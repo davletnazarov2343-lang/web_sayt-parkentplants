@@ -18,12 +18,23 @@
     "ctaSecondary": "B2B so'rov yuborish",
     "scrollHint": "Pastga aylantiring"
   },
+  "trust": {
+    "ariaLabel": "Sertifikatlar va hamkorlar",
+    "title": "Ishonch va sertifikatlar",
+    "items": {
+      "registry": "O'zR Davlat reestrida",
+      "phyto": "Fitosanitar sertifikat",
+      "iso": "ISO 9001 sifat",
+      "partners": "Netherlands Fruit Solutions",
+      "export": "Eksport sertifikati"
+    }
+  },
   "stats": {
     "title": "Raqamlarda biz",
     "subtitle": "Yigirma yildan ortiq tajriba va doimiy o'sish",
     "items": {
       "experience": {
-        "value": "22+",
+        "value": "23+",
         "label": "Yil tajriba",
         "description": "2002 yildan buyon uzluksiz faoliyat"
       },
@@ -40,9 +51,16 @@
       "nurseries": {
         "value": "2",
         "label": "Ko'chatzor",
-        "description": "Toshkent viloyati, Parkent tumani"
+        "description": "Toshkent viloyati, Parkent va Yuqori Chirchiq"
       }
     }
+  },
+  "ceoQuote": {
+    "eyebrow": "Asoschi va ekspert",
+    "quote": "Ilimsiz qilingan bog'da kelajak yo'q.",
+    "name": "Shuhrat Abrorov",
+    "role": "Ta'sischi va Bosh direktor · 23 yil tajriba",
+    "description": "Shuhrat aka 2002 yildan buyon Parkent Plants ko'chatzorini boshqaradi. U 135 dan ortiq mevali navni mahalliy iqlimga moslashtirib, fermerlar va investorlar uchun ekspert maslahat tizimini yo'lga qo'ydi. Niderlandiya, Italiya va Polshalik mutaxassislar bilan doimiy hamkorlik."
   },
   "about": {
     "eyebrow": "Nima uchun Parkent Plants",
@@ -88,14 +106,171 @@
         "count": "18 nav",
         "description": "Yirik mevali, eksportbop navlar — Bing, Regina, Lapins va mahalliy seleksiya."
       },
+      "apricot": {
+        "name": "O'rik navlari",
+        "count": "18 nav",
+        "description": "Subhoniy, Xurmoyi, Mirsanjali va eksport uchun yangi seleksiyalar."
+      },
+      "pear": {
+        "name": "Nok navlari",
+        "count": "14 nav",
+        "description": "Conference, Williams, Forelle va mahalliy o'rta-kech navlar."
+      },
+      "plum": {
+        "name": "Olxo'ri navlari",
+        "count": "12 nav",
+        "description": "President, Stanley va eksportbop quritma uchun mos navlar."
+      },
       "quince": {
         "name": "Behi navlari",
         "count": "9 nav",
         "description": "An'anaviy va zamonaviy navlar — qayta ishlash va yangi iste'mol uchun."
+      },
+      "walnut": {
+        "name": "Yong'oq navlari",
+        "count": "8 nav",
+        "description": "Chandler, Fernor va mahalliy yirik mag'izli seleksiyalar."
       }
     },
     "card": {
       "viewMore": "Batafsil"
+    }
+  },
+  "process": {
+    "eyebrow": "Hamkorlik jarayoni",
+    "title": "B2B mijoz uchun 4 bosqich",
+    "subtitle": "Birinchi qo'ng'iroqdan birinchi hosilgacha — har bosqichda agronom va menejer yoningizda.",
+    "steps": {
+      "consult": {
+        "title": "Maslahat va so'rov",
+        "description": "Loyihangizni o'rganamiz: maydon, iqlim, maqsad. Tegishli navlarni va miqdorni tavsiya qilamiz."
+      },
+      "agreement": {
+        "title": "Tanlov va shartnoma",
+        "description": "Aniq nav ro'yxati, narx, yetkazib berish muddati va to'lov shartlari kelishiladi."
+      },
+      "delivery": {
+        "title": "Yetkazib berish",
+        "description": "Sertifikatlangan ko'chat fitosanitar hujjatlar bilan, transport bilan to'g'ridan-to'g'ri yetib boradi."
+      },
+      "support": {
+        "title": "Agronomik qo'llab-quvvatlash",
+        "description": "Birinchi hosilgacha bepul telefon va dala bo'yicha texnik maslahat — tajribali agronomlarimizdan."
+      }
+    }
+  },
+  "nurseries": {
+    "eyebrow": "Ko'chatzorlarimiz",
+    "title": "Ikki zamonaviy bog'dorchilik markazi",
+    "subtitle": "Toshkent viloyatida joylashgan ikki ko'chatzor — har biri o'z ixtisoslashuvi va muhandislik tizimiga ega.",
+    "metrics": {
+      "area": "Maydon",
+      "capacity": "Yillik quvvati",
+      "specialty": "Ixtisos"
+    },
+    "visitCta": "Tashrif buyurtma berish",
+    "items": {
+      "parkent": {
+        "badge": "Asosiy bo'lim",
+        "name": "Parkent ko'chatzori",
+        "address": "Toshkent viloyati, Parkent tumani",
+        "area": "32 ga",
+        "capacity": "350 000+",
+        "specialty": "Olma, olcha, o'rik",
+        "description": "Tomchilatib sug'orish tizimi, zamonaviy ona-bog' va laboratoriya. Ko'chatzorimizning bosh punkti."
+      },
+      "yuqori_chirchiq": {
+        "badge": "Filial",
+        "name": "Yuqori Chirchiq ko'chatzori",
+        "address": "Toshkent viloyati, Yuqori Chirchiq tumani",
+        "area": "18 ga",
+        "capacity": "150 000+",
+        "specialty": "Shaftoli, nok, behi",
+        "description": "Yangi maydonlar va eksport uchun maxsus tayyorlangan navlar bo'limi. 2018 yilda ishga tushirildi."
+      }
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Mijozlarimiz fikri",
+    "title": "Professional fermer va investorlar bizni tanlaydi",
+    "subtitle": "Yiriklab ishlovchi xo'jaliklar, davlat loyihalari va xususiy investorlar bilan ishlash tajribamizdan.",
+    "items": {
+      "farmer": {
+        "quote": "Parkent Plants dan olgan olma ko'chatlarimiz uchinchi yili to'la hosilga kirdi. Sifat — eksport darajasida.",
+        "name": "Akmal Karimov",
+        "initials": "AK",
+        "role": "Fermer xo'jaligi rahbari · Samarqand"
+      },
+      "investor": {
+        "quote": "120 gektar zamonaviy intensiv bog'imiz uchun ular yagona yetkazib beruvchi bo'ldi. Agronomik qo'llab-quvvatlash juda kuchli.",
+        "name": "Davron Yo'ldoshev",
+        "initials": "DY",
+        "role": "Investor · Toshkent viloyati"
+      },
+      "government": {
+        "quote": "Davlat dasturimiz doirasida 50 000 dan ortiq ko'chat yetkazib berildi. Hujjatlar va muddatlar 100% bajarildi.",
+        "name": "Bahodir Rashidov",
+        "initials": "BR",
+        "role": "Davlat loyihasi koordinatori"
+      }
+    }
+  },
+  "knowledge": {
+    "eyebrow": "Bilim markazi",
+    "title": "Agronomdan maqolalar va qo'llanmalar",
+    "subtitle": "23 yillik amaliy tajribadan to'plangan bilim — bog'dorchilik, eksport va zamonaviy texnologiyalar.",
+    "viewAll": "Barcha maqolalar",
+    "readMore": "O'qish",
+    "items": {
+      "selection": {
+        "category": "Qo'llanma",
+        "title": "Olma navlarini tanlash bo'yicha amaliy qo'llanma",
+        "excerpt": "Iqlim, tuproq va bozor talabiga qarab to'g'ri navni qanday tanlash kerak. 32 navimizning solishtirma jadvali.",
+        "readTime": "8 daqiqa"
+      },
+      "planting": {
+        "category": "Texnologiya",
+        "title": "Bog' o'tkazishning eng yaxshi vaqti va usullari",
+        "excerpt": "Markaziy Osiyo sharoitida bahorgi va kuzgi o'tkazishning afzalliklari, zararlanishlardan himoya.",
+        "readTime": "6 daqiqa"
+      },
+      "export": {
+        "category": "Eksport",
+        "title": "Eksport uchun mevali ko'chat tayyorlash",
+        "excerpt": "Fitosanitar talablar, sertifikatlar, qadoqlash va tashish jarayoni — to'liq kontrolnaya ro'yxati.",
+        "readTime": "10 daqiqa"
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Tez-tez beriladigan savollar",
+    "title": "B2B mijozlar nimalarni so'raydi",
+    "subtitle": "Eng ko'p uchragan savollarga javoblar. Boshqa savol bo'lsa — biz bilan bog'laning.",
+    "items": {
+      "minOrder": {
+        "question": "Minimum buyurtma hajmi qancha?",
+        "answer": "Minimum miqdor — 500 ko'chat (har bir nav uchun). Yiriklab buyurtmalar uchun maxsus shartlar va chegirmalar mavjud. Aniq narxlar va shartlar uchun B2B menejerimizga murojaat qiling."
+      },
+      "regions": {
+        "question": "Yetkazib berish qaysi viloyatlarga amalga oshiriladi?",
+        "answer": "O'zbekiston bo'yicha barcha viloyatlarga. Eksport yo'nalishida Qozog'iston, Qirg'iziston va Tojikistonga doimiy yetkazib berish. Boshqa davlatlar uchun fitosanitar hujjatlar tayyorlanadi."
+      },
+      "payment": {
+        "question": "To'lov shartlari qanday?",
+        "answer": "Standart shart: 30% bron qilish, 70% yetkazib berish oldidan. Yiriklab loyihalar uchun bosqichma-bosqich to'lov sxemasi va bank kafolatlari bilan ishlaymiz."
+      },
+      "certificates": {
+        "question": "Ko'chatlarda qanday sertifikatlar bo'ladi?",
+        "answer": "Har bir partiyaga: 1) Davlat reestri sertifikati, 2) Fitosanitar sertifikat, 3) Nav identifikatsiyasi sertifikati. Eksport uchun qo'shimcha xalqaro standartlar bo'yicha hujjatlar."
+      },
+      "export": {
+        "question": "Eksport ham qilasizmi?",
+        "answer": "Ha. Markaziy Osiyo davlatlari va Afg'onistonga doimiy eksport. Yevropa va Yaqin Sharq uchun talab bo'yicha alohida shartnomalar."
+      },
+      "consult": {
+        "question": "Texnik maslahat va agronomik yordam berasizmi?",
+        "answer": "Ha, mijozlarimizga to'liq agronomik qo'llab-quvvatlash bepul. O'tkazish texnologiyasi, sug'orish tizimi, parvarish va birinchi hosilgacha bo'lgan barcha bosqichlar bo'yicha."
+      }
     }
   },
   "contact": {

@@ -2,20 +2,37 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
-const VARIETY_KEYS = ["apple", "peach", "cherry", "quince"] as const;
+const VARIETY_KEYS = [
+  "apple",
+  "peach",
+  "cherry",
+  "apricot",
+  "pear",
+  "plum",
+  "quince",
+  "walnut",
+] as const;
 
 const VARIETY_ACCENTS: Record<(typeof VARIETY_KEYS)[number], string> = {
   apple: "from-forest-100 to-forest-200",
   peach: "from-gold-100 to-gold-400/40",
   cherry: "from-forest-50 to-forest-100",
+  apricot: "from-gold-100/80 to-gold-400/30",
+  pear: "from-forest-50 to-cream-100",
+  plum: "from-forest-200/60 to-forest-100",
   quince: "from-gold-100/70 to-cream-100",
+  walnut: "from-cream-100 to-earth-400/20",
 };
 
 const VARIETY_GLYPHS: Record<(typeof VARIETY_KEYS)[number], string> = {
   apple: "🍎",
   peach: "🍑",
   cherry: "🍒",
-  quince: "🍐",
+  apricot: "🍊",
+  pear: "🍐",
+  plum: "🫐",
+  quince: "🍋",
+  walnut: "🌰",
 };
 
 export function FeaturedVarieties() {
@@ -47,7 +64,7 @@ export function FeaturedVarieties() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {VARIETY_KEYS.map((key) => (
+          {VARIETY_KEYS.map((key: (typeof VARIETY_KEYS)[number]) => (
             <article
               key={key}
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-earth-400/25 bg-cream transition-all hover:-translate-y-1 hover:border-forest-400 hover:shadow-[0_8px_32px_-12px_rgba(27,67,50,0.25)]"
