@@ -1,5 +1,130 @@
 {
-  "home": {
-    "title": "Parkent Plants"
+  "nav": {
+    "home": "Bosh sahifa",
+    "varieties": "Navlar",
+    "nursery": "Pitomnik",
+    "b2b": "B2B",
+    "about": "Biz haqimizda",
+    "contact": "Kontakt",
+    "menu": "Menyu",
+    "close": "Yopish",
+    "language": "Til"
+  },
+  "hero": {
+    "eyebrow": "2002 yildan buyon ishonchli sherik",
+    "title": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
+    "subtitle": "Yuqori sifatli, sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 135+ nav, 2 ta zamonaviy ko'chatzor. Professional fermerlar va investorlar uchun.",
+    "ctaPrimary": "Navlar katalogi",
+    "ctaSecondary": "B2B so'rov yuborish",
+    "scrollHint": "Pastga aylantiring"
+  },
+  "stats": {
+    "title": "Raqamlarda biz",
+    "subtitle": "Yigirma yildan ortiq tajriba va doimiy o'sish",
+    "items": {
+      "experience": {
+        "value": "22+",
+        "label": "Yil tajriba",
+        "description": "2002 yildan buyon uzluksiz faoliyat"
+      },
+      "seedlings": {
+        "value": "500 000+",
+        "label": "Ko'chat yiliga",
+        "description": "Sanoat miqyosida ishlab chiqarish"
+      },
+      "varieties": {
+        "value": "135+",
+        "label": "Mevali nav",
+        "description": "Mintaqa iqlimiga moslashtirilgan"
+      },
+      "nurseries": {
+        "value": "2",
+        "label": "Ko'chatzor",
+        "description": "Toshkent viloyati, Parkent tumani"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Nima uchun Parkent Plants",
+    "title": "Professional fermerlar tanlaydigan pitomnik",
+    "subtitle": "Biz nafaqat ko'chat sotamiz — biz sizning bog'ingizning kelajagini quramiz. Tanlangan navlar, sertifikatlangan sifat va to'liq agronomik qo'llab-quvvatlash.",
+    "features": {
+      "certified": {
+        "title": "Sertifikatlangan navlar",
+        "description": "O'zbekiston Respublikasi davlat reestrida ro'yxatdan o'tgan, fitosanitar tekshiruvdan o'tgan ko'chatlar."
+      },
+      "scale": {
+        "title": "Yirik xajmda yetkazib berish",
+        "description": "Bir buyurtmada 50 000+ ko'chatgacha — sanoat miqyosidagi loyihalar uchun ishonchli yetkazib beruvchi."
+      },
+      "regional": {
+        "title": "Mintaqaga moslashtirilgan",
+        "description": "Markaziy Osiyo iqlimi va tuproq sharoitiga maxsus tanlangan, sinovdan o'tkazilgan navlar."
+      },
+      "support": {
+        "title": "To'liq agronomik qo'llab-quvvatlash",
+        "description": "O'tkazishdan birinchi hosilga qadar — tajribali agronomlarimiz bilan maslahat va texnik yordam."
+      }
+    }
+  },
+  "varieties": {
+    "eyebrow": "Bizning katalog",
+    "title": "Asosiy mevali navlar",
+    "subtitle": "135 dan ortiq nav ichidan eng talab qilinadigan kategoriyalar. To'liq katalogda har bir navning batafsil texnik tavsifi mavjud.",
+    "viewAll": "To'liq katalogni ko'rish",
+    "items": {
+      "apple": {
+        "name": "Olma navlari",
+        "count": "32 nav",
+        "description": "Gala, Granny Smith, Fuji, Mahalliy Royal va boshqa premium navlar."
+      },
+      "peach": {
+        "name": "Shaftoli navlari",
+        "count": "24 nav",
+        "description": "Erta, o'rta va kech pishar navlar — uzun mavsumli hosil uchun."
+      },
+      "cherry": {
+        "name": "Olcha va gilos",
+        "count": "18 nav",
+        "description": "Yirik mevali, eksportbop navlar — Bing, Regina, Lapins va mahalliy seleksiya."
+      },
+      "quince": {
+        "name": "Behi navlari",
+        "count": "9 nav",
+        "description": "An'anaviy va zamonaviy navlar — qayta ishlash va yangi iste'mol uchun."
+      }
+    },
+    "card": {
+      "viewMore": "Batafsil"
+    }
+  },
+  "contact": {
+    "eyebrow": "Biz bilan bog'laning",
+    "title": "Loyihangiz haqida gaplashaylik",
+    "subtitle": "Yirik buyurtmalar, B2B hamkorlik yoki professional maslahat uchun biz bilan bog'laning. Har bir mijoz uchun individual yondashuv.",
+    "address": {
+      "label": "Manzil",
+      "value": "Toshkent viloyati, Parkent tumani"
+    },
+    "phone": {
+      "label": "Telefon",
+      "value": "+998 71 000 00 00"
+    },
+    "email": {
+      "label": "Elektron pochta",
+      "value": "info@parkentplants.uz"
+    },
+    "hours": {
+      "label": "Ish vaqti",
+      "value": "Dushanba – Shanba, 08:00 – 18:00"
+    },
+    "cta": "B2B so'rov yuborish"
+  },
+  "footer": {
+    "tagline": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi.",
+    "navTitle": "Saytda",
+    "contactTitle": "Aloqa",
+    "socialTitle": "Ijtimoiy tarmoqlar",
+    "rights": "Barcha huquqlar himoyalangan."
   }
 }

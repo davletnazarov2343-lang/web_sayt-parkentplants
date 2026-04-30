@@ -3,11 +3,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { LOCALES, type Locale } from "@/lib/constants";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Parkent Plants",
+  title: "Parkent Plants — Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
   description:
-    "Parkent Plants — Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi.",
+    "2002 yildan buyon Toshkent viloyatida sertifikatlangan mevali ko'chatlar yetishtiramiz. 500 000+ ko'chat yiliga, 135+ nav, 2 ta ko'chatzor.",
 };
 
 export function generateStaticParams() {
@@ -28,9 +30,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="min-h-screen bg-cream text-earth-900 antialiased">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Header />
+          <main>{children}</main>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
