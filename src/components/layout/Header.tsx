@@ -6,15 +6,15 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
-import { Button } from "@/components/ui/Button";
+import { LinkButton } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "varieties", href: "#varieties" },
+  { key: "nursery", href: "#nurseries" },
   { key: "about", href: "#about" },
-  { key: "nursery", href: "#stats" },
-  { key: "contact", href: "#contact" },
+  { key: "contact", href: "#request" },
 ] as const;
 
 export function Header() {
@@ -70,15 +70,15 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <LocaleSwitcher />
-            <a
-              href="#contact"
+            <LinkButton
+              href="#request"
+              size="sm"
+              variant="primary"
               className="hidden md:inline-flex"
               aria-label={tHero("ctaSecondary")}
             >
-              <Button size="sm" variant="primary">
-                {tHero("ctaSecondary")}
-              </Button>
-            </a>
+              {tHero("ctaSecondary")}
+            </LinkButton>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -107,15 +107,14 @@ export function Header() {
                   {t(item.key)}
                 </a>
               ))}
-              <a
-                href="#contact"
+              <LinkButton
+                href="#request"
                 onClick={() => setOpen(false)}
-                className="mt-3"
+                variant="primary"
+                className="mt-3 w-full"
               >
-                <Button className="w-full" variant="primary">
-                  {tHero("ctaSecondary")}
-                </Button>
-              </a>
+                {tHero("ctaSecondary")}
+              </LinkButton>
             </nav>
           </Container>
         </div>

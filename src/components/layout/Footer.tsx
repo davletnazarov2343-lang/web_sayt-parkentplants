@@ -12,8 +12,9 @@ import {
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "varieties", href: "#varieties" },
+  { key: "nursery", href: "#nurseries" },
   { key: "about", href: "#about" },
-  { key: "contact", href: "#contact" },
+  { key: "contact", href: "#request" },
 ] as const;
 
 const SOCIAL_LINKS = [
