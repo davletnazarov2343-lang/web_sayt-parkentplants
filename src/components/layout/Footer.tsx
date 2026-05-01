@@ -1,5 +1,11 @@
 import { useTranslations } from "next-intl";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { BRAND } from "@/lib/constants";
@@ -18,9 +24,21 @@ const NAV_ITEMS = [
 ] as const;
 
 const SOCIAL_LINKS = [
-  { name: "Instagram", Icon: InstagramIcon, href: "https://instagram.com/parkentplants" },
-  { name: "Telegram", Icon: TelegramIcon, href: "https://t.me/parkentplants" },
-  { name: "YouTube", Icon: YoutubeIcon, href: "https://youtube.com/@parkentplants" },
+  {
+    name: "Telegram",
+    Icon: TelegramIcon,
+    href: "https://t.me/+Q2HYAuBIWn4wN2Vi",
+  },
+  {
+    name: "Instagram",
+    Icon: InstagramIcon,
+    href: "https://www.instagram.com/shuhrat_abrorov/",
+  },
+  {
+    name: "YouTube",
+    Icon: YoutubeIcon,
+    href: "https://www.youtube.com/@shuhrat_abrorov",
+  },
 ] as const;
 
 export function Footer() {
@@ -91,6 +109,18 @@ export function Footer() {
                   className="text-cream-100/80 transition-colors hover:text-gold-400"
                 >
                   {t("contact.phone.value")}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold-400" />
+                <a
+                  href={`https://wa.me/${t("contact.whatsapp.value").replace(/[^0-9]/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream-100/80 transition-colors hover:text-gold-400"
+                >
+                  {t("contact.whatsapp.value")}{" "}
+                  <span className="text-cream-100/50">· WhatsApp</span>
                 </a>
               </li>
               <li className="flex items-start gap-3">

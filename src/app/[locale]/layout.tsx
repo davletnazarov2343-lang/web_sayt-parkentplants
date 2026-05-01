@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { LOCALES, type Locale } from "@/lib/constants";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsappFab } from "@/components/layout/WhatsappFab";
 
 export const metadata: Metadata = {
   title: "Parkent Plants — Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
@@ -35,6 +36,7 @@ export default async function LocaleLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <WhatsappFab />
         </NextIntlClientProvider>
       </body>
     </html>

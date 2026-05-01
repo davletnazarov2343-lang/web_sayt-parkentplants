@@ -174,20 +174,20 @@
       "parkent": {
         "badge": "Asosiy bo'lim",
         "name": "Parkent ko'chatzori",
-        "address": "Toshkent viloyati, Parkent tumani",
+        "address": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi",
         "area": "32 ga",
         "capacity": "350 000+",
         "specialty": "Olma, olcha, o'rik",
         "description": "Tomchilatib sug'orish tizimi, zamonaviy ona-bog' va laboratoriya. Ko'chatzorimizning bosh punkti."
       },
       "yuqori_chirchiq": {
-        "badge": "Filial",
+        "badge": "2-filial",
         "name": "Yuqori Chirchiq ko'chatzori",
-        "address": "Toshkent viloyati, Yuqori Chirchiq tumani",
-        "area": "18 ga",
-        "capacity": "150 000+",
-        "specialty": "Shaftoli, nok, behi",
-        "description": "Yangi maydonlar va eksport uchun maxsus tayyorlangan navlar bo'limi. 2018 yilda ishga tushirildi."
+        "address": "Toshkent viloyati, Yuqori Chirchiq tumani, Politaddel",
+        "area": "64 ga",
+        "capacity": "300 000+",
+        "specialty": "Shaftoli, nok, behi, eksport navlari",
+        "description": "Eng yirik maydoni — eksport uchun maxsus tayyorlangan navlar va keng miqyosli ishlab chiqarish bo'limi."
       }
     }
   },
@@ -394,11 +394,16 @@
     "subtitle": "Yirik buyurtmalar, B2B hamkorlik yoki professional maslahat uchun biz bilan bog'laning. Har bir mijoz uchun individual yondashuv.",
     "address": {
       "label": "Manzil",
-      "value": "Toshkent viloyati, Parkent tumani"
+      "value": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi (32 ga)"
     },
     "phone": {
-      "label": "Telefon",
-      "value": "+998 71 000 00 00"
+      "label": "Call-center",
+      "value": "+998 78 113 18 19"
+    },
+    "whatsapp": {
+      "label": "WhatsApp / Telegram",
+      "value": "+998 99 557 38 00",
+      "prefill": "Assalomu alaykum! Parkent Plants saytida ko'chat haqida ma'lumot olmoqchiman."
     },
     "email": {
       "label": "Elektron pochta",
@@ -406,7 +411,7 @@
     },
     "hours": {
       "label": "Ish vaqti",
-      "value": "Dushanba – Shanba, 08:00 – 18:00"
+      "value": "Dushanba – Shanba, 09:00 – 18:00"
     },
     "cta": "B2B so'rov yuborish"
   },

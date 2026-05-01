@@ -1,16 +1,31 @@
 import { useTranslations } from "next-intl";
-import { MapPin, Phone, Mail, Clock, ArrowRight, type LucideIcon } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  MessageCircle,
+  Clock,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 
 const CONTACT_ITEMS: Array<{
-  key: "address" | "phone" | "email" | "hours";
+  key: "address" | "phone" | "whatsapp" | "hours";
   Icon: LucideIcon;
-  hrefPrefix?: string;
+  hrefBuilder?: (rawValue: string) => string;
 }> = [
   { key: "address", Icon: MapPin },
-  { key: "phone", Icon: Phone, hrefPrefix: "tel:" },
-  { key: "email", Icon: Mail, hrefPrefix: "mailto:" },
+  {
+    key: "phone",
+    Icon: Phone,
+    hrefBuilder: (v) => `tel:${v.replace(/\s/g, "")}`,
+  },
+  {
+    key: "whatsapp",
+    Icon: MessageCircle,
+    hrefBuilder: (v) => `https://wa.me/${v.replace(/[^0-9]/g, "")}`,
+  },
   { key: "hours", Icon: Clock },
 ];
 
@@ -53,7 +68,7 @@ export function ContactPreview() {
 
           <div className="lg:col-span-7">
             <ul className="grid gap-px overflow-hidden rounded-2xl bg-cream-100/10 sm:grid-cols-2">
-              {CONTACT_ITEMS.map(({ key, Icon, hrefPrefix }) => {
+              {CONTACT_ITEMS.map(({ key, Icon, hrefBuilder }) => {
                 const value = t(`${key}.value`);
                 const content = (
                   <>
@@ -76,9 +91,11 @@ export function ContactPreview() {
 
                 return (
                   <li key={key}>
-                    {hrefPrefix ? (
+                    {hrefBuilder ? (
                       <a
-                        href={`${hrefPrefix}${value.replace(/\s/g, "")}`}
+                        href={hrefBuilder(value)}
+                        target={key === "whatsapp" ? "_blank" : undefined}
+                        rel={key === "whatsapp" ? "noopener noreferrer" : undefined}
                         className={wrapperClass}
                       >
                         {content}
