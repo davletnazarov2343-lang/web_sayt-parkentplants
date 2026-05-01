@@ -311,6 +311,178 @@
     "expertNote": "Agronomdan izoh",
     "relatedTitle": "Boshqa {fruitType} navlari"
   },
+  "quiz": {
+    "eyebrow": "Bepul ekspert tavsiyasi",
+    "title": "5 daqiqada sizga eng mos meva turini toping",
+    "subtitle": "23 yillik tajriba va ekspert algoritmimiz asosida shaxsiy tavsiya. Faqat oltita savol — natija darhol.",
+    "step": "Savol {current}/{total}",
+    "nav": {
+      "back": "Orqaga",
+      "next": "Keyingi",
+      "finish": "Natijani ko'rish"
+    },
+    "q": {
+      "goal": {
+        "title": "Asosiy maqsadingiz nima?",
+        "description": "Buni biz sizga mos eksport/ichki bozor strategiyasini tanlash uchun so'raymiz",
+        "options": {
+          "investment": {
+            "label": "Yiriklab investitsiya",
+            "hint": "Intensiv bog', maksimal daromad"
+          },
+          "commercial": {
+            "label": "Tijorat bog'i",
+            "hint": "1–10 ga, ichki bozor + chekli eksport"
+          },
+          "export": {
+            "label": "Faqat eksport",
+            "hint": "Xalqaro bozorga sertifikatlangan ko'chat"
+          },
+          "household": {
+            "label": "Hovli yoki kichik bog'",
+            "hint": "1 ga gacha, oila + qo'shimcha sotuv"
+          }
+        }
+      },
+      "region": {
+        "title": "Qaysi hududda joylashganmiz?",
+        "description": "Iqlim va tuproq xususiyatlari turlicha — buni hisoblaymiz",
+        "options": {
+          "tashkent_fergana": {
+            "label": "Toshkent / Farg'ona vodiysi",
+            "hint": "Issiq, normal tuproq"
+          },
+          "samarkand_bukhara": {
+            "label": "Samarqand / Buxoro / Navoiy",
+            "hint": "Kontinental, qurg'oqchil"
+          },
+          "khorezm": {
+            "label": "Xorazm / Qoraqalpog'iston",
+            "hint": "Issiq, ko'p hududlarda sho'r"
+          },
+          "south": {
+            "label": "Surxondaryo / Qashqadaryo",
+            "hint": "Issiq, sub-tropik hudud"
+          },
+          "mountain": {
+            "label": "Tog'li hudud",
+            "hint": "Sovuqroq, gilos va olma uchun ideal"
+          },
+          "export_only": {
+            "label": "Boshqa davlat",
+            "hint": "Tojikiston, Qirg'iziston, Qozog'iston, Turkmaniston"
+          }
+        }
+      },
+      "area": {
+        "title": "Yer maydoningiz qancha?",
+        "description": "Buni mexanizatsiya darajasi va daromad rejasi uchun ishlatamiz",
+        "options": {
+          "small": { "label": "1 ga dan kam", "hint": "Hovli yoki tajriba" },
+          "medium": { "label": "1 – 10 ga", "hint": "O'rta xo'jalik" },
+          "large": { "label": "10 – 50 ga", "hint": "Yirik fermer" },
+          "industrial": { "label": "50+ ga", "hint": "Sanoat miqyosi" }
+        }
+      },
+      "soilWater": {
+        "title": "Tuproq va sug'orish",
+        "description": "Bu eng muhim ikki omil — noto'g'ri tanlasangiz, hosil 50% kamayadi",
+        "soilLabel": "Tuproq turi:",
+        "waterLabel": "Sug'orish:",
+        "soil": {
+          "normal": {
+            "label": "Normal (qora yoki o'tloq)",
+            "hint": "Universal — barcha mevalar mos"
+          },
+          "salty": {
+            "label": "Sho'r yer",
+            "hint": "Anor, anjir, xurmo eng chidamli"
+          },
+          "heavy_clay": {
+            "label": "Lo'y, og'ir tuproq",
+            "hint": "Pivandtag tanlovi muhim"
+          },
+          "sandy_light": {
+            "label": "Qumli, yengil",
+            "hint": "Gilos va olma uchun ideal"
+          }
+        },
+        "water": {
+          "drip": {
+            "label": "Tomchilatib sug'orish",
+            "hint": "Eng yaxshi — barcha mevalar"
+          },
+          "canal": {
+            "label": "Ariqdan",
+            "hint": "Klassik usul"
+          },
+          "rain": {
+            "label": "Faqat yomg'ir / chekli",
+            "hint": "Quruqsevar mevalar"
+          }
+        }
+      },
+      "timeline": {
+        "title": "Birinchi hosilni qachon kutyapsiz?",
+        "description": "Bu intensivlik darajasi va investitsiyaga ta'sir qiladi",
+        "options": {
+          "fast": {
+            "label": "2–3 yil ichida",
+            "hint": "Past pivandtag, intensiv tizim"
+          },
+          "balanced": {
+            "label": "3–4 yil",
+            "hint": "Yarim past, balansli sxema"
+          },
+          "patient": {
+            "label": "5+ yil sabr qila olaman",
+            "hint": "Yuqori daromadli, klassik bog'"
+          }
+        }
+      }
+    },
+    "result": {
+      "eyebrow": "Sizga mos top 3 meva",
+      "title": "Mana sizning shaxsiy tavsiyangiz",
+      "subtitle": "Ballar Norchontol ekspert tizimi asosida hisoblangan — sizning javoblaringizga eng mos turlar",
+      "yearsToHarvest": "{n}-yildan hosil",
+      "ctaTitle": "Batafsil hisobotni Telegramga oling",
+      "ctaSubtitle": "Quyidagilar bilan to'liq qo'llanma:",
+      "ctaItems": {
+        "nameList": "Sizga mos aniq nav nomlari (32+ olma navi ichidan)",
+        "rootstockList": "Tuproq va sug'orishingizga mos pivandtaglar",
+        "yieldCalc": "Yer maydoningiz uchun aniq tonna va daromad hisoblovi",
+        "consultation": "Shuhrat aka yoki agronomimiz bilan 15-daqiqalik bepul qo'ng'iroq"
+      },
+      "namePlaceholder": "Ismingiz",
+      "cta": "Hisobotni olish",
+      "sending": "Yuborilmoqda...",
+      "privacy": "Telefoningiz faqat bu so'rov bo'yicha aloqa uchun ishlatiladi. 1 ish kuni ichida bog'lanamiz.",
+      "restart": "Yana sinab ko'rish"
+    },
+    "success": {
+      "title": "Tabriklaymiz! Hisobot tayyorlanmoqda",
+      "subtitle": "Menejerimiz 1 ish kuni ichida sizga qo'ng'iroq qiladi va shaxsiy hisobotni Telegram orqali yuboradi. Shuhrat akaning maslahati ham albatta tushadi.",
+      "again": "Yana boshqa stsenariy uchun sinab ko'rish"
+    },
+    "reasons": {
+      "salt_tolerance": "Sho'r yerga chidamli",
+      "fast_harvest": "Tez hosilga kiradi",
+      "high_income": "Yuqori daromad",
+      "export_match": "Eksport potensial",
+      "household_match": "Hovliga ideal",
+      "low_water": "Kam suv talab qiladi",
+      "good_storage": "Uzoq saqlanadi",
+      "mechanization": "Mexanizatsiya darajasi yuqori",
+      "regional_match": "Hududingizga eng mos"
+    },
+    "fruits": {
+      "almond": { "name": "Bodom" },
+      "grape": { "name": "Uzum" },
+      "fig": { "name": "Anjir" },
+      "pomegranate": { "name": "Anor" }
+    }
+  },
   "leadForm": {
     "eyebrow": "B2B so'rov",
     "title": "Bizga loyihangiz haqida ayting",
