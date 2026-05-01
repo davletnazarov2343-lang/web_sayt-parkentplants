@@ -67,10 +67,10 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* === Top utility bar (faqat desktop) === */}
+      {/* === Top utility bar — eng to'q (forest-900) === */}
       <div
         className={cn(
-          "hidden lg:block bg-forest-900 text-cream-100/85 transition-[max-height,opacity] duration-300 overflow-hidden",
+          "hidden lg:block bg-forest-900 text-cream-100/75 transition-[max-height,opacity] duration-300 overflow-hidden",
           scrolled ? "max-h-0 opacity-0" : "max-h-16 opacity-100",
         )}
       >
@@ -82,7 +82,10 @@ export function Header() {
                   href={phoneHref}
                   className="flex items-center gap-2 transition-colors hover:text-gold-400"
                 >
-                  <Phone className="h-3.5 w-3.5 text-gold-400" strokeWidth={2} />
+                  <Phone
+                    className="h-3.5 w-3.5 text-gold-400"
+                    strokeWidth={2}
+                  />
                   <span className="font-medium">{phoneRaw}</span>
                 </a>
               </li>
@@ -91,12 +94,18 @@ export function Header() {
                   href={`mailto:${email}`}
                   className="flex items-center gap-2 transition-colors hover:text-gold-400"
                 >
-                  <Mail className="h-3.5 w-3.5 text-gold-400" strokeWidth={2} />
+                  <Mail
+                    className="h-3.5 w-3.5 text-gold-400"
+                    strokeWidth={2}
+                  />
                   <span>{email}</span>
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Clock className="h-3.5 w-3.5 text-gold-400" strokeWidth={2} />
+                <Clock
+                  className="h-3.5 w-3.5 text-gold-400"
+                  strokeWidth={2}
+                />
                 <span>{tContact("hours.value")}</span>
               </li>
             </ul>
@@ -108,7 +117,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={name}
-                    className="inline-flex h-7 w-7 items-center justify-center rounded-full text-cream-100/70 transition-colors hover:bg-forest-700 hover:text-gold-400"
+                    className="inline-flex h-7 w-7 items-center justify-center rounded-full text-cream-100/60 transition-colors hover:bg-forest-700 hover:text-gold-400"
                   >
                     <Icon size={13} />
                   </a>
@@ -119,23 +128,23 @@ export function Header() {
         </Container>
       </div>
 
-      {/* === Main nav === */}
+      {/* === Main nav — to'q yashil, oq matn === */}
       <div
         className={cn(
-          "transition-all duration-300",
+          "border-b transition-all duration-300",
           scrolled || open
-            ? "bg-cream/95 backdrop-blur-md shadow-[0_2px_24px_-8px_rgba(27,67,50,0.18)] border-b border-earth-400/20"
-            : "bg-cream/80 backdrop-blur-sm border-b border-earth-400/10",
+            ? "bg-forest-900/95 backdrop-blur-md border-forest-700/40 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]"
+            : "bg-forest-900 border-forest-700/30",
         )}
       >
         <Container size="wide">
           <div className="flex h-[72px] items-center justify-between gap-6 lg:h-20">
             <a
               href="#top"
-              className="flex items-center transition-opacity hover:opacity-85"
+              className="flex items-center transition-opacity hover:opacity-90"
               aria-label="Parkent Plants — bosh sahifa"
             >
-              <Logo />
+              <Logo variant="light" />
             </a>
 
             {/* Desktop nav */}
@@ -144,24 +153,27 @@ export function Header() {
                 <a
                   key={item.key}
                   href={item.href}
-                  className="group relative px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-earth-900 transition-colors hover:text-forest-700"
+                  className="group relative px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-cream-100/85 transition-colors hover:text-cream"
                 >
                   {t(item.key)}
                   <span
                     aria-hidden="true"
-                    className="absolute inset-x-4 -bottom-px h-0.5 origin-left scale-x-0 bg-forest-700 transition-transform duration-300 group-hover:scale-x-100"
+                    className="absolute inset-x-4 -bottom-px h-0.5 origin-left scale-x-0 bg-gold-400 transition-transform duration-300 group-hover:scale-x-100"
                   />
                 </a>
               ))}
             </nav>
 
             <div className="flex items-center gap-3">
-              <LocaleSwitcher className="hidden md:inline-flex" />
+              <LocaleSwitcher
+                className="hidden md:inline-flex"
+                variant="light"
+              />
               <LinkButton
                 href="#request"
                 size="sm"
-                variant="primary"
-                className="hidden md:inline-flex shadow-[0_4px_14px_-4px_rgba(27,67,50,0.4)]"
+                variant="secondary"
+                className="hidden md:inline-flex shadow-[0_4px_14px_-4px_rgba(201,169,97,0.5)]"
                 aria-label={tHero("ctaSecondary")}
               >
                 {tHero("ctaSecondary")}
@@ -172,7 +184,7 @@ export function Header() {
                 onClick={() => setOpen((v) => !v)}
                 aria-label={open ? t("close") : t("menu")}
                 aria-expanded={open}
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-earth-900 hover:bg-cream-100"
+                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-cream-100 hover:bg-forest-700"
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -183,7 +195,7 @@ export function Header() {
 
       {/* === Mobile menu === */}
       {open && (
-        <div className="lg:hidden border-t border-earth-400/20 bg-cream/98 backdrop-blur-md">
+        <div className="lg:hidden border-t border-forest-700/40 bg-forest-900/98 backdrop-blur-md">
           <Container size="wide">
             <nav className="flex flex-col py-4 gap-1">
               {NAV_ITEMS.map((item) => (
@@ -191,7 +203,7 @@ export function Header() {
                   key={item.key}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-md px-4 py-3 text-base font-semibold text-earth-900 hover:bg-cream-100 hover:text-forest-700 transition-colors"
+                  className="rounded-md px-4 py-3 text-base font-semibold text-cream-100/90 hover:bg-forest-700 hover:text-cream transition-colors"
                 >
                   {t(item.key)}
                 </a>
@@ -199,23 +211,29 @@ export function Header() {
             </nav>
 
             {/* Mobile contact strip */}
-            <div className="border-t border-earth-400/20 py-4 space-y-3 text-sm">
+            <div className="border-t border-forest-700/40 py-4 space-y-3 text-sm">
               <a
                 href={phoneHref}
-                className="flex items-center gap-3 text-earth-900 hover:text-forest-700"
+                className="flex items-center gap-3 text-cream-100/90 hover:text-gold-400"
               >
-                <Phone className="h-4 w-4 text-forest-700" strokeWidth={2} />
+                <Phone
+                  className="h-4 w-4 text-gold-400"
+                  strokeWidth={2}
+                />
                 <span className="font-semibold">{phoneRaw}</span>
               </a>
               <a
                 href={`mailto:${email}`}
-                className="flex items-center gap-3 text-earth-700 hover:text-forest-700"
+                className="flex items-center gap-3 text-cream-100/75 hover:text-gold-400"
               >
-                <Mail className="h-4 w-4 text-forest-700" strokeWidth={2} />
+                <Mail
+                  className="h-4 w-4 text-gold-400"
+                  strokeWidth={2}
+                />
                 <span>{email}</span>
               </a>
               <div className="flex items-center gap-2 pt-2">
-                <LocaleSwitcher />
+                <LocaleSwitcher variant="light" />
                 <div className="ml-auto flex items-center gap-1.5">
                   {SOCIAL_LINKS.map(({ name, Icon, href }) => (
                     <a
@@ -224,7 +242,7 @@ export function Header() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={name}
-                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-earth-400/30 text-earth-700 transition-colors hover:border-forest-400 hover:text-forest-700"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-cream-100/20 text-cream-100/70 transition-colors hover:border-gold-400 hover:text-gold-400"
                     >
                       <Icon size={14} />
                     </a>
@@ -237,7 +255,7 @@ export function Header() {
               <LinkButton
                 href="#request"
                 onClick={() => setOpen(false)}
-                variant="primary"
+                variant="secondary"
                 size="lg"
                 className="w-full"
               >
