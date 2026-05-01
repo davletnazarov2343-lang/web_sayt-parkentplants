@@ -37,16 +37,16 @@ export function Logo({
   const src =
     variant === "light" ? "/brand/logo-dark.png" : "/brand/logo-light.png";
 
-  // Asl PNG aspect ratio ~1.72:1. h-12 (48px) -> width ~82px.
+  // Asl PNG aspect ratio ~1.72:1. h-14 (56px) -> width ~96px.
   return (
     <Image
       src={src}
       alt="Parkent Plants"
-      width={206}
-      height={120}
+      width={240}
+      height={140}
       priority
       className={cn(
-        "h-10 w-auto sm:h-11 lg:h-12",
+        "h-11 w-auto sm:h-12 lg:h-14",
         // Asl PNG'da matn allaqachon o'z ranglariga ega — qo'shimcha rang shart emas
         className,
       )}
