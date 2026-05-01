@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { KnowledgeCenter } from "@/components/sections/KnowledgeCenter";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
+import { LeadForm } from "@/components/sections/LeadForm";
 import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
@@ -35,6 +36,7 @@ export default function HomePage({
       <KnowledgeCenter />
       <Faq />
       <ContactPreview />
+      <LeadForm locale={lang} />
     </>
   );
 }

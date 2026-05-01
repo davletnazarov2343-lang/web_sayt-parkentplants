@@ -41,7 +41,7 @@ export function ContactPreview() {
               {t("subtitle")}
             </p>
             <LinkButton
-              href={`mailto:${t("email.value")}`}
+              href="#request"
               variant="secondary"
               size="lg"
               className="mt-8"

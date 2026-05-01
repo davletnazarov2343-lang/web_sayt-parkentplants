@@ -48,7 +48,7 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" />
             </LinkButton>
             <LinkButton
-              href="#contact"
+              href="#request"
               variant="outline"
               size="lg"
               className="w-full sm:w-auto"
