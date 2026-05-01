@@ -2,11 +2,13 @@ import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 
 const FAQ_KEYS = [
-  "minOrder",
-  "regions",
+  "varieties",
+  "saplingAge",
+  "harvestTime",
+  "germination",
+  "plantingTime",
+  "delivery",
   "payment",
-  "certificates",
-  "export",
   "consult",
 ] as const;
 

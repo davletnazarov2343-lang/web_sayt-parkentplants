@@ -13,7 +13,7 @@
   "hero": {
     "eyebrow": "2002 yildan buyon ishonchli sherik",
     "title": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
-    "subtitle": "Yuqori sifatli, sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 135+ nav, 2 ta zamonaviy ko'chatzor. Professional fermerlar va investorlar uchun.",
+    "subtitle": "Sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 11 meva turida 135+ sinalgan nav, 108 gektar maydon. O'zbekiston bo'yicha + 4 qo'shni davlatga eksport.",
     "ctaPrimary": "Navlar katalogi",
     "ctaSecondary": "B2B so'rov yuborish",
     "scrollHint": "Pastga aylantiring"
@@ -41,17 +41,17 @@
       "seedlings": {
         "value": "500 000+",
         "label": "Ko'chat yiliga",
-        "description": "Sanoat miqyosida ishlab chiqarish"
+        "description": "11 meva turida sanoat miqyosida"
       },
       "varieties": {
         "value": "135+",
-        "label": "Mevali nav",
-        "description": "Mintaqa iqlimiga moslashtirilgan"
+        "label": "Sinalgan nav",
+        "description": "Har biri 4-5 yil sinovdan o'tkazilgan"
       },
       "nurseries": {
-        "value": "2",
-        "label": "Ko'chatzor",
-        "description": "Toshkent viloyati, Parkent va Yuqori Chirchiq"
+        "value": "108",
+        "label": "Gektar maydon",
+        "description": "Parkent (58 ga) + Yuqori Chirchiq (50 ga)"
       }
     }
   },
@@ -60,28 +60,28 @@
     "quote": "Ilimsiz qilingan bog'da kelajak yo'q.",
     "name": "Shuhrat Abrorov",
     "role": "Ta'sischi va Bosh direktor · 23 yil tajriba",
-    "description": "Shuhrat aka 2002 yildan buyon Parkent Plants ko'chatzorini boshqaradi. U 135 dan ortiq mevali navni mahalliy iqlimga moslashtirib, fermerlar va investorlar uchun ekspert maslahat tizimini yo'lga qo'ydi. Niderlandiya, Italiya va Polshalik mutaxassislar bilan doimiy hamkorlik."
+    "description": "Shuhrat aka 2002 yildan Norchontol fermer xo'jaligini boshqaradi. AQSh Kaliforniyadagi zamonaviy bog'larda malaka oshirib, har yili 100+ navni o'z ko'chatzorida sinab eng yaxshilarini tavsiya qiladi. 2017-yildan Ispaniyalik selektsiyachilar bilan hamkorlikda mintaqamiz uchun yangi shaftoli, gilos va bodom navlarini olib keldi."
   },
   "about": {
     "eyebrow": "Nima uchun Parkent Plants",
     "title": "Professional fermerlar tanlaydigan pitomnik",
-    "subtitle": "Biz nafaqat ko'chat sotamiz — biz sizning bog'ingizning kelajagini quramiz. Tanlangan navlar, sertifikatlangan sifat va to'liq agronomik qo'llab-quvvatlash.",
+    "subtitle": "Biz nafaqat ko'chat sotamiz — biz sizning bog'ingizning kelajagini quramiz. Sinalgan navlar, 100% kafolat va Shuhrat akadan to'g'ridan-to'g'ri maslahat.",
     "features": {
       "certified": {
-        "title": "Sertifikatlangan navlar",
-        "description": "O'zbekiston Respublikasi davlat reestrida ro'yxatdan o'tgan, fitosanitar tekshiruvdan o'tgan ko'chatlar."
+        "title": "100% nav va pivandtag kafolati",
+        "description": "Aralash chiqsa kўchat puli to'liq qaytariladi yoki bepul payvandlab beriladi. Barcha kўchatlar fitosanitar tekshiruvdan o'tgan, davlat reestrida."
       },
       "scale": {
-        "title": "Yirik xajmda yetkazib berish",
-        "description": "Bir buyurtmada 50 000+ ko'chatgacha — sanoat miqyosidagi loyihalar uchun ishonchli yetkazib beruvchi."
+        "title": "108 gektar — sanoat miqyosi",
+        "description": "Yiliga 500 000+ ko'chat. 3 000 dan ortiq buyurtmaga bepul yetkazib berish, eksport (Tojikiston, Qirg'iziston, Turkmaniston, Qozog'iston)."
       },
       "regional": {
-        "title": "Mintaqaga moslashtirilgan",
-        "description": "Markaziy Osiyo iqlimi va tuproq sharoitiga maxsus tanlangan, sinovdan o'tkazilgan navlar."
+        "title": "4–5 yil sinalgan navlar",
+        "description": "Har bir nav iqlimimizda kamida 4 yil kuzatiladi. AQSh va Ispaniyadan keltirilgan navlar mahalliy ona-bog'larda sinaladi."
       },
       "support": {
-        "title": "To'liq agronomik qo'llab-quvvatlash",
-        "description": "O'tkazishdan birinchi hosilga qadar — tajribali agronomlarimiz bilan maslahat va texnik yordam."
+        "title": "1 yil bepul agronomik maslahat",
+        "description": "Yer tayyorlash, sug'orish, ўғitlash, shakl berish — birinchi hosilgacha. Shuhrat aka bilan bepul onlayn maslahat olish imkoniyati."
       }
     }
   },
@@ -172,22 +172,22 @@
     "visitCta": "Tashrif buyurtma berish",
     "items": {
       "parkent": {
-        "badge": "Asosiy bo'lim",
+        "badge": "Asosiy bo'lim · 2002",
         "name": "Parkent ko'chatzori",
         "address": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi",
-        "area": "32 ga",
-        "capacity": "350 000+",
-        "specialty": "Olma, olcha, o'rik",
-        "description": "Tomchilatib sug'orish tizimi, zamonaviy ona-bog' va laboratoriya. Ko'chatzorimizning bosh punkti."
+        "area": "58 ga",
+        "capacity": "37 ga ko'chat",
+        "specialty": "Olma, olcha, o'rik, ona-bog'lar",
+        "description": "Bosh ishlab chiqarish punkti — 37 ga maydonida ko'chat yetishtiriladi, qolgani esa pivandtag yetishtirish uchun ona-bog'lar va laboratoriya. Tomchilatib sug'orish."
       },
       "yuqori_chirchiq": {
-        "badge": "2-filial",
+        "badge": "2-filial · 2020",
         "name": "Yuqori Chirchiq ko'chatzori",
         "address": "Toshkent viloyati, Yuqori Chirchiq tumani, Politaddel",
-        "area": "64 ga",
-        "capacity": "300 000+",
-        "specialty": "Shaftoli, nok, behi, eksport navlari",
-        "description": "Eng yirik maydoni — eksport uchun maxsus tayyorlangan navlar va keng miqyosli ishlab chiqarish bo'limi."
+        "area": "50 ga",
+        "capacity": "Eksport navlar",
+        "specialty": "Shaftoli, nok, gilos, bodom, uzum",
+        "description": "2020-yilda ishga tushirildi — eksport navlari va keng miqyosli ishlab chiqarish uchun. Ispaniyalik selektsiyachilar bilan hamkorlikda yangi sinovlar shu yerda o'tkaziladi."
       }
     }
   },
@@ -245,32 +245,40 @@
   },
   "faq": {
     "eyebrow": "Tez-tez beriladigan savollar",
-    "title": "B2B mijozlar nimalarni so'raydi",
-    "subtitle": "Eng ko'p uchragan savollarga javoblar. Boshqa savol bo'lsa — biz bilan bog'laning.",
+    "title": "B2B mijozlar so'raydigan savollarga aniq javoblar",
+    "subtitle": "23 yillik tajribamiz va minglab konsultatsiyalardan to'plangan savollar. Boshqa savol bo'lsa — Telegram yoki WhatsApp orqali yozing.",
     "items": {
-      "minOrder": {
-        "question": "Minimum buyurtma hajmi qancha?",
-        "answer": "Minimum miqdor — 500 ko'chat (har bir nav uchun). Yiriklab buyurtmalar uchun maxsus shartlar va chegirmalar mavjud. Aniq narxlar va shartlar uchun B2B menejerimizga murojaat qiling."
+      "varieties": {
+        "question": "Sizlarda qanday mevali ko'chatlar bor?",
+        "answer": "Olma, nok, gilos, shaftoli, o'rik, olxo'ri, behi, bodom, yong'oq, pista, uzum va anjir — jami 11 dan ortiq meva turi va 135+ sinalgan nav. Subtropik mevalar (anor, xurmo) bizda yo'q — kerak bo'lsa ishonchli sheriklarimizdan topib bera olamiz, ammo asosiy buyurtma bizdan bo'lishi shart."
       },
-      "regions": {
-        "question": "Yetkazib berish qaysi viloyatlarga amalga oshiriladi?",
-        "answer": "O'zbekiston bo'yicha barcha viloyatlarga. Eksport yo'nalishida Qozog'iston, Qirg'iziston va Tojikistonga doimiy yetkazib berish. Boshqa davlatlar uchun fitosanitar hujjatlar tayyorlanadi."
+      "saplingAge": {
+        "question": "Ko'chatlaringiz necha yoshlik?",
+        "answer": "Mevali ko'chatlar 2 yoshli bo'ladi, olmada 1 yoshli (qishki payvand) ham mavjud. Olmaga 1-fevralgacha buyurtma berilsa istalgan navni kuzgacha tayyorlab beramiz. Uzum 1 yoshli — ochiq ildizli yoki tuvakda. Tuvak ko'chatlar bahorda (aprel) yetkazib beriladi."
+      },
+      "harvestTime": {
+        "question": "Nechanchi yildan hosilga kiradi?",
+        "answer": "Past bo'yli olma (M9, G41 pivandtagida): 2-yildan, 5–10 tonna. Yarim past olma (MM106, G935): 3-yildan, 5 tonna. Shaftoli, o'rik, olxo'ri: 2-yildan. Nok va bodom: 3-yildan. Gilos: 4-yildan (Krimsk-6 pivandtagida 3-yildan). Kuzda ekish hosilga erta kirish va ko'proq mevaga sabab bo'ladi."
+      },
+      "germination": {
+        "question": "Necha foiz ko'karadi? Ko'chat qurib qolsa kafolat bormi?",
+        "answer": "Klon ko'chatlar 99% gacha, urug'li 95% gacha ko'karadi. **Nav va pivandtag aslligiga 100% kafolat** — aralash chiqsa pul to'liq qaytariladi yoki bepul payvandlab beramiz. Agar ko'karish 98%+ bo'lsa, keyingi xaridda jami summadan **5% vaucher** beramiz. Saqlash va ekish qoidalariga rioya qilinishi shart."
+      },
+      "plantingTime": {
+        "question": "Qachon ekish mumkin?",
+        "answer": "Kuzda (oktyabr oxiri – noyabr oxiri), qishda (dekabr–fevral, harorat -8°C dan past bo'lmasa) va bahorda (mart–aprel, kurtak yorilmaguncha). Eng yaxshi — kuzgi ekish: ko'chat barg to'kkan, kelgusi yili kuchli o'sadi va erta hosilga kiradi. Olib ketgandan ekishgacha ko'chat ildizini 30 sm chuqurlikda nam tuproq bilan ko'mib qo'yish shart."
+      },
+      "delivery": {
+        "question": "Yetkazib berish qaysi shartlarda?",
+        "answer": "**3 000+ ko'chat** — bizdan bepul yetkazib beramiz. **1 000+ ko'chat** — xarajatlar 50/50 taqsimlanadi. 1 000 dan kam bo'lsa mijoz hisobidan. O'zbekiston bo'yicha barcha viloyatlar + 4 qo'shni davlatga eksport (Tojikiston, Qirg'iziston, Turkmaniston, Qozog'iston)."
       },
       "payment": {
         "question": "To'lov shartlari qanday?",
-        "answer": "Standart shart: 30% bron qilish, 70% yetkazib berish oldidan. Yiriklab loyihalar uchun bosqichma-bosqich to'lov sxemasi va bank kafolatlari bilan ishlaymiz."
-      },
-      "certificates": {
-        "question": "Ko'chatlarda qanday sertifikatlar bo'ladi?",
-        "answer": "Har bir partiyaga: 1) Davlat reestri sertifikati, 2) Fitosanitar sertifikat, 3) Nav identifikatsiyasi sertifikati. Eksport uchun qo'shimcha xalqaro standartlar bo'yicha hujjatlar."
-      },
-      "export": {
-        "question": "Eksport ham qilasizmi?",
-        "answer": "Ha. Markaziy Osiyo davlatlari va Afg'onistonga doimiy eksport. Yevropa va Yaqin Sharq uchun talab bo'yicha alohida shartnomalar."
+        "answer": "30% bron uchun, qolgan 70% ko'chat yuklanishidan oldin. Naqd, naqdsiz, bank o'tkazmasi — istalgan usul. Ko'chat to'liq to'lanmagan holda yuborilmaydi. Yiriklab loyihalar uchun bosqichma-bosqich shartnoma tuzamiz. Nasiya kўchat sotmaymiz."
       },
       "consult": {
-        "question": "Texnik maslahat va agronomik yordam berasizmi?",
-        "answer": "Ha, mijozlarimizga to'liq agronomik qo'llab-quvvatlash bepul. O'tkazish texnologiyasi, sug'orish tizimi, parvarish va birinchi hosilgacha bo'lgan barcha bosqichlar bo'yicha."
+        "question": "Shuhrat aka bilan bevosita maslahatlashish mumkinmi?",
+        "answer": "Ha — telefon orqali yoki bepul onlayn maslahat olishingiz mumkin (bizdan ko'chat olish niyatingiz bo'lsa). Shuhrat aka 23 yillik tajribasi va AQSh tahsilini ishga solib, sizning hududingizga, tuproqingizga va maqsadingizga mos navni shaxsan tavsiya qiladi. **VIP mijozlarga** shaxsiy raqami beriladi va yangi sinov navlariga avval ruxsat bo'ladi."
       }
     }
   },
