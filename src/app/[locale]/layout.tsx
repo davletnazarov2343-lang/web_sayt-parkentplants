@@ -6,6 +6,13 @@ import { LOCALES, type Locale } from "@/lib/constants";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsappFab } from "@/components/layout/WhatsappFab";
+import { Analytics } from "@/components/analytics/Analytics";
+import {
+  JsonLd,
+  getOrganizationSchema,
+  getLocalBusinessSchema,
+  getWebsiteSchema,
+} from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://parkentplants.uz"),
@@ -90,12 +97,16 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className="min-h-screen bg-cream text-earth-900 antialiased">
+        <JsonLd data={getOrganizationSchema()} />
+        <JsonLd data={getLocalBusinessSchema()} />
+        <JsonLd data={getWebsiteSchema(locale)} />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
           <WhatsappFab />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

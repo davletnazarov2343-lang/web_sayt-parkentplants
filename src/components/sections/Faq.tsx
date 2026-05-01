@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
+import { JsonLd, getFaqSchema } from "@/components/seo/JsonLd";
 
 const FAQ_KEYS = [
   "varieties",
@@ -15,8 +16,15 @@ const FAQ_KEYS = [
 export function Faq() {
   const t = useTranslations("faq");
 
+  // SEO uchun JSON-LD
+  const faqItems = FAQ_KEYS.map((key) => ({
+    question: t(`items.${key}.question`),
+    answer: t(`items.${key}.answer`),
+  }));
+
   return (
     <section id="faq" className="bg-cream py-20 lg:py-28">
+      <JsonLd data={getFaqSchema(faqItems)} />
       <Container size="narrow">
         <div className="text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">

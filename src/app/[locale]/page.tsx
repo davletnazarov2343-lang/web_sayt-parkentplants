@@ -12,7 +12,6 @@ import { KnowledgeCenter } from "@/components/sections/KnowledgeCenter";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
 import { LeadForm } from "@/components/sections/LeadForm";
-import { Quiz } from "@/components/quiz/Quiz";
 import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
@@ -31,7 +30,6 @@ export default function HomePage({
       <CeoQuote />
       <About />
       <FeaturedVarieties locale={lang} />
-      <Quiz locale={lang} />
       <B2BProcess />
       <Nurseries />
       <Testimonials />
