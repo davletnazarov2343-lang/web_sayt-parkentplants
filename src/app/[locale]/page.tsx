@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { KnowledgeCenter } from "@/components/sections/KnowledgeCenter";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
+import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
   params: { locale },
@@ -18,6 +19,7 @@ export default function HomePage({
   params: { locale: string };
 }) {
   unstable_setRequestLocale(locale);
+  const lang = locale as Locale;
 
   return (
     <>
@@ -26,7 +28,7 @@ export default function HomePage({
       <Stats />
       <CeoQuote />
       <About />
-      <FeaturedVarieties />
+      <FeaturedVarieties locale={lang} />
       <B2BProcess />
       <Nurseries />
       <Testimonials />

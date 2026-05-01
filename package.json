@@ -11,12 +11,17 @@
   "dependencies": {
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/inter": "^5.2.8",
+    "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.23.0",
     "clsx": "^2.1.1",
     "lucide-react": "^1.9.0",
     "next": "14.2.35",
     "next-intl": "^3.26.5",
+    "next-sanity": "^12.3.2",
     "react": "^18",
     "react-dom": "^18",
+    "sanity": "^5.23.0",
+    "styled-components": "^6.4.1",
     "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {

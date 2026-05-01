@@ -90,6 +90,7 @@
     "title": "Asosiy mevali navlar",
     "subtitle": "135 dan ortiq nav ichidan eng talab qilinadigan kategoriyalar. To'liq katalogda har bir navning batafsil texnik tavsifi mavjud.",
     "viewAll": "To'liq katalogni ko'rish",
+    "countLabel": "{n} nav",
     "items": {
       "apple": {
         "name": "Olma navlari",
@@ -272,6 +273,35 @@
         "answer": "Ha, mijozlarimizga to'liq agronomik qo'llab-quvvatlash bepul. O'tkazish texnologiyasi, sug'orish tizimi, parvarish va birinchi hosilgacha bo'lgan barcha bosqichlar bo'yicha."
       }
     }
+  },
+  "catalog": {
+    "eyebrow": "Bizning katalog",
+    "listTitle": "Mevali ko'chat navlari",
+    "listSubtitle": "135+ sertifikatlangan nav. Meva turi bo'yicha filtrlang va batafsil texnik tavsifni ko'ring.",
+    "filterPageDescription": "{fruitType} navlari — Parkent Plants katalogidan sertifikatlangan ko'chatlar.",
+    "emptyFruitType": "{fruitType} bo'yicha hozircha aktiv nav yo'q.",
+    "filter": {
+      "all": "Hammasi",
+      "count": "({n})"
+    },
+    "card": {
+      "ripensIn": "Pishish",
+      "exportable": "Eksportbop",
+      "viewMore": "Batafsil"
+    }
+  },
+  "varietyDetail": {
+    "ripeningTime": "Pishish vaqti",
+    "treeSize": "Daraxt o'lchami",
+    "yield": "O'rtacha hosil",
+    "kgPerTree": "kg/daraxt",
+    "origin": "Kelib chiqishi",
+    "exportable": "Eksport",
+    "yes": "Ha",
+    "certifications": "Sertifikatlar",
+    "requestQuote": "Buyurtma so'rash",
+    "expertNote": "Agronomdan izoh",
+    "relatedTitle": "Boshqa {fruitType} navlari"
   },
   "contact": {
     "eyebrow": "Biz bilan bog'laning",
