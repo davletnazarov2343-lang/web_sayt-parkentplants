@@ -7,6 +7,8 @@ export default createMiddleware({
   localePrefix: "always",
 });
 
+// `studio` — Sanity admin (i18n bilan to'qnashmasligi kerak)
+// `api`, `_next`, `_vercel`, statik fayllar — i18n'siz
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: ["/((?!api|studio|_next|_vercel|.*\\..*).*)"],
 };
