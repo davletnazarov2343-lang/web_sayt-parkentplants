@@ -423,6 +423,13 @@
     },
     "cta": "B2B so'rov yuborish"
   },
+  "notFound": {
+    "title": "Bunday sahifa topilmadi",
+    "description": "Izlagan sahifangiz mavjud emas yoki ko'chirib qo'yilgan. Bosh sahifaga qayting yoki katalogimizdan ko'chat tanlang.",
+    "backHome": "Bosh sahifaga",
+    "browseCatalog": "Katalog",
+    "contact": "Yordam kerakmi?"
+  },
   "footer": {
     "tagline": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi.",
     "navTitle": "Saytda",

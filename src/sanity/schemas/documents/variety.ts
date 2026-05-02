@@ -31,7 +31,10 @@ export const variety = defineType({
       type: "slug",
       group: "core",
       options: {
-        source: (doc: { name?: { uz?: string } }) => doc?.name?.uz || "",
+        source: (doc) => {
+          const d = doc as { name?: { uz?: string } };
+          return d?.name?.uz || "";
+        },
         maxLength: 96,
         slugify: (input) =>
           input

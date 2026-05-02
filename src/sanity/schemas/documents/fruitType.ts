@@ -23,7 +23,10 @@ export const fruitType = defineType({
       description: "Masalan: olma, shaftoli, olcha",
       type: "slug",
       options: {
-        source: (doc: { name?: { uz?: string } }) => doc?.name?.uz || "",
+        source: (doc) => {
+          const d = doc as { name?: { uz?: string } };
+          return d?.name?.uz || "";
+        },
         maxLength: 64,
         slugify: (input) =>
           input

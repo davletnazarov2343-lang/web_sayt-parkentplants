@@ -14,6 +14,7 @@ import {
   Sprout,
   MapPin,
   ArrowRight,
+  type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
@@ -276,7 +277,7 @@ function SpecRow({
   label,
   value,
 }: {
-  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  Icon: LucideIcon;
   label: string;
   value: string;
 }) {
