@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
@@ -33,16 +32,6 @@ const FALLBACK_GLYPHS: Record<FallbackKey, string> = {
   plum: "🫐",
 };
 
-/**
- * Real fotosurat (mavjud bo'lganlar). Yo'q bo'lganlar uchun emoji + gradient.
- * Manba: D:\Navlar\Norchontol — branded marketing materiallari.
- */
-const FALLBACK_IMAGES: Partial<Record<FallbackKey, string>> = {
-  apple: "/varieties/saplings/apple-devil-gala.png",
-  peach: "/varieties/fruits/peach-platerina.jpg",
-  cherry: "/varieties/fruits/cherry-sps342.jpg",
-};
-
 const ACCENT_PALETTE = [
   "from-forest-100 to-forest-200",
   "from-gold-100 to-gold-400/40",
@@ -56,7 +45,6 @@ type Card = {
   key: string;
   href: string;
   emoji: string;
-  image?: string;
   count: string;
   name: string;
   description: string;
@@ -85,7 +73,6 @@ export async function FeaturedVarieties({ locale }: { locale: Locale }) {
       key,
       href: `/${locale}/varieties/${key}`,
       emoji: FALLBACK_GLYPHS[key],
-      image: FALLBACK_IMAGES[key],
       count: t(`items.${key}.count`),
       name: t(`items.${key}.name`),
       description: t(`items.${key}.description`),
@@ -124,21 +111,11 @@ export async function FeaturedVarieties({ locale }: { locale: Locale }) {
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-earth-400/25 bg-cream transition-all hover:-translate-y-1 hover:border-forest-400 hover:shadow-[0_8px_32px_-12px_rgba(27,67,50,0.25)]"
             >
               <div
-                className={`relative flex h-52 items-center justify-center overflow-hidden bg-gradient-to-br ${ACCENT_PALETTE[idx % ACCENT_PALETTE.length]}`}
+                className={`relative flex h-44 items-center justify-center bg-gradient-to-br ${ACCENT_PALETTE[idx % ACCENT_PALETTE.length]}`}
               >
-                {card.image ? (
-                  <Image
-                    src={card.image}
-                    alt={card.name}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <span className="text-6xl drop-shadow-sm" aria-hidden="true">
-                    {card.emoji}
-                  </span>
-                )}
+                <span className="text-6xl drop-shadow-sm" aria-hidden="true">
+                  {card.emoji}
+                </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="text-xs font-semibold uppercase tracking-widest text-gold-700">
