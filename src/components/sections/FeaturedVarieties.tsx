@@ -19,8 +19,6 @@ const FALLBACK_KEYS = [
   "apricot",
   "pear",
   "plum",
-  "quince",
-  "walnut",
 ] as const;
 
 type FallbackKey = (typeof FALLBACK_KEYS)[number];
@@ -32,8 +30,6 @@ const FALLBACK_GLYPHS: Record<FallbackKey, string> = {
   apricot: "🍊",
   pear: "🍐",
   plum: "🫐",
-  quince: "🍋",
-  walnut: "🌰",
 };
 
 const ACCENT_PALETTE = [
@@ -43,8 +39,6 @@ const ACCENT_PALETTE = [
   "from-gold-100/80 to-gold-400/30",
   "from-forest-50 to-cream-100",
   "from-forest-200/60 to-forest-100",
-  "from-gold-100/70 to-cream-100",
-  "from-cream-100 to-earth-400/20",
 ];
 
 type Card = {
@@ -65,7 +59,7 @@ export async function FeaturedVarieties({ locale }: { locale: Locale }) {
   let cards: Card[];
 
   if (fruitTypes.length > 0) {
-    cards = fruitTypes.slice(0, 8).map((ft) => ({
+    cards = fruitTypes.slice(0, 6).map((ft) => ({
       key: ft._id,
       href: `/${locale}/varieties/${ft.slug}`,
       emoji: ft.emoji ?? "🌱",
@@ -109,7 +103,7 @@ export async function FeaturedVarieties({ locale }: { locale: Locale }) {
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, idx) => (
             <Link
               key={card.key}
