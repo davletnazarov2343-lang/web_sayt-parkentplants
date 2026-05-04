@@ -137,6 +137,27 @@
       "viewMore": "Batafsil"
     }
   },
+  "topCherries": {
+    "eyebrow": "Shuhrat aka tanlovi",
+    "title": "TOP 12 gilos navi — sinalgan, isbotlangan",
+    "subtitle": "Eng katta katalogimizdagi 65 ta sinalgan gilos va olcha navi orasidan B2B mijozlar uchun eng muhim 12 tasi. Har biri Shuhrat akaning kitobida agronomik ma'lumotlari bilan tasvirlangan.",
+    "source": "Manba: Sh. Abrorov, \"Gilos yetishtirishning katta kitobi\", 2025 — 424 sahifa",
+    "count": "{n} ta nav",
+    "reference": "Asos",
+    "daysOffset": "+{n} kun",
+    "specs": {
+      "size": "Yiriklik",
+      "firmness": "Qattiqligi",
+      "pollination": "Changlanish",
+      "selfPollinating": "O'zini changlatuvchi",
+      "color": "Rang"
+    },
+    "more": {
+      "title": "65 ta nav haqida to'liq qo'llanma kerakmi?",
+      "subtitle": "B2B menejerimiz sizning maydon, iqlim va eksport maqsadingizga eng mos navlarni tanlab beradi.",
+      "cta": "B2B so'rov yuborish"
+    }
+  },
   "process": {
     "eyebrow": "Hamkorlik jarayoni",
     "title": "B2B mijoz uchun 4 bosqich",
