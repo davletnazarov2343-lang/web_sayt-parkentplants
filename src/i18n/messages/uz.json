@@ -13,7 +13,7 @@
   "hero": {
     "eyebrow": "2002 yildan buyon ishonchli sherik",
     "title": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
-    "subtitle": "Sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 11 meva turida 135+ sinalgan nav, 108 gektar maydon. O'zbekiston bo'yicha + 4 qo'shni davlatga eksport.",
+    "subtitle": "Sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 11 meva turida 135+ sinalgan nav, 96 gektar maydon. O'zbekiston bo'yicha + 4 qo'shni davlatga eksport.",
     "ctaPrimary": "Navlar katalogi",
     "ctaSecondary": "B2B so'rov yuborish",
     "scrollHint": "Pastga aylantiring"
@@ -49,9 +49,9 @@
         "description": "Har biri 4-5 yil sinovdan o'tkazilgan"
       },
       "nurseries": {
-        "value": "108",
+        "value": "96",
         "label": "Gektar maydon",
-        "description": "Parkent (58 ga) + Yuqori Chirchiq (50 ga)"
+        "description": "Parkent (32 ga) + Yuqori Chirchiq (64 ga)"
       }
     }
   },
@@ -72,7 +72,7 @@
         "description": "Aralash chiqsa ko'chat puli to'liq qaytariladi yoki bepul payvandlab beriladi. Barcha ko'chatlar fitosanitar tekshiruvdan o'tgan, davlat reestrida."
       },
       "scale": {
-        "title": "108 gektar — sanoat miqyosi",
+        "title": "96 gektar — sanoat miqyosi",
         "description": "Yiliga 500 000+ ko'chat. 3 000 dan ortiq buyurtmaga bepul yetkazib berish, eksport (Tojikiston, Qirg'iziston, Turkmaniston, Qozog'iston)."
       },
       "regional": {
@@ -196,19 +196,19 @@
         "badge": "Asosiy bo'lim · 2002",
         "name": "Parkent ko'chatzori",
         "address": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi",
-        "area": "58 ga",
-        "capacity": "37 ga ko'chat",
+        "area": "32 ga",
+        "capacity": "200 000+ ko'chat",
         "specialty": "Olma, olcha, o'rik, ona-bog'lar",
-        "description": "Bosh ishlab chiqarish punkti — 37 ga maydonida ko'chat yetishtiriladi, qolgani esa pivandtag yetishtirish uchun ona-bog'lar va laboratoriya. Tomchilatib sug'orish."
+        "description": "Bosh ishlab chiqarish punkti — 2002-yildan, ona-bog'lar va laboratoriya shu yerda. Tomchilatib sug'orish, klon pivandtag yetishtirish."
       },
       "yuqori_chirchiq": {
         "badge": "2-filial · 2020",
         "name": "Yuqori Chirchiq ko'chatzori",
         "address": "Toshkent viloyati, Yuqori Chirchiq tumani, Politaddel",
-        "area": "50 ga",
-        "capacity": "Eksport navlar",
+        "area": "64 ga",
+        "capacity": "300 000+ ko'chat",
         "specialty": "Shaftoli, nok, gilos, bodom, uzum",
-        "description": "2020-yilda ishga tushirildi — eksport navlari va keng miqyosli ishlab chiqarish uchun. Ispaniyalik selektsiyachilar bilan hamkorlikda yangi sinovlar shu yerda o'tkaziladi."
+        "description": "2020-yilda ishga tushirildi — eng yirik maydoni, eksport navlari va keng miqyosli ishlab chiqarish uchun. Ispaniyalik selektsiyachilar bilan hamkorlikda yangi sinovlar."
       }
     }
   },
