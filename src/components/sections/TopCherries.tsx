@@ -102,6 +102,11 @@ const BADGE_CONFIG: Record<
     ru: "Поздний",
     className: "bg-cream-100 text-earth-900 border border-earth-400/30",
   },
+  reference: {
+    uz: "Asos nav",
+    ru: "Эталон",
+    className: "bg-gold-700 text-cream",
+  },
 };
 
 type FilterId = (typeof CHERRY_FILTERS)[number]["id"];
@@ -181,8 +186,8 @@ export function TopCherries({ locale }: { locale: "uz" | "ru" }) {
           </span>
         </div>
 
-        {/* Cards grid */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {/* Cards grid — 8 ta nav uchun: mobile 1, tablet 2, desktop 4 */}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {filtered.map((v) => (
             <CherryCard
               key={v.slug}

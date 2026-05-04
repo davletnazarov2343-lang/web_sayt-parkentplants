@@ -1,13 +1,11 @@
 /**
- * TOP 12 gilos navi — Shuhrat Abrorovning "Gilos yetishtirishning katta kitobi"
- * (424 sahifa, 2025) asosida. 65 ta nav orasidan B2B uchun eng muhimlari
- * tanlandi: eksport, mahalliy bozor va sariq nichлар.
+ * TOP 8 gilos navi — Norchontol ko'chatzorida bevosita yetishtiriladigan
+ * navlar. Shuhrat Abrorovning "Gilos yetishtirishning katta kitobi"
+ * (424 sahifa, 2025) asosida.
  *
- * Har nav uchun ma'lumotlar to'g'ridan-to'g'ri kitobdan olingan:
- * - Ҳосил терими вақти (Roy­al Tioga'ga nisbatan)
- * - S аллеллари (changlanish genetikasi)
- * - Қаттиқлиги, йириклиги, ёрилишга чидамлилик
- * - Тавсифлар
+ * Tartib: pishish vaqti bo'yicha (juda erta → kech).
+ * Royal Tioga — referans nav (1–5 may), qolgan navlar undan necha kun
+ * keyin pishishi ko'rsatilgan.
  *
  * Manba: Шуҳрат Аброров. Гилос Етиштиришнинг Катта Китоби.
  * Тошкент: "Yoshlar mediaprint", 2025. — 424 b. ISBN 978-9943-7862-4-0
@@ -36,7 +34,8 @@ export type CherryBadge =
   | "classic"
   | "self-pollinating"
   | "early"
-  | "late";
+  | "late"
+  | "reference";
 
 export type CherryVariety = {
   /** URL slug */
@@ -45,10 +44,10 @@ export type CherryVariety = {
   name: string;
   /** Original name from book (Cyrillic) */
   nameOriginal: string;
-  /** Days after Royal Tioga (reference variety) */
+  /** Days after Royal Tioga (reference variety). 0 = Royal Tioga itself */
   daysAfterRoyal: number;
   season: CherrySeason;
-  /** Fruit size in mm */
+  /** Fruit size in mm (0 = not specified in book) */
   sizeMm: number;
   /** "S1 S4 (ўзини чанглатувчи)" — kept verbatim */
   pollination: string;
@@ -67,22 +66,58 @@ export type CherryVariety = {
 
 export const TOP_CHERRIES: CherryVariety[] = [
   {
-    slug: "red-pacific",
-    name: "Red Pacific",
-    nameOriginal: "Ред Песифик",
+    slug: "royal-tioga",
+    name: "Royal Tioga",
+    nameOriginal: "Роял Тиога",
+    daysAfterRoyal: 0,
+    season: "very-early",
+    sizeMm: 28,
+    pollination: "S1 S4 (o'zini changlatuvchi)",
+    selfPollinating: true,
+    firmness: "good",
+    crackResistance: "medium",
+    color: "Po'st och-qirmizi · et qizil",
+    badges: ["reference", "self-pollinating", "early"],
+    taglineUz:
+      "Mavsum boshlovchisi (1–5 may). Daraxti tik va kuchli, juda unumli. Eksport bozori uchun ahamiyatli.",
+    taglineRu:
+      "Открывает сезон (1–5 мая). Дерево прямое и сильное, очень урожайное. Важен для экспортного рынка.",
+  },
+  {
+    slug: "nimba",
+    name: "Nimba",
+    nameOriginal: "Нимба",
+    daysAfterRoyal: 5,
+    season: "very-early",
+    sizeMm: 30,
+    pollination: "S2 S3",
+    selfPollinating: false,
+    firmness: "good",
+    crackResistance: "low",
+    color: "Po'st och-qirmizi · et qizil",
+    badges: ["export", "early"],
+    taglineUz:
+      "Erta pishishi va yirikligi tufayli erta-mavsum gilosi uchun ahamiyatli. Taъmi shirin, kuchsiz nordon.",
+    taglineRu:
+      "Раннее созревание и крупный размер делают сорт ценным для раннего рынка. Сладкий, легко-кисловатый.",
+  },
+  {
+    slug: "giant-red",
+    name: "Giant Red",
+    nameOriginal: "Жайнт Ред",
     daysAfterRoyal: 10,
     season: "early",
-    sizeMm: 29,
-    pollination: "S4 S9 (o'zini changlatuvchi)",
-    selfPollinating: true,
-    firmness: "excellent",
-    crackResistance: "high",
-    color: "Qizg'ish-qirmizi · eti qora",
-    badges: ["export", "self-pollinating", "early"],
+    sizeMm: 28,
+    pollination: "S1 S3",
+    selfPollinating: false,
+    firmness: "good",
+    crackResistance: "medium",
+    color: "Qizil",
+    badges: ["premium", "early"],
     taglineUz:
-      "Eksportbop, A'lo sifatli erta nav. Tez hosilga kiradi, yarim kuchli o'sadi.",
+      "Jahondagi eng yirik gilos navlaridan biri. 10-mayda oq-sariq holda terib yuqori narxda sotish mumkin.",
     taglineRu:
-      "Экспортный, отличного качества раннеспелый сорт. Быстро вступает в плодоношение.",
+      "Один из самых крупных сортов в мире. К 10 мая можно собирать в бело-жёлтом виде и продавать по высокой цене.",
   },
   {
     slug: "sweet-ariana",
@@ -103,112 +138,40 @@ export const TOP_CHERRIES: CherryVariety[] = [
       "Сердцевидная, сладкая. Дерево мощное, раскидистое, очень урожайное.",
   },
   {
-    slug: "brooks",
-    name: "Brooks",
-    nameOriginal: "Брукс",
+    slug: "sweet-lorenz",
+    name: "Sweet Lorenz",
+    nameOriginal: "Свит Лоренз",
     daysAfterRoyal: 15,
     season: "early",
-    sizeMm: 28,
-    pollination: "S1 S9",
-    selfPollinating: false,
-    firmness: "excellent",
-    crackResistance: "low",
-    color: "Qizil va och-qirmizi",
-    badges: ["export", "premium"],
-    taglineUz:
-      "Kaliforniya erta gilos standarti. Aъlo taъm, uzoq tashishga qulay.",
-    taglineRu:
-      "Стандарт Калифорнии для раннего рынка. Отличный вкус, выдерживает дальнюю перевозку.",
-  },
-  {
-    slug: "black-pearl",
-    name: "Black Pearl",
-    nameOriginal: "Блэк Перл",
-    daysAfterRoyal: 20,
-    season: "mid",
     sizeMm: 30,
-    pollination: "S4 S13",
-    selfPollinating: false,
-    firmness: "very-firm",
-    crackResistance: "medium",
-    color: "Po'st va et — qora",
-    badges: ["export", "premium"],
-    taglineUz:
-      "Erta o'rta-mavsum, jo'shqin yirik va juda qattiq. Gizela'da sermahsul.",
-    taglineRu:
-      "Ранне-средний сезон, крупная и очень плотная. Высокая урожайность на Гизеле.",
-  },
-  {
-    slug: "coral-champagne",
-    name: "Coral Champagne",
-    nameOriginal: "Корл-Шампейн",
-    daysAfterRoyal: 20,
-    season: "mid",
-    sizeMm: 30,
-    pollination: "S1 S3",
-    selfPollinating: false,
-    firmness: "excellent",
-    crackResistance: "medium",
-    color: "Po'st och qizil · et to'q qizil",
-    badges: ["premium"],
-    taglineUz:
-      "Kaliforniyada eng ko'p ekiladi. Juda shirin, kam nordon, tez hosilga kiradi.",
-    taglineRu:
-      "Самый популярный в Калифорнии. Очень сладкий, рано вступает в плодоношение.",
-  },
-  {
-    slug: "santina",
-    name: "Santina",
-    nameOriginal: "Сантина",
-    daysAfterRoyal: 20,
-    season: "mid",
-    sizeMm: 28,
-    pollination: "S1 S4 (o'zini changlatuvchi)",
-    selfPollinating: true,
-    firmness: "excellent",
-    crackResistance: "medium",
-    color: "Po'st va et — qora",
-    badges: ["export", "self-pollinating"],
-    taglineUz:
-      "Chilidan Xitoyga eksport. Yirik, ozgina nordon, ёйилиб o'sadi.",
-    taglineRu:
-      "Экспорт из Чили в Китай. Крупная, слегка кисловатая, раскидистый рост.",
-  },
-  {
-    slug: "bing",
-    name: "Bing",
-    nameOriginal: "Бинг",
-    daysAfterRoyal: 20,
-    season: "mid",
-    sizeMm: 27,
     pollination: "S3 S4",
     selfPollinating: false,
-    firmness: "good",
-    crackResistance: "low",
-    color: "Po'st va et — och qirmizi",
-    badges: ["classic", "export"],
+    firmness: "excellent",
+    crackResistance: "medium",
+    color: "Qora",
+    badges: ["premium"],
     taglineUz:
-      "Bir asrdan ko'p Shimoliy-G'arbiy AQSh standardi. Aъlo taъm, dunyodagi etakchi nav.",
+      "A'lo qattiqlik bilan yirik qora gilos. Erta-o'rta mavsum uchun premium tanlov.",
     taglineRu:
-      "Более ста лет — стандарт Северо-Запада США. Отличный вкус, мировой лидер.",
+      "Крупная чёрная черешня с отличной плотностью. Премиум-выбор для раннего сезона.",
   },
   {
-    slug: "ebony-pearl",
-    name: "Ebony Pearl",
-    nameOriginal: "Эбони-Перл",
+    slug: "sps-342",
+    name: "SPS 342",
+    nameOriginal: "СПС 342",
     daysAfterRoyal: 20,
     season: "mid",
-    sizeMm: 32,
-    pollination: "S1 S4",
+    sizeMm: 28,
+    pollination: "S1 S5",
     selfPollinating: false,
     firmness: "excellent",
     crackResistance: "high",
-    color: "Po'st va et — qirmizi va to'q qirmizi",
-    badges: ["premium", "export"],
+    color: "Qora",
+    badges: ["export", "premium"],
     taglineUz:
-      "Bing'dan yirikroq, yorilishga chidamliroq. Bakteriy rakka kamroq chalinadi.",
+      "Skina'ga o'xshash sifatli, lekin 10 kun erta. Qo'shaloq mevaga chidamli, banalı uzun. Aъlo taъm.",
     taglineRu:
-      "Крупнее Bing, устойчивее к растрескиванию. Меньше подвержен бактериальному раку.",
+      "Похож на Skina по качеству, но на 10 дней раньше. Устойчив к двойным плодам, длинная плодоножка. Отличный вкус.",
   },
   {
     slug: "skina",
@@ -245,42 +208,6 @@ export const TOP_CHERRIES: CherryVariety[] = [
       "Shimoliy-G'arbiy AQSh, Kanada va Yangi Zelandiyada keng tarqalgan, juda sermahsul.",
     taglineRu:
       "Широко распространён в США, Канаде и Новой Зеландии, очень урожайный.",
-  },
-  {
-    slug: "sweethart",
-    name: "Sweethart",
-    nameOriginal: "Свитхарт",
-    daysAfterRoyal: 40,
-    season: "very-late",
-    sizeMm: 26,
-    pollination: "S3 S4 (o'zini changlatuvchi)",
-    selfPollinating: true,
-    firmness: "excellent",
-    crackResistance: "medium",
-    color: "Po'st va et — qizil",
-    badges: ["self-pollinating", "late"],
-    taglineUz:
-      "Juda kech mavsum. Yoqimli taъm, mevasi yuzasida chuqurchalar olishi mumkin.",
-    taglineRu:
-      "Очень поздний сорт. Приятный вкус, возможны питтинги при перевозке.",
-  },
-  {
-    slug: "0900-ziroat",
-    name: "0900 Ziroat",
-    nameOriginal: "0900 Зироат",
-    daysAfterRoyal: 35,
-    season: "late",
-    sizeMm: 30,
-    pollination: "S3 S12",
-    selfPollinating: false,
-    firmness: "good",
-    crackResistance: "medium",
-    color: "Po'st qora · et och qora",
-    badges: ["export", "premium", "late"],
-    taglineUz:
-      "Turkiyaning eng yirik eksport navi. Har yili Yevropaga eksport qilinadi.",
-    taglineRu:
-      "Самый крупный экспортный сорт Турции. Ежегодно экспортируется в Европу.",
   },
 ];
 

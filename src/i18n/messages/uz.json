@@ -138,12 +138,12 @@
     }
   },
   "topCherries": {
-    "eyebrow": "Shuhrat aka tanlovi",
-    "title": "TOP 12 gilos navi — sinalgan, isbotlangan",
-    "subtitle": "Eng katta katalogimizdagi 65 ta sinalgan gilos va olcha navi orasidan B2B mijozlar uchun eng muhim 12 tasi. Har biri Shuhrat akaning kitobida agronomik ma'lumotlari bilan tasvirlangan.",
+    "eyebrow": "Norchontolda yetishtiriladigan",
+    "title": "8 ta gilos navi — bevosita ko'chatzorimizdan",
+    "subtitle": "Bizning ko'chatzorimizda bevosita yetishtiriladigan, sinalgan va eksportbop gilos navlari. Mavsum boshidan oxirigacha — Royal Tioga (1-may) dan Skina (5-iyun) gacha.",
     "source": "Manba: Sh. Abrorov, \"Gilos yetishtirishning katta kitobi\", 2025 — 424 sahifa",
     "count": "{n} ta nav",
-    "reference": "Asos",
+    "reference": "Asos nav",
     "daysOffset": "+{n} kun",
     "specs": {
       "size": "Yiriklik",
@@ -153,9 +153,9 @@
       "color": "Rang"
     },
     "more": {
-      "title": "65 ta nav haqida to'liq qo'llanma kerakmi?",
-      "subtitle": "B2B menejerimiz sizning maydon, iqlim va eksport maqsadingizga eng mos navlarni tanlab beradi.",
-      "cta": "B2B so'rov yuborish"
+      "title": "Bog'ingiz uchun aniq nav tanlash kerakmi?",
+      "subtitle": "Shuhrat aka yoki agronomimiz sizning maydon, iqlim va eksport maqsadingizga eng mos navlarni tanlab beradi.",
+      "cta": "Bepul maslahat olish"
     }
   },
   "process": {
