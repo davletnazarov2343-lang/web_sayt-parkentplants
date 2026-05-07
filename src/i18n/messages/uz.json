@@ -137,6 +137,25 @@
       "viewMore": "Batafsil"
     }
   },
+  "topPeaches": {
+    "eyebrow": "İrgeler katalogidan tanlangan",
+    "title": "8 ta shaftoli navi — may'dan sentyabr o'rtasigacha",
+    "subtitle": "Premium Ispaniya va AQSh seleksiyalari. Filomena (may 20) dan Q Henry (sentyabr 15) gacha — 4 oy uzluksiz hosil.",
+    "count": "{n} ta nav",
+    "specs": {
+      "size": "O'lchami",
+      "flesh": "Eti",
+      "brix": "Brix",
+      "bloom": "Gullash",
+      "pollination": "Changlanish",
+      "selfFertile": "O'zini changlatadi"
+    },
+    "more": {
+      "title": "Bog'ingiz uchun aniq shaftoli navlarini tanlash kerakmi?",
+      "subtitle": "Iqlim, tuproq va bozor maqsadingizga mos navlarni shaxsan tavsiya qilamiz.",
+      "cta": "Bepul maslahat olish"
+    }
+  },
   "topApples": {
     "eyebrow": "Norchontolda yetishtiriladigan",
     "title": "9 ta olma navi — yozdan kech kuzgacha",

@@ -14,6 +14,7 @@ import { ContactPreview } from "@/components/sections/ContactPreview";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { TopCherries } from "@/components/sections/TopCherries";
 import { TopApples } from "@/components/sections/TopApples";
+import { TopPeaches } from "@/components/sections/TopPeaches";
 import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
@@ -33,6 +34,7 @@ export default function HomePage({
       <About />
       <FeaturedVarieties locale={lang} />
       <TopApples locale={lang} />
+      <TopPeaches locale={lang} />
       <TopCherries locale={lang} />
       <B2BProcess />
       <Nurseries />
