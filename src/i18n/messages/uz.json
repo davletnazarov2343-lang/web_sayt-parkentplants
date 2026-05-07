@@ -137,6 +137,24 @@
       "viewMore": "Batafsil"
     }
   },
+  "topApples": {
+    "eyebrow": "Norchontolda yetishtiriladigan",
+    "title": "9 ta olma navi — yozdan kech kuzgacha",
+    "subtitle": "Bizning ko'chatzorimizda yetishtiriladigan 9 ta olma navi. Williams Pride (avgust) dan Pink Lady (noyabr) gacha — uzun mavsum, eksport va ichki bozor uchun.",
+    "count": "{n} ta nav",
+    "specs": {
+      "skin": "Po'st rangi",
+      "rootstock": "Pivandtag",
+      "storage": "Saqlash",
+      "storageMonths": "{n} oy",
+      "pollinators": "Polenizator"
+    },
+    "more": {
+      "title": "Bog'ingiz uchun aniq olma navlarini tanlash kerakmi?",
+      "subtitle": "Shuhrat aka yoki agronomimiz sizning maydon, iqlim va bozor maqsadingizga eng mos navlarni tanlab beradi.",
+      "cta": "Bepul maslahat olish"
+    }
+  },
   "topCherries": {
     "eyebrow": "Norchontolda yetishtiriladigan",
     "title": "8 ta gilos navi — bevosita ko'chatzorimizdan",

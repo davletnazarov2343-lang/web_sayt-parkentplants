@@ -13,6 +13,7 @@ import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { TopCherries } from "@/components/sections/TopCherries";
+import { TopApples } from "@/components/sections/TopApples";
 import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
@@ -31,6 +32,7 @@ export default function HomePage({
       <CeoQuote />
       <About />
       <FeaturedVarieties locale={lang} />
+      <TopApples locale={lang} />
       <TopCherries locale={lang} />
       <B2BProcess />
       <Nurseries />
