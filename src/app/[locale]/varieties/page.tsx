@@ -3,6 +3,7 @@ import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { VarietyCard } from "@/components/catalog/VarietyCard";
 import { FruitTypeNav } from "@/components/catalog/FruitTypeNav";
+import { TopCherries } from "@/components/sections/TopCherries";
 import { getAllFruitTypes, getAllVarieties } from "@/sanity/fetch";
 import type { Locale } from "@/sanity/types";
 
@@ -58,9 +59,7 @@ export default async function VarietiesIndexPage({
           />
         </div>
 
-        {varieties.length === 0 ? (
-          <EmptyState locale={lang} />
-        ) : (
+        {varieties.length > 0 && (
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {varieties.map((v) => (
               <VarietyCard
@@ -78,25 +77,27 @@ export default async function VarietiesIndexPage({
           </div>
         )}
       </Container>
-    </section>
-  );
-}
 
-function EmptyState({ locale }: { locale: Locale }) {
-  const lines =
-    locale === "ru"
-      ? [
-          "Каталог пока пуст.",
-          "Добавьте сорта в Sanity Studio: /studio",
-        ]
-      : [
-          "Katalog hozircha bo'sh.",
-          "Sanity Studio orqali nav qo'shing: /studio",
-        ];
-  return (
-    <div className="mx-auto mt-16 max-w-md rounded-2xl border border-dashed border-earth-400/40 bg-cream-100 p-10 text-center">
-      <p className="font-serif text-lg text-earth-900">{lines[0]}</p>
-      <p className="mt-2 text-sm text-earth-700">{lines[1]}</p>
-    </div>
+      {/* Sanity bo'sh bo'lsa ham foydalanuvchiga gilos navlarini ko'rsataylik */}
+      {varieties.length === 0 && (
+        <div className="mt-8">
+          <TopCherries locale={lang} />
+          <Container>
+            <div className="mt-12 rounded-2xl border border-dashed border-earth-400/40 bg-cream-100 p-8 text-center">
+              <p className="font-serif text-lg text-earth-900">
+                {lang === "ru"
+                  ? "Скоро: каталог расширяется"
+                  : "Tez orada: katalog kengaymoqda"}
+              </p>
+              <p className="mt-2 text-sm text-earth-700">
+                {lang === "ru"
+                  ? "Сорта яблони, персика, абрикоса и других видов плодов скоро будут добавлены. Пока — отправьте B2B запрос для получения информации."
+                  : "Olma, shaftoli, o'rik va boshqa meva turlarining navlari tez orada qo'shiladi. Hozircha B2B so'rovi orqali ma'lumot olishingiz mumkin."}
+              </p>
+            </div>
+          </Container>
+        </div>
+      )}
+    </section>
   );
 }
