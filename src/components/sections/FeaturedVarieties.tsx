@@ -32,6 +32,19 @@ const FALLBACK_GLYPHS: Record<FallbackKey, string> = {
   plum: "🫐",
 };
 
+/**
+ * Sanity bo'sh paytda — kartalarni qaerga olib borish.
+ * Widget'i bor mevalar bosh sahifadagi anchor'ga, qolganlari lead form'ga.
+ */
+const FALLBACK_HREFS: Record<FallbackKey, string> = {
+  apple: "#top-apples",
+  peach: "#top-peaches",
+  cherry: "#top-cherries",
+  apricot: "#request",
+  pear: "#request",
+  plum: "#request",
+};
+
 const ACCENT_PALETTE = [
   "from-forest-100 to-forest-200",
   "from-gold-100 to-gold-400/40",
@@ -71,7 +84,7 @@ export async function FeaturedVarieties({ locale }: { locale: Locale }) {
     // 2. Fallback — hardcoded i18n keys
     cards = FALLBACK_KEYS.map((key) => ({
       key,
-      href: `/${locale}/varieties/${key}`,
+      href: FALLBACK_HREFS[key],
       emoji: FALLBACK_GLYPHS[key],
       count: t(`items.${key}.count`),
       name: t(`items.${key}.name`),

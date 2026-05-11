@@ -328,7 +328,7 @@ function SpecRow({
   label,
   value,
 }: {
-  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  Icon: React.ElementType;
   label: string;
   value: React.ReactNode;
 }) {
