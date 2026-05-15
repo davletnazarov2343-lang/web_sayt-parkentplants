@@ -9,31 +9,44 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-cream pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-36"
+      className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-36"
     >
-      {/* Decorative gradient backdrop */}
+      {/* Background photo — apple orchard in bloom */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(82,183,136,0.18),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(201,169,97,0.12),transparent_50%)]"
+        className="absolute inset-0 -z-20 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1572715376701-98568319fd0b?auto=format&fit=crop&w=2400&q=85')",
+          filter: "blur(2px) saturate(1.05)",
+          transform: "scale(1.04)",
+        }}
       />
-      {/* Subtle grid texture */}
+
+      {/* Dark green tinted overlay — readability + brand color */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 opacity-[0.035] [background-image:linear-gradient(to_right,#1B4332_1px,transparent_1px),linear-gradient(to_bottom,#1B4332_1px,transparent_1px)] [background-size:48px_48px]"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-900/75 via-forest-900/60 to-forest-900/85"
+      />
+
+      {/* Subtle gold accent glow (top-right) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,97,0.18),transparent_55%)]"
       />
 
       <Container>
         <div className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-forest-700/20 bg-cream-100 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-forest-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-forest-400" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
             {t("eyebrow")}
           </span>
 
-          <h1 className="mt-8 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-earth-900 sm:text-5xl lg:text-7xl text-balance">
+          <h1 className="mt-8 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-5xl lg:text-7xl text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
             {t("title")}
           </h1>
 
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-earth-700 sm:text-lg text-balance">
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-cream-100/95 sm:text-lg text-balance drop-shadow-[0_1px_6px_rgba(0,0,0,0.25)]">
             {t("subtitle")}
           </p>
 
@@ -51,7 +64,7 @@ export function Hero() {
               href="#request"
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto"
+              className="w-full border-cream/40 bg-cream/10 text-cream backdrop-blur-sm hover:border-cream hover:bg-cream/20 sm:w-auto"
             >
               {t("ctaSecondary")}
             </LinkButton>
@@ -60,7 +73,7 @@ export function Hero() {
       </Container>
 
       {/* Scroll hint */}
-      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 hidden items-center gap-2 text-xs uppercase tracking-[0.2em] text-earth-700/60 lg:flex">
+      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 hidden items-center gap-2 text-xs uppercase tracking-[0.2em] text-cream/70 lg:flex">
         <span>{t("scrollHint")}</span>
         <ArrowDown className="h-3.5 w-3.5 animate-bounce" />
       </div>
