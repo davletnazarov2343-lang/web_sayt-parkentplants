@@ -52,6 +52,7 @@ export function getOrganizationSchema() {
     sameAs: [
       "https://t.me/+Q2HYAuBIWn4wN2Vi",
       "https://www.instagram.com/shuhrat_abrorov/",
+      "https://www.facebook.com/profile.php?id=61552782846741",
       "https://www.youtube.com/@shuhrat_abrorov",
     ],
     contactPoint: [
@@ -127,6 +128,7 @@ export function getLocalBusinessSchema() {
     sameAs: [
       "https://t.me/+Q2HYAuBIWn4wN2Vi",
       "https://www.instagram.com/shuhrat_abrorov/",
+      "https://www.facebook.com/profile.php?id=61552782846741",
       "https://www.youtube.com/@shuhrat_abrorov",
     ],
   };

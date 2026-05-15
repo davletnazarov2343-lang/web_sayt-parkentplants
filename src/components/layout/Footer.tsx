@@ -10,6 +10,7 @@ import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { BRAND } from "@/lib/constants";
 import {
+  FacebookIcon,
   InstagramIcon,
   TelegramIcon,
   YoutubeIcon,
@@ -33,6 +34,11 @@ const SOCIAL_LINKS = [
     name: "Instagram",
     Icon: InstagramIcon,
     href: "https://www.instagram.com/shuhrat_abrorov/",
+  },
+  {
+    name: "Facebook",
+    Icon: FacebookIcon,
+    href: "https://www.facebook.com/profile.php?id=61552782846741",
   },
   {
     name: "YouTube",
