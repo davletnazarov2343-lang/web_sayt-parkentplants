@@ -11,22 +11,21 @@ export function Hero() {
       id="top"
       className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-36"
     >
-      {/* Background photo — apple orchard in bloom */}
+      {/* Background photo — nursery rows (rows of saplings/fruit trees) */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-20 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1572715376701-98568319fd0b?auto=format&fit=crop&w=2400&q=85')",
-          filter: "blur(2px) saturate(1.05)",
-          transform: "scale(1.04)",
+            "url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=2400&q=85')",
+          filter: "saturate(1.08) brightness(0.95)",
         }}
       />
 
       {/* Dark green tinted overlay — readability + brand color */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-900/75 via-forest-900/60 to-forest-900/85"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-900/65 via-forest-900/45 to-forest-900/75"
       />
 
       {/* Subtle gold accent glow (top-right) */}
