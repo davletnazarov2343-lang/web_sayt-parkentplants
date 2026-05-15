@@ -106,7 +106,7 @@ export default async function VarietiesIndexPage({
                   href={`/${locale}/#request`}
                   className="mt-5 inline-flex items-center gap-2 rounded-md bg-forest-700 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-900"
                 >
-                  {lang === "ru" ? "Отправить B2B запрос →" : "B2B so'rov yuborish →"}
+                  {lang === "ru" ? "Отправить B2B запрос →" : "Bepul maslahat olish →"}
                 </a>
               </div>
             </Container>
