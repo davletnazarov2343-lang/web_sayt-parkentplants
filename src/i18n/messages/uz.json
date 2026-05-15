@@ -2,7 +2,7 @@
   "nav": {
     "home": "Bosh sahifa",
     "varieties": "Navlar",
-    "nursery": "Pitomnik",
+    "nursery": "Ko'chatzor",
     "b2b": "B2B",
     "about": "Biz haqimizda",
     "contact": "Kontakt",
@@ -64,7 +64,7 @@
   },
   "about": {
     "eyebrow": "Nima uchun Parkent Plants",
-    "title": "Professional fermerlar tanlaydigan pitomnik",
+    "title": "Professional fermerlar tanlaydigan ko'chatzor",
     "subtitle": "Biz nafaqat ko'chat sotamiz — biz sizning bog'ingizning kelajagini quramiz. Sinalgan navlar, 100% kafolat va Shuhrat akadan to'g'ridan-to'g'ri maslahat.",
     "features": {
       "certified": {
