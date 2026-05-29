@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 
-const STAT_KEYS = ["experience", "seedlings", "varieties", "nurseries"] as const;
+const STAT_KEYS = ["experience", "seedlings", "nurseries"] as const;
 
 export function Stats() {
   const t = useTranslations("stats");
@@ -18,7 +18,7 @@ export function Stats() {
           </p>
         </div>
 
-        <dl className="mx-auto mt-16 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-2xl bg-earth-400/30 lg:grid-cols-4">
+        <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-px overflow-hidden rounded-2xl bg-earth-400/30 sm:grid-cols-3">
           {STAT_KEYS.map((key) => (
             <div
               key={key}

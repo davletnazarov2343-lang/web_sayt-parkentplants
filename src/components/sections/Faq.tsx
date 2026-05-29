@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { JsonLd, getFaqSchema } from "@/components/seo/JsonLd";
 
 const FAQ_KEYS = [
-  "varieties",
   "saplingAge",
   "harvestTime",
   "germination",

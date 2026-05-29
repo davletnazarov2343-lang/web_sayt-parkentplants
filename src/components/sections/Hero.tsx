@@ -50,7 +50,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <LinkButton
-              href="#varieties"
+              href="#nurseries"
               variant="primary"
               size="lg"
               className="w-full sm:w-auto"
