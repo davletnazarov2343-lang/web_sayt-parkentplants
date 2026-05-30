@@ -4,6 +4,10 @@ import { Container } from "@/components/ui/Container";
 
 const NURSERY_KEYS = ["parkent", "yuqori_chirchiq"] as const;
 
+const NURSERY_IMAGES: Partial<Record<(typeof NURSERY_KEYS)[number], string>> = {
+  yuqori_chirchiq: "/images/yuqori-chirchiq.jpg",
+};
+
 export function Nurseries() {
   const t = useTranslations("nurseries");
 
@@ -23,25 +27,36 @@ export function Nurseries() {
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          {NURSERY_KEYS.map((key) => (
+          {NURSERY_KEYS.map((key) => {
+            const imgUrl = NURSERY_IMAGES[key];
+            return (
             <article
               key={key}
               className="group flex flex-col overflow-hidden rounded-2xl border border-earth-400/25 bg-cream transition-all hover:border-forest-400 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.25)]"
             >
-              {/* Image placeholder */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-forest-100 via-forest-200 to-forest-400/40">
+              {/* Image — real foto bo'lsa, yo'q bo'lsa gradient placeholder */}
+              <div
+                className="relative h-56 overflow-hidden bg-gradient-to-br from-forest-100 via-forest-200 to-forest-400/40 bg-cover bg-center"
+                style={imgUrl ? { backgroundImage: `url('${imgUrl}')` } : undefined}
+              >
+                {!imgUrl && (
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <Trees
+                      className="h-20 w-20 text-forest-700/30"
+                      strokeWidth={1}
+                    />
+                  </div>
+                )}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <Trees
-                    className="h-20 w-20 text-forest-700/30"
-                    strokeWidth={1}
-                  />
-                </div>
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 [background-image:radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4),transparent_60%)]"
+                  className={
+                    imgUrl
+                      ? "absolute inset-0 bg-gradient-to-t from-forest-900/40 via-transparent to-transparent"
+                      : "absolute inset-0 [background-image:radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.4),transparent_60%)]"
+                  }
                 />
                 <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-cream/90 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-forest-700 backdrop-blur">
                   {t(`items.${key}.badge`)}
@@ -100,7 +115,8 @@ export function Nurseries() {
                 </a>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>
