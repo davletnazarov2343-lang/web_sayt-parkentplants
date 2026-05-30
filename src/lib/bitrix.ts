@@ -1,11 +1,14 @@
 /**
- * Bitrix24 inbound webhook orqali lead yaratish.
+ * Bitrix24 inbound webhook orqali Deal (Сделка) yaratish.
  *
  * Webhook URL formati:
  *   https://YOUR_PORTAL.bitrix24.com/rest/USER_ID/WEBHOOK_TOKEN/
  *
- * Method: crm.lead.add
- * Docs: https://training.bitrix24.com/rest_help/crm/leads/crm_lead_add.php
+ * Eslatma: Norchontol tarif rejasida Lidlar yopiq, shuning uchun Sdelka
+ * (Deal) yaratamiz. Phone va name TITLE da, qolgan tafsilotlar COMMENTS'da.
+ *
+ * Method: crm.deal.add
+ * Docs: https://training.bitrix24.com/rest_help/crm/deals/crm_deal_add.php
  */
 
 import type { LeadInput } from "@/lib/leads/schema";
@@ -80,17 +83,23 @@ export async function sendLeadToBitrix(
     return { ok: false, error: "BITRIX_WEBHOOK_URL not set" };
   }
 
-  // crm.lead.add talab qiladigan format
+  // crm.deal.add talab qiladigan format
+  // Deal'da PHONE alohida maydon yo'q — TITLE'ga qo'shamiz
+  const title = [
+    "parkentplants.uz",
+    lead.name,
+    lead.phone,
+    lead.company ? `· ${lead.company}` : null,
+  ].filter(Boolean).join(" — ");
+
   const body = {
     fields: {
-      TITLE: `parkentplants.uz — ${lead.name}${lead.company ? " · " + lead.company : ""}`,
-      NAME: lead.name,
-      COMPANY_TITLE: lead.company || undefined,
-      PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "WORK" }],
+      TITLE: title,
       SOURCE_ID: "WEB",
       COMMENTS: buildComments(lead),
       OPENED: "Y",
       ASSIGNED_BY_ID: 1,
+      CURRENCY_ID: "UZS",
     },
     params: { REGISTER_SONET_EVENT: "Y" },
   };
@@ -98,8 +107,8 @@ export async function sendLeadToBitrix(
   try {
     // Webhook URL oxirida slash bo'lishi shart
     const endpoint = url.endsWith("/")
-      ? `${url}crm.lead.add.json`
-      : `${url}/crm.lead.add.json`;
+      ? `${url}crm.deal.add.json`
+      : `${url}/crm.deal.add.json`;
 
     const res = await fetch(endpoint, {
       method: "POST",
