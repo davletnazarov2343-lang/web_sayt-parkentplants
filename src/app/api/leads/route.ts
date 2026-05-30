@@ -100,12 +100,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // 4. Bitrix24 forward (best-effort, parallel async — lekin asosiy oqim'ni bloklamaymiz)
+  // 4. Bitrix24 forward (await qilamiz — Vercel serverless runtime tugamasin)
   if (isBitrixConfigured()) {
-    sendLeadToBitrix(lead)
-      .then(async (result) => {
-        if (!supabase || !leadId) return;
-        if (result.ok) {
+    try {
+      const result = await sendLeadToBitrix(lead);
+      if (result.ok) {
+        console.log("[leads] bitrix sync ok, dealId:", result.leadId);
+        if (supabase && leadId) {
           await supabase
             .from("leads")
             .update({
@@ -114,7 +115,10 @@ export async function POST(request: NextRequest) {
               bitrix_synced_at: new Date().toISOString(),
             })
             .eq("id", leadId);
-        } else {
+        }
+      } else {
+        console.error("[leads] bitrix sync failed:", result.error);
+        if (supabase && leadId) {
           await supabase
             .from("leads")
             .update({
@@ -122,12 +126,11 @@ export async function POST(request: NextRequest) {
               bitrix_error: result.error,
             })
             .eq("id", leadId);
-          console.error("[leads] bitrix sync failed:", result.error);
         }
-      })
-      .catch((err) => {
-        console.error("[leads] bitrix sync exception:", err);
-      });
+      }
+    } catch (err) {
+      console.error("[leads] bitrix sync exception:", err);
+    }
   } else if (supabase && leadId) {
     // Bitrix sozlanmagan — `skipped` deb belgilaymiz
     await supabase
