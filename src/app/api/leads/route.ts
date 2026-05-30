@@ -104,6 +104,13 @@ export async function POST(request: NextRequest) {
   if (isBitrixConfigured()) {
     sendLeadToBitrix(lead)
       .then(async (result) => {
+        // Logging — har doim natijani log qilamiz (debug uchun)
+        if (result.ok) {
+          console.log("[leads] bitrix sync ok, dealId:", result.leadId);
+        } else {
+          console.error("[leads] bitrix sync failed:", result.error);
+        }
+        // Supabase yangilanishi (agar sozlangan bo'lsa)
         if (!supabase || !leadId) return;
         if (result.ok) {
           await supabase
@@ -122,7 +129,6 @@ export async function POST(request: NextRequest) {
               bitrix_error: result.error,
             })
             .eq("id", leadId);
-          console.error("[leads] bitrix sync failed:", result.error);
         }
       })
       .catch((err) => {
