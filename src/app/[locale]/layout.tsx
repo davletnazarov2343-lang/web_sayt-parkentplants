@@ -76,6 +76,9 @@ export const metadata: Metadata = {
       "x-default": "/uz",
     },
   },
+  verification: {
+    google: "CmLeWRqkz020-o25TIlMM8dgX5i56WNiwSUodlBYYqM",
+  },
   icons: {
     icon: [
       { url: "/icon.png", sizes: "any" },
