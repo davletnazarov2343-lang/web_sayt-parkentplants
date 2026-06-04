@@ -7,6 +7,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsappFab } from "@/components/layout/WhatsappFab";
 import { Analytics } from "@/components/analytics/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   JsonLd,
   getOrganizationSchema,
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · Parkent Plants",
   },
   description:
-    "2002 yildan buyon Toshkent viloyatida sertifikatlangan mevali ko'chatlar yetishtiramiz. 500 000+ ko'chat yiliga, 135+ nav, 2 ta ko'chatzor (32 + 64 ga).",
+    "2002 yildan buyon Toshkent viloyatida sertifikatlangan mevali ko'chatlar yetishtiramiz. 500 000+ ko'chat yiliga, 11 meva turi, 96 gektar maydon (Parkent 32 + Yuqori Chirchiq 64).",
   keywords: [
     "mevali ko'chat",
     "olma ko'chati",
@@ -29,12 +31,16 @@ export const metadata: Metadata = {
     "olcha ko'chati",
     "o'rik ko'chati",
     "Parkent Plants",
+    "Norchontol",
     "ko'chatzor",
     "fitosanitar sertifikat",
-    "B2B ko'chat",
+    "ko'chat eksport",
     "Toshkent ko'chat",
+    "Parkent ko'chat",
+    "Yuqori Chirchiq ko'chat",
     "саженцы плодовые Узбекистан",
     "питомник Ташкент",
+    "саженцы яблони Узбекистан",
   ],
   authors: [{ name: "Parkent Plants" }],
   openGraph: {
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
     title:
       "Parkent Plants — Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
     description:
-      "23 yillik tajriba · 500 000+ ko'chat yiliga · 135+ nav · 2 ta zamonaviy ko'chatzor. Professional fermerlar va investorlar uchun.",
+      "23 yillik tajriba · 500 000+ ko'chat yiliga · 11 meva turi · 96 gektar ko'chatzor. Professional fermerlar va investorlar uchun.",
     locale: "uz_UZ",
     alternateLocale: ["ru_RU"],
     images: [
@@ -59,13 +65,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parkent Plants — yetakchi mevali ko'chatchilik xo'jaligi",
     description:
-      "23 yil tajriba · 500K+ ko'chat · 135+ nav · 2 ta ko'chatzor",
+      "23 yil tajriba · 500K+ ko'chat · 11 meva turi · 96 ga ko'chatzor",
     images: ["/brand/og-image.jpg"],
   },
   alternates: {
+    canonical: "/",
     languages: {
-      uz: "/uz",
-      ru: "/ru",
+      "uz-UZ": "/uz",
+      "ru-UZ": "/ru",
+      "x-default": "/uz",
     },
   },
   icons: {
@@ -107,6 +115,8 @@ export default async function LocaleLayout({
           <WhatsappFab />
         </NextIntlClientProvider>
         <Analytics />
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );
