@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import {
   MapPin,
@@ -9,22 +11,26 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
+import { trackEvent, type TrackEventKey } from "@/lib/analytics/events";
 
 const CONTACT_ITEMS: Array<{
   key: "address" | "phone" | "whatsapp" | "hours";
   Icon: LucideIcon;
   hrefBuilder?: (rawValue: string) => string;
+  eventKey?: TrackEventKey;
 }> = [
   { key: "address", Icon: MapPin },
   {
     key: "phone",
     Icon: Phone,
     hrefBuilder: (v) => `tel:${v.replace(/\s/g, "")}`,
+    eventKey: "contact_phone",
   },
   {
     key: "whatsapp",
     Icon: MessageCircle,
     hrefBuilder: (v) => `https://wa.me/${v.replace(/[^0-9]/g, "")}`,
+    eventKey: "contact_whatsapp",
   },
   { key: "hours", Icon: Clock },
 ];
@@ -68,7 +74,7 @@ export function ContactPreview() {
 
           <div className="lg:col-span-7">
             <ul className="grid gap-px overflow-hidden rounded-2xl bg-cream-100/10 sm:grid-cols-2">
-              {CONTACT_ITEMS.map(({ key, Icon, hrefBuilder }) => {
+              {CONTACT_ITEMS.map(({ key, Icon, hrefBuilder, eventKey }) => {
                 const value = t(`${key}.value`);
                 const content = (
                   <>
@@ -96,6 +102,14 @@ export function ContactPreview() {
                         href={hrefBuilder(value)}
                         target={key === "whatsapp" ? "_blank" : undefined}
                         rel={key === "whatsapp" ? "noopener noreferrer" : undefined}
+                        onClick={
+                          eventKey
+                            ? () =>
+                                trackEvent(eventKey, {
+                                  source: "contact_preview",
+                                })
+                            : undefined
+                        }
                         className={wrapperClass}
                       >
                         {content}

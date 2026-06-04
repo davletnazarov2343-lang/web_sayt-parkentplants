@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { MapPin, Trees, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ViewTracker } from "@/components/analytics/ViewTracker";
 
 const NURSERY_KEYS = ["parkent", "yuqori_chirchiq"] as const;
 
@@ -13,6 +14,7 @@ export function Nurseries() {
 
   return (
     <section id="nurseries" className="bg-cream-100 py-20 lg:py-28">
+      <ViewTracker eventKey="view_nurseries" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">

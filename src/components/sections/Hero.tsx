@@ -1,7 +1,10 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
+import { trackEvent } from "@/lib/analytics/events";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -54,6 +57,7 @@ export function Hero() {
               variant="primary"
               size="lg"
               className="w-full sm:w-auto"
+              onClick={() => trackEvent("hero_cta_nurseries")}
             >
               {t("ctaPrimary")}
               <ArrowRight className="h-4 w-4" />
@@ -63,6 +67,7 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="w-full border-cream/40 bg-cream/10 text-cream backdrop-blur-sm hover:border-cream hover:bg-cream/20 sm:w-auto"
+              onClick={() => trackEvent("hero_cta_consultation")}
             >
               {t("ctaSecondary")}
             </LinkButton>

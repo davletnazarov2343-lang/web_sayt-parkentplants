@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Award, Truck, Leaf, Headphones, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ViewTracker } from "@/components/analytics/ViewTracker";
 
 const FEATURES: Array<{ key: string; Icon: LucideIcon }> = [
   { key: "certified", Icon: Award },
@@ -14,6 +15,7 @@ export function About() {
 
   return (
     <section id="about" className="bg-cream py-20 lg:py-28">
+      <ViewTracker eventKey="view_about" />
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Header */}
