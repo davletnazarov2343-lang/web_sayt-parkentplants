@@ -13,6 +13,7 @@ import {
   TelegramIcon,
   YoutubeIcon,
 } from "@/components/ui/SocialIcons";
+import { trackEvent } from "@/lib/analytics/events";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -85,6 +86,7 @@ export function Header() {
               <li>
                 <a
                   href={phoneHref}
+                  onClick={() => trackEvent("contact_phone", { source: "header_top" })}
                   className="flex items-center gap-2 transition-colors hover:text-gold-400"
                 >
                   <Phone
@@ -97,6 +99,7 @@ export function Header() {
               <li>
                 <a
                   href={`mailto:${email}`}
+                  onClick={() => trackEvent("contact_email", { source: "header_top" })}
                   className="flex items-center gap-2 transition-colors hover:text-gold-400"
                 >
                   <Mail
@@ -219,6 +222,7 @@ export function Header() {
             <div className="border-t border-forest-700/40 py-4 space-y-3 text-sm">
               <a
                 href={phoneHref}
+                onClick={() => trackEvent("contact_phone", { source: "mobile_menu" })}
                 className="flex items-center gap-3 text-cream-100/90 hover:text-gold-400"
               >
                 <Phone
@@ -229,6 +233,7 @@ export function Header() {
               </a>
               <a
                 href={`mailto:${email}`}
+                onClick={() => trackEvent("contact_email", { source: "mobile_menu" })}
                 className="flex items-center gap-3 text-cream-100/75 hover:text-gold-400"
               >
                 <Mail

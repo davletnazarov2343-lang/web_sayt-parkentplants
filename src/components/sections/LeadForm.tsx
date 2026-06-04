@@ -20,6 +20,7 @@ import {
   type LeadInput,
 } from "@/lib/leads/schema";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics/events";
 
 type Status =
   | { state: "idle" }
@@ -50,6 +51,13 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>({ state: "idle" });
+  const [hasStarted, setHasStarted] = useState(false);
+
+  function handleFormStart() {
+    if (hasStarted) return;
+    setHasStarted(true);
+    trackEvent("lead_form_start", { form: "main_lead_form", locale });
+  }
 
   function toggleFruit(key: FruitTypeKey) {
     setFruitTypes((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -114,6 +122,13 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
       }
 
       setStatus({ state: "success" });
+      // Marketing event — Lead yaratildi (Facebook/GA/Yandex)
+      trackEvent("lead", {
+        form: "main_lead_form",
+        locale,
+        region: region || undefined,
+        volume: volume || undefined,
+      });
       // Form'ni tozalaymiz (keyingi so'rov uchun)
       setName("");
       setPhone("+998 ");
@@ -185,6 +200,7 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  onFocus={handleFormStart}
                   className={inputClass(Boolean(errors.name))}
                   placeholder={t("fields.name.placeholder")}
                 />

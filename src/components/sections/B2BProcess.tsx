@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { ClipboardList, FileSignature, Truck, Headphones, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { ViewTracker } from "@/components/analytics/ViewTracker";
 
 const STEPS: Array<{ key: string; Icon: LucideIcon }> = [
   { key: "consult", Icon: ClipboardList },
@@ -14,6 +15,7 @@ export function B2BProcess() {
 
   return (
     <section id="process" className="bg-cream py-20 lg:py-28">
+      <ViewTracker eventKey="view_b2b_process" />
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">
