@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Play, X, ChevronLeft, ChevronRight, Youtube } from "lucide-react";
+import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { YoutubeIcon } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
 
 const CHANNEL_URL = "https://www.youtube.com/@shuhrat_abrorov";
@@ -93,7 +94,7 @@ export function VideoSlider() {
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">
-              <Youtube className="h-4 w-4" strokeWidth={2} />
+              <YoutubeIcon size={16} />
               {t("eyebrow")}
             </span>
             <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-earth-900 sm:text-4xl lg:text-5xl text-balance">
@@ -109,7 +110,7 @@ export function VideoSlider() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full border border-forest-700/20 bg-cream px-5 py-2.5 text-sm font-semibold text-forest-700 transition-all hover:border-forest-700 hover:bg-forest-700 hover:text-cream"
           >
-            <Youtube className="h-4 w-4" strokeWidth={2} />
+            <YoutubeIcon size={16} />
             {t("channelCta")}
           </a>
         </div>
