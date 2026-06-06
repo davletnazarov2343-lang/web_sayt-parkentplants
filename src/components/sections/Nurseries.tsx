@@ -6,6 +6,7 @@ import { ViewTracker } from "@/components/analytics/ViewTracker";
 const NURSERY_KEYS = ["parkent", "yuqori_chirchiq"] as const;
 
 const NURSERY_IMAGES: Partial<Record<(typeof NURSERY_KEYS)[number], string>> = {
+  parkent: "/images/parkent-nursery.jpg",
   yuqori_chirchiq: "/images/yuqori-chirchiq.jpg",
 };
 
