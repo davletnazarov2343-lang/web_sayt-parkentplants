@@ -7,7 +7,7 @@ import { About } from "@/components/sections/About";
 import { B2BProcess } from "@/components/sections/B2BProcess";
 import { Nurseries } from "@/components/sections/Nurseries";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { KnowledgeCenter } from "@/components/sections/KnowledgeCenter";
+import { VideoSlider } from "@/components/sections/VideoSlider";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
 import { LeadForm } from "@/components/sections/LeadForm";
@@ -31,7 +31,7 @@ export default function HomePage({
       <B2BProcess />
       <Nurseries />
       <Testimonials />
-      <KnowledgeCenter />
+      <VideoSlider />
       <Faq />
       <ContactPreview />
       <LeadForm locale={lang} />

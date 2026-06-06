@@ -274,6 +274,17 @@
       }
     }
   },
+  "videos": {
+    "eyebrow": "Shuhrat akadan video maslahatlar",
+    "title": "Bog'dorchilik bo'yicha video qo'llanmalar",
+    "subtitle": "23 yillik amaliy tajriba — gilos, shaftoli, uzum, bodom va boshqa mevali daraxtlarni yetishtirish sirlari. YouTube kanalimizdagi eng yaxshi videolar.",
+    "watch": "Ko'rish",
+    "channelCta": "Kanalga obuna bo'lish",
+    "playerLabel": "Video player",
+    "close": "Yopish",
+    "prev": "Orqaga",
+    "next": "Oldinga"
+  },
   "knowledge": {
     "eyebrow": "Bilim markazi",
     "title": "Agronomdan maqolalar va qo'llanmalar",
