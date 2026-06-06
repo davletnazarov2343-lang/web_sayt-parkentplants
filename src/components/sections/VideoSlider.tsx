@@ -18,44 +18,34 @@ type Video = {
 // Yangi video qo'shish uchun pastdagi ro'yxatga ID + sarlavhasini qo'shing.
 const VIDEOS: Video[] = [
   {
+    id: "6N6WojKxnlc",
+    title: "Norchontol ko'chatzoriga sayohat!",
+    topic: "Ko'chatzor",
+  },
+  {
+    id: "AlzVDFIUDig",
+    title: "Nimaga bu sirli giloslarni ekishimizni istashmayapti?",
+    topic: "Gilos",
+  },
+  {
     id: "g0Cnyzx4jE8",
     title: "Endi bu giloslarni yashirishdan foyda yo'q! Sababi?",
     topic: "Gilos",
   },
   {
-    id: "P6YRPiZlkQ4",
-    title: "Gilos yorilmasligi uchun muhim tavsiyalar",
-    topic: "Gilos",
-  },
-  {
-    id: "rYLmLfh-Mn4",
-    title: "Gilosni qimmat sotish uchun qilinadigan ishlar",
-    topic: "Eksport",
-  },
-  {
-    id: "6HSrKlNK2nI",
-    title: "Bosqichma-bosqich shaftolilarni siyraklashtirish",
+    id: "Q17JMDhQxow",
+    title: "Biz bilgan va bilmagan shaftoli-nektarinlar!",
     topic: "Shaftoli",
   },
   {
-    id: "aSA4tVWhmbM",
-    title: "Uzumni yirik va sifatli qilishning eng oson yo'llari",
+    id: "sYpa522n7pI",
+    title: "Qaysi biri yaxshiroq? Urug'siz yoki oddiy uzum?",
     topic: "Uzum",
   },
   {
-    id: "fvTyadIbOiQ",
-    title: "Suv muammo bo'lsa bodom eking!",
-    topic: "Bodom",
-  },
-  {
-    id: "PcLApxaK8AY",
-    title: "Xorazmda bog' qilishda eng katta xato",
-    topic: "Bog'dorchilik",
-  },
-  {
-    id: "99r2bV1gtTo",
-    title: "Qaysi dorilar begona o'tlarni yo'qotadi?",
-    topic: "Dorilar",
+    id: "-9izSnjGlrI",
+    title: "Urug'siz uzum ko'chatlariga aksiya boshlandi!",
+    topic: "Aksiya",
   },
 ];
 
