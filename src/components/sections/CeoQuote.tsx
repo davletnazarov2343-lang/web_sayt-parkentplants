@@ -2,8 +2,7 @@ import { useTranslations } from "next-intl";
 import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
-// TODO: rasm /public/team/shuhrat-abrorov.jpg ga qo'yilgach, bu blokni next/image bilan almashtiramiz.
-const HAS_PHOTO = false;
+const HAS_PHOTO = true;
 
 export function CeoQuote() {
   const t = useTranslations("ceoQuote");
