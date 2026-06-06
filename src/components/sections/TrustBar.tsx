@@ -2,9 +2,6 @@ import { useTranslations } from "next-intl";
 import {
   ShieldCheck,
   Stamp,
-  BadgeCheck,
-  Globe2,
-  Sprout,
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -12,9 +9,6 @@ import { Container } from "@/components/ui/Container";
 const TRUST_ITEMS: Array<{ key: string; Icon: LucideIcon }> = [
   { key: "registry", Icon: Stamp },
   { key: "phyto", Icon: ShieldCheck },
-  { key: "iso", Icon: BadgeCheck },
-  { key: "partners", Icon: Globe2 },
-  { key: "export", Icon: Sprout },
 ];
 
 export function TrustBar() {
