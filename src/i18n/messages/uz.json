@@ -13,7 +13,7 @@
   "hero": {
     "eyebrow": "2002 yildan buyon ishonchli sherik",
     "title": "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
-    "subtitle": "Sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 11 meva turi, 96 gektar maydon. O'zbekiston bo'yicha + 4 qo'shni davlatga eksport.",
+    "subtitle": "Sertifikatlangan mevali ko'chatlar — yiliga 500 000+ dona, 11 meva turi, 87 gektar maydon. O'zbekiston bo'yicha + 4 qo'shni davlatga eksport.",
     "ctaPrimary": "Ko'chatzorlarni ko'rish",
     "ctaSecondary": "Bepul maslahat olish",
     "scrollHint": "Pastga aylantiring"
@@ -51,7 +51,7 @@
       "nurseries": {
         "value": "96",
         "label": "Gektar maydon",
-        "description": "Parkent (32 ga) + Yuqori Chirchiq (64 ga)"
+        "description": "Parkent (23 ga) + Yuqori Chirchiq (64 ga)"
       }
     }
   },
@@ -72,7 +72,7 @@
         "description": "Aralash chiqsa ko'chat puli to'liq qaytariladi yoki bepul payvandlab beriladi. Barcha ko'chatlar fitosanitar tekshiruvdan o'tgan, davlat reestrida."
       },
       "scale": {
-        "title": "96 gektar — sanoat miqyosi",
+        "title": "87 gektar — sanoat miqyosi",
         "description": "Yiliga 500 000+ ko'chat. 3 000 dan ortiq buyurtmaga bepul yetkazib berish, eksport (Tojikiston, Qirg'iziston, Turkmaniston, Qozog'iston)."
       },
       "regional": {
@@ -233,7 +233,7 @@
         "badge": "Asosiy bo'lim · 2002",
         "name": "Parkent ko'chatzori",
         "address": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi",
-        "area": "32 ga",
+        "area": "23 ga",
         "capacity": "200 000+ ko'chat",
         "specialty": "Olma, olcha, o'rik, ona-bog'lar",
         "description": "Bosh ishlab chiqarish punkti — 2002-yildan, ona-bog'lar va laboratoriya shu yerda. Tomchilatib sug'orish, klon pivandtag yetishtirish."
@@ -460,7 +460,7 @@
     "subtitle": "Yirik buyurtmalar, B2B hamkorlik yoki professional maslahat uchun biz bilan bog'laning. Har bir mijoz uchun individual yondashuv.",
     "address": {
       "label": "Manzil",
-      "value": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi (32 ga)"
+      "value": "Toshkent viloyati, Parkent tumani, Boyqozon mahallasi (23 ga)"
     },
     "phone": {
       "label": "Call-center",
