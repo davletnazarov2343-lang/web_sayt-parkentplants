@@ -139,9 +139,65 @@ export function getWebsiteSchema(locale: string) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Parkent Plants",
+    alternateName:
+      locale === "ru" ? "Питомник Паркент Плэнтс" : "Parkent Plants ko'chatzori",
     url: `${BASE_URL}/${locale}`,
     inLanguage: locale === "uz" ? "uz-UZ" : "ru-RU",
     publisher: { "@id": `${BASE_URL}#business` },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${BASE_URL}/${locale}?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+/**
+ * Service schema — Google'ga "biz qaysi xizmatni taklif qilamiz" deb aytadi.
+ */
+export function getServiceSchema(locale: string) {
+  const isRu = locale === "ru";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: isRu
+      ? "Продажа плодовых саженцев"
+      : "Mevali ko'chat sotish",
+    name: isRu
+      ? "Plodovye sazhentsy optom i v roznitsu"
+      : "Mevali ko'chat ulgurji va chakana",
+    provider: { "@id": `${BASE_URL}#business` },
+    areaServed: [
+      { "@type": "Country", name: "Uzbekistan" },
+      { "@type": "Country", name: "Tajikistan" },
+      { "@type": "Country", name: "Kyrgyzstan" },
+      { "@type": "Country", name: "Turkmenistan" },
+      { "@type": "Country", name: "Kazakhstan" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: isRu ? "Каталог плодовых саженцев" : "Mevali ko'chat katalogi",
+      itemListElement: [
+        offerItem(isRu ? "Саженцы яблони" : "Olma ko'chati"),
+        offerItem(isRu ? "Саженцы черешни и вишни" : "Olcha va gilos ko'chati"),
+        offerItem(isRu ? "Саженцы персика" : "Shaftoli ko'chati"),
+        offerItem(isRu ? "Саженцы абрикоса" : "O'rik ko'chati"),
+        offerItem(isRu ? "Саженцы груши" : "Nok ko'chati"),
+        offerItem(isRu ? "Саженцы сливы" : "Olxo'ri ko'chati"),
+        offerItem(isRu ? "Саженцы винограда" : "Uzum ko'chati"),
+        offerItem(isRu ? "Саженцы миндаля" : "Bodom ko'chati"),
+      ],
+    },
+  };
+}
+
+function offerItem(name: string) {
+  return {
+    "@type": "Offer",
+    itemOffered: { "@type": "Product", name, category: "Fruit saplings" },
   };
 }
 

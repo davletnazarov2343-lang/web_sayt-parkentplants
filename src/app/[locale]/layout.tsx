@@ -15,6 +15,7 @@ import {
   getLocalBusinessSchema,
   getWebsiteSchema,
   getBreadcrumbSchema,
+  getServiceSchema,
 } from "@/components/seo/JsonLd";
 
 const SITE_URL = "https://parkentplants.uz";
@@ -32,55 +33,71 @@ const META_CONTENT: Record<
 > = {
   uz: {
     title:
-      "Parkent Plants — Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi",
+      "Mevali ko'chat sotib olish | Parkent Plants — yetakchi ko'chatzor",
     description:
-      "2002 yildan buyon Toshkent viloyatida sertifikatlangan mevali ko'chatlar yetishtiramiz. 500 000+ ko'chat yiliga, 11 meva turi, 87 gektar maydon (Parkent 23 + Yuqori Chirchiq 64).",
+      "Mevali ko'chatlar ulgurji va chakana: olma, gilos, shaftoli, o'rik, uzum, bodom. 23 yillik bog'dorchilik tajribasi, fitosanitar sertifikat, eksport. 500 000+ ko'chat yiliga, 87 gektar maydon. Toshkent vil., Parkent va Yuqori Chirchiq ko'chatzorlari.",
     ogDescription:
-      "23 yillik tajriba · 500 000+ ko'chat yiliga · 11 meva turi · 87 gektar ko'chatzor. Professional fermerlar va investorlar uchun.",
+      "Mevali bog' uchun sifatli ko'chatlar — olma, gilos, shaftoli, o'rik, uzum, bodom. 23 yil bog'dorchilik tajribasi. Fermerlar va investorlar uchun B2B.",
     twitterDescription:
-      "23 yil tajriba · 500K+ ko'chat · 11 meva turi · 87 ga ko'chatzor",
+      "Mevali ko'chat ulgurji ⭐ 23 yil tajriba · 500K+ ko'chat · 87 ga ko'chatzor",
     ogLocale: "uz_UZ",
     keywords: [
       "mevali ko'chat",
+      "ko'chat",
+      "ko'chat sotib olish",
+      "ko'chat ulgurji",
       "olma ko'chati",
+      "gilos ko'chati",
       "shaftoli ko'chati",
-      "olcha ko'chati",
       "o'rik ko'chati",
+      "uzum ko'chati",
+      "bodom ko'chati",
+      "meva bog'i",
+      "mevali bog' uchun ko'chat",
+      "bog'dorchilik",
       "Parkent Plants",
       "Norchontol",
       "ko'chatzor",
+      "Toshkent ko'chatzori",
+      "Parkent ko'chatzori",
+      "Yuqori Chirchiq ko'chatzori",
       "fitosanitar sertifikat",
       "ko'chat eksport",
-      "Toshkent ko'chat",
-      "Parkent ko'chat",
-      "Yuqori Chirchiq ko'chat",
       "Shuhrat Abrorov",
     ],
   },
   ru: {
     title:
-      "Parkent Plants — ведущий питомник плодовых саженцев Центральной Азии",
+      "Саженцы плодовые купить | Parkent Plants — питомник в Узбекистане",
     description:
-      "С 2002 года в Ташкентской области выращиваем сертифицированные плодовые саженцы. 500 000+ саженцев в год, 11 видов плодов, 87 гектаров земли (Паркент 23 + Юкори-Чирчик 64).",
+      "Плодовые саженцы оптом и в розницу: яблоня, черешня, персик, абрикос, виноград, миндаль. 23 года практики, фитосанитарный сертификат, экспорт. 500 000+ саженцев в год, 87 гектаров земли в Ташкентской обл. (Паркент и Юкори-Чирчик).",
     ogDescription:
-      "23 года опыта · 500 000+ саженцев в год · 11 видов плодов · 87 гектаров питомника. Для профессиональных фермеров и инвесторов.",
+      "Качественные плодовые саженцы для сада — яблоня, черешня, персик, абрикос, виноград. 23 года опыта. B2B для фермеров и инвесторов.",
     twitterDescription:
-      "23 года опыта · 500K+ саженцев · 11 видов · 87 га питомника",
+      "Саженцы плодовые оптом ⭐ 23 года опыта · 500K+ саженцев · 87 га питомника",
     ogLocale: "ru_RU",
     keywords: [
       "саженцы плодовые",
+      "саженцы плодовые купить",
+      "саженцы плодовые оптом",
       "саженцы яблони",
       "саженцы черешни",
       "саженцы персика",
       "саженцы абрикоса",
+      "саженцы винограда",
+      "саженцы миндаля",
+      "плодовый сад",
+      "садоводство",
       "Parkent Plants",
       "Norchontol",
       "питомник Ташкент",
       "питомник Узбекистан",
+      "Паркент питомник",
+      "Юкори-Чирчик питомник",
       "фитосанитарный сертификат",
       "экспорт саженцев",
       "B2B саженцы",
-      "Shuhrat Abrorov",
+      "Шухрат Аброров",
     ],
   },
 };
@@ -183,6 +200,7 @@ export default async function LocaleLayout({
         <JsonLd data={getLocalBusinessSchema()} />
         <JsonLd data={getWebsiteSchema(locale)} />
         <JsonLd data={getBreadcrumbSchema(locale)} />
+        <JsonLd data={getServiceSchema(locale)} />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
