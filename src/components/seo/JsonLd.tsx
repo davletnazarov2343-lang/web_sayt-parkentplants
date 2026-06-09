@@ -201,6 +201,69 @@ function offerItem(name: string) {
   };
 }
 
+/**
+ * VideoObject schemalar — har bir YouTube video uchun.
+ * Bu Google qidiruvda video rich snippets (Q&A, "Key moments") chiqarishi mumkin.
+ */
+export function getVideoCollectionSchema(
+  videos: Array<{ id: string; title: string; topic: string }>,
+) {
+  return videos.map((v) => ({
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: v.title,
+    description: `${v.topic} — ${v.title}. Shuhrat Abrorov bog'dorchilik bo'yicha ko'rsatma.`,
+    thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`],
+    uploadDate: "2025-01-01",
+    contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
+    embedUrl: `https://www.youtube.com/embed/${v.id}`,
+    publisher: { "@id": `${BASE_URL}#business` },
+    inLanguage: "uz-UZ",
+  }));
+}
+
+/**
+ * ImageObject schema — nursery fotolari uchun.
+ * Google Images'da yaxshi rank uchun.
+ */
+export function getNurseryImagesSchema() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      contentUrl: `${BASE_URL}/images/hero-nursery.jpg`,
+      url: `${BASE_URL}/images/hero-nursery.jpg`,
+      name: "Norchontol ko'chatzori — mevali ko'chat qatorlari",
+      description:
+        "Parkent Plants (Norchontol) ko'chatzori — Toshkent viloyati. 87 gektar maydonda mevali ko'chatlar.",
+      caption: "Norchontol mevali ko'chatzori",
+      creator: { "@id": `${BASE_URL}#business` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      contentUrl: `${BASE_URL}/images/parkent-nursery.jpg`,
+      url: `${BASE_URL}/images/parkent-nursery.jpg`,
+      name: "Parkent ko'chatzori — uzumzor",
+      description:
+        "Parkent ko'chatzori, Toshkent vil., Boyqozon mahallasi. 23 gektar maydon.",
+      caption: "Parkent ko'chatzori (Boyqozon)",
+      creator: { "@id": `${BASE_URL}#business` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      contentUrl: `${BASE_URL}/images/yuqori-chirchiq.jpg`,
+      url: `${BASE_URL}/images/yuqori-chirchiq.jpg`,
+      name: "Yuqori Chirchiq ko'chatzori — yosh ko'chat qatorlari",
+      description:
+        "Yuqori Chirchiq filiali, 64 gektar maydonda mevali ko'chat ishlab chiqarish.",
+      caption: "Yuqori Chirchiq filiali",
+      creator: { "@id": `${BASE_URL}#business` },
+    },
+  ];
+}
+
 export function getBreadcrumbSchema(locale: string) {
   return {
     "@context": "https://schema.org",
