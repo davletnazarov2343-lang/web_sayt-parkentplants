@@ -82,7 +82,7 @@ export function getLocalBusinessSchema() {
     name: "Parkent Plants",
     alternateName: "Norchontol fermer xo'jaligi",
     description:
-      "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi. 500 000+ ko'chat yiliga, 11 meva turida 135+ sinalgan nav, 108 gektar maydon.",
+      "Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi. 500 000+ ko'chat yiliga, 11 meva turi, 87 gektar maydon (Parkent 23 ga + Yuqori Chirchiq 64 ga).",
     url: BASE_URL,
     telephone: "+998-78-113-18-19",
     email: "info@parkentplants.uz",
@@ -142,6 +142,21 @@ export function getWebsiteSchema(locale: string) {
     url: `${BASE_URL}/${locale}`,
     inLanguage: locale === "uz" ? "uz-UZ" : "ru-RU",
     publisher: { "@id": `${BASE_URL}#business` },
+  };
+}
+
+export function getBreadcrumbSchema(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "ru" ? "Главная" : "Bosh sahifa",
+        item: `${BASE_URL}/${locale}`,
+      },
+    ],
   };
 }
 
