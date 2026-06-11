@@ -4,6 +4,7 @@ import {
   getAllFruitTypeSlugs,
   getAllVarietySlugs,
 } from "@/sanity/fetch";
+import { NEWS_ARTICLES } from "@/lib/news";
 
 const BASE_URL = "https://parkentplants.uz";
 
@@ -17,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   // 1. Statik sahifalar
-  const staticPaths = ["", "/varieties"];
+  const staticPaths = ["", "/varieties", "/news"];
   const staticEntries = LOCALES.flatMap((locale) =>
     staticPaths.map((path) => ({
       url: `${BASE_URL}/${locale}${path}`,
@@ -77,5 +78,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity yo'q — sitemap statik sahifalardan iborat bo'ladi
   }
 
-  return [...staticEntries, ...fruitTypeEntries, ...varietyEntries];
+  // 3. News articles
+  const newsEntries = LOCALES.flatMap((locale) =>
+    NEWS_ARTICLES.map((article) => ({
+      url: `${BASE_URL}/${locale}/news/${article.slug}`,
+      lastModified: new Date(article.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: Object.fromEntries(
+          LOCALES.map((l) => [l, `${BASE_URL}/${l}/news/${article.slug}`]),
+        ),
+      },
+    })),
+  );
+
+  return [
+    ...staticEntries,
+    ...fruitTypeEntries,
+    ...varietyEntries,
+    ...newsEntries,
+  ];
 }

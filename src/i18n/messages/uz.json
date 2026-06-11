@@ -5,6 +5,7 @@
     "nursery": "Ko'chatzor",
     "b2b": "B2B",
     "about": "Biz haqimizda",
+    "news": "Yangiliklar",
     "contact": "Kontakt",
     "menu": "Menyu",
     "close": "Yopish",
@@ -491,6 +492,72 @@
       "value": "Dushanba – Shanba, 09:00 – 18:00"
     },
     "cta": "Bepul maslahat olish"
+  },
+  "news": {
+    "eyebrow": "Yangiliklar",
+    "title": "Bog'dorchilik va davlat qo'llab-quvvatlovi",
+    "subtitle": "Bog'dorchilik subsidiyalari, qonun-qarorlar va biznes uchun amaliy qo'llanmalar",
+    "readMore": "Batafsil o'qish",
+    "backToList": "Yangiliklarga qaytish",
+    "viewAll": "Barcha yangiliklar",
+    "published": "Nashr etilgan",
+    "downloadPdf": "PDF yuklab olish",
+    "pdfSize": "240 KB · 15 sahifa",
+    "shareTitle": "Ulashing",
+    "tableOfContents": "Mundarija",
+    "source": "Manba",
+    "tags": "Teglar",
+    "articles": {
+      "bogdorchilik-subsidiyalari-206-qaror": {
+        "title": "Bog'dorchilik subsidiyalari — 206-son qaror (28.04.2026)",
+        "summary": "Vazirlar Mahkamasining 206-son qarori bo'yicha bog'dorchilik uchun davlat subsidiyalari to'liq tahlil — ko'chat xaridi 50% qoplanadi, intensiv bog' uchun suv inshootlari, tomchilatib sug'orish va boshqa qo'llab-quvvatlash choralari.",
+        "tags": ["Subsidiya", "206-qaror", "Intensiv bog'", "Ko'chat xaridi"],
+        "source": "lex.uz/uz/docs/-8164708",
+        "intro": "Vazirlar Mahkamasining 2026-yil 28-apreldagi 206-son qarori bog'dorchilik uchun davlat tomonidan qo'llab-quvvatlash tizimini tubdan yangiladi. Qaror 19 ta yo'nalish bo'yicha subsidiya beradi va kamida 7 tasi bevosita bog'dorchilikka tegishli. Quyida — Parkent Plants tomonidan tayyorlangan amaliy qo'llanma.",
+        "sections": [
+          {
+            "heading": "Asosiy ma'lumot",
+            "body": "Barcha arizalar Agroportal (Raqamli qishloq xo'jaligi yagona platformasi) orqali elektron tarzda topshiriladi. To'lov agentligi — Qishloq xo'jaligi vazirligi huzuridagi \"Agrar sohada to'lovlar agentligi\". Subsidiya talabgorning maxsus undiruvga yo'l qo'yilmaydigan hisobvarag'iga o'tkaziladi. Bajarilgan ishlar O'zbekkosmos sun'iy yo'ldosh tasvirlari yoki mustaqil ekspert orqali tekshiriladi."
+          },
+          {
+            "heading": "6-ILOVA — Ko'chat xaridi (eng muhimi)",
+            "body": "Yangi intensiv bog', uzumzor va limonzor barpo etishda meva, uzum va limon ko'chatlarini xarid qilish xarajatlarining 50% qoplanadi. Maksimal miqdorlar: in-vitro usulda yetishtirilgan meva ko'chati har biriga 25 000 so'mgacha; vegetativ usulda ko'paytirilgan meva ko'chati har biriga 10 000 so'mgacha; uzumning danaksiz va yangi nav ko'chatlari har biriga 7 500 so'mgacha; mahalliy uzum ko'chatlari har biriga 2 000 so'mgacha; limon ko'chatlari har bir sotixga 300 000 so'mgacha. Shpalerga ko'tarish ham 50% qoplanadi."
+          },
+          {
+            "heading": "1-ILOVA — Tomchilatib sug'orish",
+            "body": "Mevaga 6 mln so'm/ga, uzumga 8 mln so'm/ga subsidiya beriladi. Suv bilan barqaror ta'minlanmagan hududlarda 1,25 koeffitsiyent bilan ko'paytiriladi. Texnologiya \"Tomchi-reestr\" reyestriga kiritilgan quruvchi tomonidan qurilishi shart."
+          },
+          {
+            "heading": "14-ILOVA — Suv inshootlari",
+            "body": "Yangi intensiv bog'/uzumzor uchun: burg'ilangan quduq har metriga 600 000 so'm (bitta quduq uchun 120 mln so'mgacha); nasos stansiyasi va suv quvurlari — quvur diametriga qarab 40 000 dan 250 000 so'mgacha har bir metri uchun. Polietilen va temir quvurlar uchun alohida tariflar."
+          },
+          {
+            "heading": "5-ILOVA — Quyosh energiyasi",
+            "body": "Sug'orish nasos stansiyalarini quyosh, suv yoki shamol energiyasi bilan ta'minlovchi uskunalar 50% qoplanadi, har bir kVt/soat uchun 2 mln so'mgacha, jami 100 mln so'mgacha. Asosiy shart — kamida 10 gektar va suvni tejaydigan sug'orish texnologiyasi joriy etilgan maydon."
+          },
+          {
+            "heading": "8-ILOVA — Kredit/lizing foizini qoplash",
+            "body": "Texnika lizing/kredit foizining 8 punktigacha qismi davlat tomonidan qoplanadi. Suvni tejaydigan sug'orish va quyosh panellari uchun ham mavjud. Subsidiya bevosita bankka/lizing tashkilotiga o'tkaziladi — sizning foiz to'lovingiz kamayadi."
+          },
+          {
+            "heading": "13-ILOVA — Biologik himoya",
+            "body": "Trixogramma, oltinko'z, brakon, feromon tutqichlar va bio/mikrobiologik preparatlar uchun 50% qoplanadi. Ariza muddati — hosil yilining 11-25 oktabri. Faqat O'zbekistonda ruxsat etilgan bio-vositalar hisobga olinadi."
+          },
+          {
+            "heading": "15-ILOVA — Hosil sug'urtasi",
+            "body": "Qishloq xo'jaligi sug'urtasi jamg'armasi orqali sug'urtalangan meva va uzum hosili uchun sug'urta mukofotining 50% davlat tomonidan qoplanadi. Jarayon avtomatik — Jamg'arma har oy Agentlikka buyurtmanoma yuboradi."
+          },
+          {
+            "heading": "Muhim shartlar",
+            "body": "Faqat 2025-yil 1-sentabrdan keyin barpo etilgan yangi obyektlar uchun. Ko'chatlar \"Ko'chatchilik reyestri\"ga kiritilgan xo'jaliklardan sotib olingan bo'lishi shart. O'zagroinspeksiya ko'chatlarni 2 yil davomida monitoring qiladi — agar qurib qolganlar 10% dan oshsa, mutanosib subsidiya qaytariladi. Yolg'on ma'lumot bersa, 3 yil davomida subsidiya olish huquqi cheklanadi."
+          },
+          {
+            "heading": "Parkent Plants — ko'chatchilik reyestrida",
+            "body": "Bizdan sotib olingan ko'chatlar 6-ILOVA bo'yicha subsidiyaga to'liq mos keladi. Eng ishonchli urug'siz uzum navlari va in-vitro/vegetativ ko'paytirilgan meva ko'chatlari uchun murojaat qiling: +998 78 113 18 19, +998 99 557 38 00, Telegram-bot: @norchontolbot."
+          }
+        ]
+      }
+    }
   },
   "notFound": {
     "title": "Bunday sahifa topilmadi",
