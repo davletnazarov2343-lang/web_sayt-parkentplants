@@ -1,6 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import {
   MapPin,
   Phone,
@@ -23,6 +25,7 @@ const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "nursery", href: "#nurseries" },
   { key: "about", href: "#about" },
+  { key: "news", href: "#news" },
   { key: "contact", href: "#request" },
 ] as const;
 
@@ -57,7 +60,13 @@ const SOCIAL_LINKS: ReadonlyArray<{
 
 export function Footer() {
   const t = useTranslations();
+  const locale = useLocale();
+  const pathname = usePathname();
   const year = new Date().getFullYear();
+
+  const isHomepage = pathname === `/${locale}` || pathname === "/";
+  const navHref = (anchor: string) =>
+    isHomepage ? anchor : `/${locale}${anchor === "#top" ? "" : anchor}`;
 
   return (
     <footer className="bg-forest-900 text-cream-100/90">
@@ -98,12 +107,12 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {NAV_ITEMS.map((item) => (
                 <li key={item.key}>
-                  <a
-                    href={item.href}
+                  <Link
+                    href={navHref(item.href)}
                     className="text-sm text-cream-100/70 transition-colors hover:text-gold-400"
                   >
                     {t(`nav.${item.key}`)}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

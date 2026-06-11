@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, Clock, ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
@@ -51,8 +53,16 @@ export function Header() {
   const t = useTranslations("nav");
   const tHero = useTranslations("hero");
   const tContact = useTranslations("contact");
+  const locale = useLocale();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Locale-aware nav helper — agar sub-sahifada bo'lsak, /{locale}#section
+  // ga o'tadi (avval homepage'ga), aks holda plain anchor scroll qiladi.
+  const isHomepage = pathname === `/${locale}` || pathname === "/";
+  const navHref = (anchor: string) =>
+    isHomepage ? anchor : `/${locale}${anchor === "#top" ? "" : anchor}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -148,20 +158,20 @@ export function Header() {
       >
         <Container size="wide">
           <div className="flex h-[72px] items-center justify-between gap-6 lg:h-20">
-            <a
-              href="#top"
+            <Link
+              href={navHref("#top")}
               className="flex items-center transition-opacity hover:opacity-90"
               aria-label="Parkent Plants — bosh sahifa"
             >
               <Logo variant="light" />
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-1">
               {NAV_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item.key}
-                  href={item.href}
+                  href={navHref(item.href)}
                   className="group relative px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-cream-100/85 transition-colors hover:text-cream"
                 >
                   {t(item.key)}
@@ -169,7 +179,7 @@ export function Header() {
                     aria-hidden="true"
                     className="absolute inset-x-4 -bottom-px h-0.5 origin-left scale-x-0 bg-gold-400 transition-transform duration-300 group-hover:scale-x-100"
                   />
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -179,7 +189,7 @@ export function Header() {
                 variant="light"
               />
               <LinkButton
-                href="#request"
+                href={navHref("#request")}
                 size="sm"
                 variant="secondary"
                 className="hidden md:inline-flex shadow-[0_4px_14px_-4px_rgba(201,169,97,0.5)]"
@@ -208,14 +218,14 @@ export function Header() {
           <Container size="wide">
             <nav className="flex flex-col py-4 gap-1">
               {NAV_ITEMS.map((item) => (
-                <a
+                <Link
                   key={item.key}
-                  href={item.href}
+                  href={navHref(item.href)}
                   onClick={() => setOpen(false)}
                   className="rounded-md px-4 py-3 text-base font-semibold text-cream-100/90 hover:bg-forest-700 hover:text-cream transition-colors"
                 >
                   {t(item.key)}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -264,7 +274,7 @@ export function Header() {
 
             <div className="pb-5">
               <LinkButton
-                href="#request"
+                href={navHref("#request")}
                 onClick={() => setOpen(false)}
                 variant="secondary"
                 size="lg"
