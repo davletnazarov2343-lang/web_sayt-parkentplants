@@ -290,7 +290,7 @@ export default async function NewsArticlePage({
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700"
               >
                 <Play className="h-3.5 w-3.5 fill-current" />
-                {rootstock.name} — videoda ko'ring
+                {rootstock.name} — videoda ko&apos;ring
               </a>
             </div>
           )}
