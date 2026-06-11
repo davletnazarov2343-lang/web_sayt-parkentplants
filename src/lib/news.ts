@@ -23,6 +23,12 @@ export type NewsArticle = {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: "gilos-bozori-global-talab-2027",
+    publishedAt: "2026-06-11",
+    cover: "/images/gilos-bozori-2027.jpg",
+    featured: true,
+  },
+  {
     slug: "bogdorchilik-subsidiyalari-206-qaror",
     publishedAt: "2026-06-11",
     pdf: "/docs/bogdorchilik-subsidiyalari-206-qaror.pdf",

@@ -508,6 +508,87 @@
     "source": "Manba",
     "tags": "Teglar",
     "articles": {
+      "gilos-bozori-global-talab-2027": {
+        "title": "Global gilos bozori o'zgaryaptimi?",
+        "summary": "Xitoyda gilos importi 3 yil ichida 388 ming tonnadan 600 ming tonnaga oshishi prognoz qilinmoqda. O'zbekiston bog'dorchiligi uchun yangi imkoniyatlar — qora rangli, shirin va o'zini changlatadigan gilos navlari bilan global raqobatda yutish.",
+        "tags": ["Gilos", "Eksport", "2027 buyurtma", "Royal Tioga", "Sweet Aryana"],
+        "source": "",
+        "intro": "🍒 Xitoyda gilos importi 3 yilda 388 mingdan 600 ming tonnaga oshgani prognoz qilinmoqda. Asosiy import navlar — qora va shirin gilos navlari hissasiga to'g'ri kelmoqda. Agar bundan O'zbekiston bozori ham to'g'ri xulosa chiqarsa, qora rangli, shirin, o'zini changlatadigan va oson changlanadigan gilos navlarini ko'paytirish global raqobatda yutish imkonini beradi.",
+        "sections": [
+          {
+            "heading": "Qaysi navlar bilan?",
+            "body": "Quyidagi 6 ta gilos navi — global bozor talabi va biz tomonidan sinovdan o'tkazilgan eng yaxshilari. Har biri uchun video maslahat berilgan — ko'rib chiqing va o'zingizga moslarini tanlang."
+          },
+          {
+            "heading": "Payvandtag tanlash — Krimsk-5 (VSL-2)",
+            "body": "Kuchli, ishonchli payvandtag — tez hosilga kiritadi, sovuqqa va qurg'oqchilikka o'ta chidamli, ildiz bachkisi bermaydi, bog'ingiz bir xilda o'sishini ta'minlaydi, hosildorlikni oshiradi va boshqa juda ko'p ustunliklarga ega."
+          },
+          {
+            "heading": "2027 yil kuziga buyurtma — vaqt kam qoldi!",
+            "body": "Shu gilos ko'chatlarini 2027 yil kuzi uchun Parkent Plants'dan bemalol topishingiz mumkin. Hozircha 50 000 minga yaqin gilos ko'chatlariga buyurtma berildi. Avgustgacha kam vaqt qoldi — narxlar o'zgarishidan oldin ulgurib qoling. 1$ (12 000 so'm) chegirma asosida — 5$ lik gilos ko'chati 4$ (48 000 so'm) ga. 2 yoshli baquvvat ko'chatlar."
+          }
+        ],
+        "varieties": [
+          {
+            "name": "Royal Tioga",
+            "specs": "Brix 16-18 · Kalibr 28-30, teplitsada 36 gacha",
+            "pollination": "O'zini changlatadi",
+            "extra": "Eng ertaki nav",
+            "youtubeUrl": "https://youtu.be/g0Cnyzx4jE8?t=882"
+          },
+          {
+            "name": "Red Pacific",
+            "specs": "Brix 19 · Kalibr 30-32",
+            "pollination": "O'zini changlatadi",
+            "extra": "Qarsillaydigan, saqlanish muddati uzoq, erta hosilga kiradi",
+            "youtubeUrl": "https://youtube.com/shorts/GoSs5PElpag"
+          },
+          {
+            "name": "Sweet Aryana",
+            "specs": "Brix 19-20 · Kalibr 28-30",
+            "pollination": "O'zini changlatadi",
+            "extra": "Uzilgandan keyin uzoq turadi",
+            "youtubeUrl": "https://youtu.be/AlzVDFIUDig?t=645"
+          },
+          {
+            "name": "Sweet Lorens",
+            "specs": "Brix 19-20 · Kalibr 30-32",
+            "pollination": "Oson changlanadi",
+            "extra": "Dunyodagi eng qoralardan biri, tashishga eng chidamli, uzilgandan keyin uzoq turadi",
+            "youtubeUrl": "https://youtu.be/AlzVDFIUDig?t=824"
+          },
+          {
+            "name": "Black Pearl",
+            "specs": "Brix 20 · Kalibr 30-32",
+            "pollination": "Oson changlanadi",
+            "extra": "Tim qora, qattiqlikda dunyoda N1 gilos qatorida",
+            "youtubeUrl": "https://youtu.be/AlzVDFIUDig?t=313"
+          },
+          {
+            "name": "SPS 342",
+            "specs": "Brix 18-20 · Kalibr 30-32",
+            "pollination": "Oson changlanadi",
+            "extra": "Qoralikda yetakchi, tashishga chidamli",
+            "youtubeUrl": "https://youtube.com/shorts/c0-MnZn9h48"
+          }
+        ],
+        "rootstock": {
+          "title": "Tavsiya etilgan payvandtag",
+          "name": "Krimsk-5 (VSL-2)",
+          "description": "Tez hosilga kiritadi · Sovuq va qurg'oqchilikka chidamli · Ildiz bachkisi bermaydi · Bog'ni bir xil o'stiradi · Hosildorlikni oshiradi",
+          "youtubeUrl": "https://youtu.be/KjsZiapM9_s?t=788"
+        },
+        "cta": {
+          "badge": "2027 yil kuziga buyurtma",
+          "title": "Hozirdanoq buyurtma bering — 1$ chegirma",
+          "body": "5$ (60 000 so'm) lik gilos ko'chatini 4$ (48 000 so'm) ga olishingiz mumkin. 2 yoshli baquvvat ko'chatlar. Avgustgacha ulgurib qoling — keyin narxlar o'zgaradi.",
+          "telegramText": "Buyurtma berish",
+          "telegramUrl": "https://t.me/+998995573800",
+          "phone1": "+998 78 113 18 19",
+          "phone2": "+998 99 557 38 00",
+          "stat": "Hozirgacha 50 000 minga yaqin gilos ko'chatlariga buyurtma berildi"
+        }
+      },
       "bogdorchilik-subsidiyalari-206-qaror": {
         "title": "Bog'dorchilik subsidiyalari — 206-son qaror (28.04.2026)",
         "summary": "Vazirlar Mahkamasining 206-son qarori bo'yicha bog'dorchilik uchun davlat subsidiyalari to'liq tahlil — ko'chat xaridi 50% qoplanadi, intensiv bog' uchun suv inshootlari, tomchilatib sug'orish va boshqa qo'llab-quvvatlash choralari.",

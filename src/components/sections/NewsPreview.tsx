@@ -49,57 +49,71 @@ export async function NewsPreview({ locale }: Props) {
           {news.slice(0, 2).map((article) => (
             <article
               key={article.slug}
-              className="group flex flex-col rounded-2xl border border-earth-200 bg-cream p-6 transition-all hover:border-gold-400 hover:shadow-lg sm:p-8"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-earth-200 bg-cream transition-all hover:border-gold-400 hover:shadow-lg"
             >
-              <div className="flex items-center gap-3 text-xs text-earth-500">
-                <Newspaper className="h-4 w-4 text-gold-700" />
-                <span className="inline-flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" />
-                  <time dateTime={article.publishedAt}>
-                    {formatDate(article.publishedAt, locale)}
-                  </time>
-                </span>
-                {article.pdf && (
-                  <>
-                    <span className="text-earth-300">·</span>
-                    <span className="inline-flex items-center gap-1.5 text-gold-700 font-semibold">
-                      <FileText className="h-3.5 w-3.5" />
-                      PDF
-                    </span>
-                  </>
-                )}
-              </div>
-              <h3 className="mt-3 text-xl font-serif font-bold text-earth-900 transition-colors group-hover:text-forest-700 sm:text-2xl">
+              {/* Cover image */}
+              {article.cover && (
                 <Link
                   href={`/${locale}/news/${article.slug}`}
-                  className="before:absolute before:inset-0"
+                  className="block aspect-[16/9] overflow-hidden bg-earth-100"
                 >
-                  {t(`articles.${article.slug}.title`)}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={article.cover}
+                    alt={t(`articles.${article.slug}.title`)}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
                 </Link>
-              </h3>
-              <p className="mt-3 text-sm text-earth-600 leading-relaxed sm:text-base flex-1">
-                {t(`articles.${article.slug}.summary`)}
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link
-                  href={`/${locale}/news/${article.slug}`}
-                  className="relative z-10 inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-gold-700"
-                >
-                  {t("readMore")}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                {article.pdf && (
-                  <LinkButton
-                    href={article.pdf}
-                    variant="outline"
-                    size="sm"
-                    download
-                    className="relative z-10"
+              )}
+
+              <div className="flex flex-col p-6 sm:p-8 flex-1">
+                <div className="flex items-center gap-3 text-xs text-earth-500">
+                  <Newspaper className="h-4 w-4 text-gold-700" />
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" />
+                    <time dateTime={article.publishedAt}>
+                      {formatDate(article.publishedAt, locale)}
+                    </time>
+                  </span>
+                  {article.pdf && (
+                    <>
+                      <span className="text-earth-300">·</span>
+                      <span className="inline-flex items-center gap-1.5 text-gold-700 font-semibold">
+                        <FileText className="h-3.5 w-3.5" />
+                        PDF
+                      </span>
+                    </>
+                  )}
+                </div>
+                <h3 className="mt-3 text-xl font-serif font-bold text-earth-900 transition-colors group-hover:text-forest-700 sm:text-2xl">
+                  <Link href={`/${locale}/news/${article.slug}`}>
+                    {t(`articles.${article.slug}.title`)}
+                  </Link>
+                </h3>
+                <p className="mt-3 text-sm text-earth-600 leading-relaxed sm:text-base flex-1">
+                  {t(`articles.${article.slug}.summary`)}
+                </p>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <Link
+                    href={`/${locale}/news/${article.slug}`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-forest-700 transition-colors group-hover:text-gold-700"
                   >
-                    <Download className="h-3.5 w-3.5" />
-                    {t("downloadPdf")}
-                  </LinkButton>
-                )}
+                    {t("readMore")}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  {article.pdf && (
+                    <LinkButton
+                      href={article.pdf}
+                      variant="outline"
+                      size="sm"
+                      download
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                      {t("downloadPdf")}
+                    </LinkButton>
+                  )}
+                </div>
               </div>
             </article>
           ))}
