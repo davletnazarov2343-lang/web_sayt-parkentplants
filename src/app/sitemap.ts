@@ -5,6 +5,7 @@ import {
   getAllVarietySlugs,
 } from "@/sanity/fetch";
 import { NEWS_ARTICLES } from "@/lib/news";
+import { FRUIT_CATEGORIES } from "@/lib/categories";
 
 const BASE_URL = "https://parkentplants.uz";
 
@@ -18,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   // 1. Statik sahifalar
-  const staticPaths = ["", "/varieties", "/news"];
+  const staticPaths = ["", "/varieties", "/news", "/kochatlar"];
   const staticEntries = LOCALES.flatMap((locale) =>
     staticPaths.map((path) => ({
       url: `${BASE_URL}/${locale}${path}`,
@@ -93,10 +94,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
   );
 
+  // 4. Ko'chat kategoriyalari
+  const categoryEntries = LOCALES.flatMap((locale) =>
+    FRUIT_CATEGORIES.map((cat) => ({
+      url: `${BASE_URL}/${locale}/kochatlar/${cat.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.9, // yuqori - asosiy SEO sahifalar
+      alternates: {
+        languages: Object.fromEntries(
+          LOCALES.map((l) => [l, `${BASE_URL}/${l}/kochatlar/${cat.slug}`]),
+        ),
+      },
+    })),
+  );
+
   return [
     ...staticEntries,
     ...fruitTypeEntries,
     ...varietyEntries,
     ...newsEntries,
+    ...categoryEntries,
   ];
 }

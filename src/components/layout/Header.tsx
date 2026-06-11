@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
-  { key: "nursery", href: "#nurseries" },
+  { key: "saplings", href: "/kochatlar" },
   { key: "about", href: "#about" },
   { key: "news", href: "#news" },
   { key: "contact", href: "#request" },
@@ -61,8 +61,12 @@ export function Header() {
   // Locale-aware nav helper — agar sub-sahifada bo'lsak, /{locale}#section
   // ga o'tadi (avval homepage'ga), aks holda plain anchor scroll qiladi.
   const isHomepage = pathname === `/${locale}` || pathname === "/";
-  const navHref = (anchor: string) =>
-    isHomepage ? anchor : `/${locale}${anchor === "#top" ? "" : anchor}`;
+  const navHref = (target: string) => {
+    // Absolute path (e.g. "/kochatlar") — har doim /{locale}{path}
+    if (target.startsWith("/")) return `/${locale}${target}`;
+    // Anchor (e.g. "#nurseries") — homepage'da plain, sub-page'da /{locale}#anchor
+    return isHomepage ? target : `/${locale}${target === "#top" ? "" : target}`;
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);

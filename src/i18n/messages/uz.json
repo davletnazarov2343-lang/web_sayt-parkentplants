@@ -493,6 +493,319 @@
     },
     "cta": "Bepul maslahat olish"
   },
+  "saplings": {
+    "eyebrow": "Mevali ko'chatlar",
+    "title": "Mevali ko'chat sotib olish — 9 ta meva turi",
+    "subtitle": "Parkent Plants ko'chatzori — 11 meva turida 135+ sinalgan nav, fitosanitar sertifikat, 23 yil tajriba. Ulgurji va chakana. Toshkent vil., Parkent va Yuqori Chirchiq filiallari.",
+    "metaTitle": "Mevali ko'chat sotib olish — Parkent Plants katalogi (87 ga ko'chatzor)",
+    "metaDescription": "Mevali ko'chatlar ulgurji va chakana: olma, gilos, shaftoli, o'rik, uzum, bodom va boshqa 9 ta turi. Fitosanitar sertifikat, 23 yil tajriba, eksport, B2B. Toshkent ko'chatzori.",
+    "categoriesTitle": "Ko'chat kategoriyalari",
+    "viewCategory": "Ko'rish",
+    "varietyCount": "{count} nav",
+    "introHeading": "Nima uchun Parkent Plants?",
+    "introBody": "2002 yildan beri Toshkent viloyatida sertifikatlangan mevali ko'chatlar yetishtiramiz. Yiliga 500 000+ ko'chat, 87 gektar maydon, 11 meva turi, 135+ sinalgan nav. Har bir nav 4-5 yil sinovdan o'tkazilgan. Fitosanitar sertifikat va Davlat ko'chatchilik reyestrida ro'yxatdan o'tganmiz — bu sizga 206-son qarordagi 50% davlat subsidiyasini olish imkonini beradi.",
+    "whyHeading": "Bizda ko'chat sotib olishning afzalliklari",
+    "whyItems": [
+      "Davlat ko'chatchilik reyestrida — 6-ILOVA subsidiyaga to'liq mos",
+      "Fitosanitar sertifikat — eksport va katta loyihalarga ruxsat",
+      "3 yillik nav kafolati — har bir ko'chatga rasmiy hujjat",
+      "In-vitro va vegetativ payvandtag — eng yuqori subsidiya darajasi",
+      "23 yil tajriba — Markaziy Osiyoning yetakchi ko'chatzori",
+      "Ulgurji narxlar — fermerlar va investorlar uchun",
+      "Eksport: O'zbekiston + 4 qo'shni davlat",
+      "Konsultatsiya — agronom maslahati bepul"
+    ],
+    "ctaTitle": "Buyurtma yoki maslahat kerakmi?",
+    "ctaBody": "Agronomlarimiz bilan suhbatlashing — to'g'ri nav va payvandtag tanlash, narx va etkazib berish bo'yicha bepul maslahat.",
+    "ctaPrimary": "Buyurtma berish",
+    "ctaSecondary": "+998 78 113 18 19",
+    "breadcrumb": {
+      "home": "Bosh sahifa",
+      "saplings": "Ko'chatlar"
+    },
+    "categoryPage": {
+      "varietiesTitle": "Sotuvdagi navlar",
+      "buyingGuideTitle": "Tanlash bo'yicha qo'llanma",
+      "pricingTitle": "Narxlar va etkazib berish",
+      "faqTitle": "Ko'p so'raladigan savollar",
+      "relatedTitle": "Bog'liq maqolalar",
+      "orderNow": "Buyurtma berish",
+      "callUs": "Qo'ng'iroq qilish",
+      "backToCategories": "Barcha kategoriyalar"
+    },
+    "categories": {
+      "olma-kochati": {
+        "title": "Olma ko'chati sotib olish — Parkent Plants",
+        "h1": "Olma ko'chati",
+        "metaDescription": "Olma ko'chati ulgurji va chakana — Gala, Pink Lady, Granny Smith, Golden Reinders va boshqa eng yaxshi navlar. Fitosanitar sertifikat, M9/M26 payvandtaglar, 3 yillik kafolat. Parkent Plants.",
+        "intro": "Olma — O'zbekiston bog'dorchiligining asosi va eng ko'p ekiladigan mevasi. Parkent Plants ko'chatzorida zamonaviy intensiv bog'lar uchun moslashtirilgan olma ko'chatlari yetishtiramiz: erta pishadigan yozgi navlardan tortib, qishgacha saqlanadigan kech navlargacha. Barcha ko'chatlar in-vitro yoki vegetativ usulda M9/M26 payvandtaglarda — bu 1 gektarga 1500-3500 dona ekish va 2-3 yilda hosilga kirish imkonini beradi.",
+        "buyingGuide": "Olma ko'chati tanlashda 3 omilni hisobga oling: 1) Mintaqangiz iqlimi — Toshkent vil. uchun barcha navlar mos, lekin sovuq mintaqalarga (Surxondaryo, Qashqadaryo) sovuqqa chidamli navlar (Devil Gala, Golden Reinders) tavsiya etiladi. 2) Maqsadingiz — eksport uchun (Pink Lady, Granny Smith), ichki bozor uchun (Gala, Mondial Gala). 3) Payvandtag — kichik (M9) zich ekishga, o'rta (M26) o'rtacha intensivlikka mos. Bizning agronomlarimiz har bir loyiha uchun individual tavsiya beradi.",
+        "pricing": "Narx nav va payvandtagga qarab belgilanadi. In-vitro olma ko'chati 1 dona 6$ atrofida (24 000 so'm darajasidan 70 000 so'mgacha). 206-son qarorga ko'ra 50% davlat subsidiyasi mavjud — siz amalda yarmini to'laysiz. Ulgurji buyurtma (1000+ dona) uchun maxsus narx. Etkazib berish: O'zbekiston bo'yicha + Tojikiston, Qirg'iziston, Turkmaniston, Qozog'iston.",
+        "faq": [
+          {
+            "q": "Olma ko'chati qachon ekiladi?",
+            "a": "Eng yaxshi vaqt — kuz (oktabr-noyabr) yoki erta bahor (mart). Kuzgi ekish to'g'ri qilingan bo'lsa, ko'chat tezroq hosilga kiradi."
+          },
+          {
+            "q": "Necha yil o'tib hosil beradi?",
+            "a": "Intensiv bog'da (M9 payvandtag, sug'orish + himoya bilan) 2-3 yilda hosilga kiradi. To'liq sanoat hosili 4-5 yilda."
+          },
+          {
+            "q": "1 gektarga necha dona ekish kerak?",
+            "a": "M9 payvandtagda 2500-3500 dona, M26'da 1500-2000 dona. Aniq raqam loyiha sxemasiga bog'liq — agronomimiz hisoblab beradi."
+          },
+          {
+            "q": "Fitosanitar sertifikati bormi?",
+            "a": "Albatta. Har bir partiya ko'chatga rasmiy fitosanitar sertifikat va ekinboplik xulosasi beriladi. Eksport va 206-son qaror subsidiyasiga to'liq mos."
+          },
+          {
+            "q": "Subsidiya qancha bo'ladi?",
+            "a": "206-son qaror (28.04.2026) bo'yicha xarid xarajatining 50% qoplanadi, in-vitro olma ko'chatlariga har biriga 25 000 so'mgacha. Agroportal orqali ariza."
+          }
+        ]
+      },
+      "gilos-kochati": {
+        "title": "Gilos ko'chati sotib olish — Royal Tioga, Sweet Aryana, Black Pearl",
+        "h1": "Gilos ko'chati",
+        "metaDescription": "Gilos ko'chati ulgurji va chakana — Royal Tioga, Red Pacific, Sweet Aryana, Sweet Lorens, Black Pearl, SPS 342. Krimsk-5 payvandtag, danaksiz va shirin navlar. 2027 buyurtma.",
+        "intro": "Gilos — global bozorda eng tez o'sayotgan meva: Xitoyga import 3 yilda 388 ming tonnadan 600 ming tonnaga oshmoqda. Parkent Plants'da dunyodagi eng yaxshi qora va shirin gilos navlarini yetishtiramiz: Royal Tioga, Red Pacific, Sweet Aryana, Sweet Lorens, Black Pearl, SPS 342. Brix 16-20, kalibr 28-36, o'zini changlatadigan navlar. Krimsk-5 (VSL-2) payvandtagda — tez hosilga kiritadi, sovuq va qurg'oqchilikka chidamli.",
+        "buyingGuide": "Gilos ko'chati tanlashda asosiy omillar: 1) Pishish vaqti — Royal Tioga eng ertaki, SPS 342 va Sweet Lorens kech. Marketingda davomli yetkazish uchun erta + o'rta + kech navlarni birgalikda eking. 2) Changlanish — o'zini changlatuvchi navlar (Royal Tioga, Red Pacific, Sweet Aryana) yolg'iz ekishga mos. Oson changlanuvchi navlar (Sweet Lorens, Black Pearl, SPS 342) yonida changlatuvchi nav bo'lishi shart. 3) Maqsad — eksport uchun qora, qattiq, brix 19+ navlar (Sweet Lorens, Black Pearl). Local bozor uchun shirin va katta (Sweet Aryana, Royal Tioga).",
+        "pricing": "Gilos ko'chati narxi: 1 dona 5$ (60 000 so'm) atrofida. 2027 yil kuzgi buyurtmaga 1$ chegirma — 4$ (48 000 so'm). 2 yoshli baquvvat ko'chatlar. 206-son qarorga ko'ra 50% subsidiya, har biriga 7 500 so'mgacha (danaksiz va yangi navlar). Hozirgacha 50 000+ gilos ko'chatiga buyurtma berildi — narxlar avgust oxiriga qadar.",
+        "faq": [
+          {
+            "q": "Qaysi gilos navi eng erta hosil beradi?",
+            "a": "Royal Tioga — eng ertaki, brix 16-18, kalibr 28-30 (teplitsada 36 gacha). 2 yoshli ko'chat ekilsa, 3-yilda to'liq hosilga kiradi."
+          },
+          {
+            "q": "Qaysi navlar o'zini changlatadi?",
+            "a": "Royal Tioga, Red Pacific, Sweet Aryana — o'zini to'liq changlatadi, yolg'iz ekishingiz mumkin. Boshqa navlar yonida changlatuvchi kerak."
+          },
+          {
+            "q": "Krimsk-5 payvandtag nima beradi?",
+            "a": "Tez hosilga kiritadi (2-3 yil), sovuq va qurg'oqchilikka chidamli, ildiz bachkisi bermaydi, bog'ni bir xilda o'stiradi, hosildorlikni oshiradi."
+          },
+          {
+            "q": "Eksport uchun qaysi nav yaxshi?",
+            "a": "Sweet Lorens va Black Pearl — qora, qattiq, brix 19-20, tashishga chidamli. Xitoy va Yevropa bozorlariga eng mos."
+          },
+          {
+            "q": "2027 yil kuzga qachon buyurtma berish kerak?",
+            "a": "Hozir — chunki bizga ko'chat tayyorlash 18+ oy. Avgustgacha 1$ chegirma. Hozirgacha 50 000+ buyurtma."
+          }
+        ]
+      },
+      "olcha-kochati": {
+        "title": "Olcha ko'chati sotib olish — Parkent Plants",
+        "h1": "Olcha ko'chati",
+        "metaDescription": "Olcha ko'chati ulgurji va chakana — achchiq olcha va shirin olcha navlari. Fitosanitar sertifikat, payvandtag tanlovi, agronom maslahati. Parkent Plants ko'chatzori.",
+        "intro": "Olcha — O'zbekiston bog'dorchiligida muhim mevali ekin. Parkent Plants'da murabbo va konserva ishlab chiqarish uchun ham, yangi iste'mol uchun ham olcha ko'chatlari yetishtiramiz. Navlar gilos bilan tanglanishi mumkin (oson changlanish uchun). Sovuq va qurg'oqchilikka chidamli payvandtaglarda.",
+        "buyingGuide": "Olcha tanlashda: 1) Maqsad — qayta ishlash uchun achchiq olcha, yangi iste'mol uchun shirin nav. 2) Yetilish — erta, o'rta, kech navlar bog'ni uzaytiradi. 3) Payvandtag — kuchli Krimsk-5 yoki o'rta darajadagi VSL-2. Bizning agronomlar mintaqangiz va maqsadingizga mos tavsiya beradi.",
+        "pricing": "Olcha ko'chati narxi nav va payvandtagga qarab belgilanadi. Subsidiya: 206-son qaror bo'yicha 50% qoplanadi (vegetativ ko'paytirilgan ko'chat har biriga 10 000 so'mgacha). Ulgurji buyurtma uchun aniq narxni agronomdan oling.",
+        "faq": [
+          {
+            "q": "Olcha va gilos bir xil ekinmi?",
+            "a": "Yo'q — gilos (Prunus avium) — shirin, katta. Olcha (Prunus cerasus) — achchiq, kichik, ko'pincha qayta ishlash uchun. Ammo bir xil oilaga kiradi, payvandtaglar mos."
+          },
+          {
+            "q": "Qachon ekiladi?",
+            "a": "Eng yaxshi — kuz (oktabr) yoki erta bahor (mart). Kuz ekish bahorgi o'sishni tezlashtiradi."
+          },
+          {
+            "q": "Necha yil o'tib hosil beradi?",
+            "a": "Intensiv parvarish va to'g'ri payvandtag bilan 3-4 yil. To'liq sanoat hosili 5-6 yil."
+          },
+          {
+            "q": "Sertifikat bormi?",
+            "a": "Ha, fitosanitar sertifikat, ekinboplik xulosasi, nav kafolati 3 yilga."
+          },
+          {
+            "q": "Subsidiya qancha?",
+            "a": "206-son qaror 6-ILOVA bo'yicha xarid xarajatining 50% qoplanadi, har bir ko'chatga 10 000 so'mgacha (vegetativ) yoki 25 000 so'mgacha (in-vitro)."
+          }
+        ]
+      },
+      "shaftoli-kochati": {
+        "title": "Shaftoli va nektarin ko'chati — Parkent Plants",
+        "h1": "Shaftoli ko'chati",
+        "metaDescription": "Shaftoli va nektarin ko'chati ulgurji va chakana — erta, o'rta va kech navlar. Fitosanitar sertifikat, eksport sifati, 3 yillik kafolat. Parkent Plants.",
+        "intro": "Shaftoli va nektarin — O'zbekiston janubining yorqin mevasi. Iliq iqlim va quyoshli kunlar sifatli, shirin va xushbo'y shaftoli yetishtirishga mos. Parkent Plants'da eksport sifatidagi shaftoli va nektarin navlarini taklif etamiz: erta navlar (iyun oxirida), o'rta navlar (iyul-avgust), kech navlar (sentabr). Brikiqsi 12-16, kalibr 65-85 mm.",
+        "buyingGuide": "Shaftoli tanlashda: 1) Tur — pushti shaftoli (eng ko'p talab), oq go'shtli shaftoli (premium), nektarin (silliq po'st). 2) Pishish davri — turli navlarni birga ekish bog' faoliyatini uzaytiradi. 3) Qurg'oqchilikka chidamlilik — Toshkent va Surxondaryo iqlimiga eng mos. 4) Eksport uchun yashilroq uzilib, naqliyot davomida pishadigan navlar tanlanadi.",
+        "pricing": "Shaftoli ko'chati narxi nav va payvandtagga qarab. Subsidiya: 206-son qaror bo'yicha 50% qoplanadi, vegetativ ko'paytirilgan ko'chatga 10 000 so'mgacha. In-vitro shaftoli ko'chatlariga esa 25 000 so'mgacha. Ulgurji 1000+ dona buyurtmaga maxsus narx.",
+        "faq": [
+          {
+            "q": "Shaftoli necha yilda hosil beradi?",
+            "a": "Intensiv parvarish bilan 2-3 yilda, to'liq sanoat hosili 4-5 yilda. Shaftoli — eng tez hosilga kiruvchi daraxtlardan."
+          },
+          {
+            "q": "Nektarin nima?",
+            "a": "Nektarin — shaftolining silliq po'stli versiyasi. Bir xil daraxt oilasidan, faqat genetik o'zgartirish natijasi. Brix balandroq, naqliyatga chidamli."
+          },
+          {
+            "q": "1 gektarga necha dona?",
+            "a": "An'anaviy bog'da 400-500 dona, intensiv bog'da (zich ekish) 1000-1500 dona. Agronomimiz hisoblab beradi."
+          },
+          {
+            "q": "Eksport sifatidami?",
+            "a": "Ha — biz tanlagan navlar Yevropa va Rossiya bozorlariga mos: yashilroq uzilib pishish, qattiq po'st, transportga chidamlilik."
+          },
+          {
+            "q": "Sovuqqa chidamlimi?",
+            "a": "O'zbekiston iqlimiga moslashtirilgan navlar -20°C gacha chiday oladi. Sovuq mintaqalarga maxsus tavsiya."
+          }
+        ]
+      },
+      "orik-kochati": {
+        "title": "O'rik ko'chati sotib olish — Parkent Plants",
+        "h1": "O'rik ko'chati",
+        "metaDescription": "O'rik ko'chati ulgurji va chakana — eksport sifatidagi mahalliy va xorijiy navlar. Fitosanitar sertifikat, 23 yil tajriba. Parkent Plants ko'chatzori.",
+        "intro": "O'rik — O'zbekistonning ramziy mevasi. Quruq mevasi (qoqi) va yangi iste'mol uchun jahonda mashhur. Parkent Plants'da mahalliy va xorijiy o'rik navlarini taklif etamiz: shirin, katta kalibr, naqliyotga chidamli. Eksport uchun mos navlar — Yevropa va MDH bozorlariga 5-7 kunda yetkaziladi.",
+        "buyingGuide": "O'rik tanlashda: 1) Maqsad — yangi iste'mol uchun katta kalibr (50+ mm), qoqi uchun yuqori shakar tarkibi, jem/murabbo uchun kichikroq lekin xushbo'y nav. 2) Pishish — erta o'rik (iyun) bozorda yuqori narx beradi, lekin hajmi kichikroq. Kech o'rik kattaroq lekin raqobat ko'proq. 3) Sovuqqa chidamlilik — kechki gulli navlar (rezerv kurtaklar) tavsiya etiladi.",
+        "pricing": "O'rik ko'chati narxi nav va payvandtagga qarab. 206-son qaror 50% subsidiya, har bir ko'chatga 10 000-25 000 so'mgacha. Ulgurji 1000+ dona maxsus narx. Agronom bepul maslahati bilan to'g'ri nav tanlanadi.",
+        "faq": [
+          {
+            "q": "O'rik necha yilda hosil beradi?",
+            "a": "2-3 yilda dastlabki hosil, 4-5 yilda to'liq sanoat hosili. Tez hosilga kiruvchi meva."
+          },
+          {
+            "q": "Bahorgi sovuqdan qanday himoyalaymiz?",
+            "a": "Erta gullaydi — bahorgi sovuq xavfli. Yechim: kech gulli navlar tanlash, tutun bilan himoya, sug'orish bilan harorat barqarorlashtirish."
+          },
+          {
+            "q": "Eksport uchun qaysi nav?",
+            "a": "Yirik kalibrli (50+ mm), qattiq po'stli, shirin (brix 16+) navlar Yevropa va MDH bozorlariga eng mos. Agronomimiz tavsiya beradi."
+          },
+          {
+            "q": "Qoqi uchun maxsus navlar?",
+            "a": "Ha — shakari yuqori (brix 22+), nam tarkibi past navlar quritish uchun maxsus. Standart yangi iste'mol navlaridan farq qiladi."
+          },
+          {
+            "q": "Sertifikat?",
+            "a": "Fitosanitar sertifikat, ekinboplik xulosasi, 3 yillik nav kafolati — barcha hujjatlar 206-son qaror subsidiyasiga to'liq mos."
+          }
+        ]
+      },
+      "olxori-kochati": {
+        "title": "Olxo'ri ko'chati sotib olish — Parkent Plants",
+        "h1": "Olxo'ri ko'chati",
+        "metaDescription": "Olxo'ri ko'chati ulgurji va chakana — qora, sariq, qizil navlar. Fitosanitar sertifikat, ulgurji narx, 3 yillik kafolat. Parkent Plants.",
+        "intro": "Olxo'ri — chidamli va sermahsul mevali daraxt. Qora, sariq va qizil rangli olxo'rilar — qanddor, naqliyotga chidamli. Parkent Plants'da intensiv bog' uchun moslashtirilgan olxo'ri navlarini taklif etamiz. Yangi iste'mol, konserva va quritish uchun mos.",
+        "buyingGuide": "Olxo'ri tanlashda: 1) Rang/tur — qora olxo'ri (eng ko'p talab), sariq, qizil. 2) Pishish davri — erta va kech navlarni birga ekish marketingni yaxshilaydi. 3) Changlanish — ko'p olxo'ri navlari changlatuvchi talab qiladi, agronomimiz mos sxema beradi.",
+        "pricing": "Olxo'ri ko'chati narxi nav va payvandtagga qarab. 206-son qaror 50% subsidiya. Ulgurji buyurtma uchun maxsus narx, agronomdan to'liq hisob-kitob oling.",
+        "faq": [
+          {
+            "q": "Olxo'ri necha yilda hosil beradi?",
+            "a": "2-3 yilda dastlabki hosil, 4-5 yilda to'liq. Tez hosilga kiruvchi va sermahsul daraxt."
+          },
+          {
+            "q": "Changlanish bilan nima qilamiz?",
+            "a": "Ko'p olxo'ri navlari changlatuvchi talab qiladi. Bizning agronomimiz changlanish sxemasini tuzib beradi — yonida mos nav ekamiz."
+          },
+          {
+            "q": "Qoqi uchunmi?",
+            "a": "Ha, ba'zi navlar quritish uchun ham mos (Chernoslif tipidagi qora olxo'rilar). Agronomdan tavsiya oling."
+          },
+          {
+            "q": "Sovuqqa chidamlimi?",
+            "a": "Olxo'ri sovuqqa o'rik va shaftolidan ko'ra chidamliroq. -30°C gacha (nav va payvandtagga qarab)."
+          },
+          {
+            "q": "Sertifikat?",
+            "a": "Fitosanitar sertifikat, ekinboplik xulosasi, 3 yillik nav kafolati — 206-son qaror subsidiyasiga to'liq mos."
+          }
+        ]
+      },
+      "nok-kochati": {
+        "title": "Nok ko'chati sotib olish — Parkent Plants",
+        "h1": "Nok ko'chati",
+        "metaDescription": "Nok ko'chati ulgurji va chakana — yozgi va kuzgi navlar. Fitosanitar sertifikat, payvandtag tanlovi, 23 yil tajriba. Parkent Plants.",
+        "intro": "Nok (armut) — kech etilib, uzoq saqlanadigan meva. Parkent Plants'da Yevropa va mahalliy nok navlarini taklif etamiz: shirin, sokchli, naqliyotga chidamli. Konferens, Williams, Bere navlari va boshqa eksport sifatidagi turlar.",
+        "buyingGuide": "Nok tanlashda: 1) Pishish — yozgi navlar tezda iste'mol qilinadi, kuzgi navlar 4-6 oygacha saqlanadi. 2) Eksport uchun Williams, Konferens — qattiq, transport chidamli. 3) Payvandtag — kuchli quduqli payvandtag (BA29) yoki o'rta darajadagi (Quince C).",
+        "pricing": "Nok ko'chati narxi nav va payvandtagga qarab. Subsidiya 50% — 206-son qaror. Ulgurji buyurtma uchun maxsus narx. Agronom bilan loyihangizga moslashtirib hisoblash.",
+        "faq": [
+          {
+            "q": "Nok necha yilda hosil beradi?",
+            "a": "3-4 yilda dastlabki hosil, 5-6 yilda to'liq. Nok olma yoki shaftolidan biroz sekinroq, lekin uzoq hosil beruvchi."
+          },
+          {
+            "q": "Qanday sharoit kerak?",
+            "a": "Quyosh ko'p, suv yetarli, drenaj yaxshi tuproq. O'zbekiston iqlimiga juda mos."
+          },
+          {
+            "q": "Eksport uchun?",
+            "a": "Williams, Konferens — qattiq go'shtli, yashilroq uzilib pishadigan, transportga eng chidamli navlar. Yevropa bozoriga mos."
+          },
+          {
+            "q": "Saqlash necha oy?",
+            "a": "Kuzgi navlar (Konferens) sovutgichda 4-6 oy. Bu eksport va sotuvni davriy ravishda kengaytirish imkonini beradi."
+          },
+          {
+            "q": "Sertifikat?",
+            "a": "Fitosanitar sertifikat, ekinboplik xulosasi, 3 yillik nav kafolati. 206-son qaror subsidiyasiga to'liq mos."
+          }
+        ]
+      },
+      "uzum-kochati": {
+        "title": "Uzum ko'chati — Danaksiz va shirin navlar 2027",
+        "h1": "Uzum ko'chati",
+        "metaDescription": "Uzum ko'chati ulgurji va chakana — danaksiz (urug'siz) va shirin navlar. Fitosanitar sertifikat, eksport sifati, 2027 buyurtma. Parkent Plants.",
+        "intro": "Uzum — O'zbekistonning eng qadimgi va daromadli mevasi. Parkent Plants'da global bozor talabiga mos uzum navlarini taklif etamiz: danaksiz (urug'siz) Sultanina, Crimson Seedless va boshqa zamonaviy navlar, hamda mahalliy klassik navlar. 206-son qarorda uzumga maxsus subsidiya: danaksiz va yangi navlarga har biriga 7 500 so'mgacha qoplanadi.",
+        "buyingGuide": "Uzum tanlashda: 1) Danaksizmi? — eksport va premium bozor uchun majburiy. 2) Maqsad — yangi iste'mol uchun katta yumshoq donlari (Crimson), mayiz uchun ko'p shakar (Sultanina), vino uchun maxsus navlar. 3) Shpaler — zamonaviy intensiv uzumzor uchun temir-beton shpaler. Subsidiya 6-ILOVA bo'yicha shpalerga ham qoplanadi.",
+        "pricing": "Uzum ko'chati narxi nav va payvandtagga qarab. 206-son qaror subsidiya: danaksiz va yangi nav uzum ko'chatlariga har biriga 7 500 so'mgacha; mahalliy klassik uzum ko'chatlariga 2 000 so'mgacha. Shpalerga ham 50% qoplanadi (ustun uzunligiga qarab 25 000-70 000 so'mgacha har bir ustun).",
+        "faq": [
+          {
+            "q": "Danaksiz uzum nimaga maxsus?",
+            "a": "Eksport va premium bozor majburiy talabi. Subsidiya yuqoriroq (7 500 so'm vs 2 000 so'm). Iste'molchi tomondan yuqori talab — sotish narxi 1.5-2 baravar yuqori."
+          },
+          {
+            "q": "Necha yilda hosil beradi?",
+            "a": "2-3 yilda dastlabki hosil, 4-5 yilda to'liq. To'g'ri shpaler va sug'orish bilan tez."
+          },
+          {
+            "q": "Shpaler kerakmi?",
+            "a": "Ha — intensiv uzumzorda majburiy. Shpaler bog'dorchilikni mexanizatsiyalashtiradi va hosildorlikni 2-3 barobar oshiradi. Subsidiya 50%."
+          },
+          {
+            "q": "Tomchilatib sug'orish?",
+            "a": "1-ILOVA bo'yicha 8 mln so'm/ga subsidiya. Uzumzor uchun majburiy — suv tejaydi, hosildorlikni oshiradi, kasalliklarni kamaytiradi."
+          },
+          {
+            "q": "Sertifikat?",
+            "a": "Fitosanitar sertifikat, ekinboplik xulosasi, nav kafolati 3 yilga. 206-son qaror barcha talablariga mos."
+          }
+        ]
+      },
+      "bodom-kochati": {
+        "title": "Bodom ko'chati sotib olish — Parkent Plants",
+        "h1": "Bodom ko'chati",
+        "metaDescription": "Bodom ko'chati ulgurji va chakana — eng sermahsul navlar, qurg'oqchilikka chidamli. Fitosanitar sertifikat, 23 yil tajriba. Parkent Plants.",
+        "intro": "Bodom — qurg'oqchilikka chidamli, yuqori daromadli yong'oq daraxti. Parkent Plants'da Yevropa va Amerika navlarini taklif etamiz: Nonpareil, Carmel, Independence va boshqa zamonaviy navlar. O'zbekistonning quruq mintaqalariga (Buxoro, Navoiy, Surxondaryo) eng mos meva — minimal suv bilan yuqori hosildorlik.",
+        "buyingGuide": "Bodom tanlashda: 1) Changlanish — ba'zi navlar o'zini changlatadi (Independence), boshqalari changlatuvchi talab qiladi (Nonpareil + Carmel). 2) Iqlim — qishi sovuq mintaqalarga -25°C chidamli navlar. 3) Suv — bodom suv kamligida ham yashaydi, lekin yuqori hosil uchun tomchilatib sug'orish kerak.",
+        "pricing": "Bodom ko'chati narxi nav va payvandtagga qarab. 206-son qaror subsidiya 50% — vegetativ ko'paytirilgan har biriga 10 000 so'mgacha, in-vitroga 25 000 so'mgacha. Tomchilatib sug'orish uchun ham subsidiya: meva ekinlari 6 mln so'm/ga.",
+        "faq": [
+          {
+            "q": "Bodom necha yilda hosil beradi?",
+            "a": "3-4 yilda dastlabki hosil, 5-7 yilda to'liq sanoat hosili. Sekin boshlanadi, lekin 25-30 yil hosil beradi."
+          },
+          {
+            "q": "Qurg'oqchilikka qanday chidamli?",
+            "a": "Bodom O'rta dengiz iqlimida shakllangan — kam suv bilan yashaydi. Lekin yuqori hosildorlik uchun tomchilatib sug'orish tavsiya etiladi."
+          },
+          {
+            "q": "Eksport uchun?",
+            "a": "Nonpareil — dunyo bozorida etakchi nav, AQSh va Yevropa standarti. Carmel ham eksport sifatida."
+          },
+          {
+            "q": "Yetkazib berish?",
+            "a": "Ko'chatlar kuz oxiri yoki erta bahor. O'zbekiston bo'yicha + qo'shni davlatlarga."
+          },
+          {
+            "q": "Sertifikat?",
+            "a": "Fitosanitar sertifikat, ekinboplik xulosasi, 3 yillik nav kafolati. 206-son qaror subsidiyasiga to'liq mos."
+          }
+        ]
+      }
+    }
+  },
   "news": {
     "eyebrow": "Yangiliklar",
     "title": "Bog'dorchilik va davlat qo'llab-quvvatlovi",

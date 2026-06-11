@@ -14,6 +14,7 @@ import { trackEvent, type TrackEventKey } from "@/lib/analytics/events";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { BRAND } from "@/lib/constants";
+import { FRUIT_CATEGORIES } from "@/lib/categories";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -23,7 +24,7 @@ import {
 
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
-  { key: "nursery", href: "#nurseries" },
+  { key: "saplings", href: "/kochatlar" },
   { key: "about", href: "#about" },
   { key: "news", href: "#news" },
   { key: "contact", href: "#request" },
@@ -73,7 +74,7 @@ export function Footer() {
       <Container size="wide">
         <div className="grid gap-12 py-16 lg:grid-cols-12 lg:gap-8 lg:py-20">
           {/* Brand */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <Logo variant="light" />
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cream-100/70">
               {t("footer.tagline")}
@@ -100,7 +101,7 @@ export function Footer() {
           </div>
 
           {/* Nav */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="font-serif text-base font-semibold text-cream">
               {t("footer.navTitle")}
             </h3>
@@ -118,8 +119,27 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Categories — SEO uchun muhim internal links */}
+          <div className="lg:col-span-3">
+            <h3 className="font-serif text-base font-semibold text-cream">
+              {t("saplings.categoriesTitle")}
+            </h3>
+            <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-2 lg:grid-cols-1">
+              {FRUIT_CATEGORIES.map((cat) => (
+                <li key={cat.slug}>
+                  <Link
+                    href={`/${locale}/kochatlar/${cat.slug}`}
+                    className="text-sm text-cream-100/70 transition-colors hover:text-gold-400"
+                  >
+                    {cat.icon} {t(`saplings.categories.${cat.slug}.h1`)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <h3 className="font-serif text-base font-semibold text-cream">
               {t("footer.contactTitle")}
             </h3>
