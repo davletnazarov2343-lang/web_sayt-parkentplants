@@ -32,7 +32,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "olma-kochati",
     icon: "🍎",
-    cover: "/varieties/saplings/apple-cover.jpg",
+    cover: "/images/olma-kochati.jpg",
     keywords: [
       "olma ko'chati",
       "olma ko'chati narxi",
