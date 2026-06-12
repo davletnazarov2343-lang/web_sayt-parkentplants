@@ -136,6 +136,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "bodom-kochati",
     icon: "🌰",
+    cover: "/images/bodom-kochati.jpg",
     keywords: [
       "bodom ko'chati",
       "mindal ko'chati",
