@@ -534,6 +534,48 @@
       "callUs": "Qo'ng'iroq qilish",
       "backToCategories": "Barcha kategoriyalar"
     },
+    "featuredVarieties": {
+      "title": "Sotuvdagi uzum navlari — buyurtmaga tayyor",
+      "subtitle": "Hozir ekish mumkin. Premium sifat, urug'siz navlar. Telegram orqali buyurtma bering.",
+      "labels": {
+        "ripening": "Pishish vaqti",
+        "yield": "Hosildorlik",
+        "price": "Narx",
+        "perPiece": "/ dona",
+        "tonsPerHa": "tonna/ga",
+        "currency": "so'm",
+        "availableNow": "Hozir ekish mumkin",
+        "orderTelegram": "Buyurtma berish",
+        "regional": "(mintaqaga qarab)",
+        "limited": "Soni cheklangan",
+        "seedless": "Urug'siz nav"
+      },
+      "highlights": {
+        "best-seller": "Eng ko'p sotiladigan",
+        "new": "Yangi",
+        "limited": "Soni kam"
+      },
+      "varieties": {
+        "avatar": {
+          "name": "Avatar",
+          "nameCyrillic": "Аватар",
+          "ripening": "15-iyul",
+          "description": "Eng ertaki urug'siz uzum navi. Premium sifat — eksport va ichki bozor uchun mos."
+        },
+        "crimson": {
+          "name": "Crimson",
+          "nameCyrillic": "Кримсон",
+          "ripening": "25-avgust",
+          "description": "Eng serhosil va uzoq saqlanadigan urug'siz nav. Eksport qilish imkoniyati yuqori — Markaziy Osiyo va Yevropa bozorlariga mos."
+        },
+        "autumn-royal": {
+          "name": "Autumn Royal",
+          "nameCyrillic": "Аутим Рояль",
+          "ripening": "25-avgust",
+          "description": "Premium urug'siz nav, kuzda pishadi. Yirik, baquvvat shingillar — uzum sevuvchilar uchun klassik tanlov."
+        }
+      }
+    },
     "categories": {
       "olma-kochati": {
         "title": "Olma ko'chati sotib olish — Parkent Plants",

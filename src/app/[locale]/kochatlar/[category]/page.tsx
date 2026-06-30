@@ -22,6 +22,8 @@ import {
 } from "@/lib/categories";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getNewsBySlug } from "@/lib/news";
+import { GrapeVarietyCards } from "@/components/catalog/GrapeVarietyCards";
+import { GRAPE_VARIETIES } from "@/lib/grapes/featured-varieties";
 
 type Props = {
   params: { locale: string; category: string };
@@ -157,11 +159,51 @@ export default async function CategoryPage({
     .map((slug) => getNewsBySlug(slug))
     .filter(Boolean);
 
+  // Uzum kategoriyasi uchun individual Product schemalar
+  const isGrapeCategory = category === "uzum-kochati";
+  const grapeProductSchemas = isGrapeCategory
+    ? GRAPE_VARIETIES.map((variety) => {
+        const v = (
+          messages.saplings as unknown as {
+            featuredVarieties?: {
+              varieties: Record<
+                string,
+                { name: string; nameCyrillic: string; description: string }
+              >;
+            };
+          }
+        )?.featuredVarieties?.varieties?.[variety.slug];
+        if (!v) return null;
+        return {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: `${v.name} (${v.nameCyrillic})`,
+          description: v.description,
+          image: `https://parkentplants.uz${variety.image}`,
+          brand: { "@type": "Brand", name: "Parkent Plants" },
+          category: "Grape sapling",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "UZS",
+            price: String(variety.priceUzs),
+            availability: variety.availableNow
+              ? "https://schema.org/InStock"
+              : "https://schema.org/PreOrder",
+            seller: { "@id": "https://parkentplants.uz#business" },
+            url: "https://t.me/+998995573800",
+          },
+        };
+      }).filter(Boolean)
+    : [];
+
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={productSchema} />
       <JsonLd data={faqSchema} />
+      {grapeProductSchemas.map((schema, i) =>
+        schema ? <JsonLd key={`grape-${i}`} data={schema} /> : null,
+      )}
 
       <article className="pt-28 pb-24 sm:pt-32 lg:pt-40">
         <Container size="narrow">
@@ -208,6 +250,9 @@ export default async function CategoryPage({
           <div className="mt-10 text-base leading-relaxed text-earth-700 sm:text-lg">
             <p>{intro}</p>
           </div>
+
+          {/* Sotuvdagi navlar — faqat uzum kategoriyasi uchun (hozircha) */}
+          {isGrapeCategory && <GrapeVarietyCards locale={locale} />}
 
           {/* Buying guide */}
           <section className="mt-12">
