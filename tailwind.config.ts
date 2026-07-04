@@ -37,6 +37,19 @@ const config: Config = {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         serif: ["var(--font-fraunces)", "Georgia", "serif"],
       },
+      boxShadow: {
+        soft: "0 2px 20px -8px rgba(27, 67, 50, 0.12)",
+        "soft-lg": "0 16px 44px -16px rgba(27, 67, 50, 0.28)",
+      },
+      keyframes: {
+        kenburns: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.08)" },
+        },
+      },
+      animation: {
+        kenburns: "kenburns 22s ease-out forwards",
+      },
     },
   },
   plugins: [],

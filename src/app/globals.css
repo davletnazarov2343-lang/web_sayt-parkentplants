@@ -26,3 +26,35 @@
     text-wrap: balance;
   }
 }
+
+/* Scroll-reveal — element ko'rinishga kirganda yumshoq suzib chiqadi.
+   Yashirish faqat JS yoqilganda (<head> dagi .js flagi) qo'llanadi —
+   shunda no-JS foydalanuvchilar va qidiruv tizimlari kontentni ko'radi. */
+.js .reveal {
+  opacity: 0;
+}
+
+.js .reveal.reveal-in {
+  animation: pp-reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pp-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Harakat kamaytirilgan foydalanuvchilar uchun — hech qanday animatsiya yo'q. */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+  }
+  .js .reveal.reveal-in {
+    animation: none;
+  }
+}

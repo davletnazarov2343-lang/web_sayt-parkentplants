@@ -190,6 +190,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* JS yoqilganini belgilaydi (paint'dan oldin) — scroll-reveal shu flag bilan
+            ishlaydi; JS o'chiq bo'lsa kontent yashirilmaydi. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         {/* Performance hints — tashqi resurslar tezroq yuklanadi */}
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.youtube-nocookie.com" />

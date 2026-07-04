@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 import { trackEvent } from "@/lib/analytics/events";
 
 export function Hero() {
@@ -17,7 +18,7 @@ export function Hero() {
       {/* Background photo — real Norchontol nursery rows */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-cover bg-center"
+        className="absolute inset-0 -z-20 bg-cover bg-center animate-kenburns will-change-transform motion-reduce:animate-none"
         style={{
           backgroundImage: "url('/images/hero-nursery.jpg')",
           filter: "saturate(1.05)",
@@ -33,15 +34,17 @@ export function Hero() {
       {/* Subtle gold accent glow (top-right) */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,97,0.18),transparent_55%)]"
+        className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,97,0.26),transparent_55%)]"
       />
 
       <Container>
         <div className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
-            {t("eyebrow")}
-          </span>
+          <Reveal>
+            <span className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
+              {t("eyebrow")}
+            </span>
+          </Reveal>
 
           <h1 className="mt-8 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-cream sm:text-5xl lg:text-7xl text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
             {t("title")}
@@ -51,7 +54,10 @@ export function Hero() {
             {t("subtitle")}
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <Reveal
+            delay={120}
+            className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
+          >
             <LinkButton
               href="#nurseries"
               variant="primary"
@@ -71,7 +77,7 @@ export function Hero() {
             >
               {t("ctaSecondary")}
             </LinkButton>
-          </div>
+          </Reveal>
         </div>
       </Container>
 

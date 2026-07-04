@@ -11,13 +11,13 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:pointer-events-none disabled:opacity-50 select-none";
+  "inline-flex items-center justify-center gap-2 font-medium rounded-md transition-all duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream disabled:pointer-events-none disabled:opacity-50 select-none";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-forest-700 text-cream hover:bg-forest-900 active:bg-forest-900",
+    "bg-forest-700 text-cream hover:bg-forest-900 hover:shadow-soft active:bg-forest-900",
   secondary:
-    "bg-gold-400 text-earth-900 hover:bg-gold-100 active:bg-gold-100",
+    "bg-gold-400 text-earth-900 hover:bg-gold-100 hover:shadow-soft active:bg-gold-100",
   outline:
     "bg-transparent text-forest-700 border border-forest-700 hover:bg-forest-700 hover:text-cream",
   ghost:
