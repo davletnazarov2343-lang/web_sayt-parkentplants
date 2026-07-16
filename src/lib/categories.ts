@@ -48,7 +48,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "gilos-kochati",
     icon: "🍒",
-    cover: "/images/gilos-bozori-2027.jpg",
+    cover: "/images/gilos-kochati.jpg",
     keywords: [
       "gilos ko'chati",
       "gilos ko'chati narxi",
@@ -65,6 +65,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "olcha-kochati",
     icon: "🍒",
+    cover: "/images/olcha-kochati.jpg",
     keywords: [
       "olcha ko'chati",
       "olcha ko'chati narxi",
@@ -77,6 +78,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "shaftoli-kochati",
     icon: "🍑",
+    cover: "/images/shaftoli-kochati.jpg",
     keywords: [
       "shaftoli ko'chati",
       "nektarin ko'chati",
@@ -89,6 +91,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "orik-kochati",
     icon: "🍑",
+    cover: "/images/orik-kochati.jpg",
     keywords: [
       "o'rik ko'chati",
       "abrikos ko'chati",
@@ -101,6 +104,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "olxori-kochati",
     icon: "🟣",
+    cover: "/images/olxori-kochati.jpg",
     keywords: [
       "olxo'ri ko'chati",
       "slivka ko'chati",
@@ -112,6 +116,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "nok-kochati",
     icon: "🍐",
+    cover: "/images/nok-kochati.jpg",
     keywords: [
       "nok ko'chati",
       "armut ko'chati",
@@ -123,6 +128,7 @@ export const FRUIT_CATEGORIES: FruitCategory[] = [
   {
     slug: "uzum-kochati",
     icon: "🍇",
+    cover: "/images/uzum-kochati.jpg",
     keywords: [
       "uzum ko'chati",
       "danaksiz uzum ko'chati",
