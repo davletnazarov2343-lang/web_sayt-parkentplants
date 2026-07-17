@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parkent Plants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --qora-gilos:#14060B;      /* tun qorong'usidagi gilos */
+    --pishgan:#3A0D19;         /* pishgan gilos qizili */
+    --gilos-qizil:#E0263F;     /* yorqin gilos */
+    --gilos-chuqur:#A31228;
+    --barg:#173D2C;            /* gilos bargi */
+    --barg-chuqur:#0F2C1F;
+    --gulbarg:#FDF8F5;         /* gilos guli oq-pushti */
+    --oltin:#E9B94E;
+    --qaymoq:#F6E9DC;
+    --matn:#33141C;
+    --radius:22px;
+    --display:'Unbounded',sans-serif;
+    --body:'Golos Text',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--matn);
+    background:var(--gulbarg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  a:focus-visible{outline:3px solid var(--gilos-qizil);outline-offset:3px;border-radius:6px}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(900px 520px at 78% -10%, rgba(224,38,63,.38), transparent 62%),
+      radial-gradient(700px 480px at 8% 108%, rgba(233,185,78,.14), transparent 60%),
+      linear-gradient(160deg, var(--pishgan) 0%, var(--qora-gilos) 74%);
+    color:var(--qaymoq);
+    padding:clamp(72px,12vh,132px) 24px clamp(88px,13vh,150px);
+  }
+  .hero-inner{max-width:880px;margin:0 auto;position:relative;z-index:2;text-align:center}
+  .warn-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:72px;height:72px;border-radius:50%;
+    background:rgba(224,38,63,.16);
+    border:1px solid rgba(224,38,63,.45);
+    font-size:34px;line-height:1;
+    margin-bottom:28px;
+    box-shadow:0 0 0 10px rgba(224,38,63,.06), 0 0 44px rgba(224,38,63,.35);
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.35rem,3.6vw,2.35rem);
+    line-height:1.32;
+    letter-spacing:-.01em;
+  }
+  h1 .pct{
+    display:block;
+    font-weight:800;
+    font-size:clamp(4.2rem,13vw,8.2rem);
+    line-height:1;
+    margin:6px 0 18px;
+    background:linear-gradient(120deg,#FF6B7E 0%,var(--gilos-qizil) 45%,#FFB1A0 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 10px 34px rgba(224,38,63,.45));
+  }
+  h1 .soft{
+    display:block;
+    margin-top:16px;
+    font-family:var(--body);
+    font-weight:400;
+    font-size:clamp(1rem,2vw,1.2rem);
+    color:rgba(246,233,220,.72);
+    letter-spacing:0;
+  }
+  /* suzuvchi gilos siluetlari */
+  .cherry{position:absolute;z-index:1;opacity:.5;color:#5C1626}
+  .cherry svg{display:block;width:100%;height:auto}
+  .c1{width:120px;top:12%;left:5%;animation:drift 16s ease-in-out infinite}
+  .c2{width:78px;top:64%;right:7%;animation:drift 13s ease-in-out infinite reverse}
+  .c3{width:56px;top:18%;right:16%;opacity:.35;animation:drift 19s ease-in-out infinite 2s}
+  .c4{width:64px;bottom:8%;left:16%;opacity:.35;animation:drift 15s ease-in-out infinite 1s}
+  @keyframes drift{
+    0%,100%{transform:translateY(0) rotate(-4deg)}
+    50%{transform:translateY(-22px) rotate(5deg)}
+  }
+
+  /* ---------- SEKSIYA UMUMIY ---------- */
+  .section{padding:clamp(64px,9vh,104px) 24px}
+  .container{max-width:1020px;margin:0 auto}
+  .section-head{max-width:760px;margin:0 auto clamp(40px,6vh,60px);text-align:center}
+  .head-mark{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:58px;height:58px;border-radius:16px;
+    font-size:27px;line-height:1;margin-bottom:20px;
+  }
+  h2{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.15rem,2.6vw,1.65rem);
+    line-height:1.42;
+    letter-spacing:-.01em;
+  }
+
+  /* ---------- YO'QOTISHLAR ---------- */
+  .lose .head-mark{background:rgba(224,38,63,.1);border:1px solid rgba(224,38,63,.28)}
+  .lose h2{color:var(--matn)}
+  .cards{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:720px){.cards{grid-template-columns:1fr 1fr;gap:20px}}
+  .card{
+    background:#fff;
+    border:1px solid rgba(58,13,25,.08);
+    border-radius:var(--radius);
+    padding:26px 26px 26px 22px;
+    display:flex;gap:16px;align-items:flex-start;
+    box-shadow:0 6px 26px rgba(58,13,25,.06);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(163,18,40,.13)}
+  .card .mark{
+    flex:0 0 auto;
+    width:46px;height:46px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;line-height:1;
+    background:linear-gradient(140deg,rgba(224,38,63,.12),rgba(233,185,78,.14));
+    border:1px solid rgba(224,38,63,.18);
+  }
+  .card p{font-size:1rem;font-weight:500;color:var(--matn)}
+  .num{color:var(--gilos-chuqur);font-weight:700;white-space:nowrap}
+
+  /* ---------- PARKENT BERADI ---------- */
+  .gives{
+    background:
+      radial-gradient(720px 420px at 90% 0%, rgba(233,185,78,.1), transparent 60%),
+      linear-gradient(165deg,var(--barg) 0%,var(--barg-chuqur) 80%);
+    color:var(--qaymoq);
+  }
+  .gives .head-mark{background:rgba(233,185,78,.12);border:1px solid rgba(233,185,78,.3)}
+  .gives h2{color:var(--qaymoq)}
+  .gives .card{
+    background:rgba(253,248,245,.05);
+    border:1px solid rgba(253,248,245,.13);
+    box-shadow:none;
+  }
+  .gives .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.28);background:rgba(253,248,245,.08)}
+  .gives .card .mark{
+    background:rgba(233,185,78,.13);
+    border:1px solid rgba(233,185,78,.3);
+  }
+  .gives .card p{color:rgba(246,233,220,.94);font-weight:400}
+  .gives .num{color:var(--oltin);font-weight:700}
+  .gives a{
+    color:var(--oltin);
+    font-weight:600;
+    text-decoration:underline;
+    text-decoration-color:rgba(233,185,78,.45);
+    text-underline-offset:4px;
+    transition:text-decoration-color .25s ease;
+  }
+  .gives a:hover{text-decoration-color:var(--oltin)}
+  .card.wide{grid-column:1/-1}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:
+      radial-gradient(700px 420px at 50% -20%, rgba(224,38,63,.35), transparent 65%),
+      linear-gradient(180deg,var(--qora-gilos) 0%, #1C0810 100%);
+    color:var(--qaymoq);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta-btn{
+    display:inline-block;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1rem,2.4vw,1.3rem);
+    color:#fff;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--gilos-qizil),var(--gilos-chuqur));
+    padding:22px 44px;
+    border-radius:999px;
+    box-shadow:0 14px 44px rgba(224,38,63,.42), inset 0 1px 0 rgba(255,255,255,.22);
+    transition:transform .3s ease, box-shadow .3s ease;
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  .cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 20px 56px rgba(224,38,63,.55)}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 14px 44px rgba(224,38,63,.42), 0 0 0 0 rgba(224,38,63,.32)}
+    50%{box-shadow:0 14px 44px rgba(224,38,63,.42), 0 0 0 22px rgba(224,38,63,0)}
+  }
+  .phones{
+    margin-top:36px;
+    display:flex;flex-direction:column;gap:12px;align-items:center;
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    font-weight:600;
+    letter-spacing:.02em;
+  }
+  .phones a{text-decoration:none;color:var(--qaymoq);transition:color .25s ease}
+  .phones a:hover{color:#FF8A98}
+
+  /* ---------- FOOTER / SOCIAL ---------- */
+  .footer{
+    background:#0E0409;
+    padding:44px 24px 52px;
+  }
+  .socials{
+    max-width:1020px;margin:0 auto;
+    display:flex;flex-wrap:wrap;justify-content:center;
+    gap:12px;
+  }
+  .socials a{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.78rem;
+    letter-spacing:.14em;
+    color:rgba(246,233,220,.82);
+    text-decoration:none;
+    padding:13px 22px;
+    border:1px solid rgba(246,233,220,.16);
+    border-radius:999px;
+    transition:all .3s ease;
+  }
+  .socials a:hover{
+    color:#fff;
+    border-color:var(--gilos-qizil);
+    background:rgba(224,38,63,.12);
+    transform:translateY(-2px);
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="gilos">
+      <path d="M50 8 C42 26 30 34 24 52 M50 8 C58 24 70 32 74 50" stroke="currentColor" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <path d="M50 8 C60 2 72 4 78 12 C70 18 58 16 50 8 Z" fill="currentColor" opacity=".8"/>
+      <circle cx="22" cy="66" r="15" fill="currentColor"/>
+      <circle cx="76" cy="64" r="15" fill="currentColor"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <span class="cherry c1" aria-hidden="true"><svg viewBox="0 0 100 88"><use href="#gilos"/></svg></span>
+  <span class="cherry c2" aria-hidden="true"><svg viewBox="0 0 100 88"><use href="#gilos"/></svg></span>
+  <span class="cherry c3" aria-hidden="true"><svg viewBox="0 0 100 88"><use href="#gilos"/></svg></span>
+  <span class="cherry c4" aria-hidden="true"><svg viewBox="0 0 100 88"><use href="#gilos"/></svg></span>
+
+  <div class="hero-inner">
+    <div class="warn-badge">⚠️</div>
+    <h1>
+      <span class="pct">20%</span>
+      Чегирма тугашига ҳам оз кунлар қолди,
+      <span class="soft">чунки биз пайвандлаш мавсумини бошлаймиз...</span>
+    </h1>
+  </div>
+</header>
+
+<!-- ============ NIMA YO'QOTASIZ ============ -->
+<section class="section lose">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-mark">❗️</div>
+      <h2>Келинг кўриб чиқамиз, чегирма вақти тугаса ва биз пайвандлаш ишларини бошласак, сиз нима йўқотасиз❓</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal"><span class="mark">🪴</span><p>1 гектар кўчатдан <span class="num">666$ (7 992 000 сўм)</span> кам тўлаш имкониятингизни.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Энг янги ва сизга мос келадиган топ 10 гилос навлардан танлаб, пайванд қилдириш имкониятингизни.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Оғир, шўр тупроқларга мос тушадиган, совуққа ва иссиққа, вирусларга максимал чидамли клон пайвандтагни танлаш имкониятингизни.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>1 йил эртароқ даромадга кириш имкониятингизни ҳам, чунки биздаги супер пайвандтаг <span class="num">3-4 йилдан</span> ҳосилга киради. Бу гилос бизнесида энг муҳим аҳамиятга эга.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Халқаро эксперт агроном Шуҳрат Аброровнинг <span class="num">1 800 000 сўмлик</span> Агрономлар мактаби видео дарслигингизни.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p><span class="num">230 000 сўмлик</span> гилос етиштиришнинг катта китобингизни.</p></div>
+      <div class="card wide reveal"><span class="mark">🪴</span><p>Бепул етказиб бериш имкониятингизни.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARKENT PLANTS TAQDIM QILADI ============ -->
+<section class="section gives">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="head-mark">🔥</div>
+      <h2>Ундан ташқари “Parkent Plants” компанияси сизга нималарни тақдим қилади:</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card wide reveal"><span class="mark">🪴</span><p>1 дона кўчатга <span class="num">10 000 сўм</span> субсидия олиш имконияти. Илова (<a href="https://www.parkentplants.uz/uz/news/bogdorchilik-subsidiyalari-206-qaror" target="_blank" rel="noopener">Фермер хўжалигингиз бўлса Вазирлар Маҳкамасининг 2026 йил 28 апрелдаги 206-сон қарори боғдорчилик учун давлат томонидан қўллаб-қувватлаш.</a>) «<a href="https://www.parkentplants.uz/docs/bogdorchilik-subsidiyalari-206-qaror.pdf" target="_blank" rel="noopener">Ҳужжатни юклаб олиш</a>»</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Давлат стандарти сертификати ва субсидия олиш учун Parkent Plants томонидан бериладиган барча ҳужжатлар.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>1 йиллик бепул онлайн консультация ва қўллаб-қувватлаш хизмати.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Нав ва пайвандтаг ишончлилигига кафолат ҳужжати.</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Тупроқ таҳлили натижаларига хулоса (Пайвандтаг мослигини текшириш учун)</p></div>
+      <div class="card reveal"><span class="mark">🪴</span><p>Иқлимингизга энг мос навни танлашда ёрдам. (Совуқ уриш ва ёмғирда ёрилиш хавфини ҳисобга олган ҳолда)</p></div>
+      <div class="card wide reveal"><span class="mark">🪴</span><p>Экиш схемасини ва чанглатувчиларни мукаммал жойлаш бўйича тавсия.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta">
+  <div class="container reveal">
+    <a class="cta-btn" href="http://t.me/+998995573800" target="_blank" rel="noopener">«Ҳозироқ бизга боғланинг»</a>
+    <div class="phones">
+      <span>📱 <a href="tel:+998995573800">+998995573800</a> 📱</span>
+      <span>☎️ <a href="tel:+998781131819">+998781131819</a> 🎤</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <nav class="socials">
+    <a href="http://www.youtube.com/@shuhrat_abrorov" target="_blank" rel="noopener">YOU TUBE</a>
+    <a href="https://www.instagram.com/shuhrat_abrorov?igshid=YTQwZjQ0NmI0OA==" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a href="https://t.me/shuhrat_abrorov" target="_blank" rel="noopener">TELEGRAM</a>
+    <a href="https://www.facebook.com/profile.php?id=61552782846741&mibextid=ZbWKwL" target="_blank" rel="noopener">FACEBOOK</a>
+    <a href="https://www.tiktok.com/@fruit_house.uz?_t=8i2Duqmc8bY&_r=1" target="_blank" rel="noopener">TIK TOK</a>
+  </nav>
+</footer>
+
+<script>
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.reveal');
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(el => io.observe(el));
+  }
+</script>
+
+</body>
+</html>

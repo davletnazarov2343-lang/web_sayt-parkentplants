@@ -19,9 +19,22 @@ export type NewsArticle = {
   pdf?: string;
   cover?: string;
   featured?: boolean;
+  /**
+   * Agar berilsa, karta ichki /news/[slug] sahifa o'rniga to'g'ridan-to'g'ri
+   * shu URL'ga (statik HTML) havola qiladi; bunday maqola uchun ichki [slug]
+   * sahifa yaratilmaydi.
+   */
+  externalUrl?: string;
 };
 
 export const NEWS_ARTICLES: NewsArticle[] = [
+  {
+    slug: "gilos-payvand-chegirma",
+    publishedAt: "2026-07-17",
+    cover: "/images/gilos-kochati.jpg",
+    externalUrl: "/news/gilos-payvand-chegirma.html",
+    featured: false,
+  },
   {
     slug: "gilos-bozori-global-talab-2027",
     publishedAt: "2026-06-11",

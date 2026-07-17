@@ -64,7 +64,11 @@ type ArticleMessages = {
 };
 
 export function generateStaticParams() {
-  return NEWS_ARTICLES.map((n) => ({ slug: n.slug }));
+  // externalUrl bor maqolalar tashqi statik HTML fayl orqali ochiladi —
+  // ular uchun ichki [slug] sahifa yaratilmaydi (i18n kontent yo'q).
+  return NEWS_ARTICLES.filter((n) => !n.externalUrl).map((n) => ({
+    slug: n.slug,
+  }));
 }
 
 export async function generateMetadata({
@@ -72,7 +76,7 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const article = getNewsBySlug(slug);
-  if (!article) return {};
+  if (!article || article.externalUrl) return {};
 
   const t = await getTranslations("news");
   const title = t(`articles.${slug}.title`);
@@ -103,7 +107,9 @@ export default async function NewsArticlePage({
 }: Props) {
   unstable_setRequestLocale(locale);
   const article = getNewsBySlug(slug);
-  if (!article) notFound();
+  // externalUrl bor maqolalar uchun ichki sahifa yo'q — statik HTML asosiy
+  // kirish nuqtasi, shu yerga to'g'ridan-to'g'ri kirish notFound bo'lishi kerak.
+  if (!article || article.externalUrl) notFound();
 
   const t = await getTranslations("news");
   const messages = (await getMessages()) as unknown as {
