@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import {
@@ -55,14 +56,14 @@ export async function NewsPreview({ locale }: Props) {
               {article.cover && (
                 <Link
                   href={`/${locale}/news/${article.slug}`}
-                  className="block aspect-[16/9] overflow-hidden bg-earth-100"
+                  className="relative block aspect-[16/9] overflow-hidden bg-earth-100"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={article.cover}
                     alt={t(`articles.${article.slug}.title`)}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </Link>
               )}

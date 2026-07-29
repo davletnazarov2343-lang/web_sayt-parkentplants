@@ -6,6 +6,9 @@ import { isBitrixConfigured, sendLeadToBitrix } from "@/lib/bitrix";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// Vercel standart limiti (10s) Bitrix timeout'iga (7s) yetarli emas — 503
+// javobini yozib ulgurish uchun funksiyaga ko'proq vaqt beramiz.
+export const maxDuration = 20;
 
 /**
  * POST /api/leads
@@ -85,26 +88,37 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error("[leads] supabase insert failed:", error);
-      return NextResponse.json(
-        { ok: false, error: "STORAGE" },
-        { status: 500 },
-      );
+      // Faqat message/code — to'liq error obyektini log qilmaymiz, chunki
+      // Postgres constraint xatolarida "details" maydonida mijozning
+      // telefon qiymati oshkor bo'lib qolishi mumkin.
+      console.error("[leads] supabase insert failed:", {
+        message: error.message,
+        code: error.code,
+      });
+      // ERTA QAYTMAYMIZ — Supabase yiqilgan bo'lsa ham pastdagi Bitrix24
+      // bloki baribir ishlashi kerak (lid Bitrix orqali saqlanib qolsin).
+      // leadId shu holatda null qoladi, oxiridagi `persisted` tekshiruvi
+      // Bitrix natijasiga qarab mijozga to'g'ri javob beradi.
+    } else {
+      leadId = data.id as string;
     }
-    leadId = data.id as string;
   } else {
-    console.warn(
-      "[leads] Supabase not configured — lead won't be persisted:",
-      lead.name,
-      lead.phone,
-    );
+    // Mijoz ma'lumotini (ism/telefon) oshkor qilmasdan — faqat sabab va
+    // xavfsiz kontekstni yozamiz.
+    console.warn("[leads] Supabase not configured — lead won't be persisted", {
+      locale: lead.locale,
+      region: lead.region ?? null,
+      bitrixConfigured: isBitrixConfigured(),
+    });
   }
 
   // 4. Bitrix24 forward (await qilamiz — Vercel serverless runtime tugamasin)
+  let bitrixOk = false;
   if (isBitrixConfigured()) {
     try {
       const result = await sendLeadToBitrix(lead);
       if (result.ok) {
+        bitrixOk = true;
         console.log("[leads] bitrix sync ok, dealId:", result.leadId);
         if (supabase && leadId) {
           await supabase
@@ -129,7 +143,12 @@ export async function POST(request: NextRequest) {
         }
       }
     } catch (err) {
-      console.error("[leads] bitrix sync exception:", err);
+      // Faqat message — to'liq exception obyektini log qilmaymiz (ehtiyot
+      // chorasi: kutilmagan xato ichida so'rov tafsilotlari bo'lib qolmasin).
+      console.error(
+        "[leads] bitrix sync exception:",
+        err instanceof Error ? err.message : String(err),
+      );
     }
   } else if (supabase && leadId) {
     // Bitrix sozlanmagan — `skipped` deb belgilaymiz
@@ -139,14 +158,40 @@ export async function POST(request: NextRequest) {
       .eq("id", leadId);
   }
 
-  // 5. OK — agar hech qaysi tashqi servis sozlanmagan bo'lsa ham frontend muvaffaqiyatli
-  // ko'rinadi (dev paytida ishlash uchun). Productionda env to'liq bo'ladi.
-  if (!isSupabaseConfigured() && !isBitrixConfigured()) {
-    return NextResponse.json({
-      ok: true,
-      mode: "dev",
-      warning: "No backend configured — lead logged to console only",
+  // 5. Lid hech qayerga (Supabase ham, Bitrix ham) saqlanmadimi — mijozga
+  // YOLG'ON "muvaffaqiyatli" ko'rsatmaymiz, aks holda lid jimgina yo'qoladi.
+  const persisted = leadId !== null || bitrixOk;
+  if (!persisted) {
+    // Vercel loglarida darhol ko'rinadigan aniq belgi — mijoz ma'lumotini
+    // (ism/telefon) oshkor qilmasdan, faqat sabab va kontekstni yozamiz.
+    console.error("[leads] CRITICAL: lid hech qayerga saqlanmadi", {
+      locale: lead.locale,
+      region: lead.region ?? null,
+      supabaseConfigured: isSupabaseConfigured(),
+      bitrixConfigured: isBitrixConfigured(),
     });
+
+    // Faqat mahalliy dev muhitida (NODE_ENV !== "production") env sozlanmagan
+    // bo'lsa UI'ni sinash uchun "muvaffaqiyatli" javob beramiz. Productionda
+    // (Vercel, jonli sayt) bu holat HECH QACHON yuz bermasligi kerak — agar
+    // yuz bersa, mijozga rostgo'y xabar qaytariladi.
+    if (process.env.NODE_ENV !== "production") {
+      return NextResponse.json({
+        ok: true,
+        mode: "dev",
+        warning: "No backend configured — lead logged to console only",
+      });
+    }
+
+    const fallbackMessage =
+      lead.locale === "ru"
+        ? "Извините, на сервере техническая неполадка и заявка не сохранилась. Пожалуйста, позвоните нам напрямую: +998 78 113 18 19."
+        : "Kechirasiz, serverda texnik nosozlik yuz berdi va so'rovingiz saqlanmadi. Iltimos, bevosita qo'ng'iroq qiling: +998 78 113 18 19.";
+
+    return NextResponse.json(
+      { ok: false, error: "STORAGE_UNAVAILABLE", message: fallbackMessage },
+      { status: 503 },
+    );
   }
 
   return NextResponse.json({ ok: true, id: leadId });

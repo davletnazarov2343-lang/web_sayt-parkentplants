@@ -16,6 +16,15 @@ export function getSupabaseAdmin(): SupabaseClient | null {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!url || !serviceKey) {
+    // Qiymatni EMAS — faqat qaysi env o'zgaruvchi yo'qligini log qilamiz,
+    // shunda Vercel loglarida sabab darhol ko'rinadi (lid jimgina yo'qolmaydi).
+    const missing = [
+      !url && "NEXT_PUBLIC_SUPABASE_URL",
+      !serviceKey && "SUPABASE_SERVICE_ROLE_KEY",
+    ].filter(Boolean);
+    console.error(
+      `[supabase] Sozlanmagan — quyidagi env o'zgaruvchi(lar) Vercel'da yo'q: ${missing.join(", ")}`,
+    );
     cached = null;
     return null;
   }

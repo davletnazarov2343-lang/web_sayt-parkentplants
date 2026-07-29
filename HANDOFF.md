@@ -1,7 +1,7 @@
 # Parkent Plants — Web Sayt Handoff Hujjati
 
 > Antigravity yoki boshqa IDE'da davom etish uchun to'liq qo'llanma.
-> Yangilangan: 2026-05-29
+> Yangilangan: 2026-07-29
 
 ---
 
@@ -29,8 +29,8 @@ TypeScript (strict mode)
 Tailwind CSS
 next-intl (uz/ru i18n)
 Sanity CMS v3.99 (schemas tayyor, env yo'q)
-Supabase (lazy client, env yo'q)
-Bitrix24 webhook (env yo'q)
+Supabase (lazy client, env yo'q — hali sozlanmagan)
+Bitrix24 webhook (Vercel Production'da sozlangan — ISHLAYDI)
 Zod (validation)
 lucide-react (icons)
 Vercel (hosting, auto-deploy from GitHub master)
@@ -72,7 +72,7 @@ src/
 │   │   ├── KnowledgeCenter.tsx       ← Maqolalar preview
 │   │   ├── Faq.tsx                   ← 7 ta savol-javob (varieties olib tashlandi)
 │   │   ├── ContactPreview.tsx        ← Kontakt ma'lumotlari preview
-│   │   ├── LeadForm.tsx              ← So'rov shakli (Supabase + Bitrix24 hozircha bog'lanmagan)
+│   │   ├── LeadForm.tsx              ← So'rov shakli (Bitrix24'ga ulangan, ISHLAYDI; Supabase hali sozlanmagan)
 │   │   ├── FeaturedVarieties.tsx     ← ❌ ISHLATILMAYDI (page.tsx'dan olib tashlangan)
 │   │   ├── TopApples.tsx             ← ❌ ISHLATILMAYDI
 │   │   ├── TopPeaches.tsx            ← ❌ ISHLATILMAYDI
@@ -212,32 +212,47 @@ vercel --prod --yes --scope davletnazarov2343-8099s-projects
 ```
 Yoki: Vercel dashboard'da "Redeploy" tugmasi bilan. Yoki: GitHub auto-deploy yoqilsa (Vercel Settings → Git → connect repo).
 
-### 🟡 5.2. Lead form ishlatish (Supabase + Bitrix24)
+### 🟡 5.2. Lead form holati — Bitrix24 ISHLAYDI, Supabase hali yo'q
 Lead form joylashgan: `/uz#request` (`LeadForm.tsx` komponenti).
-Hozir ma'lumotlar **hech qaerga saqlanmaydi** — env yo'q.
 
-**Supabase sozlash:**
+✅ **Bitrix24 — ISHLAYDI.** `BITRIX_WEBHOOK_URL` Vercel Production'da sozlangan
+va lidlar Bitrix24 CRM'ga muvaffaqiyatli tushmoqda (~60 kundan beri, egasi
+tomonidan tasdiqlangan). Hozircha bu — lidning YAGONA manzili.
+
+🟡 **Supabase — hali sozlanmagan.** Env yo'q, `leads` jadvali ham hali
+yaratilmagan — bazaga zaxira nusxa yozilmaydi. Ya'ni agar Bitrix24 birdan
+ishlamay qolsa, lid boshqa hech qaerda saqlanmaydi (pastdagi "API route"
+izohiga qarang — bu holatda kod mijozga yolg'on emas, halol xato ko'rsatadi).
+
+**Supabase sozlash (zaxira baza qo'shish uchun, hozircha ixtiyoriy):**
 1. https://supabase.com/dashboard da yangi project yarating
 2. SQL editor'da `supabase/migrations/0001_create_leads.sql` ni ishga tushiring
 3. Project Settings → API'dan oling:
    - Project URL
    - service_role key (server uchun)
-4. Vercel env vars (Settings → Environment Variables):
+4. Vercel env vars (Settings → Environment Variables) — nomlar aynan kod bilan
+   bir xil bo'lishi SHART (`src/lib/supabase/server.ts`), aks holda
+   `getSupabaseAdmin()` null qaytaradi va lidlar saqlanmaydi:
    ```
-   SUPABASE_URL=https://xxxxx.supabase.co
+   NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
    SUPABASE_SERVICE_ROLE_KEY=eyJ...
    ```
+   ⚠️ `SUPABASE_URL` EMAS — `NEXT_PUBLIC_SUPABASE_URL` (client va server bir xil
+   o'zgaruvchini ishlatadi, prefiks shart).
 
-**Bitrix24 sozlash:**
-1. Bitrix24'da Inbound webhook yarating
+**Bitrix24 — allaqachon sozlangan, qayta sozlash kerak emas.** Eslatma
+uchun qanday sozlanganini yozib qo'yamiz:
+1. Bitrix24'da Inbound webhook yaratilgan
 2. URL formati: `https://YOUR.bitrix24.uz/rest/USER_ID/TOKEN/`
-3. Vercel env:
-   ```
-   BITRIX_WEBHOOK_URL=https://...
-   BITRIX_RESPONSIBLE_ID=1
-   ```
+3. Vercel env: `BITRIX_WEBHOOK_URL=https://...` (hozir sozlangan, ishlayapti)
+   (Mas'ul xodim ID'si hozircha kodda qattiq yozilgan — `ASSIGNED_BY_ID: 1`,
+   `src/lib/bitrix.ts`. Alohida `BITRIX_RESPONSIBLE_ID` env o'zgaruvchisi
+   kod tomonidan o'qilmaydi.)
 
-API route: `src/app/api/leads/route.ts` — Zod validation + parallel Supabase insert + Bitrix24 `crm.lead.add`.
+API route: `src/app/api/leads/route.ts` — Zod validation → Supabase'ga
+yozishga harakat (sozlangan bo'lsa) → Bitrix24 `crm.lead.add` ga yuborish.
+Agar lid na bazaga, na Bitrix'ga tushmasa, mijozga yolg'on "muvaffaqiyatli"
+ko'rsatilmaydi — 503 xato va telefon raqami bilan halol xabar qaytariladi.
 
 ### 🟡 5.3. Sanity CMS sozlash (katalog uchun)
 Schema'lar tayyor (`src/sanity/schemas/`), faqat env yo'q.
@@ -247,8 +262,10 @@ Schema'lar tayyor (`src/sanity/schemas/`), faqat env yo'q.
    ```
    NEXT_PUBLIC_SANITY_PROJECT_ID=xxxxx
    NEXT_PUBLIC_SANITY_DATASET=production
-   SANITY_API_TOKEN=skXXX (Editor role)
    ```
+   (Draft/write token kerak bo'lsa `.env.local.example` dagi
+   `SANITY_API_READ_TOKEN` nomini ishlating — `SANITY_API_TOKEN` emas. Hozircha
+   kod bu tokenni hech qayerda o'qimaydi, faqat kelajak uchun zaxira.)
 3. `https://parkentplants.uz/studio` ga kiring va `fruitType` + `variety` document'larini to'ldiring
 
 ### 🟢 5.4. Alohida sahifalar yaratish (landing → to'liq sayt)
@@ -380,7 +397,7 @@ new.jpg, sh.jpg — boshqa ko'chatzor fotolari
 
 2. **CMS bo'sh** — Sanity sozlanmagan. `/varieties` sahifalarga kirish menyudan olib tashlangan (lekin route'lar mavjud, to'g'ridan-to'g'ri URL bilan kirsa bo'sh ko'rinadi).
 
-3. **Lead form ishlamaydi** — Supabase/Bitrix24 env yo'q. Forma yuborilganda "Yuborildi" ko'rsatadi, lekin ma'lumot saqlanmaydi.
+3. **Lead form ISHLAYDI** — forma yuborilgan lid Bitrix24 CRM'ga tushadi (`BITRIX_WEBHOOK_URL` sozlangan). Supabase (zaxira baza) hali sozlanmagan — agar Bitrix24 birdan ishlamay qolib, lid hech qaerga tushmasa, forma "Yuborildi" deb yolg'on ko'rsatmaydi: aniq xato va qo'ng'iroq qilish uchun telefon raqamini ko'rsatadi (tafsilot: 5.2-bo'lim).
 
 4. **HTTPS sertifikat avtomatik** — Vercel'da Let's Encrypt orqali.
 

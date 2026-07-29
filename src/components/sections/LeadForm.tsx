@@ -96,54 +96,73 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
       return;
     }
 
+    let res: Response;
     try {
-      const res = await fetch("/api/leads", {
+      res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsed.data),
       });
-      const data = (await res.json()) as {
-        ok: boolean;
-        error?: string;
-        details?: Record<string, string[]>;
-      };
+    } catch {
+      // Tarmoq xatosi — server bilan umuman bog'lanib bo'lmadi (masalan
+      // internet uzilgan). Mijozga tushunarli xabar ko'rsatamiz.
+      setStatus({ state: "error", message: t("networkError") });
+      return;
+    }
 
-      if (!res.ok || !data.ok) {
-        if (data.details) {
-          const fieldErrors: Record<string, string> = {};
-          for (const [key, values] of Object.entries(data.details)) {
-            fieldErrors[key] = values?.[0] ?? "invalid";
-          }
-          setErrors(fieldErrors);
-          setStatus({ state: "idle" });
-          return;
+    let data: {
+      ok: boolean;
+      error?: string;
+      message?: string;
+      details?: Record<string, string[]>;
+    };
+    try {
+      data = await res.json();
+    } catch {
+      // Server javobi JSON emas (masalan Vercel'ning timeout yoki
+      // 502/504 xato sahifasi) — xom HTML/matn o'rniga tushunarli xabar
+      // ko'rsatamiz, aks holda mijoz "Unexpected token..." kabi tushunarsiz
+      // texnik xatoni ko'radi.
+      setStatus({ state: "error", message: t("networkError") });
+      return;
+    }
+
+    if (!res.ok || !data.ok) {
+      if (data.details) {
+        const fieldErrors: Record<string, string> = {};
+        for (const [key, values] of Object.entries(data.details)) {
+          fieldErrors[key] = values?.[0] ?? "invalid";
         }
-        throw new Error(data.error || `HTTP ${res.status}`);
+        setErrors(fieldErrors);
+        setStatus({ state: "idle" });
+        return;
       }
-
-      setStatus({ state: "success" });
-      // Marketing event — Lead yaratildi (Facebook/GA/Yandex)
-      trackEvent("lead", {
-        form: "main_lead_form",
-        locale,
-        region: region || undefined,
-        volume: volume || undefined,
-      });
-      // Form'ni tozalaymiz (keyingi so'rov uchun)
-      setName("");
-      setPhone("+998 ");
-      setCompany("");
-      setRegion("");
-      setVolume("");
-      setFruitTypes(initialFruitTypes);
-      setMessage("");
-      setConsent(false);
-    } catch (err) {
+      // Server tayyorlagan (mijoz uchun tushunarli) xabar bo'lsa — shuni,
+      // bo'lmasa xom error kodini ko'rsatamiz.
       setStatus({
         state: "error",
-        message: err instanceof Error ? err.message : "unknown",
+        message: data.message || data.error || `HTTP ${res.status}`,
       });
+      return;
     }
+
+    setStatus({ state: "success" });
+    // Marketing event — Lead yaratildi (Facebook/GA/Yandex)
+    trackEvent("lead", {
+      form: "main_lead_form",
+      locale,
+      region: region || undefined,
+      volume: volume || undefined,
+    });
+    // Form'ni tozalaymiz (keyingi so'rov uchun)
+    setName("");
+    setPhone("+998 ");
+    setCompany("");
+    setRegion("");
+    setVolume("");
+    setFruitTypes(initialFruitTypes);
+    setMessage("");
+    setConsent(false);
   }
 
   return (

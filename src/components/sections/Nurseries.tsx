@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { MapPin, Trees, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -38,10 +39,16 @@ export function Nurseries() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-earth-400/25 bg-cream transition-all hover:border-forest-400 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.25)]"
             >
               {/* Image — real foto bo'lsa, yo'q bo'lsa gradient placeholder */}
-              <div
-                className="relative h-56 overflow-hidden bg-gradient-to-br from-forest-100 via-forest-200 to-forest-400/40 bg-cover bg-center"
-                style={imgUrl ? { backgroundImage: `url('${imgUrl}')` } : undefined}
-              >
+              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-forest-100 via-forest-200 to-forest-400/40">
+                {imgUrl && (
+                  <Image
+                    src={imgUrl}
+                    alt={t(`items.${key}.name`)}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                )}
                 {!imgUrl && (
                   <div
                     aria-hidden="true"

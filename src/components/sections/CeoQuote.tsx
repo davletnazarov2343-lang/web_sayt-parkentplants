@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -15,11 +16,12 @@ export function CeoQuote() {
           <div className="lg:col-span-5">
             <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-gradient-to-br from-forest-100 to-forest-200 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)]">
               {HAS_PHOTO ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                   src="/team/shuhrat-abrorov.jpg"
                   alt={t("name")}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 384px, 100vw"
+                  className="object-cover"
                 />
               ) : (
                 <div

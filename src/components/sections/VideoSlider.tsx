@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -110,12 +111,12 @@ export function VideoSlider() {
               >
                 {/* Thumbnail */}
                 <div className="relative aspect-video overflow-hidden bg-earth-400/10">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={thumbnailUrl(video.id)}
                     alt={video.title}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 340px, 300px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Topic badge */}
                   <span className="absolute left-3 top-3 inline-flex items-center rounded-full bg-cream/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-forest-700 backdrop-blur">

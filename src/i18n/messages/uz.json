@@ -390,6 +390,7 @@
     "submitting": "Yuborilmoqda...",
     "disclaimer": "Ma'lumotlaringiz uchinchi shaxslarga berilmaydi. Faqat ushbu so'rov bo'yicha aloqa uchun ishlatiladi.",
     "errorTitle": "So'rov yuborilmadi",
+    "networkError": "Kechirasiz, server bilan bog'lanishda muammo yuz berdi. Iltimos, bevosita qo'ng'iroq qiling: +998 78 113 18 19.",
     "consent": "Shaxsiy ma'lumotlarimni ushbu so'rov bo'yicha qayta ishlashga roziman.",
     "fields": {
       "name": {

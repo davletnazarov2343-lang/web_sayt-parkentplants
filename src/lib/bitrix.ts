@@ -54,6 +54,23 @@ const VOLUME_LABELS_UZ: Record<string, string> = {
   undecided: "Hali aniq emas",
 };
 
+// Bitrix24 so'roviga qo'yiladigan timeout. Funksiya limitidan (maxDuration)
+// sezilarli kam bo'lishi kerak — shunda Bitrix osilib qolsa ham, funksiyaning
+// o'zi ulgurib toza JSON javob qaytaradi (platforma timeout sahifasi emas).
+const BITRIX_FETCH_TIMEOUT_MS = 7000;
+
+/**
+ * `AbortSignal.timeout` mavjud bo'lmagan muhitda (masalan eski Node/edge
+ * runtime) funksiya yiqilmasligi uchun ehtiyot bilan signal yaratamiz.
+ * Topilmasa — signalsiz fetch qilamiz (eski, timeoutsiz xatti-harakat).
+ */
+function createTimeoutSignal(ms: number): AbortSignal | undefined {
+  if (typeof AbortSignal?.timeout === "function") {
+    return AbortSignal.timeout(ms);
+  }
+  return undefined;
+}
+
 function buildComments(lead: LeadInput): string {
   const lines: string[] = [];
   if (lead.region) lines.push(`Viloyat: ${REGION_LABELS_UZ[lead.region] ?? lead.region}`);
@@ -115,6 +132,7 @@ export async function sendLeadToBitrix(
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
       cache: "no-store",
+      signal: createTimeoutSignal(BITRIX_FETCH_TIMEOUT_MS),
     });
 
     const json = (await res.json()) as
@@ -130,6 +148,19 @@ export async function sendLeadToBitrix(
     }
     return { ok: true, leadId: String(json.result) };
   } catch (err) {
+    // AbortSignal.timeout tugaganda fetch shu bilan reject bo'ladi
+    // (name: "TimeoutError", ba'zi muhitlarda "AbortError"). Mijoz
+    // ma'lumotini logga chiqarmasdan, sababni aniq ajratamiz.
+    const isTimeout =
+      err instanceof Error &&
+      (err.name === "TimeoutError" || err.name === "AbortError");
+    if (isTimeout) {
+      console.error(
+        `[bitrix] so'rov ${BITRIX_FETCH_TIMEOUT_MS}ms ichida javob bermadi (timeout)`,
+      );
+      return { ok: false, error: "BITRIX_TIMEOUT" };
+    }
+
     const message = err instanceof Error ? err.message : "unknown";
     return { ok: false, error: message };
   }

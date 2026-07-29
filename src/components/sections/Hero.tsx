@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -14,15 +15,18 @@ export function Hero() {
       id="top"
       className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-36"
     >
-      {/* Background photo — real Norchontol nursery rows */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/hero-nursery.jpg')",
-          filter: "saturate(1.05)",
-        }}
-      />
+      {/* Background photo — real Norchontol nursery rows (LCP rasm — priority) */}
+      <div aria-hidden="true" className="absolute inset-0 -z-20">
+        <Image
+          src="/images/hero-nursery.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ filter: "saturate(1.05)" }}
+        />
+      </div>
 
       {/* Dark forest overlay — readability + brand color */}
       <div

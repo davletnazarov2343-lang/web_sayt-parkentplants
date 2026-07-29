@@ -85,6 +85,7 @@ export default async function CategoryPage({
   if (!cat) notFound();
 
   const t = await getTranslations({ locale, namespace: "saplings" });
+  const newsT = await getTranslations({ locale, namespace: "news" });
   const messages = (await getMessages()) as unknown as {
     saplings: { categories: Record<string, CategoryMessages> };
   };
@@ -333,7 +334,7 @@ export default async function CategoryPage({
                         📰 Yangilik
                       </p>
                       <h3 className="mt-2 text-lg font-serif font-bold text-earth-900 group-hover:text-forest-700">
-                        {t(`articles.${news.slug}.title` as never)}
+                        {newsT(`articles.${news.slug}.title`)}
                       </h3>
                     </Link>
                   ) : null,
