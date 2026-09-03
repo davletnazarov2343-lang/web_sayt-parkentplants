@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   unstable_setRequestLocale,
@@ -236,13 +237,14 @@ export default async function CategoryPage({
 
           {/* Cover image */}
           {cat.cover && (
-            <div className="mt-8 overflow-hidden rounded-2xl border border-earth-200 aspect-[16/9]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative mt-8 overflow-hidden rounded-2xl border border-earth-200 aspect-[16/9]">
+              <Image
                 src={cat.cover}
                 alt={h1}
-                className="h-full w-full object-cover"
-                loading="eager"
+                fill
+                sizes="(min-width: 1024px) 896px, 100vw"
+                priority
+                className="object-cover"
               />
             </div>
           )}

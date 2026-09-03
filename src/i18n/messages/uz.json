@@ -1014,5 +1014,30 @@
     "contactTitle": "Aloqa",
     "socialTitle": "Ijtimoiy tarmoqlar",
     "rights": "Barcha huquqlar himoyalangan."
+  },
+  "aboutPage": {
+    "breadcrumb": "Biz haqimizda",
+    "metaTitle": "Biz haqimizda — Parkent Plants ko'chatzori, 2002-yildan",
+    "metaDescription": "Parkent Plants (Norchontol fermer xo'jaligi) — 2002-yildan Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi. 87 gektar, yiliga 500 000+ ko'chat, 11 meva turi, 135+ nav. Asoschimiz Shuhrat Abrorov bilan tanishing.",
+    "eyebrow": "2002 yildan buyon ishonchli sherik",
+    "title": "Biz haqimizda",
+    "intro": "Parkent Plants — Norchontol fermer xo'jaligining savdo nomi. 2002-yildan buyon Toshkent viloyatida mevali ko'chat yetishtiramiz: bugun ikkita zamonaviy ko'chatzorda — jami 87 gektar maydonda — yiliga 500 000 dan ortiq ko'chat, 11 meva turida 135+ sinalgan nav ishlab chiqariladi. Mahsulotlarimiz O'zbekiston bo'ylab sotiladi va Tojikiston, Qirg'iziston, Turkmaniston, Qozog'istonga eksport qilinadi.",
+    "statsTitle": "Raqamlarda biz",
+    "historyTitle": "Asoschi va 23 yillik tajriba",
+    "whyTitle": "Nega bizni tanlashadi",
+    "nurseriesTitle": "Ikkita zamonaviy ko'chatzor",
+    "nurseriesIntro": "Toshkent viloyatida joylashgan ikki ko'chatzor — har biri o'z ixtisoslashuvi va muhandislik tizimiga ega.",
+    "ctaTitle": "Loyihangiz haqida gaplashaylik",
+    "ctaBody": "B2B hamkorlik, yirik buyurtma yoki professional maslahat uchun biz bilan bog'laning.",
+    "ctaPrimary": "Kontaktlarni ko'rish",
+    "ctaSecondary": "Ko'chat katalogi"
+  },
+  "contactPage": {
+    "breadcrumb": "Kontakt",
+    "metaTitle": "Kontakt — Parkent Plants bilan bog'laning",
+    "metaDescription": "Parkent Plants bilan bog'laning: telefon +998 78 113 18 19, WhatsApp/Telegram +998 99 557 38 00, email info@parkentplants.uz. Manzil: Toshkent viloyati, Parkent tumani, Boyqozon mahallasi. Ish vaqti: Dushanba–Shanba, 09:00–18:00.",
+    "formCtaTitle": "So'rov qoldiring",
+    "formCtaBody": "Formani to'ldiring — menejerimiz 1 ish kuni ichida siz bilan bog'lanadi.",
+    "formCtaButton": "So'rov yuborish"
   }
 }

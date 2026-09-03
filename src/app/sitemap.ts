@@ -19,7 +19,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
   // 1. Statik sahifalar
-  const staticPaths = ["", "/varieties", "/news", "/kochatlar"];
+  const staticPaths = [
+    "",
+    "/varieties",
+    "/news",
+    "/kochatlar",
+    "/biz-haqimizda",
+    "/kontakt",
+  ];
   const staticEntries = LOCALES.flatMap((locale) =>
     staticPaths.map((path) => ({
       url: `${BASE_URL}/${locale}${path}`,

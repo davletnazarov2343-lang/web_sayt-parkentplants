@@ -18,6 +18,14 @@ export async function generateMetadata({
   return {
     title: `${t("listTitle")} — Parkent Plants`,
     description: t("listSubtitle"),
+    alternates: {
+      canonical: `/${locale}/varieties`,
+      languages: {
+        "uz-UZ": "/uz/varieties",
+        "ru-UZ": "/ru/varieties",
+        "x-default": "/uz/varieties",
+      },
+    },
   };
 }
 

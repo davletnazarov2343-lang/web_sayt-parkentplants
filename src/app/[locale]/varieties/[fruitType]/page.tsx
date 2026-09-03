@@ -42,6 +42,14 @@ export async function generateMetadata({
   return {
     title: `${name} — ${t("listTitle")} · Parkent Plants`,
     description: t("filterPageDescription", { fruitType: name }),
+    alternates: {
+      canonical: `/${locale}/varieties/${fruitType}`,
+      languages: {
+        "uz-UZ": `/uz/varieties/${fruitType}`,
+        "ru-UZ": `/ru/varieties/${fruitType}`,
+        "x-default": `/uz/varieties/${fruitType}`,
+      },
+    },
   };
 }
 

@@ -25,9 +25,9 @@ import {
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "saplings", href: "/kochatlar" },
-  { key: "about", href: "#about" },
+  { key: "about", href: "/biz-haqimizda" },
   { key: "news", href: "#news" },
-  { key: "contact", href: "#request" },
+  { key: "contact", href: "/kontakt" },
 ] as const;
 
 const SOCIAL_LINKS: ReadonlyArray<{
@@ -66,8 +66,12 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const isHomepage = pathname === `/${locale}` || pathname === "/";
-  const navHref = (anchor: string) =>
-    isHomepage ? anchor : `/${locale}${anchor === "#top" ? "" : anchor}`;
+  const navHref = (target: string) => {
+    // Absolute path (masalan "/kochatlar") — har doim /{locale}{path}
+    if (target.startsWith("/")) return `/${locale}${target}`;
+    // Anchor (masalan "#news") — homepage'da plain, sub-page'da /{locale}#anchor
+    return isHomepage ? target : `/${locale}${target === "#top" ? "" : target}`;
+  };
 
   return (
     <footer className="bg-forest-900 text-cream-100/90">

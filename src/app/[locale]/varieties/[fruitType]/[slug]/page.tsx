@@ -66,6 +66,14 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${locale}/varieties/${fruitType}/${slug}`,
+      languages: {
+        "uz-UZ": `/uz/varieties/${fruitType}/${slug}`,
+        "ru-UZ": `/ru/varieties/${fruitType}/${slug}`,
+        "x-default": `/uz/varieties/${fruitType}/${slug}`,
+      },
+    },
     openGraph: {
       title,
       description,

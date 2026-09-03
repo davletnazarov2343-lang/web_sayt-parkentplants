@@ -38,6 +38,9 @@ const CONTACT_ITEMS: Array<{
 export function ContactPreview() {
   const t = useTranslations("contact");
 
+  const addressValue = t("address.value");
+  const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(addressValue)}&output=embed`;
+
   return (
     <section
       id="contact"
@@ -121,6 +124,16 @@ export function ContactPreview() {
                 );
               })}
             </ul>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-cream-100/10 shadow-[0_12px_40px_-16px_rgba(0,0,0,0.45)]">
+              <iframe
+                src={mapSrc}
+                title={`${t("address.label")}: ${addressValue}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-64 w-full border-0 sm:h-80"
+              />
+            </div>
           </div>
         </div>
       </Container>
