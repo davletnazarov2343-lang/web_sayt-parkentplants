@@ -3,6 +3,7 @@ import { ZodError } from "zod";
 import { leadSchema } from "@/lib/leads/schema";
 import { getSupabaseAdmin, isSupabaseConfigured } from "@/lib/supabase/server";
 import { isBitrixConfigured, sendLeadToBitrix } from "@/lib/bitrix";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -15,10 +16,11 @@ export const maxDuration = 20;
  * Body: LeadInput (zod schema)
  * Steps:
  *  1. Validate
- *  2. Honeypot check
- *  3. Insert to Supabase (`leads`)
- *  4. Forward to Bitrix24 (best-effort, lead saved bo'ladi xatto Bitrix yiqilsa ham)
- *  5. Update lead row with bitrix_status / bitrix_lead_id
+ *  2. Rate limit (IP bo'yicha, arzon tekshiruv — validatsiyadan oldin)
+ *  3. Honeypot check
+ *  4. Insert to Supabase (`leads`)
+ *  5. Forward to Bitrix24 (best-effort, lead saved bo'ladi xatto Bitrix yiqilsa ham)
+ *  6. Update lead row with bitrix_status / bitrix_lead_id
  */
 export async function POST(request: NextRequest) {
   // 1. Parse + validate
@@ -29,6 +31,33 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { ok: false, error: "INVALID_JSON" },
       { status: 400 },
+    );
+  }
+
+  // 2. Rate limit — zod validatsiya va honeypotdan oldin, chunki arzon
+  // tekshiruv birinchi bo'lishi kerak (ortiqcha CPU sarflamaslik uchun).
+  // Locale'ni to'liq validatsiyagacha ehtiyotkorlik bilan o'qiymiz — agar
+  // yo'q yoki noto'g'ri bo'lsa, standart "uz" ishlatiladi.
+  const rawLocale =
+    typeof body === "object" && body !== null && "locale" in body
+      ? (body as { locale?: unknown }).locale
+      : undefined;
+  const locale = rawLocale === "ru" ? "ru" : "uz";
+
+  const ip = getClientIp(request.headers);
+  const rateLimit = checkRateLimit(ip);
+  if (!rateLimit.ok) {
+    const message =
+      locale === "ru"
+        ? "Слишком много заявок с вашего адреса. Пожалуйста, попробуйте позже."
+        : "Sizning manzilingizdan juda ko'p so'rov yuborildi. Iltimos, birozdan so'ng qayta urinib ko'ring.";
+
+    return NextResponse.json(
+      { ok: false, error: "RATE_LIMITED", message },
+      {
+        status: 429,
+        headers: { "Retry-After": String(rateLimit.retryAfterSeconds) },
+      },
     );
   }
 
@@ -52,7 +81,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // 2. Honeypot — bot bo'lsa silently 200 qaytaramiz
+  // 3. Honeypot — bot bo'lsa silently 200 qaytaramiz
   if (lead.website && lead.website.length > 0) {
     return NextResponse.json({ ok: true, skipped: "honeypot" });
   }
@@ -64,7 +93,7 @@ export async function POST(request: NextRequest) {
     request.headers.get("cf-ipcountry") ||
     undefined;
 
-  // 3. Supabase insert (bo'lsa)
+  // 4. Supabase insert (bo'lsa)
   let leadId: string | null = null;
   const supabase = getSupabaseAdmin();
   if (supabase) {
@@ -112,7 +141,7 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // 4. Bitrix24 forward (await qilamiz — Vercel serverless runtime tugamasin)
+  // 5. Bitrix24 forward (await qilamiz — Vercel serverless runtime tugamasin)
   let bitrixOk = false;
   if (isBitrixConfigured()) {
     try {
@@ -158,7 +187,7 @@ export async function POST(request: NextRequest) {
       .eq("id", leadId);
   }
 
-  // 5. Lid hech qayerga (Supabase ham, Bitrix ham) saqlanmadimi — mijozga
+  // 6. Lid hech qayerga (Supabase ham, Bitrix ham) saqlanmadimi — mijozga
   // YOLG'ON "muvaffaqiyatli" ko'rsatmaymiz, aks holda lid jimgina yo'qoladi.
   const persisted = leadId !== null || bitrixOk;
   if (!persisted) {

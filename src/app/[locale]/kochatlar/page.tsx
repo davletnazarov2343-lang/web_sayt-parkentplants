@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   unstable_setRequestLocale,
   getTranslations,
@@ -121,20 +122,21 @@ export default async function SaplingsHubPage({ params: { locale } }: Props) {
               {t("categoriesTitle")}
             </h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {categories.map((cat) => (
+              {categories.map((cat, index) => (
                 <Link
                   key={cat.slug}
                   href={`/${locale}/kochatlar/${cat.slug}`}
                   className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-earth-200 bg-cream-50 transition-all hover:border-forest-400 hover:shadow-xl"
                 >
                   {cat.cover ? (
-                    <div className="aspect-[16/9] overflow-hidden bg-earth-100">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                    <div className="relative aspect-[16/9] overflow-hidden bg-earth-100">
+                      <Image
                         src={cat.cover}
                         alt={t(`categories.${cat.slug}.h1`)}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        priority={index < 3}
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>
                   ) : (

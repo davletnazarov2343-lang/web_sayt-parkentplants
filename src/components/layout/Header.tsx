@@ -21,9 +21,9 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "saplings", href: "/kochatlar" },
-  { key: "about", href: "#about" },
+  { key: "about", href: "/biz-haqimizda" },
   { key: "news", href: "#news" },
-  { key: "contact", href: "#request" },
+  { key: "contact", href: "/kontakt" },
 ] as const;
 
 const SOCIAL_LINKS = [

@@ -7,21 +7,41 @@
  * Komponent nomi ("WhatsappFab") legacy — endi 2 ta tugma chiqaradi.
  */
 
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { WhatsappIcon, TelegramIcon } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
 
 const TELEGRAM_URL = "https://t.me/norchontolbot";
+// Hero CTA bilan to'qnashmasin uchun shu masofadan keyin paydo bo'ladi.
+const SCROLL_REVEAL_THRESHOLD = 600;
 
 export function WhatsappFab() {
   const t = useTranslations("contact");
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > SCROLL_REVEAL_THRESHOLD);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const phone = t("whatsapp.value").replace(/[^0-9]/g, "");
   const messagePrefill = t("whatsapp.prefill");
   const whatsappHref = `https://wa.me/${phone}?text=${encodeURIComponent(messagePrefill)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+    <div
+      className={`fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3 transition-all duration-500 ease-out ${
+        visible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-4 opacity-0"
+      }`}
+    >
       {/* Telegram — tepada */}
       <a
         href={TELEGRAM_URL}
