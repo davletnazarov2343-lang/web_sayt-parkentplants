@@ -14,11 +14,16 @@ const cspDirectives = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://i.ytimg.com https://mc.yandex.ru https://www.facebook.com https://www.google-analytics.com https://www.googletagmanager.com https://cdn.sanity.io https://maps.gstatic.com https://maps.googleapis.com",
   "font-src 'self' data:",
-  "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com",
-  "connect-src 'self' https://www.google-analytics.com https://mc.yandex.ru https://connect.facebook.net https://www.facebook.com https://vitals.vercel-insights.com https://*.sanity.io",
+  // www.facebook.com — Meta Pixel yashirin iframe yaratadi (jonli
+  // kuzatuvda tasdiqlangan, 2026-09-04)
+  "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com https://www.facebook.com",
+  // wss://mc.yandex.ru — Yandex Metrika WebSocket ochadi (jonli kuzatuv)
+  "connect-src 'self' https://www.google-analytics.com https://mc.yandex.ru wss://mc.yandex.ru https://connect.facebook.net https://www.facebook.com https://vitals.vercel-insights.com https://*.sanity.io",
   "object-src 'none'",
   "base-uri 'self'",
-  "form-action 'self'",
+  // www.facebook.com — Meta Pixel ma'lumotni form POST orqali yuboradi
+  // (jonli kuzatuvda tasdiqlangan). Lid formasi o'z saytiga boradi.
+  "form-action 'self' https://www.facebook.com",
   "frame-ancestors 'self'",
 ].join("; ");
 
