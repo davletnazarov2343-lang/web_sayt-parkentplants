@@ -41,8 +41,12 @@ const nextConfig = {
         source: "/:path*",
         headers: [
           {
+            // ATAYLAB `includeSubDomains` va `preload` YO'Q: ular brauzerda
+            // uzoq muddat eslab qolinadi va HTTPS'siz subdomen bo'lsa uni
+            // ochib bo'lmay qoladi. Barcha subdomenlar HTTPS ekani
+            // tasdiqlangach kengaytirish mumkin.
             key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
+            value: "max-age=31536000",
           },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
