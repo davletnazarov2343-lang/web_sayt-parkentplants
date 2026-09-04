@@ -3,9 +3,13 @@ import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { VarietyCard } from "@/components/catalog/VarietyCard";
 import { FruitTypeNav } from "@/components/catalog/FruitTypeNav";
-import { TopCherries } from "@/components/sections/TopCherries";
+import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { getAllFruitTypes, getAllVarieties } from "@/sanity/fetch";
 import type { Locale } from "@/sanity/types";
+import {
+  TOTAL_CATALOG_VARIETIES,
+  getFruitTypesWithCounts,
+} from "@/lib/catalog/varieties";
 
 export const revalidate = 3600;
 
@@ -58,6 +62,11 @@ export default async function VarietiesIndexPage({
             <p className="mt-5 text-base leading-relaxed text-earth-700 lg:text-lg">
               {t("listSubtitle")}
             </p>
+            {!hasSanityData && (
+              <p className="mt-3 text-sm font-medium text-forest-700">
+                {t("staticNotice", { n: TOTAL_CATALOG_VARIETIES })}
+              </p>
+            )}
           </header>
 
           {/* Filter — faqat Sanity'da ma'lumot bo'lganda */}
@@ -90,36 +99,49 @@ export default async function VarietiesIndexPage({
               ))}
             </div>
           )}
+
+          {/* Sanity bo'sh bo'lsa — statik katalog (4 meva turi) */}
+          {!hasSanityData && (
+            <div className="mt-10">
+              <CatalogBrowser
+                locale={lang}
+                allLabel={t("filter.all")}
+                allCountLabel={t("filter.count", {
+                  n: TOTAL_CATALOG_VARIETIES,
+                })}
+                fruitTypes={getFruitTypesWithCounts().map((ft) => ({
+                  id: ft.id,
+                  emoji: ft.emoji,
+                  nameUz: ft.nameUz,
+                  nameRu: ft.nameRu,
+                  countLabel: t("filter.count", { n: ft.count }),
+                }))}
+              />
+            </div>
+          )}
         </Container>
       </section>
 
-      {/* Sanity bo'sh bo'lsa — gilos navlarini darhol ko'rsataylik */}
+      {/* Sanity bo'sh bo'lsa — qolgan meva turlari uchun so'rov CTA */}
       {!hasSanityData && (
-        <>
-          <TopCherries locale={lang} />
-          <section className="bg-cream py-12">
-            <Container>
-              <div className="mx-auto max-w-2xl rounded-2xl border border-dashed border-earth-400/40 bg-cream-100 p-8 text-center">
-                <p className="font-serif text-lg text-earth-900">
-                  {lang === "ru"
-                    ? "Скоро: каталог расширяется"
-                    : "Tez orada: katalog kengaymoqda"}
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-earth-700">
-                  {lang === "ru"
-                    ? "Сорта яблони, персика, абрикоса и других видов плодов скоро будут добавлены. Сейчас 350+ сортов готовится к загрузке."
-                    : "Olma, shaftoli, o'rik va boshqa meva turlarining navlari tez orada qo'shiladi. Hozir 350+ nav yuklash uchun tayyorlanmoqda."}
-                </p>
-                <a
-                  href={`/${locale}/#request`}
-                  className="mt-5 inline-flex items-center gap-2 rounded-md bg-forest-700 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-900"
-                >
-                  {lang === "ru" ? "Отправить B2B запрос →" : "Bepul maslahat olish →"}
-                </a>
-              </div>
-            </Container>
-          </section>
-        </>
+        <section className="bg-cream py-12">
+          <Container>
+            <div className="mx-auto max-w-2xl rounded-2xl border border-dashed border-earth-400/40 bg-cream-100 p-8 text-center">
+              <p className="font-serif text-lg text-earth-900">
+                {t("otherTypes.title")}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-earth-700">
+                {t("otherTypes.subtitle")}
+              </p>
+              <a
+                href={`/${locale}/#request`}
+                className="mt-5 inline-flex items-center gap-2 rounded-md bg-forest-700 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-900"
+              >
+                {t("otherTypes.cta")}
+              </a>
+            </div>
+          </Container>
+        </section>
       )}
     </>
   );

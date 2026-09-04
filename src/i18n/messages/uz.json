@@ -359,6 +359,7 @@
     "listSubtitle": "135+ sertifikatlangan nav. Meva turi bo'yicha filtrlang va batafsil texnik tavsifni ko'ring.",
     "filterPageDescription": "{fruitType} navlari — Parkent Plants katalogidan sertifikatlangan ko'chatlar.",
     "emptyFruitType": "{fruitType} bo'yicha hozircha aktiv nav yo'q.",
+    "staticNotice": "135+ navdan eng ko'p so'raladigan {n} tasi — texnik tavsif bilan.",
     "filter": {
       "all": "Hammasi",
       "count": "({n})"
@@ -367,6 +368,11 @@
       "ripensIn": "Pishish",
       "exportable": "Eksportbop",
       "viewMore": "Batafsil"
+    },
+    "otherTypes": {
+      "title": "Boshqa meva turi kerakmi?",
+      "subtitle": "O'rik, olcha, olxo'ri, nok va bodom ko'chatlari ham mavjud. So'rov yuboring — agronomimiz sizga mos navlarni tavsiya qiladi.",
+      "cta": "So'rov yuborish →"
     }
   },
   "varietyDetail": {
