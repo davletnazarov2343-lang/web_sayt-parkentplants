@@ -36,7 +36,17 @@ const initialFruitTypes: Record<FruitTypeKey, boolean> = FRUIT_TYPE_KEYS.reduce(
   {} as Record<FruitTypeKey, boolean>,
 );
 
-export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
+export function LeadForm({
+  locale,
+  source,
+  title,
+}: {
+  locale: "uz" | "ru";
+  /** Lid manbasi (masalan "granny-smith-lending"). Berilmasa — "website". */
+  source?: string;
+  /** Sarlavhani almashtirish (lending sahifalar uchun). Berilmasa — standart. */
+  title?: string;
+}) {
   const t = useTranslations("leadForm");
 
   const [name, setName] = useState("");
@@ -80,6 +90,7 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
       message: message.trim() || undefined,
       consent,
       locale,
+      source: source || undefined,
       website: website || undefined,
     };
 
@@ -151,6 +162,7 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
     trackEvent("lead", {
       form: "main_lead_form",
       locale,
+      source: source || undefined,
       region: region || undefined,
       volume: volume || undefined,
     });
@@ -176,7 +188,7 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
             {t("eyebrow")}
           </span>
           <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-earth-900 sm:text-4xl lg:text-5xl text-balance">
-            {t("title")}
+            {title ?? t("title")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-earth-700">
             {t("subtitle")}
@@ -191,6 +203,8 @@ export function LeadForm({ locale }: { locale: "uz" | "ru" }) {
             noValidate
             className="mt-12 rounded-2xl border border-earth-400/25 bg-cream p-6 shadow-[0_8px_40px_-20px_rgba(27,67,50,0.18)] sm:p-10"
           >
+            {source && <input type="hidden" name="source" value={source} />}
+
             {/* Honeypot — vizual yashirin */}
             <div
               aria-hidden="true"

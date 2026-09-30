@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
         volume_plan: lead.volumePlan || null,
         message: lead.message || null,
         locale: lead.locale,
-        source: "website",
+        source: lead.source || "website",
         referrer,
         user_agent: userAgent,
         ip_country: ipCountry,

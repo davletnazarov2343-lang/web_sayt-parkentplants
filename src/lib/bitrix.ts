@@ -88,7 +88,9 @@ function buildComments(lead: LeadInput): string {
     lines.push(`Izoh:\n${lead.message}`);
   }
   lines.push("");
-  lines.push(`Manba: parkentplants.uz (${lead.locale})`);
+  lines.push(
+    `Manba: parkentplants.uz (${lead.locale})${lead.source ? ` · ${lead.source}` : ""}`,
+  );
   return lines.join("\n");
 }
 

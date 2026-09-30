@@ -1021,6 +1021,87 @@
     "socialTitle": "Ijtimoiy tarmoqlar",
     "rights": "Barcha huquqlar himoyalangan."
   },
+  "grannySmithPage": {
+    "metaTitle": "Granny Smith (Challenger) olma ko'chati",
+    "metaDescription": "Ko'k olma navi Granny Smith (Challenger): sentyabr boshida pishadi, 75–80 mm kalibr, 6 oy saqlanadi, gektaridan 40–50 tonna. Sinalgan ko'chatlar, M9 payvandtag.",
+    "breadcrumb": "Granny Smith",
+    "eyebrow": "Granny Smith (Challenger) olma ko'chati",
+    "title": "Ko'k olmaga bozorlarda talab kundan-kunga oshib bormoqda",
+    "lead": "Mijozlar uchun tabiiy va jozibador, sotuvchilar uchun uzoq saqlanadigan, yetishtiruvchilar uchun har yili barqaror hosil beradigan nav. Parkent Plants — sinalgan mevali ko'chatlar.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "audience": {
+      "title": "Bu nav kimga kerak?",
+      "items": [
+        {
+          "title": "Mijozlar",
+          "text": "Tabiiy, yashil, jozibador olma. Do'kon rastasida darhol ko'zga tashlanadi."
+        },
+        {
+          "title": "Sotuvchilar",
+          "text": "Korzinka, Makro, Havas va ichki bozor uchun: 6 oygacha saqlanadi, rastada jozibasini yo'qotmaydi, katta hajmda yetkazib beriladi."
+        },
+        {
+          "title": "Yetishtiruvchilar",
+          "text": "2 yildan hosilga kiradi, gektaridan 40–50 tonna, har yili barqaror hosil."
+        }
+      ]
+    },
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        { "label": "Nomi", "value": "Granny Smith (Challenger)" },
+        { "label": "Pishish vaqti", "value": "Sentyabr boshi (hududga qarab)" },
+        { "label": "Kalibri", "value": "75–80 mm" },
+        { "label": "Meva og'irligi", "value": "180–200 g" },
+        { "label": "Payvandtag", "value": "M9" },
+        { "label": "Hosilga kirishi", "value": "2 yildan" },
+        { "label": "O'sishi", "value": "Kuchli" },
+        { "label": "Maksimal hosildorlik", "value": "40–50 tonna (gektariga)" },
+        { "label": "Saqlanishi", "value": "6 oy" },
+        { "label": "Changlanishi", "value": "Changlatuvchi ekilishi kerak (Golden Delicious, Gala)" }
+      ]
+    },
+    "advantages": {
+      "title": "Ustunliklari",
+      "items": [
+        "O'zini-o'zi siyraklatadi — daraxt ortiqcha mevalarni o'zi to'kib yuboradi",
+        "Solkashlikka (yil oralab hosil berishga) juda kam chalinadi",
+        "Har yili barqaror hosil beradi"
+      ]
+    },
+    "warning": {
+      "title": "Muhim izoh",
+      "text": "Quyosh urishi xavfi bor — bu mevaning narxiga ta'sir qiladi. Setka (soya to'ri) qilish tavsiya etiladi."
+    },
+    "gallery": {
+      "alt1": "Granny Smith olmalari shoxda",
+      "alt2": "Granny Smith olma shingili",
+      "alt3": "Granny Smith olmalari yaqindan"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Granny Smith qachon hosilga kiradi?",
+          "a": "Ekilgandan 2 yil o'tib hosilga kiradi. Maksimal hosildorlik gektariga 40–50 tonna."
+        },
+        {
+          "q": "Changlatuvchi kerakmi?",
+          "a": "Ha. Yonida Golden Delicious yoki Gala ekilishi kerak."
+        },
+        {
+          "q": "Meva qancha saqlanadi?",
+          "a": "To'g'ri sharoitda 6 oygacha saqlanadi. Shu sababli supermarket va eksport uchun qulay."
+        },
+        {
+          "q": "Quyosh urishidan qanday himoya qilinadi?",
+          "a": "Bog' ustiga setka (soya to'ri) tortish tavsiya etiladi. Bu meva sifatini va narxini saqlaydi."
+        }
+      ]
+    },
+    "formTitle": "Granny Smith ko'chatiga so'rov qoldiring"
+  },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",
     "metaTitle": "Biz haqimizda — Parkent Plants ko'chatzori, 2002-yildan",

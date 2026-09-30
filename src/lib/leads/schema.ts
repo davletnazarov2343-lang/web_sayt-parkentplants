@@ -64,6 +64,15 @@ export const leadSchema = z.object({
     .refine((v) => v === true, { message: "consent" }),
   locale: z.enum(LOCALE_KEYS).default("uz"),
 
+  // Lid manbasi (masalan lending sahifa slug'i: "granny-smith-lending").
+  // Faqat lotin harf/raqam/tire/pastki chiziq — Bitrix izohiga begona matn tushmasin.
+  source: z
+    .string()
+    .trim()
+    .max(64)
+    .regex(/^[a-zA-Z0-9_-]*$/, "format")
+    .optional(),
+
   // Anti-spam: bu maydon to'ldirilgan bo'lsa — bot
   website: z.string().max(0).optional().or(z.literal("")),
 });

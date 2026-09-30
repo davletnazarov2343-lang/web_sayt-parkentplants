@@ -52,6 +52,11 @@ const EVENT_MAP: Record<
     ym: "view_b2b_process",
   },
   view_about: { fbq: "ViewContent", ga: "view_item", ym: "view_about" },
+  view_granny_smith: {
+    fbq: "ViewContent",
+    ga: "view_item",
+    ym: "view_granny_smith",
+  },
   // Video player — Shuhrat aka videosi ko'rildi
   video_play: { fbq: "ViewContent", ga: "view_item", ym: "video_play" },
   // Hero CTA bosish
