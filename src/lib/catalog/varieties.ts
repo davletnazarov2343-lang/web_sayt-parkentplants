@@ -85,6 +85,8 @@ export type CatalogVariety = {
   specs: CatalogSpec[];
   /** Norchontol-brendli rasm mavjud bo'lsa (faqat ba'zi olma navlarida) */
   photo?: string;
+  /** Maxsus lending sahifa bo'lsa — locale prefiksisiz yo'l (masalan "/granny-smith") */
+  landingHref?: string;
 };
 
 export type FruitTypeMeta = {
@@ -216,6 +218,7 @@ function mapApple(v: AppleVariety): CatalogVariety {
     taglineRu: v.taglineRu,
     specs,
     photo: v.photo,
+    landingHref: v.landingHref,
   };
 }
 

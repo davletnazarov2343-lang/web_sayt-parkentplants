@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "saplings", href: "/kochatlar" },
+  { key: "grannySmith", href: "/granny-smith" },
   { key: "about", href: "/biz-haqimizda" },
   { key: "news", href: "#news" },
   { key: "contact", href: "/kontakt" },
@@ -66,6 +67,12 @@ export function Header() {
     if (target.startsWith("/")) return `/${locale}${target}`;
     // Anchor (e.g. "#nurseries") — homepage'da plain, sub-page'da /{locale}#anchor
     return isHomepage ? target : `/${locale}${target === "#top" ? "" : target}`;
+  };
+  // Aktiv band — faqat sahifa havolalari (/...) uchun; anchor (#...) bandlar emas.
+  const isActive = (target: string) => {
+    if (!target.startsWith("/")) return false;
+    const full = `/${locale}${target}`;
+    return pathname === full || pathname.startsWith(`${full}/`);
   };
 
   useEffect(() => {
@@ -161,7 +168,7 @@ export function Header() {
         )}
       >
         <Container size="wide">
-          <div className="flex h-[72px] items-center justify-between gap-6 lg:h-20">
+          <div className="flex h-[72px] items-center justify-between gap-4 lg:h-20 2xl:gap-6">
             <Link
               href={navHref("#top")}
               className="flex items-center transition-opacity hover:opacity-90"
@@ -170,21 +177,33 @@ export function Header() {
               <Logo variant="light" />
             </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.key}
-                  href={navHref(item.href)}
-                  className="group relative px-4 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-cream-100/85 transition-colors hover:text-cream"
-                >
-                  {t(item.key)}
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-4 -bottom-px h-0.5 origin-left scale-x-0 bg-gold-400 transition-transform duration-300 group-hover:scale-x-100"
-                  />
-                </Link>
-              ))}
+            {/* Desktop nav — 6 band + CTA + til almashtirgich lg (1024px) da sig'maydi
+                (o'lchangan: ~1300px kerak, ~913px bor), shuning uchun xl (1280px) dan
+                boshlab ko'rinadi; undan pastda hamburger menyu. xl da ixcham, 2xl da keng. */}
+            <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
+              {NAV_ITEMS.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <Link
+                    key={item.key}
+                    href={navHref(item.href)}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "group relative whitespace-nowrap px-2.5 py-2.5 text-xs font-semibold uppercase tracking-wide transition-colors hover:text-cream 2xl:px-3 2xl:text-[13px] 2xl:tracking-wider",
+                      active ? "text-cream" : "text-cream-100/85",
+                    )}
+                  >
+                    {t(item.key)}
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "absolute inset-x-2.5 2xl:inset-x-3 -bottom-px h-0.5 origin-left bg-gold-400 transition-transform duration-300 group-hover:scale-x-100",
+                        active ? "scale-x-100" : "scale-x-0",
+                      )}
+                    />
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="flex items-center gap-3">
@@ -207,7 +226,7 @@ export function Header() {
                 onClick={() => setOpen((v) => !v)}
                 aria-label={open ? t("close") : t("menu")}
                 aria-expanded={open}
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-cream-100 hover:bg-forest-700"
+                className="xl:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-cream-100 hover:bg-forest-700"
               >
                 {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -218,19 +237,28 @@ export function Header() {
 
       {/* === Mobile menu === */}
       {open && (
-        <div className="lg:hidden border-t border-forest-700/40 bg-forest-900/98 backdrop-blur-md">
+        <div className="xl:hidden border-t border-forest-700/40 bg-forest-900/98 backdrop-blur-md">
           <Container size="wide">
             <nav className="flex flex-col py-4 gap-1">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.key}
-                  href={navHref(item.href)}
-                  onClick={() => setOpen(false)}
-                  className="rounded-md px-4 py-3 text-base font-semibold text-cream-100/90 hover:bg-forest-700 hover:text-cream transition-colors"
-                >
-                  {t(item.key)}
-                </Link>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                const active = isActive(item.href);
+                return (
+                  <Link
+                    key={item.key}
+                    href={navHref(item.href)}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "rounded-md px-4 py-3 text-base font-semibold transition-colors hover:bg-forest-700 hover:text-cream",
+                      active
+                        ? "bg-forest-700/60 text-cream"
+                        : "text-cream-100/90",
+                    )}
+                  >
+                    {t(item.key)}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Mobile contact strip */}

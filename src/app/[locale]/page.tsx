@@ -1,6 +1,7 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
+import { GrannySmithBanner } from "@/components/sections/GrannySmithBanner";
 import { Stats } from "@/components/sections/Stats";
 import { CeoQuote } from "@/components/sections/CeoQuote";
 import { About } from "@/components/sections/About";
@@ -26,6 +27,7 @@ export default function HomePage({
     <>
       <Hero />
       <TrustBar />
+      <GrannySmithBanner />
       <Stats />
       <CeoQuote />
       <About />

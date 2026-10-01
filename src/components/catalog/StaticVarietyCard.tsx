@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { FRUIT_TYPES, type CatalogVariety } from "@/lib/catalog/varieties";
 
 type Props = {
@@ -81,6 +83,20 @@ export function StaticVarietyCard({ variety, locale }: Props) {
         <p className="mt-4 flex-1 border-t border-earth-400/20 pt-4 text-xs leading-relaxed text-earth-700">
           {tagline}
         </p>
+
+        {/* Lending havolasi — butun karta bosiladi (after: overlay, article `relative`) */}
+        {variety.landingHref && (
+          <Link
+            href={`/${locale}${variety.landingHref}`}
+            className="mt-3 inline-flex items-center gap-1 self-start text-xs font-semibold text-forest-700 transition-colors hover:text-forest-900 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-forest-400"
+          >
+            {locale === "ru" ? "Подробнее" : "Batafsil"}
+            <ArrowRight
+              className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
+        )}
       </div>
     </article>
   );

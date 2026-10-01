@@ -4,6 +4,7 @@
     "varieties": "Navlar",
     "nursery": "Ko'chatzor",
     "saplings": "Mevali ko'chatlar",
+    "grannySmith": "Granny Smith",
     "b2b": "B2B",
     "about": "Biz haqimizda",
     "news": "Yangiliklar",
@@ -30,6 +31,14 @@
       "partners": "Netherlands Fruit Solutions",
       "export": "Eksport sertifikati"
     }
+  },
+  "grannySmithBanner": {
+    "eyebrow": "Yangi nav",
+    "title": "Granny Smith (Challenger) — ko'k olma",
+    "text": "Bozorda talab oshib borayotgan yashil olma: 6 oygacha saqlanadi, gektaridan 40–50 tonna hosil. Sinalgan ko'chatlar Parkent Plants'da.",
+    "chips": ["75–80 mm kalibr", "6 oy saqlanadi", "40–50 t/ga"],
+    "cta": "Batafsil ko'rish",
+    "imageAlt": "Granny Smith olma shingili"
   },
   "stats": {
     "title": "Raqamlarda biz",

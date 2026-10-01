@@ -4,6 +4,7 @@
     "varieties": "Сорта",
     "nursery": "Питомник",
     "saplings": "Плодовые саженцы",
+    "grannySmith": "Granny Smith",
     "b2b": "B2B",
     "about": "О нас",
     "news": "Новости",
@@ -30,6 +31,14 @@
       "partners": "Netherlands Fruit Solutions",
       "export": "Экспортный сертификат"
     }
+  },
+  "grannySmithBanner": {
+    "eyebrow": "Новый сорт",
+    "title": "Granny Smith (Челленджер) — зелёное яблоко",
+    "text": "Зелёное яблоко с растущим спросом на рынке: хранится до 6 месяцев, 40–50 тонн с гектара. Проверенные саженцы в Parkent Plants.",
+    "chips": ["Калибр 75–80 мм", "Хранение 6 месяцев", "40–50 т/га"],
+    "cta": "Подробнее",
+    "imageAlt": "Гроздь яблок Granny Smith"
   },
   "stats": {
     "title": "Мы в цифрах",

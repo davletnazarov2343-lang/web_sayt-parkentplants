@@ -54,6 +54,8 @@ export type AppleVariety = {
   taglineRu: string;
   /** Optional photo (relative to /public) — Norchontol-branded */
   photo?: string;
+  /** Optional maxsus lending sahifa (locale prefiksisiz, masalan "/granny-smith") */
+  landingHref?: string;
 };
 
 export const TOP_APPLES: AppleVariety[] = [
@@ -212,6 +214,7 @@ export const TOP_APPLES: AppleVariety[] = [
       "Yashil olma standarti. 6 oygacha saqlanadi, supermarket va eksport bozorida yetakchi.",
     taglineRu:
       "Стандарт зелёных яблок. Хранится до 6 месяцев, лидер на рынке супермаркетов и экспорта.",
+    landingHref: "/granny-smith",
   },
   {
     slug: "pink-lady",
