@@ -12,7 +12,8 @@ import { useTranslations } from "next-intl";
 import { WhatsappIcon, TelegramIcon } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
 
-const TELEGRAM_URL = "https://t.me/norchontolbot";
+// Parkent Plants Telegram kontakti (saytning boshqa joylarida ham shu raqam).
+const TELEGRAM_URL = "https://t.me/+998995573800";
 // Hero CTA bilan to'qnashmasin uchun shu masofadan keyin paydo bo'ladi.
 const SCROLL_REVEAL_THRESHOLD = 600;
 
@@ -47,7 +48,7 @@ export function WhatsappFab() {
         href={TELEGRAM_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Telegram bot orqali yozish"
+        aria-label="Telegram orqali yozish"
         onClick={() => trackEvent("contact_telegram", { source: "fab" })}
         className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#229ED9] text-white shadow-[0_8px_24px_-4px_rgba(34,158,217,0.5)] transition-all hover:scale-105 hover:shadow-[0_12px_32px_-4px_rgba(34,158,217,0.6)] sm:h-16 sm:w-16"
       >
