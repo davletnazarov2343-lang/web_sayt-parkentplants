@@ -6,7 +6,7 @@ import { VARIETY_LANDINGS } from "@/lib/landings";
 
 type Props = { params: { locale: string } };
 
-const CONFIG = VARIETY_LANDINGS["granny-smith"];
+const CONFIG = VARIETY_LANDINGS["devil-gala"];
 
 export async function generateMetadata({
   params: { locale },
@@ -15,7 +15,7 @@ export async function generateMetadata({
   return generateVarietyLandingMetadata(CONFIG, locale);
 }
 
-export default function GrannySmithPage({ params: { locale } }: Props) {
+export default function DevilGalaPage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   return <VarietyLanding config={CONFIG} locale={locale} />;
 }

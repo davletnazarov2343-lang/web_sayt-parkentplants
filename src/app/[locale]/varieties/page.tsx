@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { VarietyCard } from "@/components/catalog/VarietyCard";
 import { FruitTypeNav } from "@/components/catalog/FruitTypeNav";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
+import { FeaturedVarieties } from "@/components/sections/FeaturedVarieties";
 import { getAllFruitTypes, getAllVarieties } from "@/sanity/fetch";
 import type { Locale } from "@/sanity/types";
 import {
@@ -68,7 +69,14 @@ export default async function VarietiesIndexPage({
               </p>
             )}
           </header>
+        </Container>
+      </section>
 
+      {/* Tavsiya etilgan navlar — katalog filtri/kartalaridan oldin */}
+      <FeaturedVarieties />
+
+      <section className="bg-cream pb-12">
+        <Container>
           {/* Filter — faqat Sanity'da ma'lumot bo'lganda */}
           {hasSanityData && (
             <div className="mt-10">

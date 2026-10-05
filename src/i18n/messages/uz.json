@@ -4,7 +4,6 @@
     "varieties": "Navlar",
     "nursery": "Ko'chatzor",
     "saplings": "Mevali ko'chatlar",
-    "grannySmith": "Granny Smith",
     "b2b": "B2B",
     "about": "Biz haqimizda",
     "news": "Yangiliklar",
@@ -32,13 +31,26 @@
       "export": "Eksport sertifikati"
     }
   },
-  "grannySmithBanner": {
-    "eyebrow": "Yangi nav",
-    "title": "Granny Smith (Challenger) — ko'k olma",
-    "text": "Bozorda talab oshib borayotgan yashil olma: 6 oygacha saqlanadi, gektaridan 40–50 tonna hosil. Sinalgan ko'chatlar Parkent Plants'da.",
-    "chips": ["75–80 mm kalibr", "6 oy saqlanadi", "40–50 t/ga"],
-    "cta": "Batafsil ko'rish",
-    "imageAlt": "Granny Smith olma shingili"
+  "featuredVarieties": {
+    "eyebrow": "Tavsiya etamiz",
+    "title": "Bozorbop olma navlari",
+    "text": "Bozorda talab yuqori, sinalgan navlar — batafsil ma'lumot va ko'chatga so'rov.",
+    "cta": "Batafsil",
+    "allLink": "Barcha navlar",
+    "items": {
+      "devil-gala": {
+        "name": "Devil Gala",
+        "tagline": "Galaning eng qizili — bozorga hammadan 1 oy oldin chiqadi.",
+        "chips": ["Iyul–avgust", "5–6 oy saqlanadi", "40–45 t/ga"],
+        "imageAlt": "Devil Gala olma shingili"
+      },
+      "granny-smith": {
+        "name": "Granny Smith (Challenger)",
+        "tagline": "Ko'k olma standarti — 6 oygacha saqlanadi.",
+        "chips": ["75–80 mm kalibr", "6 oy saqlanadi", "40–50 t/ga"],
+        "imageAlt": "Granny Smith olma shingili"
+      }
+    }
   },
   "stats": {
     "title": "Raqamlarda biz",
@@ -1110,6 +1122,89 @@
       ]
     },
     "formTitle": "Granny Smith ko'chatiga so'rov qoldiring"
+  },
+  "devilGalaPage": {
+    "metaTitle": "Devil Gala olma ko'chati",
+    "metaDescription": "Devil Gala — Galaning eng qizili: iyul–avgustda pishadi, bozorga hammadan oldin chiqadi, 5–6 oy saqlanadi, gektaridan 40–45 tonna. Sinalgan ko'chatlar, M9 payvandtag.",
+    "breadcrumb": "Devil Gala",
+    "eyebrow": "Devil Gala olma ko'chati",
+    "title": "Olma bozorida hammadan 1 oy oldin pul ishlashni xohlaysizmi?",
+    "lead": "Gala navlari uzoq turmaydi, tez yumshab qoladi degan gaplarni unuting! Devil Gala — bugun bozorda butunlay boshqacha qoidalar bilan o'ynayotgan, Galaning eng qizil navi. Parkent Plants — sinalgan mevali ko'chatlar.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "audience": {
+      "title": "Bu nav kimga kerak?",
+      "items": [
+        {
+          "title": "Mijozlar",
+          "text": "To'q qizil, xushbo'y va shirin olma. Rastada birinchi bo'lib ko'zga tashlanadi."
+        },
+        {
+          "title": "Sotuvchilar",
+          "text": "Bozorga hammadan 1 oy oldin chiqadi. 5–6 oygacha saqlanadi, Gala kabi tez yumshab qolmaydi."
+        },
+        {
+          "title": "Yetishtiruvchilar",
+          "text": "2 yildan hosilga kiradi, gektaridan 40–45 tonna, har yili barqaror hosil."
+        }
+      ]
+    },
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        { "label": "Nomi", "value": "Devil Gala (Galaning eng qizili)" },
+        { "label": "Pishish vaqti", "value": "Iyul–avgust (hududga qarab)" },
+        { "label": "Kalibri", "value": "65–75 mm" },
+        { "label": "Meva og'irligi", "value": "160–180 g" },
+        { "label": "Payvandtag", "value": "M9" },
+        { "label": "Hosilga kirishi", "value": "2 yildan" },
+        { "label": "O'sishi", "value": "O'rtacha-kuchli" },
+        { "label": "Maksimal hosildorlik", "value": "40–45 tonna (gektariga)" },
+        { "label": "Saqlanishi", "value": "5–6 oy" },
+        { "label": "Changlanishi", "value": "Changlatuvchi ekilishi kerak (Golden Delicious, Granny Smith, Fuji)" }
+      ]
+    },
+    "advantages": {
+      "title": "Ustunliklari",
+      "items": [
+        "Erta rang oladi — to'q qizil, ultra-intensiv rang",
+        "Aromati va shakari baland",
+        "Bozorga birinchi bo'lib chiqadi",
+        "Solkashlikka (yil oralab hosil berishga) kam chalinadi",
+        "Har yili barqaror hosil beradi"
+      ]
+    },
+    "warning": {
+      "title": "Muhim izoh",
+      "text": "Quyosh urishi xavfi bor — bu mevaning narxiga ta'sir qiladi, setka (soya to'ri) qilish tavsiya etiladi. Shuningdek, mevalarni majburiy siyraklatish tavsiya qilinadi."
+    },
+    "gallery": {
+      "alt1": "Devil Gala olmalari shoxda",
+      "alt2": "Devil Gala olma shingili",
+      "alt3": "Devil Gala olmalari ko'k osmon fonida"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Devil Gala qachon pishadi?",
+          "a": "Iyul–avgustda, hududga qarab. Shu sababli bozorga boshqa navlardan oldin chiqadi."
+        },
+        {
+          "q": "Gala tez yumshab qolmaydimi?",
+          "a": "Devil Gala to'g'ri sharoitda 5–6 oygacha saqlanadi."
+        },
+        {
+          "q": "Changlatuvchi kerakmi?",
+          "a": "Ha. Yonida Golden Delicious, Granny Smith yoki Fuji ekilishi kerak."
+        },
+        {
+          "q": "Quyosh urishidan qanday himoya qilinadi?",
+          "a": "Bog' ustiga setka (soya to'ri) tortish tavsiya etiladi. Bu meva sifatini va narxini saqlaydi."
+        }
+      ]
+    },
+    "formTitle": "Devil Gala ko'chatiga so'rov qoldiring"
   },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",

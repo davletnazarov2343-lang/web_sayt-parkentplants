@@ -16,16 +16,25 @@ import {
   YoutubeIcon,
 } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
+import { LANDING_HREFS } from "@/lib/landings";
 import { cn } from "@/lib/utils";
 
-const NAV_ITEMS = [
+type NavItem = {
+  key: string;
+  href: string;
+  /** Qo'shimcha yo'llar (locale prefiksisiz) — shularda ham band aktiv ko'rinadi */
+  match?: ReadonlyArray<string>;
+};
+
+const NAV_ITEMS: ReadonlyArray<NavItem> = [
   { key: "home", href: "#top" },
   { key: "saplings", href: "/kochatlar" },
-  { key: "grannySmith", href: "/granny-smith" },
+  // Navlar: katalog + lending sahifalar (Granny Smith, Devil Gala, ...)
+  { key: "varieties", href: "/varieties", match: LANDING_HREFS },
   { key: "about", href: "/biz-haqimizda" },
   { key: "news", href: "#news" },
   { key: "contact", href: "/kontakt" },
-] as const;
+];
 
 const SOCIAL_LINKS = [
   {
@@ -69,10 +78,13 @@ export function Header() {
     return isHomepage ? target : `/${locale}${target === "#top" ? "" : target}`;
   };
   // Aktiv band — faqat sahifa havolalari (/...) uchun; anchor (#...) bandlar emas.
-  const isActive = (target: string) => {
-    if (!target.startsWith("/")) return false;
+  const matchesPath = (target: string) => {
     const full = `/${locale}${target}`;
     return pathname === full || pathname.startsWith(`${full}/`);
+  };
+  const isActive = (item: NavItem) => {
+    if (!item.href.startsWith("/")) return false;
+    return matchesPath(item.href) || (item.match?.some(matchesPath) ?? false);
   };
 
   useEffect(() => {
@@ -182,7 +194,7 @@ export function Header() {
                 boshlab ko'rinadi; undan pastda hamburger menyu. xl da ixcham, 2xl da keng. */}
             <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1">
               {NAV_ITEMS.map((item) => {
-                const active = isActive(item.href);
+                const active = isActive(item);
                 return (
                   <Link
                     key={item.key}
@@ -241,7 +253,7 @@ export function Header() {
           <Container size="wide">
             <nav className="flex flex-col py-4 gap-1">
               {NAV_ITEMS.map((item) => {
-                const active = isActive(item.href);
+                const active = isActive(item);
                 return (
                   <Link
                     key={item.key}
