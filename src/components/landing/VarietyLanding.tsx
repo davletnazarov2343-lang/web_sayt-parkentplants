@@ -109,6 +109,7 @@ export async function VarietyLanding({
 
   const { hero: IMG_HERO, cluster: IMG_CLUSTER, closeup: IMG_CLOSEUP } =
     config.images;
+  const extraGallery = config.extraGallery ?? [];
   const pageUrl = `${BASE_URL}/${locale}/${config.slug}`;
 
   const audience = t.raw("audience.items") as { title: string; text: string }[];
@@ -310,15 +311,35 @@ export async function VarietyLanding({
 
           {/* 6. Galereya — closeup (rasm ichida logotip/telefon bor: kesmaymiz) */}
           <section className="mt-20">
-            <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)]">
-              <Image
-                src={IMG_CLOSEUP}
-                alt={t("gallery.alt3")}
-                fill
-                sizes="(min-width: 768px) 672px, 100vw"
-                className="object-cover"
-              />
-            </div>
+            {extraGallery.length > 0 ? (
+              // Qo'shimcha rasmlar berilgan: closeup + extraGallery, grid'da
+              <div className="grid gap-5 md:grid-cols-3">
+                {[IMG_CLOSEUP, ...extraGallery].map((src, i) => (
+                  <div
+                    key={src}
+                    className="relative aspect-square w-full overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50"
+                  >
+                    <Image
+                      src={src}
+                      alt={t(`gallery.alt${i + 3}`)}
+                      fill
+                      sizes="(min-width: 1280px) 384px, (min-width: 768px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)]">
+                <Image
+                  src={IMG_CLOSEUP}
+                  alt={t("gallery.alt3")}
+                  fill
+                  sizes="(min-width: 768px) 672px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            )}
           </section>
 
           {/* 7. FAQ */}

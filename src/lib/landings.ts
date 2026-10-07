@@ -12,7 +12,7 @@
 
 import type { TrackEventKey } from "@/lib/analytics/events";
 
-export type LandingSlug = "devil-gala" | "granny-smith";
+export type LandingSlug = "black-splendor" | "devil-gala" | "granny-smith";
 
 export type VarietyLandingConfig = {
   /** URL slug — locale prefiksisiz va "/" siz (masalan "granny-smith") */
@@ -24,6 +24,12 @@ export type VarietyLandingConfig = {
     cluster: string;
     closeup: string;
   };
+  /**
+   * Ixtiyoriy qo'shimcha galereya rasmlari. Berilsa — galereya closeup + shu
+   * rasmlarni grid'da ko'rsatadi (alt'lar `gallery.alt4`, `gallery.alt5`, ...
+   * — tartib bo'yicha). Berilmasa — galereya faqat closeup (eski ko'rinish).
+   */
+  extraGallery?: ReadonlyArray<string>;
   /** Lid manbasi — LeadForm `source` (masalan "granny-smith-lending") */
   leadSource: string;
   /** ViewTracker event nomi (events.ts'dagi EVENT_MAP kaliti) */
@@ -60,6 +66,21 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     // Changlatuvchilar qatoridagi "Granny Smith" — o'z lendingiga havola
     specLinks: [{ text: "Granny Smith", slug: "granny-smith" }],
   },
+  "black-splendor": {
+    slug: "black-splendor",
+    namespace: "blackSplendorPage",
+    images: {
+      hero: "/images/black-splendor/hero.jpg",
+      cluster: "/images/black-splendor/cluster.jpg",
+      closeup: "/images/black-splendor/closeup.jpg",
+    },
+    extraGallery: [
+      "/images/black-splendor/market-1.jpg",
+      "/images/black-splendor/market-2.jpg",
+    ],
+    leadSource: "black-splendor-lending",
+    viewEvent: "view_black_splendor",
+  },
 };
 
 export type FeaturedLanding = {
@@ -67,10 +88,16 @@ export type FeaturedLanding = {
   /** Locale prefiksisiz yo'l */
   href: string;
   image: string;
-  accent: "red" | "green";
+  accent: "red" | "green" | "purple";
 };
 
 export const FEATURED_LANDINGS: ReadonlyArray<FeaturedLanding> = [
+  {
+    slug: "black-splendor",
+    href: "/black-splendor",
+    image: VARIETY_LANDINGS["black-splendor"].images.cluster,
+    accent: "purple",
+  },
   {
     slug: "devil-gala",
     href: "/devil-gala",

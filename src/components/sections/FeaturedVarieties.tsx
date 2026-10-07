@@ -19,10 +19,15 @@ const ACCENT_STYLES: Record<
     card: "border-forest-400/40 hover:border-forest-400",
     chip: "border-forest-400/40 bg-forest-50/60 text-forest-900",
   },
+  purple: {
+    card: "border-purple-300/60 hover:border-purple-400",
+    chip: "border-purple-200 bg-purple-50 text-purple-900",
+  },
 };
 
 /**
- * "Tavsiya etilgan navlar" — nav lending sahifalariga olib boruvchi kartalar.
+ * "Tavsiya etilgan navlar" — nav lending sahifalariga olib boruvchi kartalar
+ * (olma, olxo'ri, ...). Kartalar balandligi bir xil (grid stretch + CTA pastda).
  * Ro'yxat — src/lib/landings.ts (FEATURED_LANDINGS), matnlar —
  * `featuredVarieties` namespace'da slug bo'yicha. Server komponent.
  */
@@ -69,7 +74,7 @@ export function FeaturedVarieties({
           )}
         </div>
 
-        <ul className="mt-8 grid gap-6 md:grid-cols-2">
+        <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {FEATURED_LANDINGS.map((landing) => {
             const accent = ACCENT_STYLES[landing.accent];
             const chips = t.raw(`items.${landing.slug}.chips`) as string[];
@@ -87,7 +92,7 @@ export function FeaturedVarieties({
                     src={landing.image}
                     alt={t(`items.${landing.slug}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1280px) 580px, (min-width: 768px) 45vw, 100vw"
+                    sizes="(min-width: 1280px) 384px, (min-width: 1024px) 31vw, (min-width: 768px) 45vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
@@ -117,7 +122,7 @@ export function FeaturedVarieties({
                   {/* Butun karta bosiladi (after: overlay, li `relative`) */}
                   <Link
                     href={`/${locale}${landing.href}`}
-                    className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-forest-700 transition-colors hover:text-forest-900 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-forest-400"
+                    className="mt-auto inline-flex items-center gap-1.5 self-start pt-5 text-sm font-semibold text-forest-700 transition-colors hover:text-forest-900 focus-visible:outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-forest-400"
                   >
                     {t("cta")}
                     <ArrowRight

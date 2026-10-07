@@ -62,6 +62,11 @@ const EVENT_MAP: Record<
     ga: "view_item",
     ym: "view_devil_gala",
   },
+  view_black_splendor: {
+    fbq: "ViewContent",
+    ga: "view_item",
+    ym: "view_black_splendor",
+  },
   // Video player — Shuhrat aka videosi ko'rildi
   video_play: { fbq: "ViewContent", ga: "view_item", ym: "video_play" },
   // Hero CTA bosish

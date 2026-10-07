@@ -33,11 +33,17 @@
   },
   "featuredVarieties": {
     "eyebrow": "Tavsiya etamiz",
-    "title": "Bozorbop olma navlari",
+    "title": "Bozorbop navlar",
     "text": "Bozorda talab yuqori, sinalgan navlar — batafsil ma'lumot va ko'chatga so'rov.",
     "cta": "Batafsil",
     "allLink": "Barcha navlar",
     "items": {
+      "black-splendor": {
+        "name": "Black Splendor",
+        "tagline": "Qora po'st, ichi qizil — bozorda kam, narxi baland.",
+        "chips": ["15-iyul", "65–70 mm", "25+ t/ga"],
+        "imageAlt": "Black Splendor olxo'risi — butun va kesilgan"
+      },
       "devil-gala": {
         "name": "Devil Gala",
         "tagline": "Galaning eng qizili — bozorga hammadan 1 oy oldin chiqadi.",
@@ -1205,6 +1211,92 @@
       ]
     },
     "formTitle": "Devil Gala ko'chatiga so'rov qoldiring"
+  },
+  "blackSplendorPage": {
+    "metaTitle": "Black Splendor olxo'ri ko'chati",
+    "metaDescription": "Black Splendor — qora po'stli, ichi qizil, yirik olxo'ri: 15-iyulda pishadi, 65–70 mm, 160–180 g, Brix 14–17%, gektaridan 25+ tonna. Mirobalan 29C payvandtagida sinalgan ko'chatlar.",
+    "breadcrumb": "Black Splendor",
+    "eyebrow": "Black Splendor olxo'ri ko'chati",
+    "title": "Nima uchun bu qora go'shtli olxo'rining narxi har yili baland bo'lyapti?",
+    "lead": "Raqobat. Bozorda pishgan paytida to'q qora, ichi qizil va yirik bo'ladigan olxo'rilar soni kam. Black Splendor — sifati va ta'mini uzoqroq saqlab turadigan navlardan biri, to'y-hashamlar va turli marosimlarda eng ko'zga tashlanadigan, talabgor nav. Parkent Plants — sinalgan mevali ko'chatlar.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "audience": {
+      "title": "Bu nav kimga kerak?",
+      "items": [
+        {
+          "title": "Mijozlar",
+          "text": "To'q qora, ichi qizil, yirik va sergo'sht olxo'ri. To'y va marosim dasturxonida eng ko'zga tashlanadigan meva."
+        },
+        {
+          "title": "Sotuvchilar",
+          "text": "Bozorda bunday olxo'ri kam — raqobat past. Sifati va ta'mi uzoqroq saqlanadi: maxsus muzlatkichda 3–4 hafta."
+        },
+        {
+          "title": "Yetishtiruvchilar",
+          "text": "2–3 yildan hosilga kiradi, gektaridan 25+ tonna. Bozorga erta va yirik kalibr bilan chiqadi."
+        }
+      ]
+    },
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        { "label": "Nomi", "value": "Black Splendor (qora, go'shtli olxo'ri)" },
+        { "label": "Pishish vaqti", "value": "15-iyul (hududga qarab)" },
+        { "label": "Kalibri", "value": "65–70 mm (klon payvandtagda)" },
+        { "label": "Meva og'irligi", "value": "160–180 g" },
+        { "label": "Shakar (Brix)", "value": "14–17%" },
+        { "label": "Payvandtag", "value": "Mirobalan 29C" },
+        { "label": "Hosilga kirishi", "value": "2–3 yildan" },
+        { "label": "O'sishi", "value": "Kuchli" },
+        { "label": "Maksimal hosildorlik", "value": "25+ tonna (gektariga)" },
+        { "label": "Saqlanishi", "value": "3–4 hafta (maxsus muzlatkichda)" },
+        { "label": "Changlanishi", "value": "Changlatuvchi ekilishi kerak (Santa Rosa, Pioneer, Shiro yoki Satsuma)" }
+      ]
+    },
+    "advantages": {
+      "title": "Ustunliklari",
+      "items": [
+        "Qora, yirik, ichi qizil va sergo'sht",
+        "Shakari va aromati o'ta zo'r",
+        "Bozorga erta va yirik kalibr bilan chiqadi",
+        "Har yili barqaror hosil beradi",
+        "Mirobalan 29C payvandtagi nematoda va ildiz chirish kasalliklariga chidamli"
+      ]
+    },
+    "warning": {
+      "title": "Muhim izoh",
+      "text": "Har yili barqaror hosil olish uchun 2 ta changlatuvchi nav to'g'ri sxemada ekilishi va bog'ga ari olib kirilishi kerak."
+    },
+    "gallery": {
+      "alt1": "Black Splendor olxo'rilari shoxda",
+      "alt2": "Black Splendor — butun va kesilgan mevalar",
+      "alt3": "Black Splendor olxo'risi kesilgan — ichi qizil",
+      "alt4": "Black Splendor olxo'risi bozor savatida",
+      "alt5": "Black Splendor olxo'rilari do'kon rastasida"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Black Splendor qachon pishadi?",
+          "a": "15-iyul atrofida, hududga qarab. Bozorga erta va yirik kalibr bilan chiqadi."
+        },
+        {
+          "q": "Changlatuvchi kerakmi?",
+          "a": "Ha. Santa Rosa, Pioneer, Shiro yoki Satsuma ekilishi kerak. Barqaror hosil uchun 2 ta changlatuvchi nav to'g'ri sxemada ekiladi va bog'ga ari olib kiriladi."
+        },
+        {
+          "q": "Eski bog' o'rniga ekish mumkinmi?",
+          "a": "Ha. Eski bog'lar o'rniga qayta bog' qilish uchun Mirobalan 29C eng zo'r tanlov: bu payvandtagdagi ko'chatlar nematoda va ildiz chirish kasalliklariga chidamli."
+        },
+        {
+          "q": "Meva qancha saqlanadi?",
+          "a": "Maxsus muzlatkichda 3–4 hafta."
+        }
+      ]
+    },
+    "formTitle": "Black Splendor ko'chatiga so'rov qoldiring"
   },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",
