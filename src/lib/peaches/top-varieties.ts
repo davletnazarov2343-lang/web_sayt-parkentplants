@@ -30,20 +30,32 @@ export type PeachVariety = {
   slug: string;
   name: string;
   origin: string;
+  /** Origin (ru) — bo'sh bo'lsa `origin` ishlatiladi */
+  originRu?: string;
   /** Harvest period (e.g. "Iyun 5-10") */
   harvestPeriod: string;
+  /** Harvest period (ru) — bo'sh bo'lsa `harvestPeriod` ishlatiladi */
+  harvestPeriodRu?: string;
   season: PeachSeason;
   flesh: PeachFlesh;
   /** Fruit size — gram or descriptor */
   fruitSize: string;
+  /** Fruit size (ru) — bo'sh bo'lsa `fruitSize` ishlatiladi */
+  fruitSizeRu?: string;
   /** Brix (sugar) if known */
   brix?: number;
   /** Flower density */
   flowerDensity: string;
+  /** Flower density (ru) — bo'sh bo'lsa `flowerDensity` ishlatiladi */
+  flowerDensityRu?: string;
   /** Bloom time */
   bloomTime: string;
+  /** Bloom time (ru) — bo'sh bo'lsa `bloomTime` ishlatiladi */
+  bloomTimeRu?: string;
   /** Tree vigor */
   treeVigor?: string;
+  /** Tree vigor (ru) — bo'sh bo'lsa `treeVigor` ishlatiladi */
+  treeVigorRu?: string;
   /** Crack-resistant? */
   crackResistant: boolean;
   /** Self-fertile? */
@@ -58,12 +70,17 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "filomena",
     name: "Filomena ®",
     origin: "PSB Produccion (Ispaniya)",
+    originRu: "PSB Produccion (Испания)",
     harvestPeriod: "May 20-25",
+    harvestPeriodRu: "20-25 мая",
     season: "very-early",
     flesh: "yellow",
     fruitSize: "140 g+",
+    fruitSizeRu: "140 г+",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Juda erta",
+    bloomTimeRu: "Очень раннее",
     crackResistant: true,
     selfFertile: true,
     badges: ["very-early", "crack-resistant"],
@@ -76,12 +93,17 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "astoria",
     name: "Astoria ®",
     origin: "PSB Produccion (Ispaniya)",
+    originRu: "PSB Produccion (Испания)",
     harvestPeriod: "May 25-30",
+    harvestPeriodRu: "25-30 мая",
     season: "very-early",
     flesh: "yellow",
     fruitSize: "150 g",
+    fruitSizeRu: "150 г",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Erta",
+    bloomTimeRu: "Раннее",
     crackResistant: true,
     selfFertile: true,
     badges: ["very-early", "crack-resistant", "long-storage"],
@@ -94,12 +116,17 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "royal-majestic",
     name: "Royal Majestic ®",
     origin: "Zaiger Genetics (AQSh)",
+    originRu: "Zaiger Genetics (США)",
     harvestPeriod: "Iyul 1-5",
+    harvestPeriodRu: "1-5 июля",
     season: "early",
     flesh: "yellow",
     fruitSize: "AA-A (yirik)",
+    fruitSizeRu: "AA-A (крупный)",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Kech",
+    bloomTimeRu: "Позднее",
     crackResistant: false,
     selfFertile: true,
     badges: ["premium", "long-storage"],
@@ -112,12 +139,17 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "royal-glory",
     name: "Royal Glory ®",
     origin: "Zaiger Genetics (AQSh)",
+    originRu: "Zaiger Genetics (США)",
     harvestPeriod: "Iyul 10-15",
+    harvestPeriodRu: "10-15 июля",
     season: "early",
     flesh: "yellow",
     fruitSize: "Aъlo, sertola",
+    fruitSizeRu: "Отличный, сочный",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Erta-o'rta",
+    bloomTimeRu: "Ранне-среднее",
     crackResistant: false,
     selfFertile: true,
     badges: ["classic", "premium"],
@@ -130,14 +162,20 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "royal-mona",
     name: "Royal Mona",
     origin: "Zaiger Genetics (AQSh)",
+    originRu: "Zaiger Genetics (США)",
     harvestPeriod: "Avgust 1-5",
+    harvestPeriodRu: "1-5 августа",
     season: "mid",
     flesh: "yellow",
     fruitSize: "AA",
+    fruitSizeRu: "AA",
     brix: 12,
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Erta",
+    bloomTimeRu: "Раннее",
     treeVigor: "Kuchli",
+    treeVigorRu: "Сильнорослое",
     crackResistant: false,
     selfFertile: true,
     badges: ["premium"],
@@ -150,31 +188,42 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "sweet-dream",
     name: "Sweet Dream",
     origin: "PSB Produccion (Ispaniya)",
+    originRu: "PSB Produccion (Испания)",
     harvestPeriod: "Avgust 15-20",
+    harvestPeriodRu: "15-20 августа",
     season: "mid",
     flesh: "yellow",
     fruitSize: "Yuqori tonnaj",
+    fruitSizeRu: "Высокий тоннаж",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Erta",
+    bloomTimeRu: "Раннее",
     crackResistant: false,
     selfFertile: true,
     badges: ["premium", "export"],
     taglineUz:
       "Yuqori hosilli (tonnaj!), ravon yaltiroq po'st. O'rta mavsumning eksport tanlovi.",
     taglineRu:
-      "Высокая тоннажность, гладкая блестящая кожица. Экспортный выбор среднего сезона.",
+      "Высокоурожайный (тоннаж!), гладкая блестящая кожица. Экспортный выбор среднего сезона.",
   },
   {
     slug: "cresthaven",
     name: "Cresthaven",
     origin: "AQSh",
+    originRu: "США",
     harvestPeriod: "Avgust 25-30",
+    harvestPeriodRu: "25-30 августа",
     season: "late",
     flesh: "yellow",
     fruitSize: "O'rtacha-yirik",
+    fruitSizeRu: "Среднекрупный",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Juda kech",
+    bloomTimeRu: "Очень позднее",
     treeVigor: "Yarim tik, kuchli",
+    treeVigorRu: "Полупрямостоячее, сильнорослое",
     crackResistant: false,
     selfFertile: true,
     badges: ["classic", "long-storage", "late"],
@@ -187,13 +236,19 @@ export const TOP_PEACHES: PeachVariety[] = [
     slug: "q-henry",
     name: "Q Henry",
     origin: "Kaliforniya (AQSh)",
+    originRu: "Калифорния (США)",
     harvestPeriod: "Sentyabr 10-15",
+    harvestPeriodRu: "10-15 сентября",
     season: "very-late",
     flesh: "yellow",
     fruitSize: "Yirik, yumaloq",
+    fruitSizeRu: "Крупный, округлый",
     flowerDensity: "A'lo",
+    flowerDensityRu: "Отличная",
     bloomTime: "Juda kech",
+    bloomTimeRu: "Очень позднее",
     treeVigor: "Kuchli, juda sermahsul",
+    treeVigorRu: "Сильнорослое, очень урожайное",
     crackResistant: false,
     selfFertile: true,
     badges: ["very-late", "long-storage", "export"],

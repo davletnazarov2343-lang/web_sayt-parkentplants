@@ -12,10 +12,10 @@
  * Bu fayl o'sha 4 manbani BITTA umumiy `CatalogVariety` shakliga keltiradi.
  * MUHIM: bu yerda hech qanday yangi ma'lumot o'ylab topilmagan — faqat
  * manba fayllarda va i18n'da mavjud qiymatlar ko'chirilgan/formatlangan.
- * Agar manbada biror maydon bo'lmasa (masalan ruscha tarjima), o'sha
- * qiymat ikkala locale uchun ham asl (uz) matn bilan ko'rsatiladi — bu
- * loyihada allaqachon mavjud pattern (qarang: TopCherries.tsx dagi
- * `variety.color`, `variety.nameOriginal`).
+ * Matnli maydonlarning ruscha juftlari manba fayllarda ixtiyoriy
+ * `<maydon>Ru` nomi bilan turadi (masalan `harvestPeriodRu`, `originRu`).
+ * Ruscha juft bo'lmasa, RU locale uchun asl (uz) matn fallback sifatida
+ * ko'rsatiladi: `v.<maydon>Ru ?? v.<maydon>`.
  *
  * Sanity ulanganda bu qatlamga tegilmaydi — u faqat Sanity bo'sh bo'lgan
  * holat uchun ishlatiladi (qarang: varieties/page.tsx dagi `hasSanityData`).
@@ -166,19 +166,19 @@ function mapApple(v: AppleVariety): CatalogVariety {
       labelUz: "Kelib chiqishi",
       labelRu: "Происхождение",
       valueUz: v.origin,
-      valueRu: v.origin,
+      valueRu: v.originRu ?? v.origin,
     },
     {
       labelUz: "Po'sti rangi",
       labelRu: "Цвет кожуры",
       valueUz: v.skinColor,
-      valueRu: v.skinColor,
+      valueRu: v.skinColorRu ?? v.skinColor,
     },
     {
       labelUz: "Tavsiya etilgan payvandtag",
       labelRu: "Рекомендуемый подвой",
       valueUz: v.recommendedRootstocks,
-      valueRu: v.recommendedRootstocks,
+      valueRu: v.recommendedRootstocksRu ?? v.recommendedRootstocks,
     },
     v.selfPollinating
       ? {
@@ -191,7 +191,7 @@ function mapApple(v: AppleVariety): CatalogVariety {
           labelUz: "Changlatuvchi navlar",
           labelRu: "Опылители",
           valueUz: v.pollinators ?? "Ko'rsatilmagan",
-          valueRu: v.pollinators ?? "Не указано",
+          valueRu: v.pollinatorsRu ?? v.pollinators ?? "Не указано",
         },
     {
       labelUz: "Saqlash muddati",
@@ -203,7 +203,7 @@ function mapApple(v: AppleVariety): CatalogVariety {
       labelUz: "Daraxt kuchi",
       labelRu: "Сила дерева",
       valueUz: v.treeVigor,
-      valueRu: v.treeVigor,
+      valueRu: v.treeVigorRu ?? v.treeVigor,
     },
   ];
 
@@ -212,7 +212,7 @@ function mapApple(v: AppleVariety): CatalogVariety {
     name: v.name,
     fruitType: "apple",
     ripeningUz: v.harvestPeriod,
-    ripeningRu: v.harvestPeriod,
+    ripeningRu: v.harvestPeriodRu ?? v.harvestPeriod,
     badges: v.badges.map(badgeLabel),
     taglineUz: v.taglineUz,
     taglineRu: v.taglineRu,
@@ -228,13 +228,13 @@ function mapPeach(v: PeachVariety): CatalogVariety {
       labelUz: "Kelib chiqishi",
       labelRu: "Происхождение",
       valueUz: v.origin,
-      valueRu: v.origin,
+      valueRu: v.originRu ?? v.origin,
     },
     {
       labelUz: "Meva o'lchami",
       labelRu: "Размер плода",
       valueUz: v.fruitSize,
-      valueRu: v.fruitSize,
+      valueRu: v.fruitSizeRu ?? v.fruitSize,
     },
   ];
 
@@ -251,14 +251,14 @@ function mapPeach(v: PeachVariety): CatalogVariety {
     labelUz: "Gullash zichligi",
     labelRu: "Плотность цветения",
     valueUz: v.flowerDensity,
-    valueRu: v.flowerDensity,
+    valueRu: v.flowerDensityRu ?? v.flowerDensity,
   });
 
   specs.push({
     labelUz: "Gullash vaqti",
     labelRu: "Время цветения",
     valueUz: v.bloomTime,
-    valueRu: v.bloomTime,
+    valueRu: v.bloomTimeRu ?? v.bloomTime,
   });
 
   if (v.treeVigor) {
@@ -266,7 +266,7 @@ function mapPeach(v: PeachVariety): CatalogVariety {
       labelUz: "Daraxt kuchi",
       labelRu: "Сила дерева",
       valueUz: v.treeVigor,
-      valueRu: v.treeVigor,
+      valueRu: v.treeVigorRu ?? v.treeVigor,
     });
   }
 
@@ -282,7 +282,7 @@ function mapPeach(v: PeachVariety): CatalogVariety {
     name: v.name,
     fruitType: "peach",
     ripeningUz: v.harvestPeriod,
-    ripeningRu: v.harvestPeriod,
+    ripeningRu: v.harvestPeriodRu ?? v.harvestPeriod,
     badges: v.badges.map(badgeLabel),
     taglineUz: v.taglineUz,
     taglineRu: v.taglineRu,
@@ -313,14 +313,14 @@ function mapCherry(v: CherryVariety): CatalogVariety {
     labelUz: "Changlanish",
     labelRu: "Опыление",
     valueUz: v.pollination,
-    valueRu: v.pollination,
+    valueRu: v.pollinationRu ?? v.pollination,
   });
 
   specs.push({
     labelUz: "Rang",
     labelRu: "Цвет",
     valueUz: v.color,
-    valueRu: v.color,
+    valueRu: v.colorRu ?? v.color,
   });
 
   const ripeningUz =

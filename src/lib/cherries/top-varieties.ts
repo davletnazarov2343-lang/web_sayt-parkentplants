@@ -51,11 +51,15 @@ export type CherryVariety = {
   sizeMm: number;
   /** "S1 S4 (ўзини чанглатувчи)" — kept verbatim */
   pollination: string;
+  /** Pollination (ru) — bo'sh bo'lsa `pollination` ishlatiladi */
+  pollinationRu?: string;
   selfPollinating: boolean;
   firmness: CherryFirmness;
   crackResistance: CherryCrackResistance;
   /** Color description in Uzbek-Latin */
   color: string;
+  /** Color description (ru) — bo'sh bo'lsa `color` ishlatiladi */
+  colorRu?: string;
   /** Recommended badges (visual labels) */
   badges: CherryBadge[];
   /** One-line tagline (uz) */
@@ -73,15 +77,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "very-early",
     sizeMm: 28,
     pollination: "S1 S4 (o'zini changlatuvchi)",
+    pollinationRu: "S1 S4 (самоопыляющийся)",
     selfPollinating: true,
     firmness: "good",
     crackResistance: "medium",
     color: "Po'st och-qirmizi · et qizil",
+    colorRu: "Кожица светло-красная · мякоть красная",
     badges: ["reference", "self-pollinating", "early"],
     taglineUz:
       "Mavsum boshlovchisi (1–5 may). Daraxti tik va kuchli, juda unumli. Eksport bozori uchun ahamiyatli.",
     taglineRu:
-      "Открывает сезон (1–5 мая). Дерево прямое и сильное, очень урожайное. Важен для экспортного рынка.",
+      "Открывает сезон (1–5 мая). Дерево прямостоячее и сильное, очень урожайное. Важен для экспортного рынка.",
   },
   {
     slug: "nimba",
@@ -91,15 +97,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "very-early",
     sizeMm: 30,
     pollination: "S2 S3",
+    pollinationRu: "S2 S3",
     selfPollinating: false,
     firmness: "good",
     crackResistance: "low",
     color: "Po'st och-qirmizi · et qizil",
+    colorRu: "Кожица светло-красная · мякоть красная",
     badges: ["export", "early"],
     taglineUz:
       "Erta pishishi va yirikligi tufayli erta-mavsum gilosi uchun ahamiyatli. Taъmi shirin, kuchsiz nordon.",
     taglineRu:
-      "Раннее созревание и крупный размер делают сорт ценным для раннего рынка. Сладкий, легко-кисловатый.",
+      "Раннее созревание и крупный размер делают сорт ценным для рынка ранней черешни. Вкус сладкий, слегка кисловатый.",
   },
   {
     slug: "giant-red",
@@ -109,15 +117,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "early",
     sizeMm: 28,
     pollination: "S1 S3",
+    pollinationRu: "S1 S3",
     selfPollinating: false,
     firmness: "good",
     crackResistance: "medium",
     color: "Qizil",
+    colorRu: "Красная",
     badges: ["premium", "early"],
     taglineUz:
       "Jahondagi eng yirik gilos navlaridan biri. 10-mayda oq-sariq holda terib yuqori narxda sotish mumkin.",
     taglineRu:
-      "Один из самых крупных сортов в мире. К 10 мая можно собирать в бело-жёлтом виде и продавать по высокой цене.",
+      "Один из самых крупных в мире сортов черешни. Уже 10 мая можно собирать в бело-жёлтом виде и продавать по высокой цене.",
   },
   {
     slug: "sweet-ariana",
@@ -127,10 +137,12 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "early",
     sizeMm: 30,
     pollination: "S3 S4 (o'zini changlatuvchi)",
+    pollinationRu: "S3 S4 (самоопыляющийся)",
     selfPollinating: true,
     firmness: "excellent",
     crackResistance: "medium",
     color: "Po'st va et — qirmizi",
+    colorRu: "Кожица и мякоть — красные",
     badges: ["self-pollinating", "premium", "early"],
     taglineUz:
       "Yuraksimon, shirin meva. Daraxt baquvvat, tarvaqaylab o'sadi va serhosil.",
@@ -145,15 +157,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "early",
     sizeMm: 30,
     pollination: "S3 S4",
+    pollinationRu: "S3 S4",
     selfPollinating: false,
     firmness: "excellent",
     crackResistance: "medium",
     color: "Qora",
+    colorRu: "Чёрная",
     badges: ["premium"],
     taglineUz:
       "A'lo qattiqlik bilan yirik qora gilos. Erta-o'rta mavsum uchun premium tanlov.",
     taglineRu:
-      "Крупная чёрная черешня с отличной плотностью. Премиум-выбор для раннего сезона.",
+      "Крупная чёрная черешня с отличной плотностью. Премиум-выбор для раннего и среднего сезона.",
   },
   {
     slug: "sps-342",
@@ -163,15 +177,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "mid",
     sizeMm: 28,
     pollination: "S1 S5",
+    pollinationRu: "S1 S5",
     selfPollinating: false,
     firmness: "excellent",
     crackResistance: "high",
     color: "Qora",
+    colorRu: "Чёрная",
     badges: ["export", "premium"],
     taglineUz:
       "Skina'ga o'xshash sifatli, lekin 10 kun erta. Qo'shaloq mevaga chidamli, banalı uzun. Aъlo taъm.",
     taglineRu:
-      "Похож на Skina по качеству, но на 10 дней раньше. Устойчив к двойным плодам, длинная плодоножка. Отличный вкус.",
+      "Похож на Skina по качеству, но на 10 дней раньше. Устойчив к образованию двойных плодов, плодоножка длинная. Отличный вкус.",
   },
   {
     slug: "skina",
@@ -181,15 +197,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "late",
     sizeMm: 30,
     pollination: "S1 S4 (o'zini changlatuvchi)",
+    pollinationRu: "S1 S4 (самоопыляющийся)",
     selfPollinating: true,
     firmness: "very-firm",
     crackResistance: "high",
     color: "Po'st qirmizi · et to'q qirmizi",
+    colorRu: "Кожица красная · мякоть тёмно-красная",
     badges: ["export", "self-pollinating", "late"],
     taglineUz:
       "Lapins o'rnida ko'p qabul qilinmoqda. Yirikroq, qalin bandli, oson boshqariladi.",
     taglineRu:
-      "Заменяет Lapins. Крупнее, плотнее, легче в управлении.",
+      "Всё чаще выбирают вместо Lapins. Крупнее, с толстой плодоножкой, проще в управлении.",
   },
   {
     slug: "lapins",
@@ -199,15 +217,17 @@ export const TOP_CHERRIES: CherryVariety[] = [
     season: "late",
     sizeMm: 30,
     pollination: "S1 S4 (o'zini changlatuvchi)",
+    pollinationRu: "S1 S4 (самоопыляющийся)",
     selfPollinating: true,
     firmness: "excellent",
     crackResistance: "medium",
     color: "Po'st to'q qizil · et qizil",
+    colorRu: "Кожица тёмно-красная · мякоть красная",
     badges: ["self-pollinating", "classic", "late"],
     taglineUz:
       "Shimoliy-G'arbiy AQSh, Kanada va Yangi Zelandiyada keng tarqalgan, juda sermahsul.",
     taglineRu:
-      "Широко распространён в США, Канаде и Новой Зеландии, очень урожайный.",
+      "Широко распространён на северо-западе США, в Канаде и Новой Зеландии, очень урожайный.",
   },
 ];
 

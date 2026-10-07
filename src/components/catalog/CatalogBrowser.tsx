@@ -49,7 +49,9 @@ export function CatalogBrowser({
   return (
     <div>
       <nav
-        aria-label="Meva turi bo'yicha filtr"
+        aria-label={
+          locale === "ru" ? "Фильтр по виду плодов" : "Meva turi bo'yicha filtr"
+        }
         className="-mx-1 flex flex-nowrap gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center sm:overflow-visible"
       >
         <button

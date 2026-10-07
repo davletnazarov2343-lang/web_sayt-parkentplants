@@ -333,7 +333,9 @@ function CherryCard({
           <SpecRow
             Icon={Globe2}
             label={t("specs.color")}
-            value={variety.color}
+            value={
+              locale === "ru" ? variety.colorRu ?? variety.color : variety.color
+            }
           />
         </dl>
 
