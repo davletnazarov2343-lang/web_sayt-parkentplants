@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/granny-smith",
     "/devil-gala",
     "/black-splendor",
+    "/maxfiylik",
   ];
   const staticEntries = LOCALES.flatMap((locale) =>
     staticPaths.map((path) => ({

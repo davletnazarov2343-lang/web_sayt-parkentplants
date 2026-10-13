@@ -203,7 +203,15 @@ export function Footer() {
             <p>
               © {year} {BRAND.name}. {t("footer.rights")}
             </p>
-            <p>{BRAND.domain}</p>
+            <p className="flex items-center gap-4">
+              <Link
+                href={`/${locale}/maxfiylik`}
+                className="transition-colors hover:text-gold-400"
+              >
+                {t("footer.privacy")}
+              </Link>
+              <span>{BRAND.domain}</span>
+            </p>
           </div>
         </div>
       </Container>
