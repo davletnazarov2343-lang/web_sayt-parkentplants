@@ -12,7 +12,11 @@
 
 import type { TrackEventKey } from "@/lib/analytics/events";
 
-export type LandingSlug = "black-splendor" | "devil-gala" | "granny-smith";
+export type LandingSlug =
+  | "black-splendor"
+  | "devil-gala"
+  | "granny-smith"
+  | "pink-lady";
 
 export type VarietyLandingConfig = {
   /** URL slug — locale prefiksisiz va "/" siz (masalan "granny-smith") */
@@ -39,6 +43,12 @@ export type VarietyLandingConfig = {
    * qiladi (qiymatda `text` birinchi uchragan joyi). Ixtiyoriy.
    */
   specLinks?: ReadonlyArray<{ text: string; slug: LandingSlug }>;
+  /**
+   * Ixtiyoriy: payvandtag afzalliklari bo'limi (ustunliklardan keyin).
+   * `true` bo'lsa, namespace'da `rootstock: { title, items: [{ title, text }] }`
+   * bo'lishi shart. Berilmasa — bo'lim chiqmaydi (eski ko'rinish).
+   */
+  rootstockSection?: boolean;
 };
 
 export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
@@ -81,6 +91,24 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     leadSource: "black-splendor-lending",
     viewEvent: "view_black_splendor",
   },
+  "pink-lady": {
+    slug: "pink-lady",
+    namespace: "pinkLadyPage",
+    images: {
+      hero: "/images/pink-lady/hero.jpg",
+      cluster: "/images/pink-lady/cluster.jpg",
+      closeup: "/images/pink-lady/closeup.jpg",
+    },
+    extraGallery: [
+      "/images/pink-lady/harvest-bin.jpg",
+      "/images/pink-lady/harvest-pile.jpg",
+    ],
+    leadSource: "pink-lady-lending",
+    viewEvent: "view_pink_lady",
+    // Changlatuvchilar qatoridagi "Granny Smith" — o'z lendingiga havola
+    specLinks: [{ text: "Granny Smith", slug: "granny-smith" }],
+    rootstockSection: true,
+  },
 };
 
 export type FeaturedLanding = {
@@ -88,10 +116,16 @@ export type FeaturedLanding = {
   /** Locale prefiksisiz yo'l */
   href: string;
   image: string;
-  accent: "red" | "green" | "purple";
+  accent: "red" | "green" | "purple" | "pink";
 };
 
 export const FEATURED_LANDINGS: ReadonlyArray<FeaturedLanding> = [
+  {
+    slug: "pink-lady",
+    href: "/pink-lady",
+    image: VARIETY_LANDINGS["pink-lady"].images.cluster,
+    accent: "pink",
+  },
   {
     slug: "black-splendor",
     href: "/black-splendor",

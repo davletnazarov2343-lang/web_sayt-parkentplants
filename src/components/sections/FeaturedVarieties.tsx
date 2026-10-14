@@ -23,6 +23,10 @@ const ACCENT_STYLES: Record<
     card: "border-purple-300/60 hover:border-purple-400",
     chip: "border-purple-200 bg-purple-50 text-purple-900",
   },
+  pink: {
+    card: "border-pink-300/60 hover:border-pink-400",
+    chip: "border-pink-200 bg-pink-50 text-pink-900",
+  },
 };
 
 /**
@@ -74,7 +78,8 @@ export function FeaturedVarieties({
           )}
         </div>
 
-        <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* 4 ta karta: mobil 1, planshet/noutbuk 2x2, keng ekran (xl) 4 qator — yetim karta qolmaydi */}
+        <ul className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {FEATURED_LANDINGS.map((landing) => {
             const accent = ACCENT_STYLES[landing.accent];
             const chips = t.raw(`items.${landing.slug}.chips`) as string[];
@@ -92,7 +97,7 @@ export function FeaturedVarieties({
                     src={landing.image}
                     alt={t(`items.${landing.slug}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1280px) 384px, (min-width: 1024px) 31vw, (min-width: 768px) 45vw, 100vw"
+                    sizes="(min-width: 1280px) 280px, (min-width: 768px) 46vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

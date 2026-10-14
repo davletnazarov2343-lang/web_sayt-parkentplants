@@ -38,6 +38,12 @@
     "cta": "Batafsil",
     "allLink": "Barcha navlar",
     "items": {
+      "pink-lady": {
+        "name": "Pink Lady",
+        "tagline": "Dunyodagi eng mashhur olma: sersuv, qattiq, eti qoraymaydi — eksportbop",
+        "chips": ["Oktyabr–noyabr", "CA'da 8–9 oy saqlanadi", "40–45 t/ga"],
+        "imageAlt": "Pink Lady olma shingili quyosh nurida"
+      },
       "black-splendor": {
         "name": "Black Splendor",
         "tagline": "Qora po'st, ichi qizil — bozorda kam, narxi baland.",
@@ -1298,6 +1304,128 @@
       ]
     },
     "formTitle": "Black Splendor ko'chatiga so'rov qoldiring"
+  },
+  "pinkLadyPage": {
+    "metaTitle": "Pink Lady olma ko'chati — MM111 payvandtagida",
+    "metaDescription": "Pink Lady (Rosy Glow) olma ko'chati MM111 payvandtagida: sersuv, qattiq, eti qoraymaydi, CA muzlatkichda 8–9 oygacha saqlanadi.",
+    "breadcrumb": "Pink Lady",
+    "eyebrow": "Pink Lady olma ko'chati",
+    "title": "Dunyodagi eng mashhur olma — Pink Lady",
+    "lead": "O'zbekiston iqlimiga eng mos tushgan, xalqaro brend darajasidagi olma navi. Amerikaning mashhur Golden Delicious (shirin va sersuv) hamda Avstraliyaning kechpishar Lady Williams (to'q qizil va nordon) olma navlarini tabiiy chatishtirish orqali olingan.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "audience": {
+      "title": "Bu nav kimga kerak?",
+      "items": [
+        {
+          "title": "Mijozlar",
+          "text": "Shirin va qisman nordon ta'm, o'zgacha aromat. Tishlaganda shu qadar sersuvki, sharbati sachrab ketadi."
+        },
+        {
+          "title": "Sotuvchilar",
+          "text": "Mevasi qattiq, po'sti mustahkam — terish va uzoq masofaga tashishda lat yemaydi. Eti kesilgandan keyin qoraymaydi. Oddiy omborda 4–5 oy, CA muzlatkichda 8–9 oygacha saqlanadi."
+        },
+        {
+          "title": "Yetishtiruvchilar",
+          "text": "3-yildan hosilga kiradi, maksimal hosildorlik gektariga 40–45 tonna. MM111 payvandtagida shpaler (simbag'az) shart emas."
+        }
+      ]
+    },
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        { "label": "Nomi", "value": "Pink Lady (Rosy Glow — eng qizili)" },
+        { "label": "Pishish vaqti", "value": "Oktyabr–noyabr (hududga qarab)" },
+        { "label": "Kalibri", "value": "70–85 mm" },
+        { "label": "Meva og'irligi", "value": "180–210 gramm" },
+        { "label": "Shakari", "value": "13–15%" },
+        { "label": "Payvandtagi", "value": "MM111" },
+        { "label": "Hosilga kirishi", "value": "3-yildan" },
+        { "label": "O'sishi", "value": "Kuchli o'sadi" },
+        { "label": "Maksimal hosildorligi", "value": "Gektariga 40–45 tonna" },
+        { "label": "Saqlanishi", "value": "Oddiy omborda 4–5 oy, maxsus muzlatkichlarda (CA) 8–9 oygacha sifatini yo'qotmaydi" },
+        { "label": "Changlanishi", "value": "Changlatuvchi ekilishi kerak (Golden Delicious, Granny Smith, Fuji)" }
+      ]
+    },
+    "advantages": {
+      "title": "Nav ustunliklari",
+      "items": [
+        {
+          "title": "Ta'mi",
+          "text": "Shirin va qisman nordon ta'm aralashmasi, o'zgacha aromat bilan. Tishlaganda shu qadar sersuvki, hatto sharbati sachrab ketadi!"
+        },
+        {
+          "title": "Mustahkam, eksportbop",
+          "text": "Mevasi juda qattiq, po'sti mustahkam. Terish, qadoqlash va uzoq masofaga (eksportga) tashish paytida lat yemaydi, sifatini yo'qotmaydi."
+        },
+        {
+          "title": "Eti qoraymaydi",
+          "text": "Eti och krem rangda bo'lib, kesilgandan keyin juda sekin oksidlanadi (qoraymaydi). Bu uni eksportbop va bozorbop qiladi."
+        }
+      ]
+    },
+    "rootstock": {
+      "title": "MM111 payvandtagining afzalliklari",
+      "items": [
+        {
+          "title": "Kuchli ildiz tizimi",
+          "text": "MM111 ning eng asosiy ustunligi — juda baquvvat, chuqur va keng tarqaladigan ildiz tizimi. Daraxt yerga mustahkam yopishadi, kuchli shamollarda yiqilmaydi, shpaler (simbag'az) yoki qo'shimcha tayanch (qoziq) mutlaqo shart emas."
+        },
+        {
+          "title": "Qurg'oqchilikka chidamli",
+          "text": "Chuqur ildiz otgani sababli yerning ostki qatlamlaridan namlikni bemalol oladi. Qurg'oqchilikka eng chidamli olma payvandtaglari ro'yxatida birinchi o'rinlarda turadi."
+        },
+        {
+          "title": "Qon bitiga chidamli",
+          "text": "Bu zararkunandaga qarshi yuqori chidamlilikka ega (bu xususiyat unga Northern Spy genidan o'tgan)."
+        },
+        {
+          "title": "Ildiz chirishiga chidamli",
+          "text": "Nam tuproqlarda ildiz bo'g'zining chirishiga chidamli."
+        },
+        {
+          "title": "Bakterial kuyishga bardoshli",
+          "text": "Ushbu xavfli kasallikka yuqori bardoshli hisoblanadi."
+        }
+      ]
+    },
+    "warning": {
+      "title": "Muhim izoh",
+      "text": "Pink Lady changlatuvchi nav bilan birga ekilishi kerak: Golden Delicious, Granny Smith yoki Fuji."
+    },
+    "gallery": {
+      "alt1": "Pink Lady olmalari shoxda — yorqin qizil mevalar",
+      "alt2": "Pink Lady olma shingili quyosh nurida",
+      "alt3": "Pink Lady daraxti bog'da, shoxlarida mevalar",
+      "alt4": "Pink Lady olmalari katta yashikda — hosil",
+      "alt5": "Pink Lady olmalari uyumi"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Pink Lady qachon pishadi?",
+          "a": "Oktyabr–noyabr oylarida, hududga qarab."
+        },
+        {
+          "q": "Changlatuvchi kerakmi?",
+          "a": "Ha. Yonida Golden Delicious, Granny Smith yoki Fuji ekilishi kerak."
+        },
+        {
+          "q": "Meva qancha saqlanadi?",
+          "a": "Oddiy omborda 4–5 oy. Maxsus muzlatkichlarda (CA) 8–9 oygacha sifatini yo'qotmaydi."
+        },
+        {
+          "q": "Mevaning eti qoraymaydimi?",
+          "a": "Eti och krem rangda, kesilgandan keyin juda sekin oksidlanadi — qoraymaydi. Shu sababli u bozorbop va eksportbop."
+        },
+        {
+          "q": "MM111 payvandtagida shpaler (simbag'az) kerakmi?",
+          "a": "Yo'q. MM111 ning ildiz tizimi juda baquvvat, chuqur va keng tarqaladi: daraxt yerga mustahkam yopishadi, kuchli shamollarda yiqilmaydi. Shpaler yoki qoziq mutlaqo shart emas."
+        }
+      ]
+    },
+    "formTitle": "Pink Lady ko'chatiga so'rov qoldiring"
   },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",

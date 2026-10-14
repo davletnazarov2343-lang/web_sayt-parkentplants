@@ -2,10 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import {
+  Anchor,
   Apple,
+  Bug,
   CircleCheck,
+  Droplets,
   HelpCircle,
   Phone,
+  ShieldCheck,
   Sprout,
   Store,
   TriangleAlert,
@@ -33,6 +37,18 @@ const TIKTOK_HREF = "https://www.tiktok.com/@fruit_house.uz";
 
 // Kim uchun — kartalar tartibi tarjimadagi audience.items bilan bir xil
 const AUDIENCE_ICONS: LucideIcon[] = [Apple, Store, Sprout];
+
+// Payvandtag bo'limi (ixtiyoriy) — kartalar tartibi tarjimadagi rootstock.items bilan bir xil
+const ROOTSTOCK_ICONS: LucideIcon[] = [
+  Anchor,
+  Droplets,
+  Bug,
+  Sprout,
+  ShieldCheck,
+];
+
+// Ustunlik: oddiy matn yoki sarlavhali ({ title, text }) — ikkalasi ham qo'llanadi
+type AdvantageItem = string | { title: string; text: string };
 
 const SOCIAL_LINKS: ReadonlyArray<{
   name: string;
@@ -114,7 +130,10 @@ export async function VarietyLanding({
 
   const audience = t.raw("audience.items") as { title: string; text: string }[];
   const specRows = t.raw("specs.rows") as { label: string; value: string }[];
-  const advantages = t.raw("advantages.items") as string[];
+  const advantages = t.raw("advantages.items") as AdvantageItem[];
+  const rootstock = config.rootstockSection
+    ? (t.raw("rootstock.items") as { title: string; text: string }[])
+    : [];
   const faq = t.raw("faq.items") as { q: string; a: string }[];
 
   // BreadcrumbList — biz-haqimizda sahifasidagi uslubda
@@ -276,19 +295,63 @@ export async function VarietyLanding({
               {t("advantages.title")}
             </h2>
             <ul className="mt-6 grid gap-5 md:grid-cols-3">
-              {advantages.map((text) => (
-                <li key={text} className="flex items-start gap-3">
-                  <CircleCheck
-                    className="mt-0.5 h-5 w-5 shrink-0 text-forest-700"
-                    strokeWidth={2}
-                  />
-                  <span className="text-base leading-relaxed text-earth-900">
-                    {text}
-                  </span>
-                </li>
-              ))}
+              {advantages.map((item) => {
+                const isTitled = typeof item !== "string";
+                return (
+                  <li
+                    key={isTitled ? item.title : item}
+                    className="flex items-start gap-3"
+                  >
+                    <CircleCheck
+                      className="mt-0.5 h-5 w-5 shrink-0 text-forest-700"
+                      strokeWidth={2}
+                    />
+                    {isTitled ? (
+                      <span className="text-base leading-relaxed text-earth-900">
+                        <strong className="block font-serif text-lg font-semibold">
+                          {item.title}
+                        </strong>
+                        <span className="mt-1 block text-earth-700">
+                          {item.text}
+                        </span>
+                      </span>
+                    ) : (
+                      <span className="text-base leading-relaxed text-earth-900">
+                        {item}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </section>
+
+          {/* 4b. Payvandtag afzalliklari (ixtiyoriy) */}
+          {rootstock.length > 0 && (
+            <section className="mt-12">
+              <h2 className="text-2xl font-serif font-bold text-earth-900 sm:text-3xl">
+                {t("rootstock.title")}
+              </h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {rootstock.map((item, i) => {
+                  const Icon = ROOTSTOCK_ICONS[i] ?? ShieldCheck;
+                  return (
+                    <Card key={item.title} variant="bordered">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-forest-700/10 text-forest-700">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </div>
+                      <h3 className="mt-4 font-serif text-lg font-semibold text-earth-900">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-earth-700">
+                        {item.text}
+                      </p>
+                    </Card>
+                  );
+                })}
+              </div>
+            </section>
+          )}
 
           {/* 5. Halol ogohlantirish */}
           <section
