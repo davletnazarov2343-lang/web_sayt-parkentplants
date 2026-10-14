@@ -32,7 +32,7 @@ const NAV_ITEMS: ReadonlyArray<NavItem> = [
   // Navlar: katalog + lending sahifalar (Granny Smith, Devil Gala, ...)
   { key: "varieties", href: "/varieties", match: LANDING_HREFS },
   { key: "about", href: "/biz-haqimizda" },
-  { key: "news", href: "#news" },
+  { key: "articles", href: "/maqolalar" },
   { key: "contact", href: "/kontakt" },
 ];
 

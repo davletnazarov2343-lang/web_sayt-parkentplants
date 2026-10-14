@@ -7,6 +7,7 @@
     "b2b": "B2B",
     "about": "Biz haqimizda",
     "news": "Yangiliklar",
+    "articles": "Maqolalar",
     "contact": "Kontakt",
     "menu": "Menyu",
     "close": "Yopish",
@@ -1038,6 +1039,44 @@
           }
         ]
       }
+    }
+  },
+  "articles": {
+    "eyebrow": "Maqolalar",
+    "metaTitle": "Bog'dorchilik bo'yicha maqolalar",
+    "title": "Bog'bonlar uchun foydali maqolalar",
+    "subtitle": "Mevali bog' tashkil etish va parvarishlash bo'yicha amaliy maqolalar.",
+    "byAuthor": "Muallif: {name}",
+    "viewAll": "Barcha maqolalar",
+    "readMore": "O'qish",
+    "readingTime": "{minutes} daqiqalik o'qish",
+    "breadcrumbHome": "Bosh sahifa",
+    "breadcrumbAria": "Sahifa yo'li",
+    "toc": "Mundarija",
+    "translatedFromUzbek": "O'zbek tilidan tarjima",
+    "authorLabel": "Muallif",
+    "downloadPdf": "Asl hujjatni yuklab olish (PDF)",
+    "shareTelegram": "Telegram'da ulashish",
+    "related": "Boshqa maqolalar",
+    "ctaTitle": "Bog'ingiz uchun ko'chat tanlamoqchimisiz?",
+    "ctaText": "Navlar katalogi bilan tanishing yoki mutaxassislardan bepul maslahat oling.",
+    "ctaCatalog": "Navlar katalogi",
+    "ctaConsult": "Bepul maslahat olish",
+    "emptyTitle": "Maqolalar tez orada",
+    "emptyText": "Bog'bonlar uchun foydali maqolalar ustida ishlayapmiz. Tez orada shu yerda paydo bo'ladi.",
+    "emptyHome": "Bosh sahifaga",
+    "tableLabel": "Jadval",
+    "tones": {
+      "tip": "Maslahat",
+      "info": "Ma'lumot",
+      "warning": "Diqqat"
+    },
+    "topics": {
+      "tuproq": "Tuproq",
+      "olma": "Olma",
+      "nok": "Nok",
+      "gilos": "Gilos",
+      "orik": "O'rik"
     }
   },
   "notFound": {

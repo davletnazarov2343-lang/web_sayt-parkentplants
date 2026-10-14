@@ -1,0 +1,255 @@
+{
+  "slug": "tuproq-analizi-uchun-namuna-olish-tartibi",
+  "topic": "tuproq",
+  "order": 1,
+  "publishedAt": "2026-10-14",
+  "author": "shuhrat-abrorov",
+  "uz": {
+    "title": "Tuproq analizi uchun namuna olish tartibi",
+    "summary": "Yangi bog' yoki mavjud bog' uchun tuproq analiziga namuna tayyorlash. Namuna qancha to'g'ri olinsa, tavsiya shuncha aniq bo'ladi.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Tuproq namunasi olish — amaliy tartib."
+      },
+      {
+        "type": "p",
+        "text": "*Yangi bog' yoki mavjud bog' uchun tuproq analiziga namuna tayyorlash.*"
+      },
+      {
+        "type": "p",
+        "text": "**Namuna qancha to'g'ri olinsa, tavsiya shuncha aniq bo'ladi.** Maqsad — maydonni to'liq aks ettiruvchi namuna olish: ko'p nuqtadan yig'ib, yaxshilab aralashtirib, yagona aralash namuna tayyorlanadi."
+      },
+      {
+        "type": "ol",
+        "label": "Qadamlar",
+        "items": [
+          "**Maydonni bo'ling.** Maydon kattaligiga qarab **5, 10 yoki 20 gektarli kartalarga** bo'linadi. Bir namuna oladigan eng katta maydon — **20 gektar**. 100 gektarli maydonni 20 gektardan 5 ta qismga bo'lib har biridan alohida namunalar 4 yoki 6 ta chuqurdan olinadi. Tuproq hamma joyda bir xil bo'lsa, namunalar sonini kamaytirish mumkin (100 gektarli joydan kamida 5 ta 30 sm va 5 ta 60 sm li bo'lishi shart). Tuproq turi o'zgarsa darhol alohida namuna olinadi.",
+          "**Har kartada nuqtalarni belgilang.** Kartani yaxlit holda **6 nuqtaga** bo'ling (maydon katta bo'lsa — **8 nuqta**). Nuqtalar maydon bo'ylab bir tekis va bir xil masofada bo'lishi kerak.",
+          "**Chuqur qazing.** Har nuqtada ekskavator bilan **1,5 metr chuqurlikda** chuqur qaziladi. Chuqurning **ikki vazifasi** bor: (a) tuproq **profilini ko'rish** (qatlamlar, ohak, zich qatlam, ildiz chuqurligi) va (b) analiz uchun **namuna olish**.",
+          "**Ikki qatlamdan namuna oling.** Har chuqurdan turli taraflardan 1–2 xovuchdan tuproq oling:\n**0–30 sm** qatlam → «**30**» chelakka;\n**30–60 sm** qatlam → «**60**» chelakka.\n*90–100 sm dan namuna olish shart emas — so'ruvchi ildizlar yuqori qatlamda o'sadi va pastki qatlam unumdorligi juda past bo'ladi.*",
+          "**Kartaning hamma chuqurlaridan olingan namunalarni yig'ing.** Bir kartadagi barcha nuqtalardan 0–30 namunalari bir chelakka, 30–60 namunalari boshqa chelakka to'planadi.",
+          "**Aralashtiring va 1 kg tuproq namunasini oling.** Karta tugagach, har chelakdagi tuproq to'kilib **yaxshilab aralashtiriladi**; undan **1 kg** aralash namuna olinadi. Mayda tosh va shag'al qo'shish mumkin emas. Maydonni boshqa kartalarini ham shu usulda o'rganing va namunalarni oling.",
+          "**Belgilang va jo'nating.** Namuna ichiga **karta kodi/nomi va chuqurlik** yozilgan qog'oz solinadi va analizga jo'natiladi."
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "Chuqurlik va chelak"
+      },
+      {
+        "type": "table",
+        "head": [
+          "Qatlam",
+          "Chelak",
+          "Izoh"
+        ],
+        "rows": [
+          [
+            "**0–30 sm**",
+            "**«30» chelak**",
+            "Asosiy so'ruvchi ildiz zonasi"
+          ],
+          [
+            "**30–60 sm**",
+            "**«60» chelak**",
+            "Ikkinchi ildiz zonasi"
+          ],
+          [
+            "**90–100 sm**",
+            "**olinmaydi**",
+            "Ildiz kam, unumdorlik past — natijaga ta'sir qilmaydi"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Natija:** har kartadan 2 ta aralash namuna — 0–30 sm va 30–60 sm; har biri o'sha kartadagi 4-6 nuqtadan yig'ilgan."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Amaliy maslahatlar",
+        "items": [
+          "**Chelaklar toza bo'lsin:** o'g'it yoki kimyoviy vositalar qoldig'i namunaga aralashmasligi kerak.",
+          "**Turli tarafdan oling:** har qatlamdan 1–2 xovuch — namuna maydonni to'liq aks ettiradi.",
+          "**Qatlamlarni aralashtirmang:** 0–30 va 30–60 hech qachon bir chelakka tushmasligi kerak.",
+          "**Belgi namuna ichida:** qog'oz yozuv namuna xaltasi ichiga solinadi (tashqarisiga ham qo'shimcha ravishda yozish mumkin). O'zingiz uchun ham qaydlarni saqlab qo'ying."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "info",
+        "title": "O'zbekiston sharoiti uchun",
+        "items": [
+          "**Chuqur — eng muhim qadam:** karbonatli tuproqda u ohak qatlami, zich qatlam (plujnaya podoshva), sizot suvi va tuz qatlamini ko'rsatadi — bularni faqat tuproq tahlili raqamlaridan bilib bo'lmaydi.",
+          "**Profilda nimani ko'rish kerak:** faol ohak bo'lsa uning chuqurligi, ildiz uchun turli to'siqlar mavjudligi, namlik va tuzli qatlam — bular payvandtag va drenaj qaroriga bevosita ta'sir qiladi.",
+          "**Suvni ham analizga topshiring:** tuproq namunasi bilan birga sug'orish suvi (kanal yoki skvajina) ni ham topshiring — tuproq + suv birgalikda to'liq baho beriladi."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "warning",
+        "text": "**Eslatma:** *noto'g'ri olingan namuna — noto'g'ri tavsiyaga olib keladi. Namunaning sifati butun tahlilning asosidir.*"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**Begona o'tlar:** Joy tanlashda o'simliklarning tabiiy o'sishiga qarang. Begona o'tlarning baland va zich bo'lishi — tuproq unumdorligi va namlik zaxirasining yaxshi ekanligidan dalolat beradi.",
+          "**Topografik o'rganish:** Qiyaliklarda eroziya xavfi borligi uchun yuqori, o'rta va pastki qismlaridan alohida namunalar olish kerak (tuproq qatlami pastga qarab qalinlashishi mumkin).",
+          "**Sizot suvi** chuqurligini va suv to'planish joylarini yomg'irdan keyin kuzatib belgilang.",
+          "**Sug'orish suvini ham tahlil qildiring** (ayniqsa quduq suvi — sho'r suvli qatlamga tushish xavfi bor): pH, sho'rlanish, natriy va SAR, bor, xlor, bikarbonat. Bu tuzli/borli suv sekin-asta tuproqni buzishini oldindan ko'rsatadi."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "info",
+        "title": "Asosiy qoida: \"Ildiz – daraxtning poydevori\"",
+        "text": "Bog'dorchilikda bir qoidani unutmaslik lozim: Ildiz tizimi qanchalik keng va sog'lom bo'lsa, daraxtning hosildorlik salohiyati shunchalik yuqori bo'ladi. Agar ildizlar suv to'planishi sababli nafas ololmasa, fotosintez jarayoni pasayadi, ozuqalar o'zlashtirilmaydi va natijada butun bog'ning rivojlanishi ortga ketadi."
+      },
+      {
+        "type": "callout",
+        "tone": "warning",
+        "text": "**Unutmang:** Daraxtning yer ustki qismi ikki marta katta bo'lib, ildiz kichik bo'lishi mumkin emas. O'sishni ildizlar belgilaydi!"
+      },
+      {
+        "type": "ul",
+        "label": "Laboratoriya tuproq tahlilida albatta so'rang:",
+        "items": [
+          "**Mexanik tarkib**",
+          "**Faol CaCO₃ (nafaqat umumiy)**",
+          "**pH ishqoriylik**",
+          "**EC (sho'rlanish)**",
+          "**Gumus**",
+          "**Harakatchan Fe/Zn/B**",
+          "**Kation almashinuv sig'imi (KAS)**",
+          "**Almashinuvchi kationlar (Ca, Mg, K, Na).**"
+        ]
+      }
+    ]
+  },
+  "ru": {
+    "title": "Порядок отбора образцов для анализа почвы",
+    "summary": "Подготовка образца к анализу почвы для нового или существующего сада. Чем правильнее взят образец, тем точнее будет рекомендация.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Отбор образцов почвы — практический порядок."
+      },
+      {
+        "type": "p",
+        "text": "*Подготовка образца к анализу почвы для нового или существующего сада.*"
+      },
+      {
+        "type": "p",
+        "text": "**Чем правильнее взят образец, тем точнее будет рекомендация.** Цель — взять образец, полностью отражающий участок: собирая из многих точек и хорошо перемешивая, готовят единый смешанный образец."
+      },
+      {
+        "type": "ol",
+        "label": "Шаги",
+        "items": [
+          "**Разделите участок.** В зависимости от размера участка он делится на **карты по 5, 10 или 20 гектаров**. Наибольшая площадь, с которой берётся один образец, — **20 гектаров**. Участок в 100 гектаров делится на 5 частей по 20 гектаров, и с каждой из них отдельные образцы берутся из 4 или 6 ям. Если почва везде одинаковая, количество образцов можно уменьшить (с участка в 100 гектаров обязательно должно быть не менее 5 образцов 30 см и 5 образцов 60 см). Если тип почвы меняется, сразу берётся отдельный образец.",
+          "**Отметьте точки на каждой карте.** Наметьте на всей карте **6 точек** (если участок большой — **8 точек**). Точки должны быть расположены по участку равномерно и на одинаковом расстоянии.",
+          "**Выкопайте яму.** В каждой точке экскаватором выкапывается яма **глубиной 1,5 метра**. Яма нужна для **двух целей**: (а) **увидеть профиль** почвы (слои, известь, плотный слой, глубина корней) и (б) **взять образец** для анализа.",
+          "**Возьмите образцы из двух слоёв.** Из каждой ямы с разных сторон берите по 1–2 горсти почвы:\nслой **0–30 см** → в ведро «**30**»;\nслой **30–60 см** → в ведро «**60**».\n*Брать образец с глубины 90–100 см не обязательно — всасывающие корни растут в верхнем слое, а плодородие нижнего слоя очень низкое.*",
+          "**Соберите образцы, взятые из всех ям карты.** Образцы 0–30 из всех точек одной карты собираются в одно ведро, образцы 30–60 — в другое.",
+          "**Перемешайте и возьмите образец почвы в 1 кг.** Закончив работу на карте, высыпьте почву из каждого ведра, **хорошо перемешайте** её и возьмите из неё **1 кг** смешанного образца. Мелкие камни и гравий добавлять нельзя. Остальные карты участка тоже изучите этим способом и возьмите образцы.",
+          "**Промаркируйте и отправьте.** В образец кладётся бумага, на которой написаны **код/название карты и глубина**, и образец отправляется на анализ."
+        ]
+      },
+      {
+        "type": "h3",
+        "text": "Глубина и ведро"
+      },
+      {
+        "type": "table",
+        "head": [
+          "Слой",
+          "Ведро",
+          "Примечание"
+        ],
+        "rows": [
+          [
+            "**0–30 см**",
+            "**ведро «30»**",
+            "Основная зона всасывающих корней"
+          ],
+          [
+            "**30–60 см**",
+            "**ведро «60»**",
+            "Вторая корневая зона"
+          ],
+          [
+            "**90–100 см**",
+            "**не берётся**",
+            "Корней мало, плодородие низкое — на результат не влияет"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**Результат:** с каждой карты 2 смешанных образца — 0–30 см и 30–60 см; каждый собран из 4–6 точек той же карты."
+      },
+      {
+        "type": "callout",
+        "tone": "tip",
+        "title": "Практические советы",
+        "items": [
+          "**Вёдра должны быть чистыми:** остатки удобрений или химических средств не должны примешиваться к образцу.",
+          "**Берите с разных сторон:** по 1–2 горсти из каждого слоя — образец полностью отражает участок.",
+          "**Не смешивайте слои:** 0–30 и 30–60 никогда не должны попадать в одно ведро.",
+          "**Метка внутри образца:** бумажная запись кладётся внутрь пакета для образца (дополнительно можно написать и снаружи). Сохраните записи и для себя."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "info",
+        "title": "Для условий Узбекистана",
+        "items": [
+          "**Яма — самый важный шаг:** в карбонатной почве она показывает известковый слой, плотный слой (плужная подошва), грунтовые воды и солевой слой — их нельзя узнать только по цифрам анализа почвы.",
+          "**Что нужно видеть в профиле:** если есть активная известь, её глубину, наличие различных препятствий для корней, влажность и солевой слой — они непосредственно влияют на решение о подвое и дренаже.",
+          "**Сдайте на анализ и воду:** вместе с образцом почвы сдайте и оросительную воду (из канала или скважины) — полная оценка даётся по почве и воде вместе."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "warning",
+        "text": "**Напоминание:** *неправильно взятый образец приводит к неправильной рекомендации. Качество образца — основа всего анализа.*"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**Сорняки:** При выборе места смотрите на естественный рост растений. Высокие и густые сорняки свидетельствуют о том, что плодородие почвы и запас влаги хорошие.",
+          "**Топографическое изучение:** Поскольку на склонах есть риск эрозии, из верхней, средней и нижней частей склона нужно брать отдельные образцы (слой почвы книзу может становиться толще).",
+          "Глубину **грунтовых вод** и места скопления воды отмечайте по наблюдениям после дождя.",
+          "**Отдайте на анализ и оросительную воду** (особенно колодезную воду — есть риск попасть в слой с солёной водой): pH, засолённость, натрий и SAR, бор, хлориды, гидрокарбонаты. Это заранее показывает, что солёная/борсодержащая вода постепенно портит почву."
+        ]
+      },
+      {
+        "type": "callout",
+        "tone": "info",
+        "title": "Основное правило: «Корень — фундамент дерева»",
+        "text": "В садоводстве следует помнить одно правило: чем шире и здоровее корневая система, тем выше потенциал урожайности дерева. Если корни не могут дышать из-за скопления воды, фотосинтез ослабевает, питательные вещества не усваиваются, и в результате развитие всего сада тормозится."
+      },
+      {
+        "type": "callout",
+        "tone": "warning",
+        "text": "**Не забывайте:** Невозможно, чтобы надземная часть дерева была в два раза больше, а корень — маленьким. Рост определяют корни!"
+      },
+      {
+        "type": "ul",
+        "label": "При лабораторном анализе почвы обязательно запросите:",
+        "items": [
+          "**Механический состав**",
+          "**Активный CaCO₃ (не только общий)**",
+          "**pH щёлочность**",
+          "**EC (засолённость)**",
+          "**Гумус**",
+          "**Подвижные Fe/Zn/B**",
+          "**Ёмкость катионного обмена (ЕКО)**",
+          "**Обменные катионы (Ca, Mg, K, Na).**"
+        ]
+      }
+    ]
+  }
+}

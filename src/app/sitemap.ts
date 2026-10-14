@@ -5,6 +5,7 @@ import {
   getAllVarietySlugs,
 } from "@/sanity/fetch";
 import { NEWS_ARTICLES } from "@/lib/news";
+import { getAllArticles } from "@/lib/articles";
 import { FRUIT_CATEGORIES } from "@/lib/categories";
 
 const BASE_URL = "https://parkentplants.uz";
@@ -23,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "",
     "/varieties",
     "/news",
+    "/maqolalar",
     "/kochatlar",
     "/biz-haqimizda",
     "/kontakt",
@@ -91,9 +93,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity yo'q — sitemap statik sahifalardan iborat bo'ladi
   }
 
-  // 3. News articles
+  // 3. News articles — externalUrl'li yangiliklarning ichki sahifasi yo'q
+  // (404), shu sabab sitemap'ga kiritilmaydi
   const newsEntries = LOCALES.flatMap((locale) =>
-    NEWS_ARTICLES.map((article) => ({
+    NEWS_ARTICLES.filter((article) => !article.externalUrl).map((article) => ({
       url: `${BASE_URL}/${locale}/news/${article.slug}`,
       lastModified: new Date(article.publishedAt),
       changeFrequency: "monthly" as const,
@@ -101,6 +104,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       alternates: {
         languages: Object.fromEntries(
           LOCALES.map((l) => [l, `${BASE_URL}/${l}/news/${article.slug}`]),
+        ),
+      },
+    })),
+  );
+
+  // 3b. Maqolalar (/maqolalar/<slug>) — uz/ru alternates bilan
+  const articleEntries = LOCALES.flatMap((locale) =>
+    getAllArticles().map((article) => ({
+      url: `${BASE_URL}/${locale}/maqolalar/${article.slug}`,
+      lastModified: new Date(article.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: Object.fromEntries(
+          LOCALES.map((l) => [l, `${BASE_URL}/${l}/maqolalar/${article.slug}`]),
         ),
       },
     })),
@@ -126,6 +144,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...fruitTypeEntries,
     ...varietyEntries,
     ...newsEntries,
+    ...articleEntries,
     ...categoryEntries,
   ];
 }

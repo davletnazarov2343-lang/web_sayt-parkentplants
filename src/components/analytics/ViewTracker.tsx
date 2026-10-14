@@ -13,11 +13,18 @@ import { trackEvent, type TrackEventKey } from "@/lib/analytics/events";
 export function ViewTracker({
   eventKey,
   threshold = 0.5,
+  params,
 }: {
   eventKey: TrackEventKey;
   threshold?: number;
+  /** Event bilan birga yuboriladigan ixtiyoriy ma'lumot (masalan { slug }) */
+  params?: Record<string, unknown>;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
+  // params har render'da yangi obyekt bo'lishi mumkin — effect qayta
+  // ishga tushmasligi uchun ref orqali o'qiladi
+  const paramsRef = useRef(params);
+  paramsRef.current = params;
 
   useEffect(() => {
     const el = ref.current;
@@ -31,7 +38,7 @@ export function ViewTracker({
         for (const entry of entries) {
           if (entry.isIntersecting && !fired) {
             fired = true;
-            trackEvent(eventKey);
+            trackEvent(eventKey, paramsRef.current);
             observer.disconnect();
           }
         }

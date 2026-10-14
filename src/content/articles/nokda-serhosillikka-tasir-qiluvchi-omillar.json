@@ -1,0 +1,261 @@
+{
+  "slug": "nokda-serhosillikka-tasir-qiluvchi-omillar",
+  "topic": "nok",
+  "order": 4,
+  "publishedAt": "2026-10-14",
+  "author": "shuhrat-abrorov",
+  "uz": {
+    "title": "Nokda serhosillikka ta'sir qiluvchi eng muhim omillar!",
+    "summary": "Gul chetdan changlanmaganda yoki bahorgi sovuqlar tufayli urug'i nobud bo'lganda ham daraxtning urug'siz, to'laqonli meva tugish va o'stirish qobiliyati.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Partenokarpiya — changlanmasdan meva tugish xususiyati.",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Gul chetdan changlanmaganda yoki bahorgi sovuqlar tufayli urug'i nobud bo'lganda ham daraxtning urug'siz, to'laqonli meva tugish va o'stirish qobiliyati. Bu nok hosilining noqulay ob-havoli yillarda ham saqlanib qolishini ta'minlovchi eng muhim biologik xususiyatdir."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Conference* va Kaliforniyada Williams."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Spurlarda hosil berish xususiyati.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Mevalarni asosan ikki va undan katta yoshdagi kalta hosil novdalarida (halqacha va nayzachalarda) tugish. Bunday navlar novda uchida emas, balki butun shox bo'ylab zich gul to'plamlari hosil qiladi va bu mahsuldor shoxlar yillar davomida meva beradi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "Carmen, Ercolini, Santa Maria, Eden, Harrow Sweet, *Abate*, *Conference*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Solkashlikka past moyillik.",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Hosil ko'p bo'lgan yillarda meva urug'lari ajratadigan gormonlar keyingi yil uchun gul kurtaklarining shakllanishini susaytiradi. Serhosil navlar bu bosimga kamroq ta'sirlanadi va hosil ko'p bo'lsa ham kelgusi yilga yetarlicha gul kurtagi chiqara oladi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "Ercolini, Harrow Sweet, *Williams (Bartlett)*, *Conference*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Gul kurtaklar zichligi.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "To'pgulda ko'p miqdorda gul shakllanishi va changlarning biologik unuvchanligi yuqori bo'lishi. Bu bahorda harorat past yoki nam kelib, hasharotlar kam uchgan vaqtda ham tugunchalarning yuqori foizda tugilishini ta'minlaydi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Williams (Bartlett)* (boshqa navlar uchun ham eng kuchli changlovchi), Carmen, Ercolini, Santa Maria, Eden, Harrow Sweet, *Abate Fetel*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Gullash muddati va sovuqqa chidamlilik.",
+        "number": 5
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Nok odatda olmaga nisbatan erta gullagani uchun bahorgi sovuq xavfiga duch kelishi mumkin. Kechroq gullaydigan yoki gullari yengil sovuqlarga fiziologik jihatdan bardoshli navlar hosilni yo'qotish xavfini keskin kamaytiradi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "Ercolini, Eden, *Conference* (sovuq urganda ham shakli biroz cho'ziq urug'siz meva beradi), *Harrow Sweet*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Kasalliklarga genetik chidamlilik.",
+        "number": 6
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Nokning asosiy dushmani bo'lgan bakterial kuyish kasalligiga qarshi genetik immuniteti bor. Sog'lom barg va shoxlar oziqlanishni to'xtatmaydi va daraxtning hosildorlik salohiyatini yillar davomida barqaror saqlaydi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "Eden, *Harrow Sweet*, Elliot, *Harrow Crisp*, *Kieffer* – bakterial kuyishga chidamli."
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Shuhrat Abrorov**",
+          "**2026 yil.**"
+        ]
+      }
+    ]
+  },
+  "ru": {
+    "title": "Самые важные факторы, влияющие на урожайность груши!",
+    "summary": "Способность дерева завязывать и выращивать бессемянные, полноценные плоды даже тогда, когда цветок не опылён перекрёстно или когда из-за весенних заморозков гибнут семена.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Партенокарпия — свойство завязывать плоды без опыления.",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Способность дерева завязывать и выращивать бессемянные, полноценные плоды даже тогда, когда цветок не опылён перекрёстно или когда из-за весенних заморозков гибнут семена. Это самое важное биологическое свойство, обеспечивающее сохранение урожая груши даже в годы с неблагоприятной погодой."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Конференция* и Вильямс в Калифорнии."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Свойство давать урожай на спурах.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Завязывание плодов преимущественно на коротких плодовых побегах (кольчатках и копьецах) в возрасте двух лет и старше. Такие сорта образуют плотные скопления цветков не на конце побега, а по всей ветви, и эти продуктивные ветви годами дают плоды."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "Кармен, Эрколини, Санта Мария, Эден, Харров Свит, *Аббат*, *Конференция*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Низкая склонность к периодичности плодоношения.",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "В годы с большим урожаем гормоны, выделяемые семенами плодов, ослабляют формирование цветковых почек на следующий год. Урожайные сорта меньше подвержены этому давлению и даже при большом урожае способны заложить достаточно цветковых почек на будущий год."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "Эрколини, Харров Свит, *Вильямс (Бартлетт)*, *Конференция*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Плотность цветковых почек.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Формирование большого количества цветков в соцветии и высокая биологическая прорастаемость пыльцы. Это обеспечивает высокий процент закрепления завязей даже тогда, когда весной температура низкая или погода сырая и насекомые летают мало."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Вильямс (Бартлетт)* (самый сильный опылитель и для других сортов), Кармен, Эрколини, Санта Мария, Эден, Харров Свит, *Аббат Фетель*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Сроки цветения и устойчивость к заморозкам.",
+        "number": 5
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Поскольку груша обычно цветёт раньше яблони, она может столкнуться с риском весенних заморозков. Сорта, цветущие позднее или имеющие цветки, физиологически выносливые к лёгким заморозкам, резко снижают риск потери урожая."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "Эрколини, Эден, *Конференция* (даже при поражении заморозками даёт бессемянные плоды несколько вытянутой формы), *Харроу Свит*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Генетическая устойчивость к болезням.",
+        "number": 6
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Имеется генетический иммунитет к заболеванию бактериальным ожогом, основному врагу груши. Здоровые листья и ветви не останавливают питание и годами стабильно сохраняют потенциал урожайности дерева."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "Эден, *Харроу Свит*, Эллиот, *Харроу Крисп*, *Киффер* – устойчивы к бактериальному ожогу."
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Шухрат Аброров**",
+          "**2026 год.**"
+        ]
+      }
+    ]
+  }
+}

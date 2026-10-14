@@ -9,6 +9,7 @@ import { B2BProcess } from "@/components/sections/B2BProcess";
 import { Nurseries } from "@/components/sections/Nurseries";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { VideoSlider } from "@/components/sections/VideoSlider";
+import { ArticlesPreview } from "@/components/sections/ArticlesPreview";
 import { NewsPreview } from "@/components/sections/NewsPreview";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
@@ -35,6 +36,7 @@ export default function HomePage({
       <Nurseries />
       <Testimonials />
       <VideoSlider />
+      <ArticlesPreview locale={lang} />
       <NewsPreview locale={lang} />
       <Faq />
       <ContactPreview />

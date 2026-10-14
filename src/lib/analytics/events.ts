@@ -72,6 +72,8 @@ const EVENT_MAP: Record<
     ga: "view_item",
     ym: "view_pink_lady",
   },
+  // Maqola ochildi (params: { slug }) — ViewTracker orqali
+  view_article: { fbq: "ViewContent", ga: "view_item", ym: "view_article" },
   // Video player — Shuhrat aka videosi ko'rildi
   video_play: { fbq: "ViewContent", ga: "view_item", ym: "video_play" },
   // Hero CTA bosish

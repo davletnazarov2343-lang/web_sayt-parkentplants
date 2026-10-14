@@ -26,6 +26,7 @@ const NAV_ITEMS = [
   { key: "home", href: "#top" },
   { key: "saplings", href: "/kochatlar" },
   { key: "about", href: "/biz-haqimizda" },
+  { key: "articles", href: "/maqolalar" },
   { key: "news", href: "#news" },
   { key: "contact", href: "/kontakt" },
 ] as const;

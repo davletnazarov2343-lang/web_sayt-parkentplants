@@ -1,0 +1,171 @@
+{
+  "slug": "gilosda-serhosillikka-tasir-qiluvchi-omillar",
+  "topic": "gilos",
+  "order": 3,
+  "publishedAt": "2026-10-14",
+  "author": "shuhrat-abrorov",
+  "uz": {
+    "title": "Gilosda serhosillikka ta'sir qiluvchi eng muhim omillar!",
+    "summary": "Ko'pchilik an'anaviy gilos navlari chetdan changlanishni talab qiladi (steril bo'ladi).",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "O'zini changlatish qobiliyati (Avtofertillik).",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Ko'pchilik an'anaviy gilos navlari chetdan changlanishni talab qiladi (steril bo'ladi). Bahorda ob-havo sovuq yoki yomg'irli kelib, asalarilar uchmagan vaqtda chetdan changlanuvchi navlar hosil tugmaydi. O'zini changlatuvchi navlar esa har qanday ob-havoda ham mustaqil ravishda yuqori foizli meva hosil qiladi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Royal Tioga, Sweet Aryana, Red Pacific, Lapins, Skeena, Sweetheart, Staccato.*"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Yarim pakana payvandtaglar.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Daraxtlarni yarim pakana (Krymsk 6) va tez hosilga kiritadigan (Krymsk 5 yoki VSL-2) payvandtaglarida o'stirish. Bu daraxtning behuda baland bo'lib ketishini va shox o'sishini jilovlaydi, ekilgandan keyin 3-4 yildayoq hosilga kirishini ta'minlaydi va barcha kuchni hosil sifatiga yo'naltiradi."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Mevalarning yomg'irdan yorilishiga chidamliligi.",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Pishish davrida yoqqan yomg'ir mevalarning yorilib ketishiga va monilioz (meva chirishi) sababli hosilning nobud bo'lishiga olib keladi. Terisi elastik va yorilishga genetik chidamli navlar hosilning tovar ko'rinishini to'liq saqlab qoladi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "Royal Tioga, Red Pacific, Black Pearl va SPS 342 (yorilishga yuqori chidamli); *Lapins* va Skeena (o'rtacha chidamli)."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Spurlarda hosil tugish zichligi.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Mevani asosan ikki va undan katta yoshdagi kalta guldasta shoxchalarida (spurlarda) zich hosil qilish xususiyati. Mahsuldor navlarda guldasta shoxchalari novda bo'ylab siyrak bo'lmay, bir-biriga juda yaqin va ko'p miqdorda joylashadi hamda 4–5 yil davomida kuchli hosil berish qobiliyatini saqlab turadi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Royal Tioga, Nimba, Sweet Aryana, Sweet Lorenz, Sweet Gabriel, Giant Red, Red Pacific, Black Pearl, Royal Bailey, Lapins, Skeena, Sweetheart, Staccato va boshqalar*."
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Shuhrat Abrorov**",
+          "**2026 yil.**"
+        ]
+      }
+    ]
+  },
+  "ru": {
+    "title": "Самые важные факторы, влияющие на урожайность черешни!",
+    "summary": "Большинство традиционных сортов черешни требуют перекрёстного опыления (самобесплодны).",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Способность к самоопылению (Самоплодность).",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Большинство традиционных сортов черешни требуют перекрёстного опыления (самобесплодны). Когда весной погода холодная или дождливая и пчёлы не летают, перекрёстноопыляемые сорта не завязывают плодов. Самоопыляющиеся же сорта в любую погоду самостоятельно образуют плоды с высоким процентом завязывания."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Роял Тиога, Свит Арияна, Ред Песифик, Лапинс, Скина, Свитхарт, Стаккато.*"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Полукарликовые подвои.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Выращивание деревьев на полукарликовых (Крымск 6) и скороплодных (Крымск 5 или ВСЛ-2) подвоях. Это сдерживает бесполезное вытягивание дерева в высоту и рост ветвей, обеспечивает вступление в плодоношение уже на 3-4-й год после посадки и направляет все силы на качество урожая."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Устойчивость плодов к растрескиванию от дождя.",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Дождь, выпавший в период созревания, приводит к растрескиванию плодов и к гибели урожая из-за монилиоза (гниения плодов). Сорта с эластичной кожицей, генетически устойчивые к растрескиванию, полностью сохраняют товарный вид урожая."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "Роял Тиога, Ред Песифик, Блек Перл и СПС 342 (высокоустойчивы к растрескиванию); *Лапинс* и Скина (в средней степени устойчивы)."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Плотность завязывания плодов на спурах.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Свойство плотно образовывать плоды преимущественно на коротких букетных веточках (спурах) в возрасте двух лет и старше. У продуктивных сортов букетные веточки располагаются вдоль побега не разреженно, а очень близко друг к другу и в большом количестве, а также сохраняют способность сильно плодоносить на протяжении 4–5 лет."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Роял Тиога, Нимба, Свит Арияна, Свит Лоренц, Свит Габриел, Жайнт Ред, Ред Песифик, Блек Перл, Роял Бейли, Лапинс, Скина, Свитхарт, Стаккато и другие*."
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Шухрат Аброров**",
+          "**2026 год.**"
+        ]
+      }
+    ]
+  }
+}

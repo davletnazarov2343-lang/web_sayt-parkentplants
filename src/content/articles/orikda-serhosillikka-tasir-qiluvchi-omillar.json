@@ -1,0 +1,223 @@
+{
+  "slug": "orikda-serhosillikka-tasir-qiluvchi-omillar",
+  "topic": "orik",
+  "order": 5,
+  "publishedAt": "2026-10-14",
+  "author": "shuhrat-abrorov",
+  "uz": {
+    "title": "O'rikda serhosillikka ta'sir qiluvchi eng muhim omillar!",
+    "summary": "O'rik mevali daraxtlar orasida eng erta gullaydiganlaridan biri bo'lgani sababli, hosilning saqlanib qolishini belgilovchi 1-raqamli omil bahorgi sovuqlardan omon chiqishdir.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Kech gullash muddati va bahorgi sovuqqa chidamlilik.",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "O'rik mevali daraxtlar orasida eng erta gullaydiganlaridan biri bo'lgani sababli, hosilning saqlanib qolishini belgilovchi 1-raqamli omil bahorgi sovuqlardan omon chiqishdir. Kech gullaydigan yoki gul kurtaklari past haroratga chidamli navlar har yili muntazam hosil beradi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Lido, Delicot, Ladycot, Flopria, Mediabel va Orangered*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "O'zini changlatish qobiliyati.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Bahorda ob-havo salqin, shamolli yoki yomg'irli kelganda asalarilar faol uchmaydi. Chetdan changlanuvchi navlar bunday sharoitda hosil tugmaydi, o'zini changlatuvchi navlar esa chetdan changlovchi talab qilmasdan, mustaqil ravishda yuqori foizli hosil qiladi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Prialina, Lido, Delicot, Ladycot, Flopria, Mediabel*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Sharka virusiga (PPV) genetik chidamlilik va immunitet.",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Sharka (olxo'ri chechagi) — daraxtlarni davolab bo'lmaydigan xavfli virus bo'lib, mevalarning deformatsiyasiga, sifatsiz bo'lib to'kilib ketishiga va daraxtning butunlay ishdan chiqishiga sabab bo'ladi. Sharka virusiga genetik immuniteti bor navlar virus tarqalgan hududlarda ham sog'lom o'sib, tovar hosilni to'liq saqlab qoladi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Prialina, Flopria, Rougecot, Orangered, Bolero, Medibel va Rubely*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Spurlarda va 1 yillik novdalarda hosil tugishi.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "O'rik mevani ham 1 yillik kuchli novdalarda, ham 2–3 yillik kalta shoxchalarida (spurlarda) tugadi. Mahsuldor navlarda spur shoxchalari shox bo'ylab siyraklashib ketmay, ko'p yillar davomida o'z mahsuldorligini saqlaydi va daraxt ichini yalang'ochlab qo'ymaydi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Lido, Delicot, Ladycot, Flopria, Mediabel va Orangered*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Zamonaviy payvandtaglarda yetishtirish.",
+        "number": 5
+      },
+      {
+        "type": "ul",
+        "label": "Mohiyati:",
+        "items": [
+          "Daraxtning behuda baland bo'lib o'sib ketishini jilovlab, barcha quyosh va ozuqa kuchini mevalarni to'liq kattalashtirish va rang olishga yo'naltiradi. Karbonatli (ohakli) tuproqlarda temir xloroziga chalinmaydi; natijada sog'lom yashil barg fotosintezni susaytirmasdan har yili muntazam hosil beradi. O'rik navlari bilan birikishi yaxshi bo'lgani sababli payvand joyida sinish yoki ozuqa oqimining to'silib qolishi kuzatilmaydi."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Misol:",
+        "items": [
+          "*Mirared va Myrobalan 29C.*"
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Shuhrat Abrorov**",
+          "**2026 yil.**"
+        ]
+      }
+    ]
+  },
+  "ru": {
+    "title": "Самые важные факторы, влияющие на урожайность абрикоса!",
+    "summary": "Поскольку абрикос — одно из самых рано цветущих плодовых деревьев, фактором № 1, определяющим сохранение урожая, является выживание при весенних заморозках.",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Поздние сроки цветения и устойчивость к весенним заморозкам.",
+        "number": 1
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Поскольку абрикос — одно из самых рано цветущих плодовых деревьев, фактором № 1, определяющим сохранение урожая, является выживание при весенних заморозках. Сорта, цветущие поздно или имеющие цветковые почки, устойчивые к низкой температуре, дают урожай регулярно, каждый год."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Лидо, Деликот, Лейдикот, Флоприя, Медиабел и Оранж Ред*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Способность к самоопылению.",
+        "number": 2
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Когда весной погода прохладная, ветреная или дождливая, пчёлы летают неактивно. Перекрёстноопыляемые сорта в таких условиях не завязывают плодов, а самоопыляющиеся сорта, не требуя опылителя со стороны, самостоятельно образуют урожай с высоким процентом завязывания."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Приалина, Лидо, Деликот, Лейдикот, Флоприя, Медиабел*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Генетическая устойчивость и иммунитет к вирусу шарки (PPV).",
+        "number": 3
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Шарка (оспа сливы) — опасный вирус, от которого деревья невозможно вылечить; он становится причиной деформации плодов, потери ими качества и опадания, а также полного выхода дерева из строя. Сорта с генетическим иммунитетом к вирусу шарки даже на территориях, где распространён вирус, растут здоровыми и полностью сохраняют товарный урожай."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Приалина, Флоприя, Ружкот, Оранж Ред, Болеро, Медибел и Рубелей*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Завязывание плодов на спурах и 1-летних побегах.",
+        "number": 4
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Абрикос завязывает плоды как на сильных 1-летних побегах, так и на коротких 2–3-летних веточках (спурах). У продуктивных сортов спуровые веточки не изреживаются вдоль ветви, на протяжении многих лет сохраняют свою продуктивность и не оголяют внутреннюю часть дерева."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Лидо, Деликот, Лейдикот, Флоприя, Медиабел и Оранж Ред*."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Выращивание на современных подвоях.",
+        "number": 5
+      },
+      {
+        "type": "ul",
+        "label": "Суть:",
+        "items": [
+          "Сдерживая бесполезное вытягивание дерева в высоту, направляет всю силу солнца и питательных веществ на полное укрупнение плодов и набор окраски. На карбонатных (известковых) почвах не подвергается железодефицитному хлорозу; в результате здоровый зелёный лист, не ослабляя фотосинтез, регулярно, каждый год даёт урожай. Благодаря хорошему срастанию с сортами абрикоса в месте прививки не наблюдается слома или перекрытия потока питательных веществ."
+        ]
+      },
+      {
+        "type": "ul",
+        "label": "Пример:",
+        "items": [
+          "*Мираред и Мироболан 29С.*"
+        ]
+      },
+      {
+        "type": "signature",
+        "lines": [
+          "**Шухрат Аброров**",
+          "**2026 год.**"
+        ]
+      }
+    ]
+  }
+}
