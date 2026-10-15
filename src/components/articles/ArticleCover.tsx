@@ -13,18 +13,21 @@ import { cn } from "@/lib/utils";
  */
 export function ArticleCover({
   topic,
+  cover: coverOverride,
   topicLabel,
   sizes,
   priority = false,
   className,
 }: {
   topic: ArticleTopic;
+  /** Maqolaning o'z muqovasi — berilsa mavzu rasmidan ustun */
+  cover?: string;
   topicLabel: string;
   sizes: string;
   priority?: boolean;
   className?: string;
 }) {
-  const cover = getTopicCover(topic);
+  const cover = coverOverride ?? getTopicCover(topic);
 
   return (
     <div

@@ -263,7 +263,17 @@ export function validateArticle(raw: unknown, file: string): Article {
   const obj = asObject(raw, root);
   checkKeys(
     obj,
-    ["slug", "topic", "order", "publishedAt", "author", "pdf", "uz", "ru"],
+    [
+      "slug",
+      "topic",
+      "order",
+      "publishedAt",
+      "author",
+      "cover",
+      "pdf",
+      "uz",
+      "ru",
+    ],
     root,
   );
 
@@ -327,6 +337,18 @@ export function validateArticle(raw: unknown, file: string): Article {
     uz: validateContent(obj.uz, at({ file, path: "" }, "uz")),
     ru: validateContent(obj.ru, at({ file, path: "" }, "ru")),
   };
+
+  if (obj.cover !== undefined) {
+    const coverWhere = at({ file, path: "" }, "cover");
+    const cover = plainString(obj.cover, coverWhere);
+    if (!cover.startsWith("/")) {
+      fail(
+        coverWhere,
+        `"/" bilan boshlanishi kerak (masalan "/images/maqolalar/rasm.jpg"): ${JSON.stringify(cover)}`,
+      );
+    }
+    article.cover = cover;
+  }
 
   if (obj.pdf !== undefined) {
     const pdfWhere = at({ file, path: "" }, "pdf");

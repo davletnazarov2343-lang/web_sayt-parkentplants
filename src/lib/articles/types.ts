@@ -92,6 +92,12 @@ export type Article = {
   /** YYYY-MM-DD */
   publishedAt: string;
   author: AuthorId;
+  /**
+   * Alohida muqova rasmi (public/ ichidagi yo'l), masalan
+   * "/images/maqolalar/tuproq-namuna.jpg". Berilmasa — mavzu rasmi
+   * (`getTopicCover`), u ham yo'q bo'lsa — gradient + SVG.
+   */
+  cover?: string;
   /** Asl hujjat, masalan "/maqolalar/<fayl>.pdf" (public/ ichida) */
   pdf?: string;
   uz: ArticleContent;

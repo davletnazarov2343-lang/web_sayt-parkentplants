@@ -36,6 +36,7 @@ export async function ArticleCard({
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-earth-400/25 bg-cream transition-all duration-200 hover:-translate-y-0.5 hover:border-gold-400 hover:shadow-[0_12px_40px_-12px_rgba(27,67,50,0.28)]">
       <ArticleCover
         topic={article.topic}
+        cover={article.cover}
         topicLabel={t(`topics.${article.topic}`)}
         sizes={COVER_SIZES}
         priority={priority}

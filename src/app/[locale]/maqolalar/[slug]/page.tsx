@@ -61,8 +61,9 @@ export async function generateMetadata({
   const lang = toLocale(locale);
   const content = article[lang];
   const authorName = getAuthor(article.author).name[lang];
-  const image = getTopicCover(article.topic) ?? FALLBACK_IMAGE;
-  const path = `/${lang}/maqolalar/${slug}`;
+  const image =
+    article.cover ?? getTopicCover(article.topic) ?? FALLBACK_IMAGE;
+  const path =`/${lang}/maqolalar/${slug}`;
 
   return {
     title: content.title,
@@ -113,7 +114,8 @@ export default async function ArticlePage({
   const hasToc = toc.length >= 2;
   const minutes = readingMinutes(content);
   const related = getRelatedArticles(slug, 3);
-  const image = getTopicCover(article.topic) ?? FALLBACK_IMAGE;
+  const image =
+    article.cover ?? getTopicCover(article.topic) ?? FALLBACK_IMAGE;
 
   const pageUrl = `${BASE_URL}/${lang}/maqolalar/${slug}`;
   const shareUrl = `https://t.me/share/url?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(content.title)}`;
