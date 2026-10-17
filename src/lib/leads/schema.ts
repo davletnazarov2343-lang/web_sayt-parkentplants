@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { sanitizeUtmValue } from "@/lib/leads/utm";
 
 /**
  * Form bilan API o'rtasidagi shartnoma. Bir joyda — ham client ham server validate qiladi.
@@ -46,6 +47,23 @@ export const LOCALE_KEYS = ["uz", "ru"] as const;
 // O'zbek/xalqaro telefon: +998 XX XXX XX XX yoki minimal +<digits>{7,15}
 const phoneRegex = /^\+?[0-9\s\-()]{7,20}$/;
 
+// UTM qiymati: string bo'lsa tozalanadi va UTM_VALUE_MAX gacha qisqartiriladi
+// (uzun fbclid lidni rad ettirmasin), bo'sh bo'lsa undefined.
+const utmValue = z
+  .string()
+  .transform((v) => sanitizeUtmValue(v))
+  .optional();
+
+const utmSchema = z.object({
+  utm_source: utmValue,
+  utm_medium: utmValue,
+  utm_campaign: utmValue,
+  utm_content: utmValue,
+  utm_term: utmValue,
+  fbclid: utmValue,
+  gclid: utmValue,
+});
+
 export const leadSchema = z.object({
   name: z.string().trim().min(2, "min").max(120, "max"),
   phone: z
@@ -72,6 +90,12 @@ export const leadSchema = z.object({
     .max(64)
     .regex(/^[a-zA-Z0-9_-]*$/, "format")
     .optional(),
+
+  // Reklama manbasi (utm_* + fbclid/gclid) — qarang: src/lib/leads/utm.ts.
+  // Qiymatlar rad etilmaydi, faqat tozalanadi va qisqartiriladi; butun obyekt
+  // noto'g'ri bo'lsa ham `.catch(undefined)` — manba hech qachon lidni
+  // yo'qotishga sabab bo'lmasin.
+  utm: utmSchema.optional().catch(undefined),
 
   // Anti-spam: bu maydon to'ldirilgan bo'lsa — bot
   website: z.string().max(0).optional().or(z.literal("")),

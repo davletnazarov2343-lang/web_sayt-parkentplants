@@ -21,6 +21,7 @@ import {
 } from "@/lib/leads/schema";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics/events";
+import { getAttribution } from "@/lib/leads/utm";
 
 type Status =
   | { state: "idle" }
@@ -91,6 +92,8 @@ export function LeadForm({
       consent,
       locale,
       source: source || undefined,
+      // Reklama manbasi (utm_* / fbclid / gclid) — joriy URL yoki sessiya
+      utm: getAttribution(),
       website: website || undefined,
     };
 
