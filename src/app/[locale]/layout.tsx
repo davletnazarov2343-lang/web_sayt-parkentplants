@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsappFab } from "@/components/layout/WhatsappFab";
 import { Analytics } from "@/components/analytics/Analytics";
+import { UtmCapture } from "@/components/analytics/UtmCapture";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
@@ -217,6 +218,7 @@ export default async function LocaleLayout({
           <WhatsappFab />
         </NextIntlClientProvider>
         <Analytics />
+        <UtmCapture />
         <VercelAnalytics />
         <SpeedInsights />
       </body>

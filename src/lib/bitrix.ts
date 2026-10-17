@@ -12,6 +12,7 @@
  */
 
 import type { LeadInput } from "@/lib/leads/schema";
+import { formatUtmLines, isMetaTraffic } from "@/lib/leads/utm";
 
 type BitrixResult =
   | { ok: true; leadId: string }
@@ -91,7 +92,47 @@ function buildComments(lead: LeadInput): string {
   lines.push(
     `Manba: parkentplants.uz (${lead.locale})${lead.source ? ` · ${lead.source}` : ""}`,
   );
+  // Reklama manbasi (utm_* / click ID) — operator lid Meta/Telegram/Google
+  // reklamasidan kelganini Deal kartasida darhol ko'rsin.
+  lines.push(...formatUtmLines(lead.utm));
   return lines.join("\n");
+}
+
+/**
+ * crm.deal.add uchun so'rov tanasi. Alohida (sof) funksiya — tarmoqsiz
+ * tekshirish oson bo'lsin.
+ */
+export function buildBitrixDealPayload(lead: LeadInput) {
+  // Deal'da PHONE alohida maydon yo'q — TITLE'ga qo'shamiz.
+  // Meta reklamasidan kelgan lid ro'yxatda darhol ajralib tursin: "[Meta] ".
+  const title = [
+    "parkentplants.uz",
+    lead.name,
+    lead.phone,
+    lead.company ? `· ${lead.company}` : null,
+  ].filter(Boolean).join(" — ");
+
+  const utm = lead.utm;
+  const fields: Record<string, string | number> = {
+    TITLE: isMetaTraffic(utm) ? `[Meta] ${title}` : title,
+    SOURCE_ID: "WEB",
+    COMMENTS: buildComments(lead),
+    OPENED: "Y",
+    ASSIGNED_BY_ID: 1,
+    CURRENCY_ID: "UZS",
+  };
+
+  // Bitrix24 Deal'ning standart UTM maydonlari — faqat qiymat bo'lsa yuboramiz
+  if (utm?.utm_source) fields.UTM_SOURCE = utm.utm_source;
+  if (utm?.utm_medium) fields.UTM_MEDIUM = utm.utm_medium;
+  if (utm?.utm_campaign) fields.UTM_CAMPAIGN = utm.utm_campaign;
+  if (utm?.utm_content) fields.UTM_CONTENT = utm.utm_content;
+  if (utm?.utm_term) fields.UTM_TERM = utm.utm_term;
+
+  return {
+    fields,
+    params: { REGISTER_SONET_EVENT: "Y" },
+  };
 }
 
 export async function sendLeadToBitrix(
@@ -103,25 +144,7 @@ export async function sendLeadToBitrix(
   }
 
   // crm.deal.add talab qiladigan format
-  // Deal'da PHONE alohida maydon yo'q — TITLE'ga qo'shamiz
-  const title = [
-    "parkentplants.uz",
-    lead.name,
-    lead.phone,
-    lead.company ? `· ${lead.company}` : null,
-  ].filter(Boolean).join(" — ");
-
-  const body = {
-    fields: {
-      TITLE: title,
-      SOURCE_ID: "WEB",
-      COMMENTS: buildComments(lead),
-      OPENED: "Y",
-      ASSIGNED_BY_ID: 1,
-      CURRENCY_ID: "UZS",
-    },
-    params: { REGISTER_SONET_EVENT: "Y" },
-  };
+  const body = buildBitrixDealPayload(lead);
 
   try {
     // Webhook URL oxirida slash bo'lishi shart
