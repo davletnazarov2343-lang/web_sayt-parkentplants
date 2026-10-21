@@ -223,6 +223,95 @@ export async function VarietyLanding({
     faq.map((item) => ({ question: item.q, answer: item.a })),
   );
 
+  // Hero matni ikki bo'lakka bo'lingan: video variantda mobilda ular orasiga video tushadi.
+  // Video variantda mobil sarlavha bir pog'ona kichik, CTA tugmalari to'liq kenglikda (ustma-ust).
+  const heroIntro = (
+    <>
+      <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
+        {t("eyebrow")}
+      </p>
+      <h1
+        className={
+          video
+            ? "mt-4 text-3xl font-serif font-bold text-earth-900 sm:text-5xl lg:text-6xl leading-tight"
+            : "mt-4 text-4xl font-serif font-bold text-earth-900 sm:text-5xl lg:text-6xl leading-tight"
+        }
+      >
+        {t("title")}
+      </h1>
+      <p className="mt-6 text-base text-earth-700 leading-relaxed sm:text-lg">
+        {t("lead")}
+      </p>
+    </>
+  );
+
+  const heroExtras = (
+    <>
+      {/* Hero faktlar (ixtiyoriy): 3 chip + mavjudlik belgisi */}
+      {config.heroFacts && (
+        <>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {heroFacts.map((fact) => (
+              <li
+                key={fact}
+                className="rounded-full border border-forest-400/40 bg-forest-50/60 px-3.5 py-1.5 text-sm font-semibold text-forest-900"
+              >
+                {fact}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-cream">
+            <span
+              aria-hidden="true"
+              className="relative flex h-2.5 w-2.5 shrink-0"
+            >
+              <span className="absolute inline-flex h-full w-full rounded-full bg-forest-200 opacity-60 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-forest-200" />
+            </span>
+            {t("availabilityBadge")}
+          </p>
+        </>
+      )}
+
+      {/* `data-hero-cta` — StickyBar shu tugmalar ko'rinib turganda yashirinadi */}
+      <div
+        data-hero-cta={config.stickyBar ? "" : undefined}
+        className={
+          video
+            ? "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
+            : "mt-8 flex flex-wrap gap-3"
+        }
+      >
+        <TrackedLinkButton
+          href={CALL_HREF}
+          variant="primary"
+          size="lg"
+          className={video ? "w-full sm:w-auto" : undefined}
+          event="contact_phone"
+          source="landing_hero"
+          landing={config.slug}
+        >
+          <Phone className="h-4 w-4" />
+          {t("ctaCall")}
+        </TrackedLinkButton>
+        <TrackedLinkButton
+          href={TELEGRAM_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+          size="lg"
+          className={video ? "w-full sm:w-auto" : undefined}
+          event="contact_telegram"
+          source="landing_hero"
+          landing={config.slug}
+        >
+          <TelegramIcon size={16} />
+          {t("ctaTelegram")}
+        </TrackedLinkButton>
+      </div>
+    </>
+  );
+
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
@@ -256,82 +345,34 @@ export async function VarietyLanding({
           </nav>
 
           {/* 1. Hero */}
-          <header className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
-                {t("eyebrow")}
-              </p>
-              <h1 className="mt-4 text-4xl font-serif font-bold text-earth-900 sm:text-5xl lg:text-6xl leading-tight">
-                {t("title")}
-              </h1>
-              <p className="mt-6 text-base text-earth-700 leading-relaxed sm:text-lg">
-                {t("lead")}
-              </p>
-
-              {/* Hero faktlar (ixtiyoriy): 3 chip + mavjudlik belgisi */}
-              {config.heroFacts && (
-                <>
-                  <ul className="mt-6 flex flex-wrap gap-2">
-                    {heroFacts.map((fact) => (
-                      <li
-                        key={fact}
-                        className="rounded-full border border-forest-400/40 bg-forest-50/60 px-3.5 py-1.5 text-sm font-semibold text-forest-900"
-                      >
-                        {fact}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 inline-flex items-center gap-2.5 rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-cream">
-                    <span
-                      aria-hidden="true"
-                      className="relative flex h-2.5 w-2.5 shrink-0"
-                    >
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-forest-200 opacity-60 motion-safe:animate-ping" />
-                      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-forest-200" />
-                    </span>
-                    {t("availabilityBadge")}
-                  </p>
-                </>
-              )}
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <TrackedLinkButton
-                  href={CALL_HREF}
-                  variant="primary"
-                  size="lg"
-                  event="contact_phone"
-                  source="landing_hero"
-                  landing={config.slug}
-                >
-                  <Phone className="h-4 w-4" />
-                  {t("ctaCall")}
-                </TrackedLinkButton>
-                <TrackedLinkButton
-                  href={TELEGRAM_HREF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="outline"
-                  size="lg"
-                  event="contact_telegram"
-                  source="landing_hero"
-                  landing={config.slug}
-                >
-                  <TelegramIcon size={16} />
-                  {t("ctaTelegram")}
-                </TrackedLinkButton>
+          {video ? (
+            // Video variant. Mobil (< lg): eyebrow -> sarlavha -> lead -> VIDEO -> faktlar -> CTA.
+            // Matn bloki mobilda `contents` (bolalari to'g'ridan-to'g'ri grid elementi bo'ladi) va
+            // `order` bilan video o'rtaga qo'yiladi — video bitta, DOM'da takrorlanmaydi.
+            // Desktop (lg+): avvalgidek 2 ustun (matn bloki | video).
+            <header className="mt-8 grid gap-0 lg:grid-cols-2 lg:items-center lg:gap-14">
+              <div className="contents lg:block">
+                <div>{heroIntro}</div>
+                <div className="order-3 lg:order-none">{heroExtras}</div>
               </div>
-            </div>
-            {video ? (
-              <LandingVideo
-                src={video.src}
-                srcMobile={video.srcMobile}
-                poster={video.poster}
-                width={video.width}
-                height={video.height}
-                posterAlt={t("gallery.alt5")}
-                ariaLabel={t("video.ariaLabel")}
-              />
-            ) : (
+              <div className="order-2 mt-8 lg:order-none lg:mt-0">
+                <LandingVideo
+                  src={video.src}
+                  srcMobile={video.srcMobile}
+                  poster={video.poster}
+                  width={video.width}
+                  height={video.height}
+                  posterAlt={t("gallery.alt5")}
+                  ariaLabel={t("video.ariaLabel")}
+                />
+              </div>
+            </header>
+          ) : (
+            <header className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+              <div>
+                {heroIntro}
+                {heroExtras}
+              </div>
               <div className="relative mx-auto aspect-square w-full max-w-xl overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)] lg:max-w-none">
                 <Image
                   src={IMG_HERO}
@@ -342,8 +383,8 @@ export async function VarietyLanding({
                   className="object-cover"
                 />
               </div>
-            )}
-          </header>
+            </header>
+          )}
 
           {/* Mobil pastki panel (ixtiyoriy): hero'dan keyin paydo bo'ladi */}
           {config.stickyBar && (

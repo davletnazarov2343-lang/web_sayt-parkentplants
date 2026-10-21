@@ -15,6 +15,8 @@ export async function generateVarietyLandingMetadata(
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: config.namespace });
   const path = `/${config.slug}`;
+  // Hero rasmining haqiqiy o'lchami (berilmasa — kvadrat 1080x1080)
+  const { width, height } = config.ogImage ?? { width: 1080, height: 1080 };
   return {
     title: t("metaTitle"),
     description: t("metaDescription"),
@@ -34,8 +36,8 @@ export async function generateVarietyLandingMetadata(
       images: [
         {
           url: config.images.hero,
-          width: 1080,
-          height: 1080,
+          width,
+          height,
           alt: t("gallery.alt1"),
         },
       ],

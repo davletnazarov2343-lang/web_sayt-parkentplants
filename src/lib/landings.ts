@@ -64,6 +64,11 @@ export type VarietyLandingConfig = {
    * — tartib bo'yicha). Berilmasa — galereya faqat closeup (eski ko'rinish).
    */
   extraGallery?: ReadonlyArray<string>;
+  /**
+   * OpenGraph rasmi (hero) haqiqiy o'lchami (px). Berilmasa — 1080x1080
+   * (kvadrat hero rasmlar uchun standart).
+   */
+  ogImage?: { width: number; height: number };
   /** Lid manbasi — LeadForm `source` (masalan "granny-smith-lending") */
   leadSource: string;
   /** ViewTracker event nomi (events.ts'dagi EVENT_MAP kaliti) */
@@ -180,6 +185,7 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
       closeup: "/images/sweet-aryana/closeup.jpg",
     },
     extraGallery: ["/images/sweet-aryana/harvest-hand.jpg"],
+    ogImage: { width: 1200, height: 1080 },
     leadSource: "sweet-aryana-lending",
     viewEvent: "view_sweet_aryana",
     audience: false,

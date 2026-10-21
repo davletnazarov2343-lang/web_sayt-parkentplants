@@ -83,7 +83,8 @@ export function FeaturedVarieties({
           )}
         </div>
 
-        {/* 5 ta karta, markazlashgan qatorlar: mobil 1 ustun, md (768+) 2+2+1, lg (1024+) 3+2.
+        {/* 5 ta karta, markazlashgan qatorlar: mobil 1 ustun, md (768+) 2+2+1, lg (1024+) 3+2,
+            xl (1280+) hammasi bir qatorda (5).
             Karta kengligi = (100% - bo'shliqlar) / ustunlar soni; gap-6 = 1.5rem */}
         <ul className="mt-8 flex flex-wrap justify-center gap-6">
           {FEATURED_LANDINGS.map((landing) => {
@@ -93,7 +94,7 @@ export function FeaturedVarieties({
               <li
                 key={landing.slug}
                 className={cn(
-                  "group relative flex w-full flex-col overflow-hidden rounded-2xl border bg-cream transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.3)] md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]",
+                  "group relative flex w-full flex-col overflow-hidden rounded-2xl border bg-cream transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.3)] md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] xl:w-[calc((100%-6rem)/5)]",
                   accent.card,
                 )}
               >
@@ -103,16 +104,16 @@ export function FeaturedVarieties({
                     src={landing.image}
                     alt={t(`items.${landing.slug}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, 100vw"
+                    sizes="(min-width: 1280px) 230px, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
 
-                <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <h3 className="font-serif text-xl font-semibold leading-tight text-earth-900 sm:text-2xl">
+                <div className="flex flex-1 flex-col p-5 sm:p-6 xl:p-4">
+                  <h3 className="font-serif text-xl font-semibold leading-tight text-earth-900 sm:text-2xl xl:text-xl">
                     {t(`items.${landing.slug}.name`)}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-earth-700 sm:text-base">
+                  <p className="mt-2 text-sm leading-relaxed text-earth-700 sm:text-base xl:text-sm">
                     {t(`items.${landing.slug}.tagline`)}
                   </p>
 
@@ -121,7 +122,7 @@ export function FeaturedVarieties({
                       <li
                         key={chip}
                         className={cn(
-                          "rounded-full border px-3 py-1 text-xs font-semibold sm:text-sm",
+                          "rounded-full border px-3 py-1 text-xs font-semibold sm:text-sm xl:rounded-2xl xl:px-2.5 xl:text-xs",
                           accent.chip,
                         )}
                       >

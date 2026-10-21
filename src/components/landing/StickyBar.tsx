@@ -1,18 +1,46 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ClipboardList, Phone } from "lucide-react";
 import { TelegramIcon } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
 import { LEAD_FORM_ID, scrollToLeadForm } from "@/lib/landing-form";
 import { cn } from "@/lib/utils";
 
+/** Hero CTA tugmalari konteynerining belgisi (VarietyLanding `stickyBar` bo'lganda qo'yadi) */
+const HERO_CTA_SELECTOR = "[data-hero-cta]";
+
+/**
+ * Selektor bo'yicha topilgan element ko'rinish maydonida bo'lsa `true`.
+ * Element topilmasa `false`; hali o'lchanmagan paytda `null`.
+ */
+function useElementInView(selector: string): boolean | null {
+  const [inView, setInView] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const el = document.querySelector(selector);
+    if (!el) {
+      setInView(false);
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      setInView(entries[entries.length - 1].isIntersecting);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [selector]);
+
+  return inView;
+}
+
 /**
  * Mobil (< md) pastki yopishqoq panel: Qo'ng'iroq / Telegram / Buyurtma.
  *
- * - Hero'dan o'tgandan keyin ko'rinadi (hero tagidagi ko'rinmas belgi kuzatiladi).
- * - Lid formasi ko'rinish maydonida bo'lsa yashiriladi (kiritish maydonlari va
+ * - Hero CTA tugmalari ham, lid formasi ham ko'rinish maydonida BO'LMAGANDA
+ *   ko'rinadi: birinchi ekranda (CTA pastda) ko'rinadi, CTA ko'ringanda yashirinadi,
+ *   o'tib ketgach qaytadi, formada yana yashirinadi (kiritish maydonlari va
  *   "Yuborish" tugmasini yopmasin).
+ * - O'lchov tugamaguncha yashirin (SSR/hydration paytida yaltirab ketmasin).
  * - Panel ochiq paytda <body>ga `has-sticky-bar` klassi qo'yiladi: globals.css
  *   mobilda pastdan joy qoldiradi — footer panel ostida qolmaydi.
  * - iOS xavfsiz zona: `env(safe-area-inset-bottom)`.
@@ -29,31 +57,8 @@ export function StickyBar({
   telegramHref: string;
   labels: { call: string; telegram: string; order: string };
 }) {
-  const sentinelRef = useRef<HTMLDivElement>(null);
-  const [pastHero, setPastHero] = useState(false);
-  const [formInView, setFormInView] = useState(false);
-
-  // Hero tagidagi belgi ko'rish maydonining TEPASIDAN o'tib ketgan bo'lsa — hero o'tdi
-  useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      setPastHero(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  // Lid formasi ko'rinib turgan paytda panel yashirin
-  useEffect(() => {
-    const form = document.getElementById(LEAD_FORM_ID);
-    if (!form) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      setFormInView(entry.isIntersecting);
-    });
-    observer.observe(form);
-    return () => observer.disconnect();
-  }, []);
+  const heroCtaInView = useElementInView(HERO_CTA_SELECTOR);
+  const formInView = useElementInView(`#${LEAD_FORM_ID}`);
 
   // Footer panel ostida qolmasligi uchun pastdan joy (globals.css)
   useEffect(() => {
@@ -61,16 +66,13 @@ export function StickyBar({
     return () => document.body.classList.remove("has-sticky-bar");
   }, []);
 
-  const visible = pastHero && !formInView;
+  const visible = heroCtaInView === false && formInView === false;
 
   const itemClass =
     "flex h-12 items-center justify-center gap-1.5 rounded-lg px-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream";
 
   return (
     <>
-      {/* Hero tugashini bildiruvchi ko'rinmas belgi */}
-      <div ref={sentinelRef} aria-hidden="true" className="h-px w-full" />
-
       <div
         aria-hidden={!visible}
         className={cn(
