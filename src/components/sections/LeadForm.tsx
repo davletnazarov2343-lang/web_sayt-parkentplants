@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics/events";
 import { getAttribution } from "@/lib/leads/utm";
+import { LEAD_OPTION_EVENT } from "@/lib/landing-form";
 
 type Status =
   | { state: "idle" }
@@ -37,16 +38,46 @@ const initialFruitTypes: Record<FruitTypeKey, boolean> = FRUIT_TYPE_KEYS.reduce(
   {} as Record<FruitTypeKey, boolean>,
 );
 
+/** Meva turi chiplari boshlang'ich holati; `defaults` — oldindan belgilanganlar */
+function buildFruitTypes(
+  defaults?: ReadonlyArray<FruitTypeKey>,
+): Record<FruitTypeKey, boolean> {
+  const state = { ...initialFruitTypes };
+  for (const key of defaults ?? []) state[key] = true;
+  return state;
+}
+
+export type LeadSourceOption = {
+  /** Variant kaliti (masalan "now") — LEAD_OPTION_EVENT shu qiymat bilan keladi */
+  value: string;
+  /** Kartada ko'rsatiladigan yorliq */
+  label: string;
+  /** API'ga ketadigan lid manbasi (faqat `[a-zA-Z0-9_-]`, ko'pi bilan 64) */
+  source: string;
+};
+
 export function LeadForm({
   locale,
   source,
   title,
+  sourceOptions,
+  defaultOption,
+  defaultFruitTypes,
 }: {
   locale: "uz" | "ru";
   /** Lid manbasi (masalan "granny-smith-lending"). Berilmasa — "website". */
   source?: string;
   /** Sarlavhani almashtirish (lending sahifalar uchun). Berilmasa — standart. */
   title?: string;
+  /**
+   * Forma tepasida katta kartali tanlov (radio). Berilsa, yuboriladigan `source`
+   * tanlangan variantning `source`i bo'ladi (`source` prop'i esa zaxira).
+   */
+  sourceOptions?: ReadonlyArray<LeadSourceOption>;
+  /** Boshlang'ich variant (`sourceOptions[].value`). Berilmasa — birinchisi. */
+  defaultOption?: string;
+  /** Oldindan belgilanadigan meva turlari (masalan ["cherry"]) */
+  defaultFruitTypes?: ReadonlyArray<FruitTypeKey>;
 }) {
   const t = useTranslations("leadForm");
 
@@ -55,7 +86,9 @@ export function LeadForm({
   const [company, setCompany] = useState("");
   const [region, setRegion] = useState<RegionKey | "">("");
   const [volume, setVolume] = useState<VolumePlanKey | "">("");
-  const [fruitTypes, setFruitTypes] = useState(initialFruitTypes);
+  const [fruitTypes, setFruitTypes] = useState(() =>
+    buildFruitTypes(defaultFruitTypes),
+  );
   const [message, setMessage] = useState("");
   const [consent, setConsent] = useState(false);
   const [website, setWebsite] = useState(""); // honeypot
@@ -63,6 +96,26 @@ export function LeadForm({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>({ state: "idle" });
   const [hasStarted, setHasStarted] = useState(false);
+
+  // Manba tanlovi (faqat `sourceOptions` berilganda ishlaydi)
+  const initialOption = defaultOption ?? sourceOptions?.[0]?.value ?? "";
+  const [option, setOption] = useState(initialOption);
+  const optionsRef = useRef(sourceOptions);
+  optionsRef.current = sourceOptions;
+  const effectiveSource =
+    sourceOptions?.find((o) => o.value === option)?.source ?? source;
+
+  // Sahifadagi boshqa tugmalar (masalan "Hozir bor" kartasi) variantni tanlatadi
+  useEffect(() => {
+    function handleSelect(e: Event) {
+      const value = (e as CustomEvent<{ value?: string }>).detail?.value;
+      if (value && optionsRef.current?.some((o) => o.value === value)) {
+        setOption(value);
+      }
+    }
+    window.addEventListener(LEAD_OPTION_EVENT, handleSelect);
+    return () => window.removeEventListener(LEAD_OPTION_EVENT, handleSelect);
+  }, []);
 
   function handleFormStart() {
     if (hasStarted) return;
@@ -91,7 +144,7 @@ export function LeadForm({
       message: message.trim() || undefined,
       consent,
       locale,
-      source: source || undefined,
+      source: effectiveSource || undefined,
       // Reklama manbasi (utm_* / fbclid / gclid) — joriy URL yoki sessiya
       utm: getAttribution(),
       website: website || undefined,
@@ -165,7 +218,7 @@ export function LeadForm({
     trackEvent("lead", {
       form: "main_lead_form",
       locale,
-      source: source || undefined,
+      source: effectiveSource || undefined,
       region: region || undefined,
       volume: volume || undefined,
     });
@@ -175,7 +228,8 @@ export function LeadForm({
     setCompany("");
     setRegion("");
     setVolume("");
-    setFruitTypes(initialFruitTypes);
+    setFruitTypes(buildFruitTypes(defaultFruitTypes));
+    setOption(initialOption);
     setMessage("");
     setConsent(false);
   }
@@ -190,7 +244,10 @@ export function LeadForm({
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">
             {t("eyebrow")}
           </span>
-          <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-earth-900 sm:text-4xl lg:text-5xl text-balance">
+          <h2
+            id={sourceOptions ? "request-title" : undefined}
+            className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-earth-900 sm:text-4xl lg:text-5xl text-balance"
+          >
             {title ?? t("title")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-earth-700">
@@ -206,7 +263,58 @@ export function LeadForm({
             noValidate
             className="mt-12 rounded-2xl border border-earth-400/25 bg-cream p-6 shadow-[0_8px_40px_-20px_rgba(27,67,50,0.18)] sm:p-10"
           >
-            {source && <input type="hidden" name="source" value={source} />}
+            {effectiveSource && (
+              <input type="hidden" name="source" value={effectiveSource} />
+            )}
+
+            {/* Manba tanlovi — katta bosiladigan kartalar (radio) */}
+            {sourceOptions && sourceOptions.length > 0 && (
+              <div
+                role="radiogroup"
+                aria-labelledby="request-title"
+                className="mb-6 grid gap-3 sm:grid-cols-2"
+              >
+                {sourceOptions.map((opt) => {
+                  const checked = opt.value === option;
+                  return (
+                    <label
+                      key={opt.value}
+                      className={cn(
+                        "relative flex min-h-[3.5rem] cursor-pointer items-center gap-3 rounded-xl border-2 p-4 transition-colors focus-within:ring-2 focus-within:ring-forest-400 focus-within:ring-offset-2 focus-within:ring-offset-cream",
+                        checked
+                          ? "border-forest-700 bg-forest-50/70"
+                          : "border-earth-400/40 bg-cream-100 hover:border-forest-400",
+                      )}
+                    >
+                      <input
+                        type="radio"
+                        name="lead-source-option"
+                        value={opt.value}
+                        checked={checked}
+                        onChange={() => setOption(opt.value)}
+                        className="sr-only"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors",
+                          checked
+                            ? "border-forest-700 bg-forest-700"
+                            : "border-earth-400",
+                        )}
+                      >
+                        {checked && (
+                          <span className="h-2 w-2 rounded-full bg-cream" />
+                        )}
+                      </span>
+                      <span className="text-sm font-semibold leading-snug text-earth-900 sm:text-base">
+                        {opt.label}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Honeypot — vizual yashirin */}
             <div

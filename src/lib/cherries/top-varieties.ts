@@ -66,6 +66,8 @@ export type CherryVariety = {
   taglineUz: string;
   /** One-line tagline (ru) */
   taglineRu: string;
+  /** Optional maxsus lending sahifa (locale prefiksisiz, masalan "/sweet-aryana") */
+  landingHref?: string;
 };
 
 export const TOP_CHERRIES: CherryVariety[] = [
@@ -130,8 +132,8 @@ export const TOP_CHERRIES: CherryVariety[] = [
       "Один из самых крупных в мире сортов черешни. Уже 10 мая можно собирать в бело-жёлтом виде и продавать по высокой цене.",
   },
   {
-    slug: "sweet-ariana",
-    name: "Sweet Ariana",
+    slug: "sweet-aryana",
+    name: "Sweet Aryana",
     nameOriginal: "Свит Ариана",
     daysAfterRoyal: 10,
     season: "early",
@@ -148,6 +150,7 @@ export const TOP_CHERRIES: CherryVariety[] = [
       "Yuraksimon, shirin meva. Daraxt baquvvat, tarvaqaylab o'sadi va serhosil.",
     taglineRu:
       "Сердцевидная, сладкая. Дерево мощное, раскидистое, очень урожайное.",
+    landingHref: "/sweet-aryana",
   },
   {
     slug: "sweet-lorenz",

@@ -72,6 +72,11 @@ const EVENT_MAP: Record<
     ga: "view_item",
     ym: "view_pink_lady",
   },
+  view_sweet_aryana: {
+    fbq: "ViewContent",
+    ga: "view_item",
+    ym: "view_sweet_aryana",
+  },
   // Maqola ochildi (params: { slug }) — ViewTracker orqali
   view_article: { fbq: "ViewContent", ga: "view_item", ym: "view_article" },
   // Video player — Shuhrat aka videosi ko'rildi

@@ -342,6 +342,7 @@ function mapCherry(v: CherryVariety): CatalogVariety {
     taglineUz: v.taglineUz,
     taglineRu: v.taglineRu,
     specs,
+    landingHref: v.landingHref,
   };
 }
 

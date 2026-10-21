@@ -14,6 +14,8 @@ const cspDirectives = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://i.ytimg.com https://mc.yandex.ru https://www.facebook.com https://www.google-analytics.com https://www.googletagmanager.com https://cdn.sanity.io https://maps.gstatic.com https://maps.googleapis.com",
   "font-src 'self' data:",
+  // Lending hero video (/videos/*.mp4) — o'z domenidan
+  "media-src 'self'",
   // www.facebook.com — Meta Pixel yashirin iframe yaratadi (jonli
   // kuzatuvda tasdiqlangan, 2026-09-04)
   "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com https://www.facebook.com",

@@ -39,6 +39,12 @@
     "cta": "Batafsil",
     "allLink": "Barcha navlar",
     "items": {
+      "sweet-aryana": {
+        "name": "Sweet Aryana",
+        "tagline": "Erta pishadigan, o'zini changlatadigan gilos — transportga juda chidamli.",
+        "chips": ["15-may", "28–30 mm", "10–12 t/ga"],
+        "imageAlt": "Sweet Aryana gilosi shoxda — to'q-qizil mevalar"
+      },
       "pink-lady": {
         "name": "Pink Lady",
         "tagline": "Dunyodagi eng mashhur olma: sersuv, qattiq, eti qoraymaydi — eksportbop",
@@ -946,7 +952,7 @@
           },
           {
             "name": "Sweet Aryana",
-            "specs": "Brix 19-20 · Kalibr 28-30",
+            "specs": "Brix 17–19% · Kalibr 28-30",
             "pollination": "O'zini changlatadi",
             "extra": "Uzilgandan keyin uzoq turadi",
             "youtubeUrl": "https://youtu.be/AlzVDFIUDig?t=645"
@@ -1465,6 +1471,158 @@
       ]
     },
     "formTitle": "Pink Lady ko'chatiga so'rov qoldiring"
+  },
+  "sweetAryanaPage": {
+    "metaTitle": "Sweet Aryana gilos ko'chati — vishnya payvandtagida",
+    "metaDescription": "Sweet Aryana gilos ko'chati: pishish vaqti 15-may (regioniga qarab), o'zini changlatadi, kalibri 28–30 mm, shakari 17–19%. Vishnya payvandtagida bor.",
+    "breadcrumb": "Sweet Aryana",
+    "eyebrow": "Sweet Aryana gilos ko'chati",
+    "title": "Nega bu gilos O'zbekistonda juda tez ommalashdi?",
+    "lead": "Bu shunchaki shov-shuvmi yoki asosli sabab bormi? Keling parametrlarini ko'rib chiqamiz.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "heroFacts": [
+      "Pishish vaqti: 15-may",
+      "O'zini changlatadi",
+      "Kalibri: 28–30 mm"
+    ],
+    "availabilityBadge": "Hozirgi kunda vishnya payvandtagida bor",
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        {
+          "label": "Pishish vaqti",
+          "value": "15-may (regioniga qarab)"
+        },
+        {
+          "label": "Changlanishi",
+          "value": "O'zini changlatadi"
+        },
+        {
+          "label": "Kalibri",
+          "value": "28–30 mm"
+        },
+        {
+          "label": "Qattiqligi",
+          "value": "62 (zo'r)"
+        },
+        {
+          "label": "Shakari",
+          "value": "17–19%"
+        },
+        {
+          "label": "Rangi",
+          "value": "To'q-qizil"
+        },
+        {
+          "label": "Hosildorligi",
+          "value": "10–12 tonna (gektariga)"
+        },
+        {
+          "label": "O'sishi",
+          "value": "Kuchli"
+        },
+        {
+          "label": "S allellari",
+          "value": "S3S4'"
+        },
+        {
+          "label": "Band (pedicel) uzunligi",
+          "value": "33–38 mm (ya'ni 3.3 – 3.8 sm) oralig'ida bo'ladi"
+        }
+      ]
+    },
+    "advantages": {
+      "title": "Nav ustunliklari",
+      "items": [
+        {
+          "title": "Erta pishish va bozordagi eng qimmat narx",
+          "text": "Pishish vaqti: 15-may (regioniga qarab)."
+        },
+        {
+          "title": "Chidamlilik",
+          "text": "Transportga juda chidamli va uzoq masofalarga (masalan, eksportga) yuborilganda ham sifatini yo'qotmaydi."
+        },
+        {
+          "title": "Mutlaqo o'zini-o'zi changlatishi",
+          "text": "Bahorda ob-havo noqulay kelib, asal arilar uchmay qolsa ham, bu navda yuqori tonna kafolatlanganligi."
+        },
+        {
+          "title": "Eksport standarti bo'yicha meva kalibr taqsimoti",
+          "text": "To'g'ri agrotexnika qilinganda hosilning 85% dan ortig'i Yirik (28–30 mm) va Premium (30+ mm) o'lchov toifasiga kiradi."
+        },
+        {
+          "title": "Band (pedicel) uzunligi",
+          "text": "Odatda gilos bandi qisqa bo'lsa, terish qiyinlashadi. Sweet Aryana navida esa bu ko'rsatkich 3.5 sm atrofida bo'lib, bu ishchilar uchun mevani shoxdan shikastlamasdan va tez uzib olish imkonini beradi. Shuningdek, o'rtacha qalinlikdagi va uzunlikdagi band mevani terishdan keyingi saralash (kalibrovka) liniyalarida ham kamroq uzilib tushishini (eksportbop gilos albatta bandi bilan sotiladi) ta'minlaydi."
+        }
+      ]
+    },
+    "offers": {
+      "title": "Ishonchli ko'chatlar uchun",
+      "now": {
+        "badge": "Hozir bor",
+        "title": "Vishnya payvandtagida",
+        "text": "Hozirgi kunda «Parkent Plants» ko'chatchiligida Sweet Aryana navi vishnya payvandtagida bor.",
+        "cta": "So'rov qoldirish"
+      },
+      "preorder": {
+        "badge": "2027 kuz mavsumi",
+        "title": "Klon payvandtagli",
+        "text": "Klon payvandtaglini 2027 kuz mavsumi uchun buyurtma qilishingiz mumkin.",
+        "cta": "Buyurtma qoldirish"
+      }
+    },
+    "warning": {
+      "title": "Eslatma",
+      "text": "Hozirgi kunda «Parkent Plants» ko'chatchiligida Sweet Aryana navi vishnya payvandtagida bor. Klon payvandtaglini 2027 kuz mavsumi uchun buyurtma qilishingiz mumkin."
+    },
+    "video": {
+      "title": "Sweet Aryana videoda",
+      "caption": "Sweet Aryana gilosi bog'da",
+      "ariaLabel": "Sweet Aryana gilosi bog'da — ovozsiz video"
+    },
+    "gallery": {
+      "alt1": "Sweet Aryana gilosi — yirik, yaltiroq to'q-qizil mevalar yaqin planda",
+      "alt2": "Mevalarga to'la Sweet Aryana shoxi bog'da",
+      "alt3": "Sweet Aryana gilos mevalari shoxda — yaqindan ko'rinish",
+      "alt4": "Qo'lda ushlab turilgan Sweet Aryana gilos shingili",
+      "alt5": "Sweet Aryana bog'idan kadr"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Sweet Aryana qachon pishadi?",
+          "a": "15-may (regioniga qarab)."
+        },
+        {
+          "q": "Sweet Aryana o'zini changlatadimi?",
+          "a": "O'zini changlatadi."
+        },
+        {
+          "q": "Sweet Aryana hozir qaysi payvandtagda bor?",
+          "a": "Hozirgi kunda «Parkent Plants» ko'chatchiligida Sweet Aryana navi vishnya payvandtagida bor."
+        },
+        {
+          "q": "Klon payvandtagli ko'chatni buyurtma qilish mumkinmi?",
+          "a": "Klon payvandtaglini 2027 kuz mavsumi uchun buyurtma qilishingiz mumkin."
+        },
+        {
+          "q": "Qanday buyurtma qilish mumkin?",
+          "a": "Telefon qiling: +998 78 113 18 19 yoki Telegramdan yozing: +998 99 557 38 00."
+        }
+      ]
+    },
+    "formTitle": "Sweet Aryana ko'chatiga so'rov qoldiring",
+    "formOption": {
+      "now": "Hozir bor — vishnya payvandtagida",
+      "preorder": "Klon payvandtagli — 2027 kuz mavsumiga buyurtma"
+    },
+    "stickyBar": {
+      "call": "Qo'ng'iroq",
+      "telegram": "Telegram",
+      "order": "Buyurtma"
+    }
   },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",

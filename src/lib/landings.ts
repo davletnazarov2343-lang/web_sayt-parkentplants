@@ -11,12 +11,42 @@
  */
 
 import type { TrackEventKey } from "@/lib/analytics/events";
+import { LOCALES } from "@/lib/constants";
+import type { FruitTypeKey } from "@/lib/leads/schema";
 
 export type LandingSlug =
   | "black-splendor"
   | "devil-gala"
   | "granny-smith"
-  | "pink-lady";
+  | "pink-lady"
+  | "sweet-aryana";
+
+/** Hero video (ovozsiz, loop). Poster — video'ning birinchi kadriga mos rasm. */
+export type LandingVideo = {
+  /** Asosiy (desktop) fayl, masalan "/videos/sweet-aryana.mp4" */
+  src: string;
+  /** Mobil (< 768px) uchun yengilroq fayl. Berilmasa — `src` */
+  srcMobile?: string;
+  /** Poster rasm (LCP) — video yuklanguncha ko'rinadi */
+  poster: string;
+  /** Video o'lchami (kenglik/balandlik nisbati ramka uchun) */
+  width: number;
+  height: number;
+  /** JSON-LD VideoObject: yuklangan sana (ISO, "2026-10-21") */
+  uploadDate: string;
+  /** JSON-LD VideoObject: davomiyligi (ISO 8601, masalan "PT17S") */
+  duration: string;
+};
+
+/**
+ * Lid formasining "manba" tanlovi (masalan "Hozir bor" / "2027 buyurtma").
+ * `value` — i18n kaliti ham: yorliq `<namespace>.formOption.<value>` dan olinadi.
+ * `source` — API'ga ketadigan lid manbasi (faqat `[a-zA-Z0-9_-]`, ko'pi bilan 64).
+ */
+export type LandingSourceOption = {
+  value: string;
+  source: string;
+};
 
 export type VarietyLandingConfig = {
   /** URL slug — locale prefiksisiz va "/" siz (masalan "granny-smith") */
@@ -49,6 +79,38 @@ export type VarietyLandingConfig = {
    * bo'lishi shart. Berilmasa — bo'lim chiqmaydi (eski ko'rinish).
    */
   rootstockSection?: boolean;
+  /** "Kim uchun" bo'limi. Standart `true`; `false` — bo'lim chiqmaydi (tarjimada `audience` shart emas). */
+  audience?: boolean;
+  /**
+   * Hero'da 3 ta qisqa fakt (chip) + mavjudlik belgisi. `true` bo'lsa, namespace'da
+   * `heroFacts: string[]` va `availabilityBadge: string` bo'lishi shart.
+   */
+  heroFacts?: boolean;
+  /**
+   * Hero rasm o'rniga video. Namespace'da `video: { title, ariaLabel }` va
+   * poster alt'i uchun `gallery.alt5` bo'lishi shart. Hero rasm esa galereyaga
+   * ko'chadi (alt: `gallery.alt1`).
+   */
+  video?: LandingVideo;
+  /**
+   * "Hozir bor / oldindan buyurtma" ikki kartali bo'lim (ustunliklardan keyin).
+   * `true` bo'lsa, namespace'da `offers: { title, now, preorder }` (har biri
+   * `{ badge, title, text, cta }`) bo'lishi shart. Karta tugmasi formani
+   * tegishli variantga o'rnatib, formaga siljitadi — `sourceOptions` bilan birga ishlating.
+   */
+  offers?: boolean;
+  /**
+   * Mobil (< md) pastki yopishqoq panel: Qo'ng'iroq / Telegram / Buyurtma.
+   * Namespace'da `stickyBar: { call, telegram, order }` bo'lishi shart.
+   */
+  stickyBar?: boolean;
+  /**
+   * Lid formasi tepasida 2 variantli tanlov. Standart tanlov — birinchisi.
+   * Berilsa, `leadSource` o'rniga tanlangan variantning `source`i yuboriladi.
+   */
+  sourceOptions?: ReadonlyArray<LandingSourceOption>;
+  /** Lid formasida oldindan belgilangan meva turlari (masalan ["cherry"]) */
+  defaultFruitTypes?: ReadonlyArray<FruitTypeKey>;
 };
 
 export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
@@ -109,17 +171,66 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     specLinks: [{ text: "Granny Smith", slug: "granny-smith" }],
     rootstockSection: true,
   },
+  "sweet-aryana": {
+    slug: "sweet-aryana",
+    namespace: "sweetAryanaPage",
+    images: {
+      hero: "/images/sweet-aryana/hero.jpg",
+      cluster: "/images/sweet-aryana/cluster.jpg",
+      closeup: "/images/sweet-aryana/closeup.jpg",
+    },
+    extraGallery: ["/images/sweet-aryana/harvest-hand.jpg"],
+    leadSource: "sweet-aryana-lending",
+    viewEvent: "view_sweet_aryana",
+    audience: false,
+    heroFacts: true,
+    video: {
+      src: "/videos/sweet-aryana.mp4",
+      srcMobile: "/videos/sweet-aryana-480.mp4",
+      poster: "/images/sweet-aryana/video-poster.jpg",
+      width: 720,
+      height: 632,
+      uploadDate: "2026-10-21",
+      duration: "PT17S",
+    },
+    offers: true,
+    stickyBar: true,
+    sourceOptions: [
+      { value: "now", source: "sweet-aryana-lending-now" },
+      { value: "preorder", source: "sweet-aryana-lending-2027" },
+    ],
+    defaultFruitTypes: ["cherry"],
+  },
 };
+
+/**
+ * Mobil pastki panel (`stickyBar`) bor sahifalar — har ikki locale uchun to'liq
+ * yo'l ("/uz/sweet-aryana", ...). Global WhatsappFab shu sahifalarda mobilda
+ * yashiriladi (tugmalar ustma-ust tushmasin).
+ */
+export const STICKY_BAR_PATHS: ReadonlyArray<string> = Object.values(
+  VARIETY_LANDINGS,
+)
+  .filter((landing) => landing.stickyBar)
+  .flatMap((landing) =>
+    LOCALES.map((locale) => `/${locale}/${landing.slug}`),
+  );
 
 export type FeaturedLanding = {
   slug: LandingSlug;
   /** Locale prefiksisiz yo'l */
   href: string;
   image: string;
-  accent: "red" | "green" | "purple" | "pink";
+  accent: "red" | "green" | "purple" | "pink" | "rose";
 };
 
 export const FEATURED_LANDINGS: ReadonlyArray<FeaturedLanding> = [
+  {
+    slug: "sweet-aryana",
+    href: "/sweet-aryana",
+    image: VARIETY_LANDINGS["sweet-aryana"].images.cluster,
+    accent: "rose",
+  },
   {
     slug: "pink-lady",
     href: "/pink-lady",

@@ -8,9 +8,11 @@
  */
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { WhatsappIcon, TelegramIcon } from "@/components/ui/SocialIcons";
 import { trackEvent } from "@/lib/analytics/events";
+import { STICKY_BAR_PATHS } from "@/lib/landings";
 
 // Parkent Plants Telegram kontakti (saytning boshqa joylarida ham shu raqam).
 const TELEGRAM_URL = "https://t.me/+998995573800";
@@ -19,7 +21,14 @@ const SCROLL_REVEAL_THRESHOLD = 600;
 
 export function WhatsappFab() {
   const t = useTranslations("contact");
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
+
+  // Mobil pastki paneli (StickyBar) bor lending sahifalarda FAB mobilda yashirin
+  // (tugmalar ustma-ust tushmasin); desktopda (md+) avvalgidek ko'rinadi.
+  const hasStickyBar = STICKY_BAR_PATHS.includes(
+    (pathname ?? "").replace(/\/+$/, ""),
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +47,8 @@ export function WhatsappFab() {
   return (
     <div
       className={`fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3 transition-all duration-500 ease-out ${
+        hasStickyBar ? "max-md:hidden " : ""
+      }${
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-4 opacity-0"

@@ -223,6 +223,35 @@ export function getVideoCollectionSchema(
 }
 
 /**
+ * VideoObject schema — saytning o'zida joylashgan bitta video (mp4) uchun
+ * (lending hero video). Google video natijalari uchun nom, tavsif, thumbnail,
+ * contentUrl va uploadDate shart. URL'lar to'liq (absolute) bo'lishi kerak.
+ */
+export function getVideoObjectSchema(video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  contentUrl: string;
+  uploadDate: string;
+  /** ISO 8601, masalan "PT17S" */
+  duration: string;
+  inLanguage?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: [video.thumbnailUrl],
+    uploadDate: video.uploadDate,
+    duration: video.duration,
+    contentUrl: video.contentUrl,
+    publisher: { "@id": `${BASE_URL}#business` },
+    ...(video.inLanguage ? { inLanguage: video.inLanguage } : {}),
+  };
+}
+
+/**
  * ImageObject schema — nursery fotolari uchun.
  * Google Images'da yaxshi rank uchun.
  */

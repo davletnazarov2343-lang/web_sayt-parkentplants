@@ -19,6 +19,14 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+
+  /* Mobil pastki panel (StickyBar, lending sahifalar) ochiq paytda footer
+     panel ostida qolmasligi uchun pastdan joy: panel balandligi (4rem) + iOS xavfsiz zona */
+  @media (max-width: 767px) {
+    body.has-sticky-bar {
+      padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px));
+    }
+  }
 }
 
 @layer utilities {

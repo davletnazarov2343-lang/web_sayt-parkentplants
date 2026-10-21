@@ -27,6 +27,11 @@ const ACCENT_STYLES: Record<
     card: "border-pink-300/60 hover:border-pink-400",
     chip: "border-pink-200 bg-pink-50 text-pink-900",
   },
+  // Gilos — chuqur olcha-qizil (red/pink'dan ajralib turishi uchun to'qroq)
+  rose: {
+    card: "border-rose-400/70 hover:border-rose-600",
+    chip: "border-rose-300 bg-rose-100/60 text-rose-900",
+  },
 };
 
 /**
@@ -78,8 +83,9 @@ export function FeaturedVarieties({
           )}
         </div>
 
-        {/* 4 ta karta: mobil 1, planshet/noutbuk 2x2, keng ekran (xl) 4 qator — yetim karta qolmaydi */}
-        <ul className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {/* 5 ta karta, markazlashgan qatorlar: mobil 1 ustun, md (768+) 2+2+1, lg (1024+) 3+2.
+            Karta kengligi = (100% - bo'shliqlar) / ustunlar soni; gap-6 = 1.5rem */}
+        <ul className="mt-8 flex flex-wrap justify-center gap-6">
           {FEATURED_LANDINGS.map((landing) => {
             const accent = ACCENT_STYLES[landing.accent];
             const chips = t.raw(`items.${landing.slug}.chips`) as string[];
@@ -87,7 +93,7 @@ export function FeaturedVarieties({
               <li
                 key={landing.slug}
                 className={cn(
-                  "group relative flex flex-col overflow-hidden rounded-2xl border bg-cream transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.3)]",
+                  "group relative flex w-full flex-col overflow-hidden rounded-2xl border bg-cream transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-16px_rgba(27,67,50,0.3)] md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]",
                   accent.card,
                 )}
               >
@@ -97,7 +103,7 @@ export function FeaturedVarieties({
                     src={landing.image}
                     alt={t(`items.${landing.slug}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1280px) 280px, (min-width: 768px) 46vw, 100vw"
+                    sizes="(min-width: 1280px) 380px, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
