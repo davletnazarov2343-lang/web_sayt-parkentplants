@@ -396,10 +396,9 @@
   "catalog": {
     "eyebrow": "Bizning katalog",
     "listTitle": "Mevali ko'chat navlari",
-    "listSubtitle": "135+ sertifikatlangan nav. Meva turi bo'yicha filtrlang va batafsil texnik tavsifni ko'ring.",
+    "listSubtitle": "135+ sertifikatlangan nav. Quyida — bozorda talab yuqori navlar haqida batafsil ma'lumot.",
     "filterPageDescription": "{fruitType} navlari — Parkent Plants katalogidan sertifikatlangan ko'chatlar.",
     "emptyFruitType": "{fruitType} bo'yicha hozircha aktiv nav yo'q.",
-    "staticNotice": "135+ navdan eng ko'p so'raladigan {n} tasi — texnik tavsif bilan.",
     "filter": {
       "all": "Hammasi",
       "count": "({n})"

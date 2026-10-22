@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { FeaturedVarieties } from "@/components/sections/FeaturedVarieties";
-import { TOTAL_CATALOG_VARIETIES } from "@/lib/catalog/varieties";
 
 export const revalidate = 3600;
 
@@ -46,9 +45,6 @@ export default async function VarietiesIndexPage({
             </h1>
             <p className="mt-5 text-base leading-relaxed text-earth-700 lg:text-lg">
               {t("listSubtitle")}
-            </p>
-            <p className="mt-3 text-sm font-medium text-forest-700">
-              {t("staticNotice", { n: TOTAL_CATALOG_VARIETIES })}
             </p>
           </header>
         </Container>
