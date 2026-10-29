@@ -15,12 +15,7 @@ import {
   getOrganizationSchema,
   getLocalBusinessSchema,
   getWebsiteSchema,
-  getBreadcrumbSchema,
-  getServiceSchema,
-  getVideoCollectionSchema,
-  getNurseryImagesSchema,
 } from "@/components/seo/JsonLd";
-import { SITE_VIDEOS } from "@/lib/videos";
 
 const SITE_URL = "https://parkentplants.uz";
 
@@ -203,14 +198,6 @@ export default async function LocaleLayout({
         <JsonLd data={getOrganizationSchema()} />
         <JsonLd data={getLocalBusinessSchema()} />
         <JsonLd data={getWebsiteSchema(locale)} />
-        <JsonLd data={getBreadcrumbSchema(locale)} />
-        <JsonLd data={getServiceSchema(locale)} />
-        {getVideoCollectionSchema(SITE_VIDEOS).map((video, i) => (
-          <JsonLd key={`video-${i}`} data={video} />
-        ))}
-        {getNurseryImagesSchema().map((img, i) => (
-          <JsonLd key={`img-${i}`} data={img} />
-        ))}
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>

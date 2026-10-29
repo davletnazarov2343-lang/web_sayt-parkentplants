@@ -15,11 +15,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
-import {
-  JsonLd,
-  getLocalBusinessSchema,
-  getOrganizationSchema,
-} from "@/components/seo/JsonLd";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 type Props = { params: { locale: string } };
 
@@ -101,15 +97,11 @@ export default async function ContactPage({ params: { locale } }: Props) {
     ],
   };
 
-  // Mavjud generatorlardan LocalBusiness va Organization schema
-  const localBusinessSchema = getLocalBusinessSchema();
-  const organizationSchema = getOrganizationSchema();
+  // Organization va LocalBusiness layout'da (har sahifada, @id bilan) — bu yerda takrorlanmaydi.
 
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={localBusinessSchema} />
-      <JsonLd data={organizationSchema} />
 
       <article className="pt-28 pb-24 sm:pt-32 lg:pt-40">
         <Container size="default">

@@ -132,7 +132,7 @@ export default async function ArticlePage({
     author: { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",
-      "@id": `${BASE_URL}#business`,
+      "@id": `${BASE_URL}/#localbusiness`,
       name: "Parkent Plants",
       url: BASE_URL,
       logo: {

@@ -12,7 +12,7 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "catalog" });
   return {
-    title: `${t("listTitle")} — Parkent Plants`,
+    title: t("listTitle"),
     description: t("listSubtitle"),
     alternates: {
       canonical: `/${locale}/varieties`,

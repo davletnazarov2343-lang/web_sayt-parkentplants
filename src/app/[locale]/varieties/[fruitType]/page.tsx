@@ -14,6 +14,9 @@ import { LOCALES } from "@/lib/constants";
 import type { Locale } from "@/sanity/types";
 
 export const revalidate = 3600;
+// Soft-404 oldini olish: generateStaticParams ro'yxatidan tashqari yo'llar
+// to'g'ridan-to'g'ri 404 qaytaradi (ISR'da notFound() 200 bilan keshlanardi).
+export const dynamicParams = false;
 
 type Props = {
   params: { locale: string; fruitType: string };
@@ -40,7 +43,7 @@ export async function generateMetadata({
   const name = ft.name[lang];
   const t = await getTranslations({ locale, namespace: "catalog" });
   return {
-    title: `${name} — ${t("listTitle")} · Parkent Plants`,
+    title: `${name} — ${t("listTitle")}`,
     description: t("filterPageDescription", { fruitType: name }),
     alternates: {
       canonical: `/${locale}/varieties/${fruitType}`,

@@ -209,15 +209,8 @@ export async function VarietyLanding({
     ],
   };
 
-  // Product — NARXSIZ (offers yo'q): faqat nom, tavsif, rasm, brend
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: t("eyebrow"),
-    description: t("metaDescription"),
-    image: [IMG_HERO, IMG_CLUSTER, IMG_CLOSEUP].map((src) => `${BASE_URL}${src}`),
-    brand: { "@type": "Brand", name: "Parkent Plants" },
-  };
+  // Product JSON-LD ataylab yo'q: lendinglarda narx ko'rsatilmaydi, narxsiz
+  // Product Google "Product snippets" xatosini beradi (offers/review/rating kerak).
 
   const faqSchema = getFaqSchema(
     faq.map((item) => ({ question: item.q, answer: item.a })),
@@ -315,7 +308,6 @@ export async function VarietyLanding({
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={productSchema} />
       <JsonLd data={faqSchema} />
       {video && (
         <JsonLd

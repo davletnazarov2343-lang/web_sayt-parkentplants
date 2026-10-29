@@ -56,7 +56,7 @@ export default async function SaplingsHubPage({ params: { locale } }: Props) {
     description: t("metaDescription"),
     url: `https://parkentplants.uz/${locale}/kochatlar`,
     inLanguage: locale === "uz" ? "uz-UZ" : "ru-RU",
-    isPartOf: { "@id": "https://parkentplants.uz#business" },
+    isPartOf: { "@id": "https://parkentplants.uz/#localbusiness" },
     hasPart: categories.map((c) => ({
       "@type": "WebPage",
       "@id": `https://parkentplants.uz/${locale}/kochatlar/${c.slug}`,

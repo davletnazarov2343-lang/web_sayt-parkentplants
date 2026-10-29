@@ -63,6 +63,9 @@ type ArticleMessages = {
   cta?: Cta;
 };
 
+// Soft-404 oldini olish: ro'yxatdan tashqari yo'llar to'g'ridan-to'g'ri 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   // externalUrl bor maqolalar tashqi statik HTML fayl orqali ochiladi —
   // ular uchun ichki [slug] sahifa yaratilmaydi (i18n kontent yo'q).
@@ -136,7 +139,7 @@ export default async function NewsArticlePage({
       name: "Parkent Plants",
       url: "https://parkentplants.uz",
     },
-    publisher: { "@id": "https://parkentplants.uz#business" },
+    publisher: { "@id": "https://parkentplants.uz/#localbusiness" },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `https://parkentplants.uz/${locale}/news/${slug}`,

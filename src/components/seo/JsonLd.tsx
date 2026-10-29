@@ -24,6 +24,8 @@ export function JsonLd({ data }: JsonLdProps) {
 }
 
 const BASE_URL = "https://parkentplants.uz";
+const ORG_ID = `${BASE_URL}/#organization`;
+const LOCALBUSINESS_ID = `${BASE_URL}/#localbusiness`;
 
 // ===========================================================================
 // Schema generators
@@ -33,6 +35,7 @@ export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: "Parkent Plants (Norchontol)",
     legalName: "Norchontol fermer xo'jaligi",
     url: BASE_URL,
@@ -78,7 +81,8 @@ export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Farm"],
-    "@id": `${BASE_URL}#business`,
+    "@id": LOCALBUSINESS_ID,
+    parentOrganization: { "@id": ORG_ID },
     name: "Parkent Plants",
     alternateName: "Norchontol fermer xo'jaligi",
     description:
@@ -143,61 +147,7 @@ export function getWebsiteSchema(locale: string) {
       locale === "ru" ? "Питомник Паркент Плэнтс" : "Parkent Plants ko'chatzori",
     url: `${BASE_URL}/${locale}`,
     inLanguage: locale === "uz" ? "uz-UZ" : "ru-RU",
-    publisher: { "@id": `${BASE_URL}#business` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${BASE_URL}/${locale}?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
-}
-
-/**
- * Service schema — Google'ga "biz qaysi xizmatni taklif qilamiz" deb aytadi.
- */
-export function getServiceSchema(locale: string) {
-  const isRu = locale === "ru";
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: isRu
-      ? "Продажа плодовых саженцев"
-      : "Mevali ko'chat sotish",
-    name: isRu
-      ? "Plodovye sazhentsy optom i v roznitsu"
-      : "Mevali ko'chat ulgurji va chakana",
-    provider: { "@id": `${BASE_URL}#business` },
-    areaServed: [
-      { "@type": "Country", name: "Uzbekistan" },
-      { "@type": "Country", name: "Tajikistan" },
-      { "@type": "Country", name: "Kyrgyzstan" },
-      { "@type": "Country", name: "Turkmenistan" },
-      { "@type": "Country", name: "Kazakhstan" },
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: isRu ? "Каталог плодовых саженцев" : "Mevali ko'chat katalogi",
-      itemListElement: [
-        offerItem(isRu ? "Саженцы яблони" : "Olma ko'chati"),
-        offerItem(isRu ? "Саженцы черешни и вишни" : "Olcha va gilos ko'chati"),
-        offerItem(isRu ? "Саженцы персика" : "Shaftoli ko'chati"),
-        offerItem(isRu ? "Саженцы абрикоса" : "O'rik ko'chati"),
-        offerItem(isRu ? "Саженцы груши" : "Nok ko'chati"),
-        offerItem(isRu ? "Саженцы сливы" : "Olxo'ri ko'chati"),
-        offerItem(isRu ? "Саженцы винограда" : "Uzum ko'chati"),
-        offerItem(isRu ? "Саженцы миндаля" : "Bodom ko'chati"),
-      ],
-    },
-  };
-}
-
-function offerItem(name: string) {
-  return {
-    "@type": "Offer",
-    itemOffered: { "@type": "Product", name, category: "Fruit saplings" },
+    publisher: { "@id": ORG_ID },
   };
 }
 
@@ -206,7 +156,12 @@ function offerItem(name: string) {
  * Bu Google qidiruvda video rich snippets (Q&A, "Key moments") chiqarishi mumkin.
  */
 export function getVideoCollectionSchema(
-  videos: Array<{ id: string; title: string; topic: string }>,
+  videos: Array<{
+    id: string;
+    title: string;
+    topic: string;
+    uploadDate: string;
+  }>,
 ) {
   return videos.map((v) => ({
     "@context": "https://schema.org",
@@ -214,10 +169,10 @@ export function getVideoCollectionSchema(
     name: v.title,
     description: `${v.topic} — ${v.title}. Shuhrat Abrorov bog'dorchilik bo'yicha ko'rsatma.`,
     thumbnailUrl: [`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`],
-    uploadDate: "2025-01-01",
+    uploadDate: v.uploadDate,
     contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
     embedUrl: `https://www.youtube.com/embed/${v.id}`,
-    publisher: { "@id": `${BASE_URL}#business` },
+    publisher: { "@id": LOCALBUSINESS_ID },
     inLanguage: "uz-UZ",
   }));
 }
@@ -246,65 +201,8 @@ export function getVideoObjectSchema(video: {
     uploadDate: video.uploadDate,
     duration: video.duration,
     contentUrl: video.contentUrl,
-    publisher: { "@id": `${BASE_URL}#business` },
+    publisher: { "@id": LOCALBUSINESS_ID },
     ...(video.inLanguage ? { inLanguage: video.inLanguage } : {}),
-  };
-}
-
-/**
- * ImageObject schema — nursery fotolari uchun.
- * Google Images'da yaxshi rank uchun.
- */
-export function getNurseryImagesSchema() {
-  return [
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageObject",
-      contentUrl: `${BASE_URL}/images/hero-nursery.jpg`,
-      url: `${BASE_URL}/images/hero-nursery.jpg`,
-      name: "Norchontol ko'chatzori — mevali ko'chat qatorlari",
-      description:
-        "Parkent Plants (Norchontol) ko'chatzori — Toshkent viloyati. 87 gektar maydonda mevali ko'chatlar.",
-      caption: "Norchontol mevali ko'chatzori",
-      creator: { "@id": `${BASE_URL}#business` },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageObject",
-      contentUrl: `${BASE_URL}/images/parkent-nursery.jpg`,
-      url: `${BASE_URL}/images/parkent-nursery.jpg`,
-      name: "Parkent ko'chatzori — uzumzor",
-      description:
-        "Parkent ko'chatzori, Toshkent vil., Boyqozon mahallasi. 23 gektar maydon.",
-      caption: "Parkent ko'chatzori (Boyqozon)",
-      creator: { "@id": `${BASE_URL}#business` },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ImageObject",
-      contentUrl: `${BASE_URL}/images/yuqori-chirchiq.jpg`,
-      url: `${BASE_URL}/images/yuqori-chirchiq.jpg`,
-      name: "Yuqori Chirchiq ko'chatzori — yosh ko'chat qatorlari",
-      description:
-        "Yuqori Chirchiq filiali, 64 gektar maydonda mevali ko'chat ishlab chiqarish.",
-      caption: "Yuqori Chirchiq filiali",
-      creator: { "@id": `${BASE_URL}#business` },
-    },
-  ];
-}
-
-export function getBreadcrumbSchema(locale: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: locale === "ru" ? "Главная" : "Bosh sahifa",
-        item: `${BASE_URL}/${locale}`,
-      },
-    ],
   };
 }
 

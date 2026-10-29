@@ -14,6 +14,8 @@ import { NewsPreview } from "@/components/sections/NewsPreview";
 import { Faq } from "@/components/sections/Faq";
 import { ContactPreview } from "@/components/sections/ContactPreview";
 import { LeadForm } from "@/components/sections/LeadForm";
+import { JsonLd, getVideoCollectionSchema } from "@/components/seo/JsonLd";
+import { SITE_VIDEOS } from "@/lib/videos";
 import type { Locale } from "@/sanity/types";
 
 export default function HomePage({
@@ -35,6 +37,10 @@ export default function HomePage({
       <B2BProcess />
       <Nurseries />
       <Testimonials />
+      {/* VideoObject — faqat shu videolar ko'rinadigan bosh sahifada */}
+      {getVideoCollectionSchema(SITE_VIDEOS).map((video, i) => (
+        <JsonLd key={`video-${i}`} data={video} />
+      ))}
       <VideoSlider />
       <ArticlesPreview locale={lang} />
       <NewsPreview locale={lang} />

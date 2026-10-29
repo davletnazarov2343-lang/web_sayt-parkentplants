@@ -544,7 +544,7 @@
     "eyebrow": "Mevali ko'chatlar",
     "title": "Mevali ko'chat sotib olish — 9 ta meva turi",
     "subtitle": "Parkent Plants ko'chatzori — 11 meva turida 135+ sinalgan nav, fitosanitar sertifikat, 23 yil tajriba. Ulgurji va chakana. Toshkent vil., Parkent va Yuqori Chirchiq filiallari.",
-    "metaTitle": "Mevali ko'chat sotib olish — Parkent Plants katalogi (87 ga ko'chatzor)",
+    "metaTitle": "Mevali ko'chat sotib olish — katalog (87 ga ko'chatzor)",
     "metaDescription": "Mevali ko'chatlar ulgurji va chakana: olma, gilos, shaftoli, o'rik, uzum, bodom va boshqa 9 ta turi. Fitosanitar sertifikat, 23 yil tajriba, eksport, B2B. Toshkent ko'chatzori.",
     "categoriesTitle": "Ko'chat kategoriyalari",
     "viewCategory": "Ko'rish",
@@ -624,7 +624,7 @@
     },
     "categories": {
       "olma-kochati": {
-        "title": "Olma ko'chati sotib olish — Parkent Plants",
+        "title": "Olma ko'chati sotib olish",
         "h1": "Olma ko'chati",
         "metaDescription": "Olma ko'chati ulgurji va chakana — Gala, Pink Lady, Granny Smith, Golden Reinders va boshqa eng yaxshi navlar. Fitosanitar sertifikat, M9/M26 payvandtaglar, 3 yillik kafolat. Parkent Plants.",
         "intro": "Olma — O'zbekiston bog'dorchiligining asosi va eng ko'p ekiladigan mevasi. Parkent Plants ko'chatzorida zamonaviy intensiv bog'lar uchun moslashtirilgan olma ko'chatlari yetishtiramiz: erta pishadigan yozgi navlardan tortib, qishgacha saqlanadigan kech navlargacha. Barcha ko'chatlar in-vitro yoki vegetativ usulda M9/M26 payvandtaglarda — bu 1 gektarga 1500-3500 dona ekish va 2-3 yilda hosilga kirish imkonini beradi.",
@@ -684,7 +684,7 @@
         ]
       },
       "olcha-kochati": {
-        "title": "Olcha ko'chati sotib olish — Parkent Plants",
+        "title": "Olcha ko'chati sotib olish",
         "h1": "Olcha ko'chati",
         "metaDescription": "Olcha ko'chati ulgurji va chakana — achchiq olcha va shirin olcha navlari. Fitosanitar sertifikat, payvandtag tanlovi, agronom maslahati. Parkent Plants ko'chatzori.",
         "intro": "Olcha — O'zbekiston bog'dorchiligida muhim mevali ekin. Parkent Plants'da murabbo va konserva ishlab chiqarish uchun ham, yangi iste'mol uchun ham olcha ko'chatlari yetishtiramiz. Navlar gilos bilan tanglanishi mumkin (oson changlanish uchun). Sovuq va qurg'oqchilikka chidamli payvandtaglarda.",
@@ -714,7 +714,7 @@
         ]
       },
       "shaftoli-kochati": {
-        "title": "Shaftoli va nektarin ko'chati — Parkent Plants",
+        "title": "Shaftoli va nektarin ko'chati",
         "h1": "Shaftoli ko'chati",
         "metaDescription": "Shaftoli va nektarin ko'chati ulgurji va chakana — erta, o'rta va kech navlar. Fitosanitar sertifikat, eksport sifati, 3 yillik kafolat. Parkent Plants.",
         "intro": "Shaftoli va nektarin — O'zbekiston janubining yorqin mevasi. Iliq iqlim va quyoshli kunlar sifatli, shirin va xushbo'y shaftoli yetishtirishga mos. Parkent Plants'da eksport sifatidagi shaftoli va nektarin navlarini taklif etamiz: erta navlar (iyun oxirida), o'rta navlar (iyul-avgust), kech navlar (sentabr). Brikiqsi 12-16, kalibr 65-85 mm.",
@@ -744,7 +744,7 @@
         ]
       },
       "orik-kochati": {
-        "title": "O'rik ko'chati sotib olish — Parkent Plants",
+        "title": "O'rik ko'chati sotib olish",
         "h1": "O'rik ko'chati",
         "metaDescription": "O'rik ko'chati ulgurji va chakana — eksport sifatidagi mahalliy va xorijiy navlar. Fitosanitar sertifikat, 23 yil tajriba. Parkent Plants ko'chatzori.",
         "intro": "O'rik — O'zbekistonning ramziy mevasi. Quruq mevasi (qoqi) va yangi iste'mol uchun jahonda mashhur. Parkent Plants'da mahalliy va xorijiy o'rik navlarini taklif etamiz: shirin, katta kalibr, naqliyotga chidamli. Eksport uchun mos navlar — Yevropa va MDH bozorlariga 5-7 kunda yetkaziladi.",
@@ -774,7 +774,7 @@
         ]
       },
       "olxori-kochati": {
-        "title": "Olxo'ri ko'chati sotib olish — Parkent Plants",
+        "title": "Olxo'ri ko'chati sotib olish",
         "h1": "Olxo'ri ko'chati",
         "metaDescription": "Olxo'ri ko'chati ulgurji va chakana — qora, sariq, qizil navlar. Fitosanitar sertifikat, ulgurji narx, 3 yillik kafolat. Parkent Plants.",
         "intro": "Olxo'ri — chidamli va sermahsul mevali daraxt. Qora, sariq va qizil rangli olxo'rilar — qanddor, naqliyotga chidamli. Parkent Plants'da intensiv bog' uchun moslashtirilgan olxo'ri navlarini taklif etamiz. Yangi iste'mol, konserva va quritish uchun mos.",
@@ -804,7 +804,7 @@
         ]
       },
       "nok-kochati": {
-        "title": "Nok ko'chati sotib olish — Parkent Plants",
+        "title": "Nok ko'chati sotib olish",
         "h1": "Nok ko'chati",
         "metaDescription": "Nok ko'chati ulgurji va chakana — yozgi va kuzgi navlar. Fitosanitar sertifikat, payvandtag tanlovi, 23 yil tajriba. Parkent Plants.",
         "intro": "Nok (armut) — kech etilib, uzoq saqlanadigan meva. Parkent Plants'da Yevropa va mahalliy nok navlarini taklif etamiz: shirin, sokchli, naqliyotga chidamli. Konferens, Williams, Bere navlari va boshqa eksport sifatidagi turlar.",
@@ -864,7 +864,7 @@
         ]
       },
       "bodom-kochati": {
-        "title": "Bodom ko'chati sotib olish — Parkent Plants",
+        "title": "Bodom ko'chati sotib olish",
         "h1": "Bodom ko'chati",
         "metaDescription": "Bodom ko'chati ulgurji va chakana — eng sermahsul navlar, qurg'oqchilikka chidamli. Fitosanitar sertifikat, 23 yil tajriba. Parkent Plants.",
         "intro": "Bodom — qurg'oqchilikka chidamli, yuqori daromadli yong'oq daraxti. Parkent Plants'da Yevropa va Amerika navlarini taklif etamiz: Nonpareil, Carmel, Independence va boshqa zamonaviy navlar. O'zbekistonning quruq mintaqalariga (Buxoro, Navoiy, Surxondaryo) eng mos meva — minimal suv bilan yuqori hosildorlik.",
@@ -1625,7 +1625,7 @@
   },
   "aboutPage": {
     "breadcrumb": "Biz haqimizda",
-    "metaTitle": "Biz haqimizda — Parkent Plants ko'chatzori, 2002-yildan",
+    "metaTitle": "Biz haqimizda — ko'chatzor, 2002-yildan",
     "metaDescription": "Parkent Plants (Norchontol fermer xo'jaligi) — 2002-yildan Markaziy Osiyoning yetakchi mevali ko'chatchilik xo'jaligi. 87 gektar, yiliga 500 000+ ko'chat, 11 meva turi, 135+ nav. Asoschimiz Shuhrat Abrorov bilan tanishing.",
     "eyebrow": "2002 yildan buyon ishonchli sherik",
     "title": "Biz haqimizda",
@@ -1642,7 +1642,7 @@
   },
   "contactPage": {
     "breadcrumb": "Kontakt",
-    "metaTitle": "Kontakt — Parkent Plants bilan bog'laning",
+    "metaTitle": "Kontakt — biz bilan bog'laning",
     "metaDescription": "Parkent Plants bilan bog'laning: telefon +998 78 113 18 19, WhatsApp/Telegram +998 99 557 38 00, email info@parkentplants.uz. Manzil: Toshkent viloyati, Parkent tumani, Boyqozon mahallasi. Ish vaqti: Dushanba–Shanba, 09:00–18:00.",
     "formCtaTitle": "So'rov qoldiring",
     "formCtaBody": "Formani to'ldiring — menejerimiz 1 ish kuni ichida siz bilan bog'lanadi.",

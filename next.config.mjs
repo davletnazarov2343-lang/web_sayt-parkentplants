@@ -40,6 +40,17 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  // www → asosiy domen (SEO: dublikat domenni yo'q qilish), 308 doimiy
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.parkentplants.uz" }],
+        destination: "https://parkentplants.uz/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

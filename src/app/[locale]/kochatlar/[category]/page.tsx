@@ -40,6 +40,9 @@ type CategoryMessages = {
   faq: { q: string; a: string }[];
 };
 
+// Soft-404 oldini olish: ro'yxatdan tashqari yo'llar to'g'ridan-to'g'ri 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return FRUIT_CATEGORIES.map((c) => ({ category: c.slug }));
 }
@@ -152,7 +155,7 @@ export default async function CategoryPage({
       highPrice: "70000",
       offerCount: "10",
       availability: "https://schema.org/InStock",
-      seller: { "@id": "https://parkentplants.uz#business" },
+      seller: { "@id": "https://parkentplants.uz/#localbusiness" },
     },
   };
 
@@ -191,7 +194,7 @@ export default async function CategoryPage({
             availability: variety.availableNow
               ? "https://schema.org/InStock"
               : "https://schema.org/PreOrder",
-            seller: { "@id": "https://parkentplants.uz#business" },
+            seller: { "@id": "https://parkentplants.uz/#localbusiness" },
             url: "https://t.me/+998995573800",
           },
         };
