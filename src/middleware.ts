@@ -8,6 +8,9 @@ import { LOCALES, DEFAULT_LOCALE } from "@/lib/constants";
  *   Accept-Language: ru bilan jo'natadi (tarixiy/standart), lekin
  *   asosiy auditoriyamiz o'zbek tilida. Shu sababli yangi mehmonlar
  *   doim DEFAULT_LOCALE ('uz') ga yo'naltiriladi.
+ * - `alternateLinks: false` — next-intl HTTP `Link` sarlavhasiga hreflang
+ *   qo'shmaydi. hreflang yagona manbasi — HTML <link rel="alternate">
+ *   (src/lib/seo/alternates.ts) va sitemap; ikkalasida `uz`/`ru`/`x-default`.
  * - NEXT_LOCALE cookie esa hurmatlanadi — agar user LocaleSwitcher
  *   orqali RU ga o'tgan bo'lsa, keyingi tashriflarda RU ko'rsatamiz.
  */
@@ -16,6 +19,7 @@ export default createMiddleware({
   defaultLocale: DEFAULT_LOCALE,
   localePrefix: "always",
   localeDetection: false,
+  alternateLinks: false,
 });
 
 // `studio` — Sanity admin (i18n bilan to'qnashmasligi kerak)

@@ -97,10 +97,14 @@ export function VideoSlider() {
             <ChevronRight className="h-5 w-5" strokeWidth={2} />
           </button>
 
-          {/* Track */}
+          {/* Track.
+              `scroll-smooth` ATAYLAB yo'q: `snap-mandatory` bilan birga bo'lganda Chrome
+              bosh sahifada LCP'ni umuman qayd etmaydi (PageSpeed: NO_LCP, 0 ball). Lokal
+              o'lchov: shu ikki xususiyatdan biri olib tashlansa LCP qaytadi. Strelkalar
+              baribir silliq: scrollSlider() `behavior: "smooth"` ni o'zi beradi. */}
           <div
             id="video-slider-track"
-            className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-4 pb-6 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-earth-400/30 sm:gap-6"
+            className="-mx-4 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-6 [scrollbar-width:thin] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-earth-400/30 sm:gap-6"
           >
             {VIDEOS.map((video) => (
               <button

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import {
   unstable_setRequestLocale,
@@ -48,24 +49,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "contactPage" });
-  return {
+  return buildMetadata({
+    locale,
+    path: "/kontakt",
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {
-      canonical: `/${locale}/kontakt`,
-      languages: {
-        "uz-UZ": "/uz/kontakt",
-        "ru-UZ": "/ru/kontakt",
-        "x-default": "/uz/kontakt",
-      },
-    },
-    openGraph: {
-      type: "website",
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: `https://parkentplants.uz/${locale}/kontakt`,
-    },
-  };
+  });
 }
 
 export default async function ContactPage({ params: { locale } }: Props) {

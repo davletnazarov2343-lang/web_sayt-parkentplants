@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -66,25 +67,23 @@ export async function generateMetadata({
     variety.description?.[lang] ||
     `${variety.name[lang]} navi, sertifikatlangan ko'chat. Parkent Plants.`;
 
-  return {
+  return buildMetadata({
+    locale,
+    path: `/varieties/${fruitType}/${slug}`,
     title,
     description,
-    alternates: {
-      canonical: `/${locale}/varieties/${fruitType}/${slug}`,
-      languages: {
-        "uz-UZ": `/uz/varieties/${fruitType}/${slug}`,
-        "ru-UZ": `/ru/varieties/${fruitType}/${slug}`,
-        "x-default": `/uz/varieties/${fruitType}/${slug}`,
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      images: variety.coverImage
-        ? [urlFor(variety.coverImage).width(1200).height(630).fit("crop").url()]
-        : undefined,
-    },
-  };
+    image: variety.coverImage
+      ? {
+          url: urlFor(variety.coverImage)
+            .width(1200)
+            .height(630)
+            .fit("crop")
+            .url(),
+          width: 1200,
+          height: 630,
+        }
+      : undefined,
+  });
 }
 
 const TREE_SIZE_LABELS: Record<

@@ -2,10 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Shrift almashishidagi sakrash (CLS) oldini olish: veb-shrift (swap) kelguncha
+ * ko'rinadigan zaxira shrift Inter/Fraunces o'lchamlariga moslashtirilgan
+ * (size-adjust + ascent/descent override).
+ * Sabab: bosh sahifada h1 Georgia bilan 5 qator, Fraunces yuklangach 4 qator bo'lib,
+ * pastdagi blok 37px sakragan (CLS 0.06; PageSpeed'da 0.154).
+ * Qiymatlar: Inter vs Arial — next/font formulasi (capsize metrikalari, 107.06%);
+ * Chrome'da o'lchangan haqiqiy/zaxira kenglik nisbati 400 da 0.996.
+ * Fraunces vs Times New Roman — formula (115%) va o'rtacha kenglik (107-113%) yetmadi:
+ * sarlavhalar sintetik qalin zaxira bilan chiqadi. 113/118% ni 8 sahifada (390px va
+ * 1440px, sekinlashtirilgan tarmoq/CPU) CLS bo'yicha solishtirib, 118% tanlandi
+ * (bosh sahifa mobil: Georgia 0.061 -> 0.0001). ascent/descent = metrika / size-adjust.
+ * Shrift, og'irlik yoki sarlavha matni keskin o'zgarsa qiymatlarni qayta o'lchang.
+ */
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 107.06%;
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Fraunces Fallback";
+  src: local("Times New Roman");
+  size-adjust: 118%;
+  ascent-override: 82.88%;
+  descent-override: 21.61%;
+  line-gap-override: 0%;
+}
+
 @layer base {
   :root {
-    --font-inter: "Inter", system-ui, -apple-system, sans-serif;
-    --font-fraunces: "Fraunces", Georgia, serif;
+    --font-inter: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
+    --font-fraunces: "Fraunces", "Fraunces Fallback", Georgia, serif;
   }
 
   html {

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import type { VarietyLandingConfig } from "@/lib/landings";
-
-const BASE_URL = "https://parkentplants.uz";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 /**
  * Nav lending sahifasi uchun metadata: title/description, canonical,
- * hreflang va OpenGraph (hero rasm 1080x1080).
+ * hreflang (uz/ru/x-default), OpenGraph + Twitter card (hero rasm).
  * `unstable_setRequestLocale(locale)` ni sahifaning o'zi chaqiradi.
  */
 export async function generateVarietyLandingMetadata(
@@ -14,33 +13,18 @@ export async function generateVarietyLandingMetadata(
   locale: string,
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: config.namespace });
-  const path = `/${config.slug}`;
   // Hero rasmining haqiqiy o'lchami (berilmasa — kvadrat 1080x1080)
   const { width, height } = config.ogImage ?? { width: 1080, height: 1080 };
-  return {
+  return buildMetadata({
+    locale,
+    path: `/${config.slug}`,
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {
-      canonical: `/${locale}${path}`,
-      languages: {
-        "uz-UZ": `/uz${path}`,
-        "ru-UZ": `/ru${path}`,
-        "x-default": `/uz${path}`,
-      },
+    image: {
+      url: config.images.hero,
+      width,
+      height,
+      alt: t("gallery.alt1"),
     },
-    openGraph: {
-      type: "website",
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: `${BASE_URL}/${locale}${path}`,
-      images: [
-        {
-          url: config.images.hero,
-          width,
-          height,
-          alt: t("gallery.alt1"),
-        },
-      ],
-    },
-  };
+  });
 }

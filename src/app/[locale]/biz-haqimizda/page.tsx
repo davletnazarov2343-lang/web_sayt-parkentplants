@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -37,24 +38,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "aboutPage" });
-  return {
+  return buildMetadata({
+    locale,
+    path: "/biz-haqimizda",
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {
-      canonical: `/${locale}/biz-haqimizda`,
-      languages: {
-        "uz-UZ": "/uz/biz-haqimizda",
-        "ru-UZ": "/ru/biz-haqimizda",
-        "x-default": "/uz/biz-haqimizda",
-      },
-    },
-    openGraph: {
-      type: "website",
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: `https://parkentplants.uz/${locale}/biz-haqimizda`,
-    },
-  };
+  });
 }
 
 export default async function AboutPage({ params: { locale } }: Props) {

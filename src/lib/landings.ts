@@ -267,3 +267,25 @@ export const FEATURED_LANDINGS: ReadonlyArray<FeaturedLanding> = [
 export const LANDING_HREFS: ReadonlyArray<string> = FEATURED_LANDINGS.map(
   (l) => l.href,
 );
+
+/**
+ * Lending -> ko'chat kategoriyasi slug'i (/kochatlar/<slug>). Ichki havolalar
+ * uchun: kategoriya sahifasi o'z lendinglarini, lending esa o'z kategoriyasini
+ * ko'rsatadi. Yangi lending qo'shilsa — shu yerga ham yozuv qo'shing.
+ */
+export const LANDING_CATEGORY: Record<LandingSlug, string> = {
+  "pink-lady": "olma-kochati",
+  "devil-gala": "olma-kochati",
+  "granny-smith": "olma-kochati",
+  "sweet-aryana": "gilos-kochati",
+  "black-splendor": "olxori-kochati",
+};
+
+/** Berilgan kategoriyaga tegishli lendinglar (FEATURED_LANDINGS tartibida) */
+export function getLandingsByCategory(
+  categorySlug: string,
+): FeaturedLanding[] {
+  return FEATURED_LANDINGS.filter(
+    (l) => LANDING_CATEGORY[l.slug] === categorySlug,
+  );
+}

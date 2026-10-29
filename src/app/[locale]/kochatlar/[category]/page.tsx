@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -25,6 +26,9 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getNewsBySlug } from "@/lib/news";
 import { GrapeVarietyCards } from "@/components/catalog/GrapeVarietyCards";
 import { GRAPE_VARIETIES } from "@/lib/grapes/featured-varieties";
+import { CategoryLandings } from "@/components/links/CategoryLandings";
+import { ArticleLinkCard } from "@/components/links/ArticleLinkCard";
+import { getArticlesForCategory } from "@/lib/articles/related";
 
 type Props = {
   params: { locale: string; category: string };
@@ -60,25 +64,14 @@ export async function generateMetadata({
   const catMessages = messages.saplings?.categories?.[category];
   if (!catMessages) return {};
 
-  return {
+  return buildMetadata({
+    locale,
+    path: `/kochatlar/${category}`,
     title: catMessages.title,
     description: catMessages.metaDescription,
     keywords: cat.keywords,
-    alternates: {
-      canonical: `/${locale}/kochatlar/${category}`,
-      languages: {
-        "uz-UZ": `/uz/kochatlar/${category}`,
-        "ru-UZ": `/ru/kochatlar/${category}`,
-      },
-    },
-    openGraph: {
-      type: "website",
-      title: catMessages.title,
-      description: catMessages.metaDescription,
-      url: `https://parkentplants.uz/${locale}/kochatlar/${category}`,
-      images: cat.cover ? [{ url: cat.cover }] : undefined,
-    },
-  };
+    image: cat.cover ? { url: cat.cover } : undefined,
+  });
 }
 
 export default async function CategoryPage({
@@ -90,6 +83,7 @@ export default async function CategoryPage({
 
   const t = await getTranslations({ locale, namespace: "saplings" });
   const newsT = await getTranslations({ locale, namespace: "news" });
+  const tLinks = await getTranslations({ locale, namespace: "internalLinks" });
   const messages = (await getMessages()) as unknown as {
     saplings: { categories: Record<string, CategoryMessages> };
   };
@@ -158,6 +152,9 @@ export default async function CategoryPage({
       seller: { "@id": "https://parkentplants.uz/#localbusiness" },
     },
   };
+
+  // Mavzuga oid maqolalar (ichki havola)
+  const relatedArticles = getArticlesForCategory(category);
 
   // Related news
   const relatedNewsArticles = (cat.relatedNews ?? [])
@@ -260,6 +257,9 @@ export default async function CategoryPage({
           {/* Sotuvdagi navlar — faqat uzum kategoriyasi uchun (hozircha) */}
           {isGrapeCategory && <GrapeVarietyCards locale={locale} />}
 
+          {/* Bozorbop navlar — shu meva turining lendinglari (bo'lsa) */}
+          <CategoryLandings categorySlug={category} />
+
           {/* Buying guide */}
           <section className="mt-12">
             <h2 className="text-2xl font-serif font-bold text-earth-900 sm:text-3xl">
@@ -344,6 +344,20 @@ export default async function CategoryPage({
                     </Link>
                   ) : null,
                 )}
+              </div>
+            </section>
+          )}
+
+          {/* Mavzuga oid maqola */}
+          {relatedArticles.length > 0 && (
+            <section className="mt-12">
+              <h2 className="text-2xl font-serif font-bold text-earth-900 sm:text-3xl">
+                {tLinks("articleTitle")}
+              </h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {relatedArticles.map((article) => (
+                  <ArticleLinkCard key={article.slug} article={article} />
+                ))}
               </div>
             </section>
           )}

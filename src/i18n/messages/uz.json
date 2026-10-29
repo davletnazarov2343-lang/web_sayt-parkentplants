@@ -1647,5 +1647,26 @@
     "formCtaTitle": "So'rov qoldiring",
     "formCtaBody": "Formani to'ldiring — menejerimiz 1 ish kuni ichida siz bilan bog'lanadi.",
     "formCtaButton": "So'rov yuborish"
+  },
+  "internalLinks": {
+    "saplingsTitle": "Tegishli ko'chatlar",
+    "hubLink": "Barcha ko'chatlar",
+    "hubText": "Mevali ko'chatlar katalogi — barcha meva turlari bir joyda.",
+    "categoryText": "Kategoriya sahifasi: navlar, narxlar va yetkazib berish.",
+    "varietiesTitle": "Bozorbop navlar",
+    "articleLabel": "Maqola",
+    "articleTitle": "Mavzuga oid maqola",
+    "view": "Ko'rish",
+    "allCategory": {
+      "olma-kochati": "Barcha olma ko'chatlari",
+      "gilos-kochati": "Barcha gilos ko'chatlari",
+      "olcha-kochati": "Barcha olcha ko'chatlari",
+      "shaftoli-kochati": "Barcha shaftoli va nektarin ko'chatlari",
+      "orik-kochati": "Barcha o'rik ko'chatlari",
+      "olxori-kochati": "Barcha olxo'ri ko'chatlari",
+      "nok-kochati": "Barcha nok ko'chatlari",
+      "uzum-kochati": "Barcha uzum ko'chatlari",
+      "bodom-kochati": "Barcha bodom ko'chatlari"
+    }
   }
 }

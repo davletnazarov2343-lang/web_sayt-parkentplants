@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
@@ -21,6 +22,7 @@ import { ArticleTocMobile } from "@/components/articles/ArticleTocMobile";
 import { ArticleTocSidebar } from "@/components/articles/ArticleTocSidebar";
 import { AuthorAvatar } from "@/components/articles/AuthorAvatar";
 import { ReadingProgress } from "@/components/articles/ReadingProgress";
+import { RelatedSaplings } from "@/components/links/RelatedSaplings";
 import {
   buildToc,
   formatArticleDate,
@@ -31,6 +33,7 @@ import {
   getTopicCover,
   readingMinutes,
 } from "@/lib/articles";
+import { getArticleRelated } from "@/lib/articles/related";
 import { LOCALES, type Locale } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -63,38 +66,17 @@ export async function generateMetadata({
   const authorName = getAuthor(article.author).name[lang];
   const image =
     article.cover ?? getTopicCover(article.topic) ?? FALLBACK_IMAGE;
-  const path =`/${lang}/maqolalar/${slug}`;
 
-  return {
+  return buildMetadata({
+    locale: lang,
+    path: `/maqolalar/${slug}`,
     title: content.title,
     description: content.summary,
-    authors: [{ name: authorName }],
-    openGraph: {
-      type: "article",
-      siteName: "Parkent Plants",
-      title: content.title,
-      description: content.summary,
-      url: path,
-      locale: lang === "ru" ? "ru_RU" : "uz_UZ",
-      publishedTime: article.publishedAt,
-      authors: [authorName],
-      images: [{ url: image }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: content.title,
-      description: content.summary,
-      images: [image],
-    },
-    alternates: {
-      canonical: path,
-      languages: {
-        "uz-UZ": `/uz/maqolalar/${slug}`,
-        "ru-UZ": `/ru/maqolalar/${slug}`,
-        "x-default": `/uz/maqolalar/${slug}`,
-      },
-    },
-  };
+    type: "article",
+    publishedTime: article.publishedAt,
+    authors: [authorName],
+    image: { url: image },
+  });
 }
 
 export default async function ArticlePage({
@@ -114,6 +96,7 @@ export default async function ArticlePage({
   const hasToc = toc.length >= 2;
   const minutes = readingMinutes(content);
   const related = getRelatedArticles(slug, 3);
+  const relatedSaplings = getArticleRelated(slug);
   const image =
     article.cover ?? getTopicCover(article.topic) ?? FALLBACK_IMAGE;
 
@@ -346,6 +329,14 @@ export default async function ArticlePage({
             )}
           </div>
         </Container>
+
+        {/* Tegishli ko'chatlar — kategoriya + lendinglar (ichki havolalar) */}
+        {relatedSaplings && (
+          <RelatedSaplings
+            categorySlug={relatedSaplings.category}
+            landings={relatedSaplings.landings}
+          />
+        )}
 
         {/* Boshqa maqolalar */}
         {related.length > 0 && (

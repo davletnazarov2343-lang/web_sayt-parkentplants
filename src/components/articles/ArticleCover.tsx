@@ -15,6 +15,7 @@ export function ArticleCover({
   topic,
   cover: coverOverride,
   topicLabel,
+  alt,
   sizes,
   priority = false,
   className,
@@ -23,6 +24,8 @@ export function ArticleCover({
   /** Maqolaning o'z muqovasi — berilsa mavzu rasmidan ustun */
   cover?: string;
   topicLabel: string;
+  /** Rasm alt matni — maqola sarlavhasi */
+  alt: string;
   sizes: string;
   priority?: boolean;
   className?: string;
@@ -40,7 +43,7 @@ export function ArticleCover({
         <>
           <Image
             src={cover}
-            alt=""
+            alt={alt}
             fill
             priority={priority}
             sizes={sizes}

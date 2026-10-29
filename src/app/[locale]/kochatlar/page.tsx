@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -23,23 +24,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "saplings" });
-  return {
+  return buildMetadata({
+    locale,
+    path: "/kochatlar",
     title: t("metaTitle"),
     description: t("metaDescription"),
-    alternates: {
-      canonical: `/${locale}/kochatlar`,
-      languages: {
-        "uz-UZ": "/uz/kochatlar",
-        "ru-UZ": "/ru/kochatlar",
-      },
-    },
-    openGraph: {
-      type: "website",
-      title: t("metaTitle"),
-      description: t("metaDescription"),
-      url: `https://parkentplants.uz/${locale}/kochatlar`,
-    },
-  };
+  });
 }
 
 export default async function SaplingsHubPage({ params: { locale } }: Props) {

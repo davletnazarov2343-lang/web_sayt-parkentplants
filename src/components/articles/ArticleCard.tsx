@@ -38,6 +38,7 @@ export async function ArticleCard({
         topic={article.topic}
         cover={article.cover}
         topicLabel={t(`topics.${article.topic}`)}
+        alt={content.title}
         sizes={COVER_SIZES}
         priority={priority}
       />

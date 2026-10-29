@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 /**
  * Muallif avatari: rasm bo'lsa — rasm, bo'lmasa — bosh harflar doirasi
- * (masalan "SA"). Ism har doim yonida alohida matn sifatida chiqadi, shu
- * sabab avatar dekorativ (alt bo'sh).
+ * (masalan "SA"). Rasm alt'i — muallif ismi; bosh harflar doirasi esa
+ * dekorativ (aria-hidden), ism yonida alohida matn sifatida chiqadi.
  */
 export function AuthorAvatar({
   name,
@@ -22,7 +22,7 @@ export function AuthorAvatar({
     return (
       <Image
         src={photo}
-        alt=""
+        alt={name}
         width={size}
         height={size}
         className={cn(

@@ -30,6 +30,7 @@ import { LandingVideo } from "@/components/landing/LandingVideo";
 import { LeadFormLink } from "@/components/landing/LeadFormLink";
 import { StickyBar } from "@/components/landing/StickyBar";
 import { TrackedLinkButton } from "@/components/landing/TrackedLinkButton";
+import { LandingRelatedLinks } from "@/components/links/LandingRelatedLinks";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -664,6 +665,9 @@ export async function VarietyLanding({
               ))}
             </div>
           </section>
+
+          {/* 7b. Ichki havolalar: o'z kategoriyasi + mavzuga oid maqola */}
+          <LandingRelatedLinks landing={config.slug} />
         </Container>
       </article>
 

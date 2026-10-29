@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -85,24 +86,15 @@ export async function generateMetadata({
   const title = t(`articles.${slug}.title`);
   const summary = t(`articles.${slug}.summary`);
 
-  return {
+  return buildMetadata({
+    locale,
+    path: `/news/${slug}`,
     title,
     description: summary,
-    openGraph: {
-      type: "article",
-      title,
-      description: summary,
-      publishedTime: article.publishedAt,
-      images: article.cover ? [{ url: article.cover }] : undefined,
-    },
-    alternates: {
-      canonical: `/${locale}/news/${slug}`,
-      languages: {
-        "uz-UZ": `/uz/news/${slug}`,
-        "ru-UZ": `/ru/news/${slug}`,
-      },
-    },
-  };
+    type: "article",
+    publishedTime: article.publishedAt,
+    image: article.cover ? { url: article.cover } : undefined,
+  });
 }
 
 export default async function NewsArticlePage({

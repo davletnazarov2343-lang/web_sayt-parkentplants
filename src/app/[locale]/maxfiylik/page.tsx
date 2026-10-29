@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
@@ -27,18 +28,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const p = pick(locale);
-  return {
+  return buildMetadata({
+    locale,
+    path: "/maxfiylik",
     title: p.title,
     description: p.metaDescription,
-    alternates: {
-      canonical: `/${locale}/maxfiylik`,
-      languages: {
-        "uz-UZ": "/uz/maxfiylik",
-        "ru-UZ": "/ru/maxfiylik",
-        "x-default": "/uz/maxfiylik",
-      },
-    },
-  };
+  });
 }
 
 function Section({ s }: { s: PolicySection }) {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { notFound } from "next/navigation";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
@@ -42,18 +43,12 @@ export async function generateMetadata({
   const lang = locale as Locale;
   const name = ft.name[lang];
   const t = await getTranslations({ locale, namespace: "catalog" });
-  return {
+  return buildMetadata({
+    locale,
+    path: `/varieties/${fruitType}`,
     title: `${name} — ${t("listTitle")}`,
     description: t("filterPageDescription", { fruitType: name }),
-    alternates: {
-      canonical: `/${locale}/varieties/${fruitType}`,
-      languages: {
-        "uz-UZ": `/uz/varieties/${fruitType}`,
-        "ru-UZ": `/ru/varieties/${fruitType}`,
-        "x-default": `/uz/varieties/${fruitType}`,
-      },
-    },
-  };
+  });
 }
 
 export default async function FruitTypePage({

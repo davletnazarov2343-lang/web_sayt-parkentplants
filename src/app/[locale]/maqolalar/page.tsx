@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Sprout } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -23,27 +24,12 @@ export async function generateMetadata({
   const title = t("metaTitle");
   const description = t("subtitle");
 
-  return {
+  return buildMetadata({
+    locale: lang,
+    path: "/maqolalar",
     title,
     description,
-    openGraph: {
-      type: "website",
-      siteName: "Parkent Plants",
-      title,
-      description,
-      url: `/${lang}/maqolalar`,
-      locale: lang === "ru" ? "ru_RU" : "uz_UZ",
-      images: [{ url: "/brand/og-image.jpg" }],
-    },
-    alternates: {
-      canonical: `/${lang}/maqolalar`,
-      languages: {
-        "uz-UZ": "/uz/maqolalar",
-        "ru-UZ": "/ru/maqolalar",
-        "x-default": "/uz/maqolalar",
-      },
-    },
-  };
+  });
 }
 
 export default async function ArticlesListPage({ params: { locale } }: Props) {

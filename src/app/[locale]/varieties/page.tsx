@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { FeaturedVarieties } from "@/components/sections/FeaturedVarieties";
@@ -11,18 +12,12 @@ export async function generateMetadata({
   params: { locale },
 }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "catalog" });
-  return {
+  return buildMetadata({
+    locale,
+    path: "/varieties",
     title: t("listTitle"),
     description: t("listSubtitle"),
-    alternates: {
-      canonical: `/${locale}/varieties`,
-      languages: {
-        "uz-UZ": "/uz/varieties",
-        "ru-UZ": "/ru/varieties",
-        "x-default": "/uz/varieties",
-      },
-    },
-  };
+  });
 }
 
 export default async function VarietiesIndexPage({

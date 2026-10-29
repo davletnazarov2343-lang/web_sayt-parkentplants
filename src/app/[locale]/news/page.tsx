@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import Link from "next/link";
 import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Calendar, FileText } from "lucide-react";
@@ -14,17 +15,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   unstable_setRequestLocale(locale);
   const t = await getTranslations("news");
-  return {
+  return buildMetadata({
+    locale,
+    path: "/news",
     title: t("title"),
     description: t("subtitle"),
-    alternates: {
-      canonical: `/${locale}/news`,
-      languages: {
-        "uz-UZ": "/uz/news",
-        "ru-UZ": "/ru/news",
-      },
-    },
-  };
+  });
 }
 
 export default async function NewsListPage({ params: { locale } }: Props) {

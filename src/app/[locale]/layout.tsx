@@ -17,7 +17,7 @@ import {
   getWebsiteSchema,
 } from "@/components/seo/JsonLd";
 
-const SITE_URL = "https://parkentplants.uz";
+import { buildAlternates, SITE_URL } from "@/lib/seo/alternates";
 
 const META_CONTENT: Record<
   Locale,
@@ -140,8 +140,8 @@ export async function generateMetadata({
       images: [
         {
           url: "/brand/og-image.jpg",
-          width: 1500,
-          height: 1500,
+          width: 2835,
+          height: 2835,
           alt: meta.title,
         },
       ],
@@ -152,14 +152,7 @@ export async function generateMetadata({
       description: meta.twitterDescription,
       images: ["/brand/og-image.jpg"],
     },
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        "uz-UZ": "/uz",
-        "ru-UZ": "/ru",
-        "x-default": "/uz",
-      },
-    },
+    alternates: buildAlternates(lang, ""),
     verification: {
       google: "CmLeWRqkz020-o25TIlMM8dgX5i56WNiwSUodlBYYqM",
       yandex: "23462ea252b26b6b",

@@ -7,17 +7,53 @@ import {
 import { NEWS_ARTICLES } from "@/lib/news";
 import { getAllArticles } from "@/lib/articles";
 import { FRUIT_CATEGORIES } from "@/lib/categories";
+import { buildAlternates } from "@/lib/seo/alternates";
+import {
+  categoryLastmod,
+  DEFAULT_LASTMOD,
+  lastmodDate,
+  pageLastmod,
+} from "@/lib/seo/lastmod";
 
-const BASE_URL = "https://parkentplants.uz";
+type Entry = MetadataRoute.Sitemap[number];
+
+/**
+ * Bitta URL (bitta til) uchun yozuv. hreflang HTML bilan bir xil manbadan
+ * (`buildAlternates`): `uz`, `ru`, `x-default` (-> uz).
+ */
+function entry(
+  locale: string,
+  path: string,
+  lastModified: Date,
+  changeFrequency: Entry["changeFrequency"],
+  priority: number,
+): Entry {
+  const { canonical, languages } = buildAlternates(locale, path);
+  return {
+    url: canonical,
+    lastModified,
+    changeFrequency,
+    priority,
+    alternates: { languages },
+  };
+}
+
+/** Eng yangi sana (ISO "YYYY-MM-DD" satrlari) */
+const newest = (dates: string[]) =>
+  lastmodDate(
+    dates.length ? dates.reduce((a, b) => (a > b ? a : b)) : DEFAULT_LASTMOD,
+  );
 
 /**
  * Dynamic sitemap.xml — Google'ga barcha sahifalarni ko'rsatadi.
  * Sanity sozlanmagan bo'lsa ham asosiy sahifalar uchun ishlaydi.
  *
- * Har URL uchun hreflang alternates ham qo'shamiz (uz ↔ ru).
+ * `lastModified` — build vaqti EMAS: maqola/yangilik uchun o'z sanasi,
+ * qolganlari uchun src/lib/seo/lastmod.ts dagi qo'lda yuritiladigan xarita.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date();
+  const articles = getAllArticles();
+  const news = NEWS_ARTICLES.filter((article) => !article.externalUrl);
 
   // 1. Statik sahifalar
   const staticPaths = [
@@ -35,19 +71,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/pink-lady",
     "/sweet-aryana",
   ];
+  // Ro'yxat sahifalari ichidagi eng yangi elementning sanasini oladi
+  const listLastmod: Record<string, Date> = {
+    "/news": newest(NEWS_ARTICLES.map((n) => n.publishedAt)),
+    "/maqolalar": newest(articles.map((a) => a.publishedAt)),
+  };
   const staticEntries = LOCALES.flatMap((locale) =>
-    staticPaths.map((path) => ({
-      url: `${BASE_URL}/${locale}${path}`,
-      lastModified: now,
-      changeFrequency:
-        path === "" ? ("weekly" as const) : ("monthly" as const),
-      priority: path === "" ? 1.0 : 0.8,
-      alternates: {
-        languages: Object.fromEntries(
-          LOCALES.map((l) => [l, `${BASE_URL}/${l}${path}`]),
-        ),
-      },
-    })),
+    staticPaths.map((path) =>
+      entry(
+        locale,
+        path,
+        listLastmod[path] ?? pageLastmod(path),
+        path === "" ? "weekly" : "monthly",
+        path === "" ? 1.0 : 0.8,
+      ),
+    ),
   );
 
   // 2. Dinamik: Sanity'dan fruit type va variety sahifalari
@@ -57,38 +95,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const fruitTypes = await getAllFruitTypeSlugs();
     fruitTypeEntries = LOCALES.flatMap((locale) =>
-      fruitTypes.map(({ slug }) => ({
-        url: `${BASE_URL}/${locale}/varieties/${slug}`,
-        lastModified: now,
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-        alternates: {
-          languages: Object.fromEntries(
-            LOCALES.map((l) => [
-              l,
-              `${BASE_URL}/${l}/varieties/${slug}`,
-            ]),
-          ),
-        },
-      })),
+      fruitTypes.map(({ slug }) =>
+        entry(
+          locale,
+          `/varieties/${slug}`,
+          lastmodDate(DEFAULT_LASTMOD),
+          "weekly",
+          0.7,
+        ),
+      ),
     );
 
     const varieties = await getAllVarietySlugs();
     varietyEntries = LOCALES.flatMap((locale) =>
-      varieties.map(({ slug, fruitTypeSlug }) => ({
-        url: `${BASE_URL}/${locale}/varieties/${fruitTypeSlug}/${slug}`,
-        lastModified: now,
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-        alternates: {
-          languages: Object.fromEntries(
-            LOCALES.map((l) => [
-              l,
-              `${BASE_URL}/${l}/varieties/${fruitTypeSlug}/${slug}`,
-            ]),
-          ),
-        },
-      })),
+      varieties.map(({ slug, fruitTypeSlug }) =>
+        entry(
+          locale,
+          `/varieties/${fruitTypeSlug}/${slug}`,
+          lastmodDate(DEFAULT_LASTMOD),
+          "monthly",
+          0.6,
+        ),
+      ),
     );
   } catch {
     // Sanity yo'q — sitemap statik sahifalardan iborat bo'ladi
@@ -97,47 +125,41 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 3. News articles — externalUrl'li yangiliklarning ichki sahifasi yo'q
   // (404), shu sabab sitemap'ga kiritilmaydi
   const newsEntries = LOCALES.flatMap((locale) =>
-    NEWS_ARTICLES.filter((article) => !article.externalUrl).map((article) => ({
-      url: `${BASE_URL}/${locale}/news/${article.slug}`,
-      lastModified: new Date(article.publishedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: {
-        languages: Object.fromEntries(
-          LOCALES.map((l) => [l, `${BASE_URL}/${l}/news/${article.slug}`]),
-        ),
-      },
-    })),
+    news.map((article) =>
+      entry(
+        locale,
+        `/news/${article.slug}`,
+        lastmodDate(article.publishedAt),
+        "monthly",
+        0.7,
+      ),
+    ),
   );
 
-  // 3b. Maqolalar (/maqolalar/<slug>) — uz/ru alternates bilan
+  // 3b. Maqolalar (/maqolalar/<slug>) — uz/ru/x-default alternates bilan
   const articleEntries = LOCALES.flatMap((locale) =>
-    getAllArticles().map((article) => ({
-      url: `${BASE_URL}/${locale}/maqolalar/${article.slug}`,
-      lastModified: new Date(article.publishedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-      alternates: {
-        languages: Object.fromEntries(
-          LOCALES.map((l) => [l, `${BASE_URL}/${l}/maqolalar/${article.slug}`]),
-        ),
-      },
-    })),
+    articles.map((article) =>
+      entry(
+        locale,
+        `/maqolalar/${article.slug}`,
+        lastmodDate(article.publishedAt),
+        "monthly",
+        0.7,
+      ),
+    ),
   );
 
   // 4. Ko'chat kategoriyalari
   const categoryEntries = LOCALES.flatMap((locale) =>
-    FRUIT_CATEGORIES.map((cat) => ({
-      url: `${BASE_URL}/${locale}/kochatlar/${cat.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.9, // yuqori - asosiy SEO sahifalar
-      alternates: {
-        languages: Object.fromEntries(
-          LOCALES.map((l) => [l, `${BASE_URL}/${l}/kochatlar/${cat.slug}`]),
-        ),
-      },
-    })),
+    FRUIT_CATEGORIES.map((cat) =>
+      entry(
+        locale,
+        `/kochatlar/${cat.slug}`,
+        categoryLastmod(cat.slug),
+        "weekly",
+        0.9, // yuqori - asosiy SEO sahifalar
+      ),
+    ),
   );
 
   return [
