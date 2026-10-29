@@ -3,6 +3,7 @@ import { unstable_setRequestLocale, getTranslations } from "next-intl/server";
 import { Home, Search, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 
 export const metadata = {
   title: "Sahifa topilmadi",
@@ -66,12 +67,14 @@ export default async function NotFound({
 
           <p className="mt-8 text-sm text-cream-100/60">
             {t("contact")}{" "}
-            <a
+            <TrackedContactLink
+              event="contact_phone"
+              source="not_found"
               href="tel:+998781131819"
               className="font-semibold text-gold-400 hover:underline"
             >
               +998 78 113 18 19
-            </a>
+            </TrackedContactLink>
           </p>
         </div>
       </Container>

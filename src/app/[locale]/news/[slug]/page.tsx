@@ -21,6 +21,7 @@ import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { getNewsBySlug, NEWS_ARTICLES } from "@/lib/news";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 
 type Props = {
   params: { locale: string; slug: string };
@@ -310,28 +311,37 @@ export default async function NewsArticlePage({
                 {cta.body}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a
+                <TrackedContactLink
+                  event="contact_telegram"
+                  source="article_page"
+                  params={{ slug }}
                   href={cta.telegramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-gold-400 px-6 py-3 text-sm font-bold text-earth-900 transition-colors hover:bg-gold-100 sm:text-base"
                 >
                   🍒 {cta.telegramText}
-                </a>
-                <a
+                </TrackedContactLink>
+                <TrackedContactLink
+                  event="contact_phone"
+                  source="article_page"
+                  params={{ slug }}
                   href={`tel:${cta.phone1.replace(/\s/g, "")}`}
                   className="inline-flex items-center gap-2 rounded-md border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-700"
                 >
                   <Phone className="h-4 w-4" />
                   {cta.phone1}
-                </a>
-                <a
+                </TrackedContactLink>
+                <TrackedContactLink
+                  event="contact_phone"
+                  source="article_page"
+                  params={{ slug }}
                   href={`tel:${cta.phone2.replace(/\s/g, "")}`}
                   className="inline-flex items-center gap-2 rounded-md border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-700"
                 >
                   <Phone className="h-4 w-4" />
                   {cta.phone2}
-                </a>
+                </TrackedContactLink>
               </div>
               <p className="mt-6 text-sm text-cream-100/70 italic">
                 ❗️ {cta.stat}

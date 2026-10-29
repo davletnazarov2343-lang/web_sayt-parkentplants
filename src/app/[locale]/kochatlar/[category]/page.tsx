@@ -23,6 +23,7 @@ import {
   FRUIT_CATEGORIES,
 } from "@/lib/categories";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 import { getNewsBySlug } from "@/lib/news";
 import { GrapeVarietyCards } from "@/components/catalog/GrapeVarietyCards";
 import { GRAPE_VARIETIES } from "@/lib/grapes/featured-varieties";
@@ -297,13 +298,16 @@ export default async function CategoryPage({
                 {t("categoryPage.orderNow")}
                 <ArrowRight className="h-4 w-4" />
               </LinkButton>
-              <a
+              <TrackedContactLink
+                event="contact_phone"
+                source="category_page"
+                params={{ category }}
                 href="tel:+998781131819"
                 className="inline-flex items-center gap-2 rounded-md border border-forest-700 px-6 py-3 text-sm font-semibold text-forest-700 transition-colors hover:bg-forest-700 hover:text-cream"
               >
                 <Phone className="h-4 w-4" />
                 {t("categoryPage.callUs")}
-              </a>
+              </TrackedContactLink>
             </div>
           </section>
 
@@ -422,13 +426,16 @@ export default async function CategoryPage({
                 {t("ctaPrimary")}
                 <ArrowRight className="h-4 w-4" />
               </LinkButton>
-              <a
+              <TrackedContactLink
+                event="contact_phone"
+                source="category_page_cta"
+                params={{ category }}
                 href="tel:+998781131819"
                 className="inline-flex items-center gap-2 rounded-md border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-700"
               >
                 <Phone className="h-4 w-4" />
                 +998 78 113 18 19
-              </a>
+              </TrackedContactLink>
             </div>
           </section>
         </Container>

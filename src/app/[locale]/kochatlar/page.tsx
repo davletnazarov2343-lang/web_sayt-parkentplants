@@ -16,6 +16,7 @@ import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { getAllCategories } from "@/lib/categories";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 
 type Props = { params: { locale: string } };
 
@@ -196,13 +197,15 @@ export default async function SaplingsHubPage({ params: { locale } }: Props) {
                 {t("ctaPrimary")}
                 <ArrowRight className="h-4 w-4" />
               </LinkButton>
-              <a
+              <TrackedContactLink
+                event="contact_phone"
+                source="catalog_page"
                 href={`tel:${t("ctaSecondary").replace(/\s/g, "")}`}
                 className="inline-flex items-center gap-2 rounded-md border border-cream-100/30 px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-forest-700"
               >
                 <Phone className="h-4 w-4" />
                 {t("ctaSecondary")}
-              </a>
+              </TrackedContactLink>
             </div>
           </section>
         </Container>

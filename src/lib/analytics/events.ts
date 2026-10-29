@@ -5,6 +5,11 @@
  *   import { trackEvent } from "@/lib/analytics/events";
  *   trackEvent("lead", { source: "hero_form" });
  *
+ * Eslatma: `source` (va medium/campaign/...) parametrlari GA4'ga `placement`
+ * (placement_medium, placement_campaign...) nomi bilan ketadi — GA4'da bu nomlar
+ * trafik-manba uchun band va sessiya atributsiyasini buzadi ("fab / (not set)").
+ * Chaqiruvchilar baribir `source` deb yozaveradi; almashtirish shu yerda.
+ *
  * Server-side render'da skip qiladi (window yo'q).
  */
 
@@ -94,6 +99,39 @@ const EVENT_MAP: Record<
   },
 };
 
+// GA4'da band (reserved) trafik-manba parametrlari → xavfsiz nomlar.
+// Faqat GA payload'iga qo'llanadi; Meta va Yandex params o'zgarishsiz ketadi.
+const GA_RESERVED_PARAM_RENAMES: Record<string, string> = {
+  source: "placement",
+  medium: "placement_medium",
+  campaign: "placement_campaign",
+  campaign_id: "placement_campaign_id",
+  term: "placement_term",
+  content: "placement_content",
+};
+
+// contact_* event kalitidan GA4 `method` qiymati (GA'da hammasi bitta `contact` event)
+const GA_CONTACT_METHODS: Record<string, string> = {
+  contact_phone: "phone",
+  contact_telegram: "telegram",
+  contact_whatsapp: "whatsapp",
+  contact_email: "email",
+};
+
+function buildGaParams(
+  eventKey: string,
+  params?: Record<string, unknown>,
+): Record<string, unknown> | undefined {
+  const method = GA_CONTACT_METHODS[eventKey];
+  if (!params && !method) return undefined;
+  const out: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(params ?? {})) {
+    out[GA_RESERVED_PARAM_RENAMES[key] ?? key] = value;
+  }
+  if (method) out.method = method;
+  return out;
+}
+
 type FbqWindow = Window & {
   fbq?: (action: "track" | "trackCustom", event: string, params?: Record<string, unknown>) => void;
   gtag?: (action: "event", event: string, params?: Record<string, unknown>) => void;
@@ -116,7 +154,7 @@ export function trackEvent(
     }
     // 2. Google Analytics 4
     if (win.gtag && mapping.ga) {
-      win.gtag("event", mapping.ga, params);
+      win.gtag("event", mapping.ga, buildGaParams(eventKey, params));
     }
     // 3. Yandex.Metrika
     const ymId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;

@@ -5,6 +5,7 @@ import {
   formatUzs,
   type GrapeVariety,
 } from "@/lib/grapes/featured-varieties";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 
 const TELEGRAM_ORDER_URL = "https://t.me/+998995573800";
 
@@ -166,14 +167,17 @@ export async function GrapeVarietyCards({ locale }: Props) {
                 </dl>
 
                 {/* CTA */}
-                <a
+                <TrackedContactLink
+                  event="contact_telegram"
+                  source="grape_cards"
+                  params={{ variety: variety.slug }}
                   href={TELEGRAM_ORDER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center justify-center gap-2 rounded-md bg-forest-700 px-4 py-3 text-sm font-bold text-cream transition-colors hover:bg-forest-900"
                 >
                   🍇 {featured.labels.orderTelegram}
-                </a>
+                </TrackedContactLink>
               </div>
             </article>
           );

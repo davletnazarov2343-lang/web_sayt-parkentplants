@@ -17,6 +17,7 @@ import {
 import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TrackedContactLink } from "@/components/analytics/TrackedContactLink";
 
 type Props = { params: { locale: string } };
 
@@ -24,22 +25,26 @@ const CONTACT_ITEMS: Array<{
   key: "address" | "phone" | "whatsapp" | "email" | "hours";
   Icon: LucideIcon;
   hrefBuilder?: (rawValue: string) => string;
+  eventKey?: "contact_phone" | "contact_whatsapp" | "contact_email";
 }> = [
   { key: "address", Icon: MapPin },
   {
     key: "phone",
     Icon: Phone,
     hrefBuilder: (v) => `tel:${v.replace(/\s/g, "")}`,
+    eventKey: "contact_phone",
   },
   {
     key: "whatsapp",
     Icon: MessageCircle,
     hrefBuilder: (v) => `https://wa.me/${v.replace(/[^0-9]/g, "")}`,
+    eventKey: "contact_whatsapp",
   },
   {
     key: "email",
     Icon: Mail,
     hrefBuilder: (v) => `mailto:${v}`,
+    eventKey: "contact_email",
   },
   { key: "hours", Icon: Clock },
 ];
@@ -122,7 +127,7 @@ export default async function ContactPage({ params: { locale } }: Props) {
           <section className="mt-16 grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-5">
               <ul className="grid overflow-hidden rounded-2xl border border-earth-400/25 bg-earth-400/25 gap-px">
-                {CONTACT_ITEMS.map(({ key, Icon, hrefBuilder }) => {
+                {CONTACT_ITEMS.map(({ key, Icon, hrefBuilder, eventKey }) => {
                   const value = tContact(`${key}.value`);
                   const content = (
                     <>
@@ -144,7 +149,9 @@ export default async function ContactPage({ params: { locale } }: Props) {
                   return (
                     <li key={key}>
                       {hrefBuilder ? (
-                        <a
+                        <TrackedContactLink
+                          event={eventKey!}
+                          source="kontakt_page"
                           href={hrefBuilder(value)}
                           target={key === "whatsapp" ? "_blank" : undefined}
                           rel={
@@ -155,7 +162,7 @@ export default async function ContactPage({ params: { locale } }: Props) {
                           className={wrapperClass}
                         >
                           {content}
-                        </a>
+                        </TrackedContactLink>
                       ) : (
                         <div className={wrapperClass}>{content}</div>
                       )}
