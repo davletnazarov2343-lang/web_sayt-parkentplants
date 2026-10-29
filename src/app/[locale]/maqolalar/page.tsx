@@ -22,7 +22,7 @@ export async function generateMetadata({
   const lang = toLocale(locale);
   const t = await getTranslations({ locale: lang, namespace: "articles" });
   const title = t("metaTitle");
-  const description = t("subtitle");
+  const description = t("metaDescription");
 
   return buildMetadata({
     locale: lang,
@@ -49,7 +49,7 @@ export default async function ArticlesListPage({ params: { locale } }: Props) {
             {t("eyebrow")}
           </p>
           <h1 className="mt-4 text-balance font-serif text-3xl font-bold leading-tight text-earth-900 sm:text-4xl lg:text-5xl">
-            {t("title")}
+            {t("h1")}
           </h1>
           <p className="mt-4 text-base text-earth-700 sm:text-lg">
             {t("subtitle")}

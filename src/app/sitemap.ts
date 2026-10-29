@@ -12,6 +12,7 @@ import {
   categoryLastmod,
   DEFAULT_LASTMOD,
   lastmodDate,
+  PAGE_LASTMOD,
   pageLastmod,
 } from "@/lib/seo/lastmod";
 
@@ -74,7 +75,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Ro'yxat sahifalari ichidagi eng yangi elementning sanasini oladi
   const listLastmod: Record<string, Date> = {
     "/news": newest(NEWS_ARTICLES.map((n) => n.publishedAt)),
-    "/maqolalar": newest(articles.map((a) => a.publishedAt)),
+    "/maqolalar": newest([
+      ...articles.map((a) => a.publishedAt),
+      PAGE_LASTMOD["/maqolalar"],
+    ]),
   };
   const staticEntries = LOCALES.flatMap((locale) =>
     staticPaths.map((path) =>

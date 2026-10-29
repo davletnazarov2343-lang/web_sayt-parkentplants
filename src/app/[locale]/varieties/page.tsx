@@ -15,8 +15,8 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: "/varieties",
-    title: t("listTitle"),
-    description: t("listSubtitle"),
+    title: t("metaTitle"),
+    description: t("metaDescription"),
   });
 }
 
@@ -36,7 +36,7 @@ export default async function VarietiesIndexPage({
               {t("eyebrow")}
             </span>
             <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight tracking-tight text-earth-900 sm:text-5xl lg:text-6xl text-balance">
-              {t("listTitle")}
+              {t("indexH1")}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-earth-700 lg:text-lg">
               {t("listSubtitle")}

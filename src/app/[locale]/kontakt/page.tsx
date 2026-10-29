@@ -111,7 +111,7 @@ export default async function ContactPage({ params: { locale } }: Props) {
               {tContact("eyebrow")}
             </p>
             <h1 className="mt-4 text-4xl font-serif font-bold text-earth-900 sm:text-5xl lg:text-6xl leading-tight">
-              {tContact("title")}
+              {t("h1")}
             </h1>
             <p className="mt-6 text-base text-earth-600 leading-relaxed sm:text-lg">
               {tContact("subtitle")}

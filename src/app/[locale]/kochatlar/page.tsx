@@ -122,7 +122,7 @@ export default async function SaplingsHubPage({ params: { locale } }: Props) {
                     <div className="relative aspect-[16/9] overflow-hidden bg-earth-100">
                       <Image
                         src={cat.cover}
-                        alt={t(`categories.${cat.slug}.h1`)}
+                        alt={t(`categories.${cat.slug}.name`)}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         priority={index < 3}
@@ -138,7 +138,7 @@ export default async function SaplingsHubPage({ params: { locale } }: Props) {
                   )}
                   <div className="p-5 sm:p-6 flex-1 flex flex-col">
                     <h3 className="text-xl font-serif font-bold text-earth-900 group-hover:text-forest-700 transition-colors">
-                      {cat.icon} {t(`categories.${cat.slug}.h1`)}
+                      {cat.icon} {t(`categories.${cat.slug}.name`)}
                     </h3>
                     <p className="mt-2 text-sm text-earth-600 leading-relaxed flex-1 line-clamp-3">
                       {t(`categories.${cat.slug}.intro`).slice(0, 140)}…

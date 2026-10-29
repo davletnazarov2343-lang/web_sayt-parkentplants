@@ -16,11 +16,12 @@
  */
 export const PAGE_LASTMOD: Record<string, string> = {
   // Bosh sahifa: oxirgi ko'rinadigan o'zgarish — Sweet Aryana kartasi (FeaturedVarieties)
-  "": "2026-10-21",
+  "": "2026-10-29", // title/description Faza 1 matnlarida o'zgargan
   "/varieties": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/kochatlar": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/biz-haqimizda": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/kontakt": "2026-10-29", // sarlavha Faza 0 da o'zgargan
+  "/maqolalar": "2026-10-29", // title/H1/description Faza 1 matnlarida o'zgargan
   "/maxfiylik": "2026-10-13",
 
   // Nav lendinglari: 2026-10-29 da "kategoriya + maqola" ichki havola bloki qo'shildi
@@ -40,7 +41,7 @@ export const CATEGORY_LASTMOD: Record<string, string> = {
   "orik-kochati": "2026-10-29", // sarlavha + maqola havolasi
   "olxori-kochati": "2026-10-29", // sarlavha + ichki havolalar (Black Splendor)
   "nok-kochati": "2026-10-29", // sarlavha + maqola havolasi
-  "uzum-kochati": "2026-09-03",
+  "uzum-kochati": "2026-10-29", // title/H1/description Faza 1 matnlarida o'zgargan
   "bodom-kochati": "2026-10-29", // sarlavha Faza 0 da o'zgargan
 };
 

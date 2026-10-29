@@ -37,6 +37,8 @@ type Props = {
 type CategoryMessages = {
   title: string;
   h1: string;
+  /** Qisqa nom (breadcrumb, chip, schema) — H1 uzun bo'lgani uchun alohida */
+  name: string;
   metaDescription: string;
   intro: string;
   buyingGuide: string;
@@ -90,7 +92,8 @@ export default async function CategoryPage({
   const catMessages = messages.saplings?.categories?.[category];
   if (!catMessages) notFound();
 
-  const { h1, intro, buyingGuide, pricing, faq, metaDescription } = catMessages;
+  const { h1, name, intro, buyingGuide, pricing, faq, metaDescription } =
+    catMessages;
   const allCategories = getAllCategories();
   const otherCategories = allCategories.filter((c) => c.slug !== category);
 
@@ -128,7 +131,7 @@ export default async function CategoryPage({
       {
         "@type": "ListItem",
         position: 3,
-        name: h1,
+        name,
         item: `https://parkentplants.uz/${locale}/kochatlar/${category}`,
       },
     ],
@@ -138,7 +141,7 @@ export default async function CategoryPage({
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: h1,
+    name,
     description: metaDescription,
     brand: { "@type": "Brand", name: "Parkent Plants" },
     category: "Fruit saplings",
@@ -219,7 +222,7 @@ export default async function CategoryPage({
               {t("breadcrumb.saplings")}
             </Link>
             <span className="mx-2 text-earth-300">/</span>
-            <span className="text-earth-700 font-medium">{h1}</span>
+            <span className="text-earth-700 font-medium">{name}</span>
           </nav>
 
           {/* Header */}
@@ -227,8 +230,15 @@ export default async function CategoryPage({
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold-700">
               {t("eyebrow")}
             </p>
-            <h1 className="mt-4 text-4xl font-serif font-bold text-earth-900 sm:text-5xl lg:text-6xl leading-tight">
-              {cat.icon} {h1}
+            {/* Emoji — H1 matnidan tashqarida (dekor, ekran o'quvchilarga o'qilmaydi) */}
+            <span
+              aria-hidden="true"
+              className="mt-4 block text-5xl leading-none"
+            >
+              {cat.icon}
+            </span>
+            <h1 className="mt-3 text-3xl font-serif font-bold text-earth-900 sm:text-4xl lg:text-5xl leading-tight">
+              {h1}
             </h1>
             <p className="mt-6 text-base text-earth-600 leading-relaxed sm:text-lg">
               {metaDescription}
@@ -383,7 +393,7 @@ export default async function CategoryPage({
                 >
                   <span>{c.icon}</span>
                   <span>
-                    {(messages.saplings?.categories?.[c.slug]?.h1 as string) ??
+                    {(messages.saplings?.categories?.[c.slug]?.name as string) ??
                       c.slug}
                   </span>
                 </Link>

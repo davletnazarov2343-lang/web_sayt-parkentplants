@@ -136,7 +136,7 @@ export function Footer() {
                     href={`/${locale}/kochatlar/${cat.slug}`}
                     className="text-sm text-cream-100/70 transition-colors hover:text-gold-400"
                   >
-                    {cat.icon} {t(`saplings.categories.${cat.slug}.h1`)}
+                    {cat.icon} {t(`saplings.categories.${cat.slug}.name`)}
                   </Link>
                 </li>
               ))}

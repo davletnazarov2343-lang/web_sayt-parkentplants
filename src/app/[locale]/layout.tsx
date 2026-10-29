@@ -32,9 +32,9 @@ const META_CONTENT: Record<
 > = {
   uz: {
     title:
-      "Mevali ko'chat sotib olish | Parkent Plants — yetakchi ko'chatzor",
+      "Mevali ko'chatlar — Toshkent ko'chatzori | Parkent Plants",
     description:
-      "Mevali ko'chatlar ulgurji va chakana: olma, gilos, shaftoli, o'rik, uzum, bodom. 23 yillik bog'dorchilik tajribasi, fitosanitar sertifikat, eksport. 500 000+ ko'chat yiliga, 87 gektar maydon. Toshkent vil., Parkent va Yuqori Chirchiq ko'chatzorlari.",
+      "Mevali ko'chatlar ulgurji va chakana: olma, gilos, shaftoli, o'rik, uzum, bodom. 23 yil tajriba, fitosanitar sertifikat, 87 ga ko'chatzor. Ariza qoldiring.",
     ogDescription:
       "Mevali bog' uchun sifatli ko'chatlar — olma, gilos, shaftoli, o'rik, uzum, bodom. 23 yil bog'dorchilik tajribasi. Fermerlar va investorlar uchun B2B.",
     twitterDescription:
@@ -67,9 +67,9 @@ const META_CONTENT: Record<
   },
   ru: {
     title:
-      "Саженцы плодовые купить | Parkent Plants — питомник в Узбекистане",
+      "Питомник плодовых саженцев в Ташкенте | Parkent Plants",
     description:
-      "Плодовые саженцы оптом и в розницу: яблоня, черешня, персик, абрикос, виноград, миндаль. 23 года практики, фитосанитарный сертификат, экспорт. 500 000+ саженцев в год, 87 гектаров земли в Ташкентской обл. (Паркент и Юкори-Чирчик).",
+      "Плодовые саженцы оптом и в розницу: яблоня, черешня, персик, абрикос, виноград. 23 года опыта, фитосанитарный сертификат, 87 га. Оставьте заявку или звоните.",
     ogDescription:
       "Качественные плодовые саженцы для сада — яблоня, черешня, персик, абрикос, виноград. 23 года опыта. B2B для фермеров и инвесторов.",
     twitterDescription:
