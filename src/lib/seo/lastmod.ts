@@ -19,7 +19,8 @@ export const PAGE_LASTMOD: Record<string, string> = {
   "": "2026-10-29", // title/description Faza 1 matnlarida o'zgargan
   "/varieties": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/kochatlar": "2026-10-29", // sarlavha Faza 0 da o'zgargan
-  "/biz-haqimizda": "2026-10-29", // sarlavha Faza 0 da o'zgargan
+  "/biz-haqimizda": "2026-10-29", // sarlavha Faza 0 da o'zgargan; OAV havolasi qo'shildi
+  "/oav": "2026-10-29", // yangi sahifa
   "/kontakt": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/maqolalar": "2026-10-29", // title/H1/description Faza 1 matnlarida o'zgargan
   "/maxfiylik": "2026-10-13",

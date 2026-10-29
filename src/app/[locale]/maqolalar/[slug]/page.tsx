@@ -15,6 +15,7 @@ import { Container } from "@/components/ui/Container";
 import { LinkButton } from "@/components/ui/Button";
 import { TelegramIcon } from "@/components/ui/SocialIcons";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FOUNDER_ID, ORG_ID } from "@/lib/schema/organization";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { ArticleBlocks } from "@/components/articles/ArticleBlocks";
 import { ArticleCard } from "@/components/articles/ArticleCard";
@@ -112,10 +113,15 @@ export default async function ArticlePage({
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
     image: [`${BASE_URL}${image}`],
-    author: { "@type": "Person", name: authorName },
+    author: {
+      "@type": "Person",
+      // Asoschi bo'lsa — sayt bo'ylab yagona Person tuguniga ulanadi
+      ...(article.author === "shuhrat-abrorov" ? { "@id": FOUNDER_ID } : {}),
+      name: authorName,
+    },
     publisher: {
       "@type": "Organization",
-      "@id": `${BASE_URL}/#localbusiness`,
+      "@id": ORG_ID,
       name: "Parkent Plants",
       url: BASE_URL,
       logo: {

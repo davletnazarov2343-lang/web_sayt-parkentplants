@@ -28,6 +28,7 @@ const NAV_ITEMS = [
   { key: "about", href: "/biz-haqimizda" },
   { key: "articles", href: "/maqolalar" },
   { key: "news", href: "#news" },
+  { key: "press", href: "/oav" },
   { key: "contact", href: "/kontakt" },
 ] as const;
 
