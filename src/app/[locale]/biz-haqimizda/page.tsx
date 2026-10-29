@@ -248,6 +248,17 @@ export default async function AboutPage({ params: { locale } }: Props) {
             </div>
           </section>
 
+          {/* OAV havolasi */}
+          <p className="mt-10 max-w-3xl text-base leading-relaxed text-earth-700">
+            {t("pressText")}{" "}
+            <Link
+              href={`/${locale}/oav`}
+              className="font-semibold text-forest-700 underline underline-offset-4 hover:text-forest-900"
+            >
+              {t("pressLink")}
+            </Link>
+          </p>
+
           {/* CTA */}
           <section className="mt-16 rounded-2xl bg-gradient-to-br from-forest-900 to-forest-700 p-8 sm:p-12 text-cream">
             <h2 className="text-3xl font-serif font-bold sm:text-4xl">

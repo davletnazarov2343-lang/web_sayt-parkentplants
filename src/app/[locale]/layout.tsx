@@ -13,6 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   JsonLd,
   getOrganizationSchema,
+  getFounderSchema,
   getLocalBusinessSchema,
   getWebsiteSchema,
 } from "@/components/seo/JsonLd";
@@ -189,6 +190,7 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-screen bg-cream text-earth-900 antialiased">
         <JsonLd data={getOrganizationSchema()} />
+        <JsonLd data={getFounderSchema()} />
         <JsonLd data={getLocalBusinessSchema()} />
         <JsonLd data={getWebsiteSchema(locale)} />
         <NextIntlClientProvider messages={messages}>

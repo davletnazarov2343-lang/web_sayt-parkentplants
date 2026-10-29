@@ -8,6 +8,8 @@
  * Schema.org standartiga muvofiq.
  */
 
+import { BASE_URL, ORG_ID } from "@/lib/schema/organization";
+
 type JsonLdProps = {
   data: object;
 };
@@ -23,59 +25,14 @@ export function JsonLd({ data }: JsonLdProps) {
   );
 }
 
-const BASE_URL = "https://parkentplants.uz";
-const ORG_ID = `${BASE_URL}/#organization`;
+// Organization va asoschi Person ma'lumotlari — src/lib/schema/organization.ts
+export { getOrganizationSchema, getFounderSchema } from "@/lib/schema/organization";
+
 const LOCALBUSINESS_ID = `${BASE_URL}/#localbusiness`;
 
 // ===========================================================================
 // Schema generators
 // ===========================================================================
-
-export function getOrganizationSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": ORG_ID,
-    name: "Parkent Plants (Norchontol)",
-    legalName: "Norchontol fermer xo'jaligi",
-    url: BASE_URL,
-    logo: `${BASE_URL}/brand/icon-square.png`,
-    foundingDate: "2002",
-    founders: [
-      {
-        "@type": "Person",
-        name: "Shuhrat Abrorov",
-        jobTitle: "Founder & CEO",
-        alumniOf: {
-          "@type": "Place",
-          name: "California, USA (Modern orchard training)",
-        },
-      },
-    ],
-    sameAs: [
-      "https://t.me/+Q2HYAuBIWn4wN2Vi",
-      "https://www.instagram.com/shuhrat_abrorov/",
-      "https://www.facebook.com/profile.php?id=61552782846741",
-      "https://www.youtube.com/@shuhrat_abrorov",
-    ],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+998-78-113-18-19",
-        contactType: "customer service",
-        areaServed: ["UZ", "TJ", "KG", "TM", "KZ"],
-        availableLanguage: ["uz", "ru"],
-      },
-      {
-        "@type": "ContactPoint",
-        telephone: "+998-99-557-38-00",
-        contactType: "sales",
-        contactOption: "TollFree",
-        areaServed: ["UZ", "TJ", "KG", "TM", "KZ"],
-      },
-    ],
-  };
-}
 
 export function getLocalBusinessSchema() {
   return {

@@ -8,6 +8,7 @@
     "about": "Biz haqimizda",
     "news": "Yangiliklar",
     "articles": "Maqolalar",
+    "press": "OAVda biz haqimizda",
     "contact": "Kontakt",
     "menu": "Menyu",
     "close": "Yopish",
@@ -1649,10 +1650,43 @@
     "whyTitle": "Nega bizni tanlashadi",
     "nurseriesTitle": "Ikkita zamonaviy ko'chatzor",
     "nurseriesIntro": "Toshkent viloyatida joylashgan ikki ko'chatzor — har biri o'z ixtisoslashuvi va muhandislik tizimiga ega.",
+    "pressText": "Xo'jaligimiz va asoschimiz haqida Kun.uz, EastFruit va xalqaro nashrlarda chiqqan maqolalar.",
+    "pressLink": "OAVda biz haqimizda",
     "ctaTitle": "Loyihangiz haqida gaplashaylik",
     "ctaBody": "B2B hamkorlik, yirik buyurtma yoki professional maslahat uchun biz bilan bog'laning.",
     "ctaPrimary": "Kontaktlarni ko'rish",
     "ctaSecondary": "Ko'chat katalogi"
+  },
+  "pressPage": {
+    "breadcrumb": "OAVda biz haqimizda",
+    "metaTitle": "OAVda biz haqimizda (Norchontol)",
+    "metaDescription": "Parkent Plants (Norchontol fermer xo'jaligi) va asoschisi Shuhrat Abrorov haqida Kun.uz, EastFruit va xalqaro nashrlardagi maqolalar.",
+    "title": "OAVda biz haqimizda",
+    "introBrand": "Parkent Plants — Norchontol fermer xo'jaligining brendi",
+    "intro": "(STIR 203 992 341). 2002-yildan beri Toshkent viloyatida mevali daraxt ko'chatlarini yetishtiramiz. Avvalgi yillardagi maqolalarda xo'jaligimiz \"Norchontol\" nomi bilan tilga olingan.",
+    "items": {
+      "kun2021": {
+        "heading": "Kun.uz, 2021-yil 31-dekabr",
+        "text": "«Bularni qilmay turib, yuqori natijaga erisholmaymiz». Xo'jalik asoschilari Shuhrat Abrorov va Abdulaziz Abduyunusov O'zbekistonda ko'chatchilikni rivojlantirish bo'yicha takliflar bildirgan."
+      },
+      "eastfruit": {
+        "heading": "EastFruit, 2020-yil 18-mart",
+        "text": "Tojikistondagi \"Vahdat milliy bog'i\"da Shuhrat Abrorov Norchontol ko'chatzorida yetishtirilgan sertifikatlangan ko'chatlarni tojik bog'bonlarga taqdim etgan."
+      },
+      "kun2018": {
+        "heading": "Kun.uz, 2018-yil 1-sentabr",
+        "text": "Agro House, Norchontol va Eco Drip Lux hamkorligida intensiv bog'dorchilik seminari o'tkazilgan; fransiyalik konsultant Fabien Martel bilan birga Shuhrat Abrorov ma'ruza qilgan."
+      },
+      "kun2024": {
+        "heading": "Kun.uz, 2024-yil 19-dekabr",
+        "text": "Shuhrat Abrorov bog'larda tomchilatib sug'orish nima uchun sekin joriy qilinayotganini tahlil qilgan."
+      },
+      "treefruit": {
+        "heading": "Tree Fruit (Avstraliya)",
+        "text": "Shuhrat Abrorov USAID AgLinks loyihasi doirasida Avstraliyadagi gilos bog'larida tajriba almashgan."
+      }
+    },
+    "note": "Eslatma: \"Norchontol Niholi\" fermer xo'jaligi Parkent Plants'ga aloqador emas."
   },
   "contactPage": {
     "breadcrumb": "Kontakt",
