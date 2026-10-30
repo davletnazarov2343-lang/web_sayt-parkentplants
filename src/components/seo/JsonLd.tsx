@@ -37,7 +37,7 @@ const LOCALBUSINESS_ID = `${BASE_URL}/#localbusiness`;
 export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Farm"],
+    "@type": "LocalBusiness",
     "@id": LOCALBUSINESS_ID,
     parentOrganization: { "@id": ORG_ID },
     name: "Parkent Plants",
