@@ -100,10 +100,6 @@ export function getFounderSchema() {
     jobTitle:
       "Asoschi va bosh direktor, intensiv bog'dorchilik bo'yicha mutaxassis",
     worksFor: { "@id": ORG_ID },
-    alumniOf: {
-      "@type": "Place",
-      name: "California, USA (Modern orchard training)",
-    },
     knowsAbout: [
       "intensiv bog'dorchilik",
       "mevali ko'chat yetishtirish",
