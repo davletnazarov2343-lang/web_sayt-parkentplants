@@ -35,11 +35,23 @@ export const REGION_KEYS = [
 ] as const;
 
 export const VOLUME_PLAN_KEYS = [
+  "1-100",
+  "101-499",
   "500-2000",
   "2001-10000",
   "10001-50000",
   "50000+",
   "undecided",
+] as const;
+
+/** Qisqa (lending) formadagi hajm variantlari — "Hali aniq emas"siz, kichik buyurtmalar bilan */
+export const COMPACT_VOLUME_KEYS = [
+  "1-100",
+  "101-499",
+  "500-2000",
+  "2001-10000",
+  "10001-50000",
+  "50000+",
 ] as const;
 
 export const LOCALE_KEYS = ["uz", "ru"] as const;

@@ -48,6 +48,8 @@ const REGION_LABELS_UZ: Record<string, string> = {
 };
 
 const VOLUME_LABELS_UZ: Record<string, string> = {
+  "1-100": "1 — 100 ko'chat",
+  "101-499": "101 — 499 ko'chat",
   "500-2000": "500 — 2 000 ko'chat",
   "2001-10000": "2 001 — 10 000 ko'chat",
   "10001-50000": "10 001 — 50 000 ko'chat",

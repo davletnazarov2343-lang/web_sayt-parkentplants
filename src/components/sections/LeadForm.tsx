@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import {
+  COMPACT_VOLUME_KEYS,
   FRUIT_TYPE_KEYS,
   REGION_KEYS,
   VOLUME_PLAN_KEYS,
@@ -63,6 +64,7 @@ export function LeadForm({
   sourceOptions,
   defaultOption,
   defaultFruitTypes,
+  compact = false,
 }: {
   locale: "uz" | "ru";
   /** Lid manbasi (masalan "granny-smith-lending"). Berilmasa — "website". */
@@ -78,6 +80,12 @@ export function LeadForm({
   defaultOption?: string;
   /** Oldindan belgilanadigan meva turlari (masalan ["cherry"]) */
   defaultFruitTypes?: ReadonlyArray<FruitTypeKey>;
+  /**
+   * Qisqa forma (lending): ism, telefon va majburiy "nechta ko'chat" (tugmalar).
+   * Kompaniya, viloyat, meva turlari, izoh va rozilik belgisi chiqmaydi —
+   * rozilik matni yuborish tugmasi ostida yoziladi.
+   */
+  compact?: boolean;
 }) {
   const t = useTranslations("leadForm");
 
@@ -142,7 +150,7 @@ export function LeadForm({
         .filter(([, v]) => v)
         .map(([k]) => k) as FruitTypeKey[]),
       message: message.trim() || undefined,
-      consent,
+      consent: compact ? true : consent,
       locale,
       source: effectiveSource || undefined,
       // Reklama manbasi (utm_* / fbclid / gclid) — joriy URL yoki sessiya
@@ -152,9 +160,11 @@ export function LeadForm({
 
     // Client-side validation (server ham qayta tekshiradi)
     const parsed = leadSchema.safeParse(payload);
-    if (!parsed.success) {
+    const volumeMissing = compact && !volume;
+    if (!parsed.success || volumeMissing) {
       const fieldErrors: Record<string, string> = {};
-      for (const issue of parsed.error.issues) {
+      if (volumeMissing) fieldErrors.volumePlan = "required";
+      for (const issue of parsed.success ? [] : parsed.error.issues) {
         const key = issue.path[0]?.toString() ?? "_form";
         if (!fieldErrors[key]) fieldErrors[key] = issue.message;
       }
@@ -242,7 +252,7 @@ export function LeadForm({
       <Container size="narrow">
         <header className="mx-auto max-w-2xl text-center">
           <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-forest-600">
-            {t("eyebrow")}
+            {compact ? t("compactEyebrow") : t("eyebrow")}
           </span>
           <h2
             id={sourceOptions ? "request-title" : undefined}
@@ -251,7 +261,7 @@ export function LeadForm({
             {title ?? t("title")}
           </h2>
           <p className="mt-5 text-base leading-relaxed text-earth-700">
-            {t("subtitle")}
+            {compact ? t("compactSubtitle") : t("subtitle")}
           </p>
         </header>
 
@@ -367,115 +377,156 @@ export function LeadForm({
               </Field>
             </div>
 
-            <div className="mt-5">
-              <Field
-                label={t("fields.company.label")}
-                error={errors.company && t(`errors.${errors.company}`)}
-              >
-                <input
-                  type="text"
-                  autoComplete="organization"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  className={inputClass(Boolean(errors.company))}
-                  placeholder={t("fields.company.placeholder")}
-                />
-              </Field>
-            </div>
-
-            <div className="mt-5 grid gap-5 sm:grid-cols-2">
-              <Field label={t("fields.region.label")}>
-                <select
-                  value={region}
-                  onChange={(e) => setRegion(e.target.value as RegionKey | "")}
-                  className={inputClass(false)}
+            {compact ? (
+              <div className="mt-6" role="radiogroup" aria-labelledby="lead-volume-label">
+                <span
+                  id="lead-volume-label"
+                  className="block text-sm font-semibold text-earth-900"
                 >
-                  <option value="">{t("fields.region.placeholder")}</option>
-                  {REGION_KEYS.map((r) => (
-                    <option key={r} value={r}>
-                      {t(`regions.${r}`)}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-              <Field label={t("fields.volume.label")}>
-                <select
-                  value={volume}
-                  onChange={(e) =>
-                    setVolume(e.target.value as VolumePlanKey | "")
-                  }
-                  className={inputClass(false)}
-                >
-                  <option value="">{t("fields.volume.placeholder")}</option>
-                  {VOLUME_PLAN_KEYS.map((v) => (
-                    <option key={v} value={v}>
-                      {t(`volumes.${v}`)}
-                    </option>
-                  ))}
-                </select>
-              </Field>
-            </div>
-
-            <div className="mt-6">
-              <span className="block text-sm font-semibold text-earth-900">
-                {t("fields.fruitTypes.label")}
-              </span>
-              <p className="mt-1 text-xs text-earth-700">
-                {t("fields.fruitTypes.hint")}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {FRUIT_TYPE_KEYS.map((key) => {
-                  const active = fruitTypes[key];
-                  return (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => toggleFruit(key)}
-                      className={cn(
-                        "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                        active
-                          ? "border-forest-700 bg-forest-700 text-cream"
-                          : "border-earth-400/40 bg-cream-100 text-earth-900 hover:border-forest-400",
-                      )}
-                    >
-                      {t(`fruitTypes.${key}`)}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-5">
-              <Field
-                label={t("fields.message.label")}
-                error={errors.message && t(`errors.${errors.message}`)}
-              >
-                <textarea
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  className={cn(inputClass(false), "min-h-[110px] resize-y")}
-                  placeholder={t("fields.message.placeholder")}
-                />
-              </Field>
-            </div>
-
-            <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm text-earth-700">
-              <input
-                type="checkbox"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                className="mt-0.5 h-4 w-4 shrink-0 rounded border-earth-400 text-forest-700 focus:ring-forest-400"
-              />
-              <span>
-                {t("consent")}{" "}
-                {errors.consent && (
-                  <span className="font-semibold text-red-600">
-                    — {t(`errors.${errors.consent}`)}
-                  </span>
+                  {t("fields.volume.compactLabel")}
+                  <span className="ml-0.5 text-forest-700">*</span>
+                </span>
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {COMPACT_VOLUME_KEYS.map((v) => {
+                    const active = volume === v;
+                    return (
+                      <button
+                        key={v}
+                        type="button"
+                        role="radio"
+                        aria-checked={active}
+                        onClick={() => setVolume(v)}
+                        className={cn(
+                          "rounded-lg border-2 px-3 py-2.5 text-sm font-semibold transition-colors",
+                          active
+                            ? "border-forest-700 bg-forest-700 text-cream"
+                            : "border-earth-400/40 bg-cream-100 text-earth-900 hover:border-forest-400",
+                        )}
+                      >
+                        {t(`volumes.${v}`)}
+                      </button>
+                    );
+                  })}
+                </div>
+                {errors.volumePlan && (
+                  <p className="mt-2 text-sm font-semibold text-red-600">
+                    {t(`errors.${errors.volumePlan}`)}
+                  </p>
                 )}
-              </span>
-            </label>
+              </div>
+            ) : (
+              <>
+              <div className="mt-5">
+                <Field
+                  label={t("fields.company.label")}
+                  error={errors.company && t(`errors.${errors.company}`)}
+                >
+                  <input
+                    type="text"
+                    autoComplete="organization"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className={inputClass(Boolean(errors.company))}
+                    placeholder={t("fields.company.placeholder")}
+                  />
+                </Field>
+              </div>
+
+              <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                <Field label={t("fields.region.label")}>
+                  <select
+                    value={region}
+                    onChange={(e) => setRegion(e.target.value as RegionKey | "")}
+                    className={inputClass(false)}
+                  >
+                    <option value="">{t("fields.region.placeholder")}</option>
+                    {REGION_KEYS.map((r) => (
+                      <option key={r} value={r}>
+                        {t(`regions.${r}`)}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label={t("fields.volume.label")}>
+                  <select
+                    value={volume}
+                    onChange={(e) =>
+                      setVolume(e.target.value as VolumePlanKey | "")
+                    }
+                    className={inputClass(false)}
+                  >
+                    <option value="">{t("fields.volume.placeholder")}</option>
+                    {VOLUME_PLAN_KEYS.map((v) => (
+                      <option key={v} value={v}>
+                        {t(`volumes.${v}`)}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+              </div>
+
+              <div className="mt-6">
+                <span className="block text-sm font-semibold text-earth-900">
+                  {t("fields.fruitTypes.label")}
+                </span>
+                <p className="mt-1 text-xs text-earth-700">
+                  {t("fields.fruitTypes.hint")}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {FRUIT_TYPE_KEYS.map((key) => {
+                    const active = fruitTypes[key];
+                    return (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => toggleFruit(key)}
+                        className={cn(
+                          "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
+                          active
+                            ? "border-forest-700 bg-forest-700 text-cream"
+                            : "border-earth-400/40 bg-cream-100 text-earth-900 hover:border-forest-400",
+                        )}
+                      >
+                        {t(`fruitTypes.${key}`)}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-5">
+                <Field
+                  label={t("fields.message.label")}
+                  error={errors.message && t(`errors.${errors.message}`)}
+                >
+                  <textarea
+                    rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className={cn(inputClass(false), "min-h-[110px] resize-y")}
+                    placeholder={t("fields.message.placeholder")}
+                  />
+                </Field>
+              </div>
+
+              <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm text-earth-700">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-earth-400 text-forest-700 focus:ring-forest-400"
+                />
+                <span>
+                  {t("consent")}{" "}
+                  {errors.consent && (
+                    <span className="font-semibold text-red-600">
+                      — {t(`errors.${errors.consent}`)}
+                    </span>
+                  )}
+                </span>
+              </label>
+              </>
+            )}
 
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <button
@@ -496,7 +547,7 @@ export function LeadForm({
                 )}
               </button>
               <p className="text-xs leading-relaxed text-earth-700/70">
-                {t("disclaimer")}
+                {compact ? t("compactConsent") : t("disclaimer")}
               </p>
             </div>
 

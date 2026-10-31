@@ -110,6 +110,23 @@ export type VarietyLandingConfig = {
    */
   stickyBar?: boolean;
   /**
+   * Ixtiyoriy: shu lending uchun alohida Telegram havolasi (hero tugmasi va
+   * mobil pastki panel). Berilmasa — umumiy raqam (t.me/+998995573800).
+   */
+  telegramHref?: string;
+  /**
+   * Lid qoldirishga moslangan tartib: hero -> takliflar (narx bilan) -> qisqa forma
+   * -> qolgan bo'limlar; "Eslatma" bo'limi chiqmaydi; hero'da formaga tugma.
+   * Namespace'da `ctaForm`, `offers.now.price`, `offers.preorder.price` bo'lishi
+   * shart; `offers: true` va `sourceOptions` bilan ishlating.
+   */
+  conversionLayout?: boolean;
+  /**
+   * Ixtiyoriy YouTube video (bosilgandagina yuklanadi). `start` — boshlanish
+   * soniyasi. Namespace'da `youtube: { title, text, ariaLabel }` bo'lishi shart.
+   */
+  youtube?: { id: string; start?: number };
+  /**
    * Lid formasi tepasida 2 variantli tanlov. Standart tanlov — birinchisi.
    * Berilsa, `leadSource` o'rniga tanlangan variantning `source`i yuboriladi.
    */
@@ -187,6 +204,7 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     extraGallery: ["/images/sweet-aryana/harvest-hand.jpg"],
     ogImage: { width: 1200, height: 1080 },
     leadSource: "sweet-aryana-lending",
+    telegramHref: "https://t.me/m/Fdqy8BuLYTdi",
     viewEvent: "view_sweet_aryana",
     audience: false,
     heroFacts: true,
@@ -201,6 +219,8 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     },
     offers: true,
     stickyBar: true,
+    conversionLayout: true,
+    youtube: { id: "AlzVDFIUDig", start: 644 },
     sourceOptions: [
       { value: "now", source: "sweet-aryana-lending-now" },
       { value: "preorder", source: "sweet-aryana-lending-2027" },
