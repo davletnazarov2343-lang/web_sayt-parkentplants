@@ -110,6 +110,11 @@ export type VarietyLandingConfig = {
    */
   stickyBar?: boolean;
   /**
+   * Ixtiyoriy: shu lending uchun alohida Telegram havolasi (hero tugmasi va
+   * mobil pastki panel). Berilmasa — umumiy raqam (t.me/+998995573800).
+   */
+  telegramHref?: string;
+  /**
    * Lid formasi tepasida 2 variantli tanlov. Standart tanlov — birinchisi.
    * Berilsa, `leadSource` o'rniga tanlangan variantning `source`i yuboriladi.
    */
@@ -187,6 +192,7 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     extraGallery: ["/images/sweet-aryana/harvest-hand.jpg"],
     ogImage: { width: 1200, height: 1080 },
     leadSource: "sweet-aryana-lending",
+    telegramHref: "https://t.me/m/Fdqy8BuLYTdi",
     viewEvent: "view_sweet_aryana",
     audience: false,
     heroFacts: true,

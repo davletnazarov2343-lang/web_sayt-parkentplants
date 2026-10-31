@@ -130,6 +130,7 @@ export async function VarietyLanding({
 }) {
   const lang = locale === "ru" ? "ru" : "uz";
   const t = await getTranslations({ locale, namespace: config.namespace });
+  const telegramHref = config.telegramHref ?? TELEGRAM_HREF;
   const tFooter = await getTranslations({ locale, namespace: "footer" });
   const homeLabel = locale === "ru" ? "Главная" : "Bosh sahifa";
 
@@ -289,7 +290,7 @@ export async function VarietyLanding({
           {t("ctaCall")}
         </TrackedLinkButton>
         <TrackedLinkButton
-          href={TELEGRAM_HREF}
+          href={telegramHref}
           target="_blank"
           rel="noopener noreferrer"
           variant="outline"
@@ -384,7 +385,7 @@ export async function VarietyLanding({
             <StickyBar
               landing={config.slug}
               callHref={CALL_HREF}
-              telegramHref={TELEGRAM_HREF}
+              telegramHref={telegramHref}
               labels={{
                 call: t("stickyBar.call"),
                 telegram: t("stickyBar.telegram"),
