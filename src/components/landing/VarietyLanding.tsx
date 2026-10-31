@@ -38,6 +38,7 @@ import {
   YoutubeIcon,
 } from "@/components/ui/SocialIcons";
 import type { VarietyLandingConfig } from "@/lib/landings";
+import { YouTubeFacade } from "./YouTubeFacade";
 
 const BASE_URL = "https://parkentplants.uz";
 
@@ -627,6 +628,24 @@ export async function VarietyLanding({
           <LandingRelatedLinks landing={config.slug} />
     </>
   );
+  const youtubeBlock = config.youtube ? (
+    <section className="mt-20 mx-auto max-w-4xl">
+      <h2 className="text-2xl font-serif font-bold text-earth-900 sm:text-3xl">
+        {t("youtube.title")}
+      </h2>
+      <p className="mt-3 text-base leading-relaxed text-earth-700">
+        {t("youtube.text")}
+      </p>
+      <div className="mt-6">
+        <YouTubeFacade
+          id={config.youtube.id}
+          start={config.youtube.start}
+          title={t("youtube.title")}
+          ariaLabel={t("youtube.ariaLabel")}
+        />
+      </div>
+    </section>
+  ) : null;
   const leadForm = (
     <LeadForm
       locale={lang}
@@ -733,6 +752,7 @@ export async function VarietyLanding({
               {offersBlock}
               {rootstockBlock}
               {warningBlock}
+              {youtubeBlock}
               {postWarningBlock}
             </>
           )}
@@ -745,6 +765,7 @@ export async function VarietyLanding({
           {leadForm}
           <article className="pt-4 pb-20">
             <Container size="default">
+              {youtubeBlock}
               {preOffersBlock}
               {rootstockBlock}
               {postWarningBlock}

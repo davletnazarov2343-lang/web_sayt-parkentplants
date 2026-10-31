@@ -122,6 +122,11 @@ export type VarietyLandingConfig = {
    */
   conversionLayout?: boolean;
   /**
+   * Ixtiyoriy YouTube video (bosilgandagina yuklanadi). `start` — boshlanish
+   * soniyasi. Namespace'da `youtube: { title, text, ariaLabel }` bo'lishi shart.
+   */
+  youtube?: { id: string; start?: number };
+  /**
    * Lid formasi tepasida 2 variantli tanlov. Standart tanlov — birinchisi.
    * Berilsa, `leadSource` o'rniga tanlangan variantning `source`i yuboriladi.
    */
@@ -215,6 +220,7 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     offers: true,
     stickyBar: true,
     conversionLayout: true,
+    youtube: { id: "AlzVDFIUDig", start: 644 },
     sourceOptions: [
       { value: "now", source: "sweet-aryana-lending-now" },
       { value: "preorder", source: "sweet-aryana-lending-2027" },
