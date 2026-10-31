@@ -115,6 +115,13 @@ export type VarietyLandingConfig = {
    */
   telegramHref?: string;
   /**
+   * Lid qoldirishga moslangan tartib: hero -> takliflar (narx bilan) -> qisqa forma
+   * -> qolgan bo'limlar; "Eslatma" bo'limi chiqmaydi; hero'da formaga tugma.
+   * Namespace'da `ctaForm`, `offers.now.price`, `offers.preorder.price` bo'lishi
+   * shart; `offers: true` va `sourceOptions` bilan ishlating.
+   */
+  conversionLayout?: boolean;
+  /**
    * Lid formasi tepasida 2 variantli tanlov. Standart tanlov — birinchisi.
    * Berilsa, `leadSource` o'rniga tanlangan variantning `source`i yuboriladi.
    */
@@ -207,6 +214,7 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     },
     offers: true,
     stickyBar: true,
+    conversionLayout: true,
     sourceOptions: [
       { value: "now", source: "sweet-aryana-lending-now" },
       { value: "preorder", source: "sweet-aryana-lending-2027" },

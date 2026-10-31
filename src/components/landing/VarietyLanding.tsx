@@ -131,6 +131,7 @@ export async function VarietyLanding({
   const lang = locale === "ru" ? "ru" : "uz";
   const t = await getTranslations({ locale, namespace: config.namespace });
   const telegramHref = config.telegramHref ?? TELEGRAM_HREF;
+  const conversionLayout = config.conversionLayout === true;
   const tFooter = await getTranslations({ locale, namespace: "footer" });
   const homeLabel = locale === "ru" ? "Главная" : "Bosh sahifa";
 
@@ -162,12 +163,14 @@ export async function VarietyLanding({
           title: t("offers.now.title"),
           text: t("offers.now.text"),
           cta: t("offers.now.cta"),
+          price: conversionLayout ? t("offers.now.price") : null,
         },
         preorder: {
           badge: t("offers.preorder.badge"),
           title: t("offers.preorder.title"),
           text: t("offers.preorder.text"),
           cta: t("offers.preorder.cta"),
+          price: conversionLayout ? t("offers.preorder.price") : null,
         },
       }
     : null;
@@ -277,9 +280,20 @@ export async function VarietyLanding({
             : "mt-8 flex flex-wrap gap-3"
         }
       >
+        {conversionLayout && (
+          <LeadFormLink
+            option="now"
+            variant="primary"
+            size="lg"
+            className={video ? "w-full sm:w-auto" : undefined}
+          >
+            {t("ctaForm")}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </LeadFormLink>
+        )}
         <TrackedLinkButton
           href={CALL_HREF}
-          variant="primary"
+          variant={conversionLayout ? "outline" : "primary"}
           size="lg"
           className={video ? "w-full sm:w-auto" : undefined}
           event="contact_phone"
@@ -307,93 +321,9 @@ export async function VarietyLanding({
     </>
   );
 
-  return (
+  // Bo'limlar — `conversionLayout` bo'lsa tartib o'zgaradi (takliflar + forma hero'dan keyin)
+  const preOffersBlock = (
     <>
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
-      {video && (
-        <JsonLd
-          data={getVideoObjectSchema({
-            name: t("video.title"),
-            description: t("metaDescription"),
-            thumbnailUrl: `${BASE_URL}${video.poster}`,
-            contentUrl: `${BASE_URL}${video.src}`,
-            uploadDate: video.uploadDate,
-            duration: video.duration,
-            inLanguage: locale === "ru" ? "ru-RU" : "uz-UZ",
-          })}
-        />
-      )}
-
-      <article className="pt-28 pb-20 sm:pt-32 lg:pt-40">
-        <Container size="default">
-          {/* Breadcrumb */}
-          <nav className="text-sm text-earth-700/70">
-            <Link href={`/${locale}`} className="hover:text-forest-700">
-              {homeLabel}
-            </Link>
-            <span className="mx-2 text-earth-400">/</span>
-            <span className="text-earth-700 font-medium">
-              {t("breadcrumb")}
-            </span>
-          </nav>
-
-          {/* 1. Hero */}
-          {video ? (
-            // Video variant. Mobil (< lg): eyebrow -> sarlavha -> lead -> VIDEO -> faktlar -> CTA.
-            // Matn bloki mobilda `contents` (bolalari to'g'ridan-to'g'ri grid elementi bo'ladi) va
-            // `order` bilan video o'rtaga qo'yiladi — video bitta, DOM'da takrorlanmaydi.
-            // Desktop (lg+): avvalgidek 2 ustun (matn bloki | video).
-            <header className="mt-8 grid gap-0 lg:grid-cols-2 lg:items-center lg:gap-14">
-              <div className="contents lg:block">
-                <div>{heroIntro}</div>
-                <div className="order-3 lg:order-none">{heroExtras}</div>
-              </div>
-              <div className="order-2 mt-8 lg:order-none lg:mt-0">
-                <LandingVideo
-                  src={video.src}
-                  srcMobile={video.srcMobile}
-                  poster={video.poster}
-                  width={video.width}
-                  height={video.height}
-                  posterAlt={t("gallery.alt5")}
-                  ariaLabel={t("video.ariaLabel")}
-                />
-              </div>
-            </header>
-          ) : (
-            <header className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-              <div>
-                {heroIntro}
-                {heroExtras}
-              </div>
-              <div className="relative mx-auto aspect-square w-full max-w-xl overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)] lg:max-w-none">
-                <Image
-                  src={IMG_HERO}
-                  alt={t("gallery.alt1")}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </header>
-          )}
-
-          {/* Mobil pastki panel (ixtiyoriy): hero'dan keyin paydo bo'ladi */}
-          {config.stickyBar && (
-            <StickyBar
-              landing={config.slug}
-              callHref={CALL_HREF}
-              telegramHref={telegramHref}
-              labels={{
-                call: t("stickyBar.call"),
-                telegram: t("stickyBar.telegram"),
-                order: t("stickyBar.order"),
-              }}
-            />
-          )}
-
           {/* 2. Kim uchun (ixtiyoriy) */}
           {showAudience && (
             <section className="mt-20">
@@ -492,6 +422,10 @@ export async function VarietyLanding({
             </ul>
           </section>
 
+    </>
+  );
+  const offersBlock = (
+    <>
           {/* 4a. Hozir bor / oldindan buyurtma (ixtiyoriy) */}
           {offers && (
             <section className="mt-20">
@@ -515,6 +449,11 @@ export async function VarietyLanding({
                   <p className="mt-2 flex-1 text-base leading-relaxed text-earth-700">
                     {offers.now.text}
                   </p>
+                  {offers.now.price && (
+                    <p className="mt-4 font-serif text-2xl font-bold text-forest-900 sm:text-3xl">
+                      {offers.now.price}
+                    </p>
+                  )}
                   <LeadFormLink
                     option="now"
                     variant="primary"
@@ -542,6 +481,11 @@ export async function VarietyLanding({
                   <p className="mt-2 flex-1 text-base leading-relaxed text-amber-900/90">
                     {offers.preorder.text}
                   </p>
+                  {offers.preorder.price && (
+                    <p className="mt-4 font-serif text-2xl font-bold text-amber-900 sm:text-3xl">
+                      {offers.preorder.price}
+                    </p>
+                  )}
                   <LeadFormLink
                     option="preorder"
                     variant="secondary"
@@ -556,6 +500,10 @@ export async function VarietyLanding({
             </section>
           )}
 
+    </>
+  );
+  const rootstockBlock = (
+    <>
           {/* 4b. Payvandtag afzalliklari (ixtiyoriy) */}
           {rootstock.length > 0 && (
             <section className="mt-12">
@@ -583,6 +531,10 @@ export async function VarietyLanding({
             </section>
           )}
 
+    </>
+  );
+  const warningBlock = (
+    <>
           {/* 5. Halol ogohlantirish */}
           <section
             role="note"
@@ -602,6 +554,10 @@ export async function VarietyLanding({
             </div>
           </section>
 
+    </>
+  );
+  const postWarningBlock = (
+    <>
           {/* 6. Galereya — closeup (rasm ichida logotip/telefon bor: kesmaymiz) */}
           <section className="mt-20">
             {galleryItems.length > 1 ? (
@@ -669,17 +625,135 @@ export async function VarietyLanding({
 
           {/* 7b. Ichki havolalar: o'z kategoriyasi + mavzuga oid maqola */}
           <LandingRelatedLinks landing={config.slug} />
+    </>
+  );
+  const leadForm = (
+    <LeadForm
+      locale={lang}
+      source={config.leadSource}
+      title={t("formTitle")}
+      sourceOptions={sourceOptions}
+      defaultFruitTypes={config.defaultFruitTypes}
+      compact={conversionLayout}
+    />
+  );
+
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
+      {video && (
+        <JsonLd
+          data={getVideoObjectSchema({
+            name: t("video.title"),
+            description: t("metaDescription"),
+            thumbnailUrl: `${BASE_URL}${video.poster}`,
+            contentUrl: `${BASE_URL}${video.src}`,
+            uploadDate: video.uploadDate,
+            duration: video.duration,
+            inLanguage: locale === "ru" ? "ru-RU" : "uz-UZ",
+          })}
+        />
+      )}
+
+      <article className="pt-28 pb-20 sm:pt-32 lg:pt-40">
+        <Container size="default">
+          {/* Breadcrumb */}
+          <nav className="text-sm text-earth-700/70">
+            <Link href={`/${locale}`} className="hover:text-forest-700">
+              {homeLabel}
+            </Link>
+            <span className="mx-2 text-earth-400">/</span>
+            <span className="text-earth-700 font-medium">
+              {t("breadcrumb")}
+            </span>
+          </nav>
+
+          {/* 1. Hero */}
+          {video ? (
+            // Video variant. Mobil (< lg): eyebrow -> sarlavha -> lead -> VIDEO -> faktlar -> CTA.
+            // Matn bloki mobilda `contents` (bolalari to'g'ridan-to'g'ri grid elementi bo'ladi) va
+            // `order` bilan video o'rtaga qo'yiladi — video bitta, DOM'da takrorlanmaydi.
+            // Desktop (lg+): avvalgidek 2 ustun (matn bloki | video).
+            <header className="mt-8 grid gap-0 lg:grid-cols-2 lg:items-center lg:gap-14">
+              <div className="contents lg:block">
+                <div>{heroIntro}</div>
+                <div className="order-3 lg:order-none">{heroExtras}</div>
+              </div>
+              <div className="order-2 mt-8 lg:order-none lg:mt-0">
+                <LandingVideo
+                  src={video.src}
+                  srcMobile={video.srcMobile}
+                  poster={video.poster}
+                  width={video.width}
+                  height={video.height}
+                  posterAlt={t("gallery.alt5")}
+                  ariaLabel={t("video.ariaLabel")}
+                />
+              </div>
+            </header>
+          ) : (
+            <header className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+              <div>
+                {heroIntro}
+                {heroExtras}
+              </div>
+              <div className="relative mx-auto aspect-square w-full max-w-xl overflow-hidden rounded-2xl border border-earth-400/25 bg-forest-50 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)] lg:max-w-none">
+                <Image
+                  src={IMG_HERO}
+                  alt={t("gallery.alt1")}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 560px, (min-width: 640px) 576px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </header>
+          )}
+
+          {/* Mobil pastki panel (ixtiyoriy): hero'dan keyin paydo bo'ladi */}
+          {config.stickyBar && (
+            <StickyBar
+              landing={config.slug}
+              callHref={CALL_HREF}
+              telegramHref={telegramHref}
+              labels={{
+                call: t("stickyBar.call"),
+                telegram: t("stickyBar.telegram"),
+                order: t("stickyBar.order"),
+              }}
+            />
+          )}
+
+          {conversionLayout ? (
+            offersBlock
+          ) : (
+            <>
+              {preOffersBlock}
+              {offersBlock}
+              {rootstockBlock}
+              {warningBlock}
+              {postWarningBlock}
+            </>
+          )}
         </Container>
       </article>
 
-      {/* 8. Lid formasi */}
-      <LeadForm
-        locale={lang}
-        source={config.leadSource}
-        title={t("formTitle")}
-        sourceOptions={sourceOptions}
-        defaultFruitTypes={config.defaultFruitTypes}
-      />
+      {/* 8. Lid formasi. conversionLayout: forma takliflardan keyin, qolgan bo'limlar formadan keyin */}
+      {conversionLayout ? (
+        <>
+          {leadForm}
+          <article className="pt-4 pb-20">
+            <Container size="default">
+              {preOffersBlock}
+              {rootstockBlock}
+              {postWarningBlock}
+            </Container>
+          </article>
+        </>
+      ) : (
+        leadForm
+      )}
 
       {/* 9. Ijtimoiy tarmoqlar */}
       <section className="py-14">

@@ -433,11 +433,14 @@
   },
   "leadForm": {
     "eyebrow": "B2B so'rov",
+    "compactEyebrow": "Buyurtma",
     "title": "Bizga loyihangiz haqida ayting",
     "subtitle": "Forma to'ldiring — bir ish kuni ichida menejerimiz qo'ng'iroq qilib, narx va hujjatlar bo'yicha aniqlik kiritadi.",
+    "compactSubtitle": "Ism va raqamingizni qoldiring — menejerimiz qo'ng'iroq qilib, narx va buyurtma bo'yicha aniqlik kiritadi.",
     "submit": "So'rovni yuborish",
     "submitting": "Yuborilmoqda...",
     "disclaimer": "Ma'lumotlaringiz uchinchi shaxslarga berilmaydi. Faqat ushbu so'rov bo'yicha aloqa uchun ishlatiladi.",
+    "compactConsent": "«So'rovni yuborish» tugmasini bosib, shaxsiy ma'lumotlarimni ushbu so'rov bo'yicha qayta ishlashga rozilik bildiraman. Ma'lumotlar uchinchi shaxslarga berilmaydi.",
     "errorTitle": "So'rov yuborilmadi",
     "networkError": "Kechirasiz, server bilan bog'lanishda muammo yuz berdi. Iltimos, bevosita qo'ng'iroq qiling: +998 78 113 18 19.",
     "consent": "Shaxsiy ma'lumotlarimni ushbu so'rov bo'yicha qayta ishlashga roziman.",
@@ -459,6 +462,7 @@
       },
       "volume": {
         "label": "Buyurtma hajmi",
+        "compactLabel": "Nechta ko'chat kerak?",
         "placeholder": "Tanlang"
       },
       "fruitTypes": {
@@ -498,6 +502,8 @@
       "other": "Boshqa"
     },
     "volumes": {
+      "1-100": "1 — 100 ko'chat",
+      "101-499": "101 — 499 ko'chat",
       "500-2000": "500 — 2 000 ko'chat",
       "2001-10000": "2 001 — 10 000 ko'chat",
       "10001-50000": "10 001 — 50 000 ko'chat",
@@ -509,7 +515,8 @@
       "max": "Juda uzun",
       "format": "Telefon raqami noto'g'ri formatda",
       "consent": "Roziligingiz kerak",
-      "invalid": "Noto'g'ri qiymat"
+      "invalid": "Noto'g'ri qiymat",
+      "required": "Variantni tanlang"
     },
     "success": {
       "title": "Rahmat! So'rovingiz qabul qilindi",
@@ -1491,8 +1498,9 @@
     "metaDescription": "Sweet Aryana gilos ko'chati: 15-mayda pishadi (hududga qarab), o'zini changlatadi, 28–30 mm, shakari 17–19%. Vishnya payvandtagida bor. Ariza qoldiring.",
     "breadcrumb": "Sweet Aryana",
     "eyebrow": "Sweet Aryana gilos ko'chati",
-    "title": "Nega bu gilos O'zbekistonda juda tez ommalashdi?",
-    "lead": "Bu shunchaki shov-shuvmi yoki asosli sabab bormi? Keling parametrlarini ko'rib chiqamiz.",
+    "title": "Sweet Aryana gilos ko'chati — 15-mayda pishadi, o'zini changlatadi",
+    "lead": "Erta pishadigan, yirik (28–30 mm) va transportga chidamli gilos. Vishnya payvandtagidagi ko'chatlar hozir bor — 35 000 so'mdan.",
+    "ctaForm": "Narx va buyurtma",
     "ctaCall": "Qo'ng'iroq qilish",
     "ctaTelegram": "Telegramdan yozish",
     "heroFacts": [
@@ -1577,13 +1585,15 @@
         "badge": "Hozir bor",
         "title": "Vishnya payvandtagida",
         "text": "Hozirgi kunda «Parkent Plants» ko'chatchiligida Sweet Aryana navi vishnya payvandtagida bor.",
-        "cta": "So'rov qoldirish"
+        "cta": "So'rov qoldirish",
+        "price": "35 000 so'mdan"
       },
       "preorder": {
         "badge": "2027 kuz mavsumi",
         "title": "Klon payvandtagli",
         "text": "Klon payvandtaglini 2027 kuz mavsumi uchun buyurtma qilishingiz mumkin.",
-        "cta": "Buyurtma qoldirish"
+        "cta": "Buyurtma qoldirish",
+        "price": "60 000 so'mdan"
       }
     },
     "warning": {
@@ -1606,12 +1616,16 @@
       "title": "Ko'p beriladigan savollar",
       "items": [
         {
+          "q": "Ko'chat narxi qancha?",
+          "a": "Vishnya payvandtagida — 35 000 so'mdan. Klon payvandtagli (2027 kuz mavsumiga buyurtma) — 60 000 so'mdan. Aniq narx buyurtma hajmiga bog'liq — menejerimiz aytib beradi."
+        },
+        {
           "q": "Sweet Aryana qachon pishadi?",
           "a": "15-may (regioniga qarab)."
         },
         {
           "q": "Sweet Aryana o'zini changlatadimi?",
-          "a": "O'zini changlatadi."
+          "a": "Ha, o'zini changlatadi — alohida changlatuvchi nav ekish shart emas."
         },
         {
           "q": "Sweet Aryana hozir qaysi payvandtagda bor?",
@@ -1627,7 +1641,7 @@
         }
       ]
     },
-    "formTitle": "Sweet Aryana ko'chatiga so'rov qoldiring",
+    "formTitle": "Sweet Aryana ko'chatiga buyurtma qoldiring",
     "formOption": {
       "now": "Hozir bor — vishnya payvandtagida",
       "preorder": "Klon payvandtagli — 2027 kuz mavsumiga buyurtma"
