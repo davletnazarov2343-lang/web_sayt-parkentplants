@@ -16,11 +16,12 @@
  */
 export const PAGE_LASTMOD: Record<string, string> = {
   // Bosh sahifa: oxirgi ko'rinadigan o'zgarish — Sweet Aryana kartasi (FeaturedVarieties)
-  "": "2026-10-29", // title/description Faza 1 matnlarida o'zgargan
+  "": "2026-11-02", // Shuhrat Abrorov bloki + missiyalar lentasi
   "/varieties": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/kochatlar": "2026-10-29", // sarlavha Faza 0 da o'zgargan
-  "/biz-haqimizda": "2026-10-29", // sarlavha Faza 0 da o'zgargan; OAV havolasi qo'shildi
+  "/biz-haqimizda": "2026-11-02", // Shuhrat Abrorov bloki to'g'rilandi
   "/oav": "2026-10-29", // yangi sahifa
+  "/shuhrat-abrorov": "2026-11-02", // yangi sahifa: tarjimai hol, missiyalar, galereya
   "/kontakt": "2026-10-29", // sarlavha Faza 0 da o'zgargan
   "/maqolalar": "2026-10-29", // title/H1/description Faza 1 matnlarida o'zgargan
   "/maxfiylik": "2026-10-13",

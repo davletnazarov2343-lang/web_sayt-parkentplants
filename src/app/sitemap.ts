@@ -65,6 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kochatlar",
     "/biz-haqimizda",
     "/oav",
+    "/shuhrat-abrorov",
     "/kontakt",
     "/granny-smith",
     "/devil-gala",
