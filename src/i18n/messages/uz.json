@@ -23,14 +23,11 @@
     "scrollHint": "Pastga aylantiring"
   },
   "trust": {
-    "ariaLabel": "Sertifikatlar va hamkorlar",
+    "ariaLabel": "Ishonch va sertifikatlar",
     "title": "Ishonch va sertifikatlar",
     "items": {
-      "registry": "O'zR Davlat reestrida",
-      "phyto": "Fitosanitar sertifikat",
-      "iso": "ISO 9001 sifat",
-      "partners": "Netherlands Fruit Solutions",
-      "export": "Eksport sertifikati"
+      "registry": "O'zbekiston Davlat reestrida",
+      "phyto": "Fitosanitariya sertifikati"
     }
   },
   "featuredVarieties": {
