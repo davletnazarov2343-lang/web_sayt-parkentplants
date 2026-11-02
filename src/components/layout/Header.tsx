@@ -175,7 +175,7 @@ export function Header() {
         className={cn(
           "border-b transition-all duration-300",
           scrolled || open
-            ? "bg-forest-900/95 backdrop-blur-md border-forest-700/40 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]"
+            ? "bg-forest-900 border-forest-700/40 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.5)]"
             : "bg-forest-900 border-forest-700/30",
         )}
       >
@@ -249,7 +249,7 @@ export function Header() {
 
       {/* === Mobile menu === */}
       {open && (
-        <div className="xl:hidden border-t border-forest-700/40 bg-forest-900/98 backdrop-blur-md">
+        <div className="xl:hidden border-t border-forest-700/40 bg-forest-900">
           <Container size="wide">
             <nav className="flex flex-col py-4 gap-1">
               {NAV_ITEMS.map((item) => {

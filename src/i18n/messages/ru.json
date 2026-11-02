@@ -23,14 +23,11 @@
     "scrollHint": "Прокрутите вниз"
   },
   "trust": {
-    "ariaLabel": "Сертификаты и партнёры",
+    "ariaLabel": "Доверие и сертификаты",
     "title": "Доверие и сертификаты",
     "items": {
-      "registry": "Госреестр Узбекистана",
-      "phyto": "Фитосанитарный сертификат",
-      "iso": "ISO 9001",
-      "partners": "Netherlands Fruit Solutions",
-      "export": "Экспортный сертификат"
+      "registry": "В Госреестре Узбекистана",
+      "phyto": "Фитосанитарный сертификат"
     }
   },
   "featuredVarieties": {
