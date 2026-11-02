@@ -38,7 +38,9 @@ export function getOrganizationSchema() {
       addressRegion: "Toshkent viloyati",
       addressLocality: "Parkent tumani, Boyqozon mahallasi",
     },
-    founder: { "@id": FOUNDER_ID },
+    // Shuhrat Abrorov — 2016-yildan sherik (2002-yildagi asoschi EMAS),
+    // shuning uchun `founder` emas, `member` sifatida bog'lanadi.
+    member: { "@id": FOUNDER_ID },
     sameAs: [
       "https://t.me/+Q2HYAuBIWn4wN2Vi",
       "https://www.instagram.com/shuhrat_abrorov/",
@@ -97,16 +99,52 @@ export function getFounderSchema() {
     "@id": FOUNDER_ID,
     name: "Shuhrat Abrorov",
     alternateName: ["Шухрат Аброров", "Shukhrat Abrorov", "Shukrat Abrorov"],
-    jobTitle:
-      "Asoschi va bosh direktor, intensiv bog'dorchilik bo'yicha mutaxassis",
-    worksFor: { "@id": ORG_ID },
+    jobTitle: "Agronom, bog'dorchilik bo'yicha xalqaro konsultant",
+    description:
+      "O'zbekistonlik agronom va xalqaro bog'dorchilik konsultanti. 2016-yildan Parkent Plants (Norchontol) ko'chatchilik xo'jaligi sherigi. 5 qit'adagi 30+ davlat bog'lari tajribasi, 20 ga yaqin kitob muallifi, Fruit House Organics (2019) va Agronomlar maktabi (2023) asoschisi. O'zbekiston bo'ylab ~2 500 ga bog'larda konsultant.",
+    url: `${BASE_URL}/uz/shuhrat-abrorov`,
+    image: `${BASE_URL}/team/shuhrat/seminar.jpg`,
+    birthDate: "1983-05-22",
+    birthPlace: {
+      "@type": "Place",
+      name: "Marhamat tumani, Andijon viloyati, O'zbekiston",
+    },
+    nationality: { "@type": "Country", name: "Uzbekistan" },
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Toshkent Davlat Agrar Universiteti",
+        alternateName: "Tashkent State Agrarian University",
+      },
+    ],
+    worksFor: [
+      { "@id": ORG_ID },
+      {
+        "@type": "Organization",
+        name: "Fruit House Organics",
+        foundingDate: "2019",
+        description: "Bog'dorchilik konsalting firmasi (hammuassis: Fabian Martel)",
+      },
+      {
+        "@type": "EducationalOrganization",
+        name: "Agronomlar maktabi",
+        foundingDate: "2023",
+      },
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Agronom-konsultant",
+      occupationLocation: { "@type": "Country", name: "Uzbekistan" },
+    },
     knowsAbout: [
       "intensiv bog'dorchilik",
       "mevali ko'chat yetishtirish",
+      "danakli mevalar",
       "gilos",
       "olma",
       "payvandtaglar",
       "tomchilatib sug'orish",
+      "agronomlar ta'limi",
     ],
     sameAs: [
       "https://t.me/shuhrat_abrorov",

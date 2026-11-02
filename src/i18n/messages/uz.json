@@ -9,6 +9,7 @@
     "news": "Yangiliklar",
     "articles": "Maqolalar",
     "press": "OAVda biz haqimizda",
+    "founder": "Shuhrat Abrorov",
     "contact": "Kontakt",
     "menu": "Menyu",
     "close": "Yopish",
@@ -97,10 +98,10 @@
   },
   "ceoQuote": {
     "eyebrow": "Asoschi va ekspert",
-    "quote": "Ilimsiz qilingan bog'da kelajak yo'q.",
+    "quote": "Ilmsiz qilingan bog'da kelajak yo'q.",
     "name": "Shuhrat Abrorov",
-    "role": "Ta'sischi va Bosh direktor · 23 yil tajriba",
-    "description": "Shuhrat aka 2002 yildan Norchontol fermer xo'jaligini boshqaradi. AQSh Kaliforniyadagi zamonaviy bog'larda malaka oshirib, har yili 100+ navni o'z ko'chatzorida sinab eng yaxshilarini tavsiya qiladi. 2017-yildan Ispaniyalik selektsiyachilar bilan hamkorlikda mintaqamiz uchun yangi shaftoli, gilos va bodom navlarini olib keldi."
+    "role": "Agronom · Xalqaro konsultant · 20+ yil tajriba",
+    "description": "Toshkent Davlat Agrar Universitetini tamomlagach, AQShning eng yirik danakli meva yetishtiruvchi kompaniyasi — Kaliforniyadagi Kingsburg Orchards'da ikki mavsum amaliyot o'tagan. 2016-yildan Parkent Plants (Norchontol) ko'chatchilik xo'jaligi sherigi. 5 qit'adagi 30+ davlat bog'lari tajribasini O'zbekistonga moslashtiradi; bugun 2 500 gektarga yaqin bog'larda agronom-konsultant, 20 ga yaqin kitob muallifi."
   },
   "about": {
     "eyebrow": "Nima uchun Parkent Plants",
@@ -387,7 +388,7 @@
       },
       "consult": {
         "question": "Shuhrat aka bilan bevosita maslahatlashish mumkinmi?",
-        "answer": "Ha — telefon orqali yoki bepul onlayn maslahat olishingiz mumkin (bizdan ko'chat olish niyatingiz bo'lsa). Shuhrat aka 23 yillik tajribasi va AQSh tahsilini ishga solib, sizning hududingizga, tuproqingizga va maqsadingizga mos navni shaxsan tavsiya qiladi. **VIP mijozlarga** shaxsiy raqami beriladi va yangi sinov navlariga avval ruxsat bo'ladi."
+        "answer": "Ha — telefon orqali yoki bepul onlayn maslahat olishingiz mumkin (bizdan ko'chat olish niyatingiz bo'lsa). Shuhrat aka 20 yildan ortiq tajribasi va AQShdagi amaliyotini ishga solib, sizning hududingizga, tuproqingizga va maqsadingizga mos navni shaxsan tavsiya qiladi. **VIP mijozlarga** shaxsiy raqami beriladi va yangi sinov navlariga avval ruxsat bo'ladi."
       }
     }
   },
@@ -1662,7 +1663,7 @@
     "title": "Biz haqimizda — Parkent Plants ko'chatzori",
     "intro": "Parkent Plants — Norchontol fermer xo'jaligining savdo nomi. 2002-yildan buyon Toshkent viloyatida mevali ko'chat yetishtiramiz: bugun ikkita zamonaviy ko'chatzorda — jami 87 gektar maydonda — yiliga 500 000 dan ortiq ko'chat, 11 meva turida 135+ sinalgan nav ishlab chiqariladi. Mahsulotlarimiz O'zbekiston bo'ylab sotiladi va Tojikiston, Qirg'iziston, Turkmaniston, Qozog'istonga eksport qilinadi.",
     "statsTitle": "Raqamlarda biz",
-    "historyTitle": "Asoschi va 23 yillik tajriba",
+    "historyTitle": "Shuhrat Abrorov — agronom va xalqaro konsultant",
     "whyTitle": "Nega bizni tanlashadi",
     "nurseriesTitle": "Ikkita zamonaviy ko'chatzor",
     "nurseriesIntro": "Toshkent viloyatida joylashgan ikki ko'chatzor — har biri o'z ixtisoslashuvi va muhandislik tizimiga ega.",

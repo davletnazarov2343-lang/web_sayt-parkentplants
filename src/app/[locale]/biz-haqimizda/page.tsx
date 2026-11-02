@@ -133,7 +133,7 @@ export default async function AboutPage({ params: { locale } }: Props) {
               <div className="lg:col-span-5">
                 <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-gradient-to-br from-forest-100 to-forest-200 shadow-[0_20px_60px_-25px_rgba(27,67,50,0.45)]">
                   <Image
-                    src="/team/shuhrat-abrorov.jpg"
+                    src="/team/shuhrat/seminar.jpg"
                     alt={tCeo("name")}
                     fill
                     sizes="(min-width: 1024px) 384px, 100vw"
@@ -162,6 +162,13 @@ export default async function AboutPage({ params: { locale } }: Props) {
                 <p className="mt-6 text-base leading-relaxed text-earth-700 sm:text-lg">
                   {tCeo("description")}
                 </p>
+                <Link
+                  href={`/${locale}/shuhrat-abrorov`}
+                  className="mt-6 inline-flex items-center gap-2 font-semibold text-forest-700 hover:text-forest-900"
+                >
+                  {locale === "ru" ? "Биография и миссии" : "Tarjimai hol va missiyalar"}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </section>
