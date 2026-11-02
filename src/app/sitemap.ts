@@ -72,6 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/black-splendor",
     "/maxfiylik",
     "/pink-lady",
+    "/golden-delicious",
     "/sweet-aryana",
   ];
   // Ro'yxat sahifalari ichidagi eng yangi elementning sanasini oladi

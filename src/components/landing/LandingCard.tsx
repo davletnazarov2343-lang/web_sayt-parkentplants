@@ -31,11 +31,16 @@ const ACCENT_STYLES: Record<
     card: "border-rose-400/70 hover:border-rose-600",
     chip: "border-rose-300 bg-rose-100/60 text-rose-900",
   },
+  // Golden Delicious — sariq/oltin (sayt amber palitrasi: ogohlantirish bloklari bilan bir xil)
+  gold: {
+    card: "border-amber-300/70 hover:border-amber-500",
+    chip: "border-amber-300 bg-amber-100/60 text-amber-900",
+  },
 };
 
 /**
  * Nav lendingiga olib boruvchi karta (rasm, nom, qisqa tavsif, chiplar, "Batafsil").
- * `li` elementi — ota `ul` ichida ishlatiladi; kenglik `className` orqali beriladi.
+ * `li` elementi — ota `ul` ichida (LandingCarousel) ishlatiladi; kenglikni karusel beradi.
  * Matnlar — `featuredVarieties` namespace'da slug bo'yicha. Server komponent.
  */
 export function LandingCard({
@@ -64,7 +69,7 @@ export function LandingCard({
           src={landing.image}
           alt={t(`items.${landing.slug}.imageAlt`)}
           fill
-          sizes="(min-width: 1280px) 230px, (min-width: 1024px) 30vw, (min-width: 768px) 46vw, 100vw"
+          sizes="(min-width: 1280px) 290px, (min-width: 1024px) 30vw, (min-width: 640px) 46vw, 86vw"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>

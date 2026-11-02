@@ -21,7 +21,7 @@ export type ArticleRelated = {
 export const ARTICLE_RELATED: Record<string, ArticleRelated> = {
   "olmada-serhosillikka-tasir-qiluvchi-omillar": {
     category: "olma-kochati",
-    landings: ["pink-lady", "granny-smith", "devil-gala"],
+    landings: ["pink-lady", "granny-smith", "devil-gala", "golden-delicious"],
   },
   "gilosda-serhosillikka-tasir-qiluvchi-omillar": {
     category: "gilos-kochati",

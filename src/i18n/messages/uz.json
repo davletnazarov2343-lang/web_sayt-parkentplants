@@ -37,7 +37,15 @@
     "text": "Bozorda talab yuqori, sinalgan navlar — batafsil ma'lumot va ko'chatga so'rov.",
     "cta": "Batafsil",
     "allLink": "Barcha navlar",
+    "carouselPrev": "Oldingi navlar",
+    "carouselNext": "Keyingi navlar",
     "items": {
+      "golden-delicious": {
+        "name": "Golden Delicious",
+        "tagline": "O'zbek xalqining sevimli olmasi: shirin, nordonligi yo'q, asal aromatli.",
+        "chips": ["Sentyabr–oktyabr", "CA'da 8–10 oy saqlanadi", "25–35 t/ga"],
+        "imageAlt": "Golden Delicious daraxti — shoxlari mevaga to'la"
+      },
       "sweet-aryana": {
         "name": "Sweet Aryana",
         "tagline": "Erta pishadigan, o'zini changlatadigan gilos — transportga juda chidamli.",
@@ -1490,6 +1498,125 @@
       ]
     },
     "formTitle": "Pink Lady ko'chatiga so'rov qoldiring"
+  },
+  "goldenDeliciousPage": {
+    "metaTitle": "Golden Delicious olma ko'chati sotib olish",
+    "metaDescription": "Golden Delicious olma ko'chati MM106 payvandtagida: shirin, nordonligi yo'q, asal aromatli, qarsildoq. 2–3 yildan hosilga kiradi. Parkent Plants — ariza qoldiring.",
+    "breadcrumb": "Golden Delicious",
+    "eyebrow": "Golden Delicious olma ko'chati",
+    "title": "O'zbek xalqining sevimli Goldeni!",
+    "lead": "Yaratilganiga 1 asr bo'lgan bo'lsa ham, o'z o'rnini yo'qotmay kelayotgan olma navi. Shirin, nordonligi yo'q — to'liq pishganda asal yoki nokni eslatuvchi xushbo'y aromat paydo bo'ladi. O'zbekistondagi eng mashhur olmalardan biri.",
+    "ctaCall": "Qo'ng'iroq qilish",
+    "ctaTelegram": "Telegramdan yozish",
+    "audience": {
+      "title": "Bu nav kimga kerak?",
+      "items": [
+        {
+          "title": "Mijozlar",
+          "text": "Shirin ta'm, nordonlik yo'q. To'liq pishganda asal yoki nokni eslatuvchi xushbo'y aromat paydo bo'ladi. Eti qarsildoq va sersuv."
+        },
+        {
+          "title": "Sotuvchilar",
+          "text": "Mahalliy bozor o'rgangan, doimiy xaridori bor. Oddiy omborda 3–5 oy, maxsus muzlatkichlarda (CA/ULO) 8–10 oygacha saqlanadi."
+        },
+        {
+          "title": "Yetishtiruvchilar",
+          "text": "2–3 yildan hosilga kiradi, maksimal hosildorlik gektariga 25–35 tonna. Qisman o'zini o'zi changlatadi."
+        }
+      ]
+    },
+    "specs": {
+      "title": "Nav xususiyatlari",
+      "rows": [
+        { "label": "Nomi", "value": "Golden Delicious (Golden)" },
+        { "label": "Pishish vaqti", "value": "Sentyabr–oktyabr (hududga qarab)" },
+        { "label": "Kalibri", "value": "65–85 mm" },
+        { "label": "Meva og'irligi", "value": "140–200 gramm" },
+        { "label": "Shakari", "value": "15–18%" },
+        { "label": "Payvandtagi", "value": "MM106" },
+        { "label": "Hosilga kirishi", "value": "2–3 yildan" },
+        { "label": "O'sishi", "value": "O'rtacha kuchli o'sadi" },
+        { "label": "Maksimal hosildorligi", "value": "Gektariga 25–35 tonna" },
+        { "label": "Saqlanishi", "value": "Oddiy omborda 3–5 oy, maxsus muzlatkichlarda (CA/ULO) 8–10 oygacha" },
+        { "label": "Changlanishi", "value": "Qisman o'zini o'zi changlatadi; changlatuvchi sifatida Granny Smith, Gala (Royal Gala, Gala Must), Fuji, Red Delicious (Starkrimson) ekish tavsiya qilinadi" }
+      ]
+    },
+    "advantages": {
+      "title": "Nav ustunliklari",
+      "items": [
+        {
+          "title": "Shirin ta'm, xushbo'y aromat",
+          "text": "Shirin ta'm, nordonlik yo'q. Meva to'liq pishib yetilganda unga xos desertbop, asal yoki nokni eslatuvchi shirin hid (aromat) paydo bo'ladi."
+        },
+        {
+          "title": "Qarsildoq va sersuv",
+          "text": "Yangi uzilgan olmaning eti oq-sarg'ish (kremsimon) rangda, juda zich, sersuv va tishlaganda yoqimli qarsillaydi."
+        },
+        {
+          "title": "Bozori tayyor",
+          "text": "Mahalliy bozor o'rgangan, doimiy xaridori bor. O'zbekistondagi eng mashhur olmalardan biri."
+        }
+      ]
+    },
+    "facts": {
+      "title": "Golden Delicious haqida TOP faktlar",
+      "items": [
+        {
+          "title": "5 000 dollarlik daraxt",
+          "text": "Stark Bro's ko'chatxonasi 1914-yilda g'ayritabiiy shirin olma berayotgan o'sha birinchi tasodifiy daraxtni va uning atrofidagi bir parcha yer huquqini fermer Anderson Mullinsdan 5 000 AQSh dollariga sotib olgan. O'sha davr (110 yil avvalgi pul qiymati) uchun bu astronomik summa bo'lib, hozirgi kunda 150 000 dollardan oshiqroq qiymatga teng demakdir! Daraxt o'g'irlanmasligi yoki zarar ko'rmasligi uchun uning atrofi po'lat panjara bilan o'ralib, signalizatsiya o'rnatilgan."
+        },
+        {
+          "title": "Red Delicious bilan aka-uka emas",
+          "text": "Ko'pchilik nomi o'xshash bo'lgani uchun ularni aka-uka navlar deb o'ylaydi. Aslida Golden Delicious va Red Delicious navlarining genetik kelib chiqishi butunlay boshqa-boshqa. Ularni faqat marketing maqsadida — xaridorlar oson eslab qolishi va mashhur qizil olmaga raqobatchi qilib ko'rsatish uchun shunday nomlashgan."
+        },
+        {
+          "title": "57 000 ta gen — «super-ota-ona»",
+          "text": "Golden Delicious'da 57 000 ta gen mavjud bo'lib, bu o'sha davrgacha o'rganilgan barcha o'simliklar ichida eng yuqori ko'rsatkich edi (hatto inson genlaridan ham ko'proq). Aynan shu boy genetikasi tufayli u eng chidamli va boshqa navlarni yaratishda eng ko'p qo'llaniladigan «super-ota-ona» olma hisoblanadi."
+        }
+      ]
+    },
+    "warning": {
+      "title": "Muhim izoh",
+      "text": "Golden Delicious qisman o'zini o'zi changlatadi, ammo qo'shimcha changlatish uchun yoniga quyidagi navlarni ekish tavsiya qilinadi: Granny Smith, Gala (Royal Gala, Gala Must), Fuji yoki Red Delicious (Starkrimson)."
+    },
+    "gallery": {
+      "alt1": "Golden Delicious olmalari shoxda — sariq mevalar, ko'k osmon fonida",
+      "alt2": "Golden Delicious daraxti — shoxlari mevaga to'la",
+      "alt3": "Golden Delicious olmasi suv tomchilarida — yaqin plan",
+      "alt4": "Golden Delicious olmalari barglar orasida",
+      "alt5": "Golden Delicious olmalari bozorda — hosil"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "items": [
+        {
+          "q": "Golden Delicious qachon pishadi?",
+          "a": "Sentyabr–oktyabr oylarida, hududga qarab."
+        },
+        {
+          "q": "Changlatuvchi kerakmi?",
+          "a": "Qisman o'zini o'zi changlatadi, ammo yoniga Granny Smith, Gala (Royal Gala, Gala Must), Fuji yoki Red Delicious (Starkrimson) ekish tavsiya qilinadi."
+        },
+        {
+          "q": "Meva qancha saqlanadi?",
+          "a": "Oddiy omborda 3–5 oy. Maxsus muzlatkichlarda (CA/ULO) 8–10 oygacha saqlash mumkin."
+        },
+        {
+          "q": "Necha yildan hosilga kiradi?",
+          "a": "MM106 payvandtagida 2–3 yildan. Maksimal hosildorligi — gektariga 25–35 tonna."
+        },
+        {
+          "q": "Golden Delicious va Red Delicious aka-uka navlarmi?",
+          "a": "Yo'q. Ularning genetik kelib chiqishi butunlay boshqa-boshqa — nomlari faqat marketing maqsadida o'xshatilgan."
+        }
+      ]
+    },
+    "formTitle": "Golden Delicious ko'chatiga so'rov qoldiring",
+    "stickyBar": {
+      "call": "Qo'ng'iroq",
+      "telegram": "Telegram",
+      "order": "Buyurtma"
+    }
   },
   "sweetAryanaPage": {
     "metaTitle": "Sweet Aryana gilos ko'chati sotib olish",

@@ -77,6 +77,11 @@ const EVENT_MAP: Record<
     ga: "view_item",
     ym: "view_pink_lady",
   },
+  view_golden_delicious: {
+    fbq: "ViewContent",
+    ga: "view_item",
+    ym: "view_golden_delicious",
+  },
   view_sweet_aryana: {
     fbq: "ViewContent",
     ga: "view_item",

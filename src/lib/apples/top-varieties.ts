@@ -227,6 +227,34 @@ export const TOP_APPLES: AppleVariety[] = [
     photo: "/varieties/saplings/apple-jeromin.png",
   },
   {
+    slug: "golden-delicious",
+    name: "Golden Delicious",
+    origin: "AQSh (Stark Bro's, 1914)",
+    originRu: "США (Stark Bro's, 1914)",
+    harvestPeriod: "Sentyabr–oktyabr",
+    harvestPeriodRu: "Сентябрь–октябрь",
+    season: "autumn",
+    skinColor: "Sariq",
+    skinColorRu: "Жёлтая",
+    recommendedRootstocks: "MM106",
+    recommendedRootstocksRu: "MM106",
+    // Qisman o'zini o'zi changlatadi (boolean buni ifodalay olmaydi) — changlatuvchi tavsiya etiladi
+    selfPollinating: false,
+    pollinators: "Granny Smith, Gala, Fuji, Red Delicious",
+    pollinatorsRu: "Granny Smith, Gala, Fuji, Red Delicious",
+    // Oddiy omborda 3–5 oy (yuqori chegara), CA/ULO da 8–10 oy — Pink Lady yozuvidagidek
+    storageMonths: 5,
+    storage: "long",
+    treeVigor: "O'rtacha kuchli",
+    treeVigorRu: "Средне-сильнорослое",
+    badges: [],
+    taglineUz:
+      "O'zbek xalqining sevimli olmasi: shirin, nordonligi yo'q, asal aromatli.",
+    taglineRu:
+      "Любимое яблоко узбекского народа: сладкое, без кислинки, с медовым ароматом.",
+    landingHref: "/golden-delicious",
+  },
+  {
     slug: "story-inored",
     name: "Story® Inored",
     origin: "Frantsiya (NOVADI)",

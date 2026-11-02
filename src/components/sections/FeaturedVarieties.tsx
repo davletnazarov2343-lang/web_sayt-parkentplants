@@ -3,12 +3,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { LandingCard } from "@/components/landing/LandingCard";
+import { LandingCarousel } from "@/components/landing/LandingCarousel";
 import { FEATURED_LANDINGS } from "@/lib/landings";
 
 /**
  * "Tavsiya etilgan navlar" — nav lending sahifalariga olib boruvchi kartalar
- * (olma, olxo'ri, ...). Kartalar balandligi bir xil (grid stretch + CTA pastda).
- * Ro'yxat — src/lib/landings.ts (FEATURED_LANDINGS), matnlar —
+ * (olma, olxo'ri, ...): bitta qatorli, o'zi siljiydigan karusel (LandingCarousel).
+ * Kartalar balandligi bir xil (CTA pastda). Ro'yxat — src/lib/landings.ts (FEATURED_LANDINGS), matnlar —
  * `featuredVarieties` namespace'da slug bo'yicha. Server komponent.
  */
 export function FeaturedVarieties({
@@ -54,18 +55,17 @@ export function FeaturedVarieties({
           )}
         </div>
 
-        {/* 5 ta karta, markazlashgan qatorlar: mobil 1 ustun, md (768+) 2+2+1, lg (1024+) 3+2,
-            xl (1280+) hammasi bir qatorda (5).
-            Karta kengligi = (100% - bo'shliqlar) / ustunlar soni; gap-6 = 1.5rem */}
-        <ul className="mt-8 flex flex-wrap justify-center gap-6">
+        {/* Bitta qator: mobil ~1.15, sm 2, lg 3, xl 4 karta ko'rinadi; qolgani siljiydi */}
+        <LandingCarousel
+          className="mt-8"
+          label={t("title")}
+          prevLabel={t("carouselPrev")}
+          nextLabel={t("carouselNext")}
+        >
           {FEATURED_LANDINGS.map((landing) => (
-            <LandingCard
-              key={landing.slug}
-              landing={landing}
-              className="md:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] xl:w-[calc((100%-6rem)/5)]"
-            />
+            <LandingCard key={landing.slug} landing={landing} />
           ))}
-        </ul>
+        </LandingCarousel>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { LandingCard } from "@/components/landing/LandingCard";
+import { LandingCarousel } from "@/components/landing/LandingCarousel";
 import { getLandingsByCategory } from "@/lib/landings";
 
 /**
@@ -8,6 +9,7 @@ import { getLandingsByCategory } from "@/lib/landings";
  */
 export function CategoryLandings({ categorySlug }: { categorySlug: string }) {
   const t = useTranslations("internalLinks");
+  const tCarousel = useTranslations("featuredVarieties");
   const landings = getLandingsByCategory(categorySlug);
   if (landings.length === 0) return null;
 
@@ -19,15 +21,16 @@ export function CategoryLandings({ categorySlug }: { categorySlug: string }) {
       >
         {t("varietiesTitle")}
       </h2>
-      <ul className="mt-6 flex flex-wrap justify-center gap-6">
+      <LandingCarousel
+        className="mt-6"
+        label={t("varietiesTitle")}
+        prevLabel={tCarousel("carouselPrev")}
+        nextLabel={tCarousel("carouselNext")}
+      >
         {landings.map((landing) => (
-          <LandingCard
-            key={landing.slug}
-            landing={landing}
-            className="sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
-          />
+          <LandingCard key={landing.slug} landing={landing} />
         ))}
-      </ul>
+      </LandingCarousel>
     </section>
   );
 }

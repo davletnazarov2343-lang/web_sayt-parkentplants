@@ -17,6 +17,7 @@ import type { FruitTypeKey } from "@/lib/leads/schema";
 export type LandingSlug =
   | "black-splendor"
   | "devil-gala"
+  | "golden-delicious"
   | "granny-smith"
   | "pink-lady"
   | "sweet-aryana";
@@ -84,6 +85,12 @@ export type VarietyLandingConfig = {
    * bo'lishi shart. Berilmasa — bo'lim chiqmaydi (eski ko'rinish).
    */
   rootstockSection?: boolean;
+  /**
+   * Ixtiyoriy: "TOP faktlar" bo'limi (ustunliklardan keyin, kartalar ko'rinishida).
+   * `true` bo'lsa, namespace'da `facts: { title, items: [{ title, text }] }`
+   * bo'lishi shart. Berilmasa — bo'lim chiqmaydi (eski ko'rinish).
+   */
+  facts?: boolean;
   /** "Kim uchun" bo'limi. Standart `true`; `false` — bo'lim chiqmaydi (tarjimada `audience` shart emas). */
   audience?: boolean;
   /**
@@ -193,6 +200,27 @@ export const VARIETY_LANDINGS: Record<LandingSlug, VarietyLandingConfig> = {
     specLinks: [{ text: "Granny Smith", slug: "granny-smith" }],
     rootstockSection: true,
   },
+  "golden-delicious": {
+    slug: "golden-delicious",
+    namespace: "goldenDeliciousPage",
+    images: {
+      hero: "/images/golden-delicious/hero.jpg",
+      cluster: "/images/golden-delicious/cluster.jpg",
+      closeup: "/images/golden-delicious/closeup.jpg",
+    },
+    extraGallery: [
+      "/images/golden-delicious/leaves.jpg",
+      "/images/golden-delicious/market.jpg",
+    ],
+    // Logotipdan pastdagi telefon yo'lagi kesilgan: 1080x974
+    ogImage: { width: 1080, height: 974 },
+    leadSource: "golden-delicious-lending",
+    viewEvent: "view_golden_delicious",
+    // Changlatuvchilar qatoridagi "Granny Smith" — o'z lendingiga havola
+    specLinks: [{ text: "Granny Smith", slug: "granny-smith" }],
+    facts: true,
+    stickyBar: true,
+  },
   "sweet-aryana": {
     slug: "sweet-aryana",
     namespace: "sweetAryanaPage",
@@ -247,10 +275,16 @@ export type FeaturedLanding = {
   /** Locale prefiksisiz yo'l */
   href: string;
   image: string;
-  accent: "red" | "green" | "purple" | "pink" | "rose";
+  accent: "red" | "green" | "purple" | "pink" | "rose" | "gold";
 };
 
 export const FEATURED_LANDINGS: ReadonlyArray<FeaturedLanding> = [
+  {
+    slug: "golden-delicious",
+    href: "/golden-delicious",
+    image: VARIETY_LANDINGS["golden-delicious"].images.cluster,
+    accent: "gold",
+  },
   {
     slug: "sweet-aryana",
     href: "/sweet-aryana",
@@ -297,6 +331,7 @@ export const LANDING_CATEGORY: Record<LandingSlug, string> = {
   "pink-lady": "olma-kochati",
   "devil-gala": "olma-kochati",
   "granny-smith": "olma-kochati",
+  "golden-delicious": "olma-kochati",
   "sweet-aryana": "gilos-kochati",
   "black-splendor": "olxori-kochati",
 };

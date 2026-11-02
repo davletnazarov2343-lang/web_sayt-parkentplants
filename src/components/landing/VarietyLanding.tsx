@@ -8,7 +8,10 @@ import {
   Bug,
   CalendarClock,
   CircleCheck,
+  Coins,
+  Dna,
   Droplets,
+  GitCompare,
   HelpCircle,
   Phone,
   ShieldCheck,
@@ -57,6 +60,9 @@ const ROOTSTOCK_ICONS: LucideIcon[] = [
   Sprout,
   ShieldCheck,
 ];
+
+// "TOP faktlar" bo'limi (ixtiyoriy) — kartalar tartibi tarjimadagi facts.items bilan bir xil
+const FACT_ICONS: LucideIcon[] = [Coins, GitCompare, Dna];
 
 // Ustunlik: oddiy matn yoki sarlavhali ({ title, text }) — ikkalasi ham qo'llanadi
 type AdvantageItem = string | { title: string; text: string };
@@ -152,6 +158,9 @@ export async function VarietyLanding({
   const advantages = t.raw("advantages.items") as AdvantageItem[];
   const rootstock = config.rootstockSection
     ? (t.raw("rootstock.items") as { title: string; text: string }[])
+    : [];
+  const facts = config.facts
+    ? (t.raw("facts.items") as { title: string; text: string }[])
     : [];
   const faq = t.raw("faq.items") as { q: string; a: string }[];
 
@@ -422,6 +431,33 @@ export async function VarietyLanding({
               })}
             </ul>
           </section>
+
+          {/* 4c. TOP faktlar (ixtiyoriy) */}
+          {facts.length > 0 && (
+            <section className="mt-20">
+              <h2 className="text-2xl font-serif font-bold text-earth-900 sm:text-3xl">
+                {t("facts.title")}
+              </h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
+                {facts.map((item, i) => {
+                  const Icon = FACT_ICONS[i] ?? Apple;
+                  return (
+                    <Card key={item.title} variant="bordered">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-100 text-amber-700">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </div>
+                      <h3 className="mt-4 font-serif text-lg font-semibold text-earth-900">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-earth-700">
+                        {item.text}
+                      </p>
+                    </Card>
+                  );
+                })}
+              </div>
+            </section>
+          )}
 
     </>
   );
