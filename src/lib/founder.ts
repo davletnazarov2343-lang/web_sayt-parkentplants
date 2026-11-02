@@ -174,7 +174,7 @@ export const FOUNDER = {
   gallery: [
     { src: "/team/shuhrat/seminar.jpg", caption: { uz: "Bog'dorchilik seminarida ma'ruza", ru: "Доклад на семинаре по садоводству" } as L },
     { src: "/team/shuhrat/gilos-bogi.jpg", caption: { uz: "Gilos hosili", ru: "Урожай черешни" } as L },
-    { src: "/team/shuhrat/bogda-mutaxassislar.jpg", caption: { uz: "Intensiv bog'da xorijiy mutaxassislar bilan", ru: "В интенсивном саду с иностранными специалистами" } as L, wide: true },
+    { src: "/team/shuhrat/bogda-mutaxassislar.jpg", caption: { uz: "Intensiv bog'da ustozi, fransiyalik olim Fabian Martel bilan", ru: "В интенсивном саду с наставником, французским учёным Фабианом Мартелем" } as L, wide: true },
     { src: "/team/shuhrat/olma-bogi.jpg", caption: { uz: "Olma bog'ida, hosil mavsumi", ru: "В яблоневом саду, сезон урожая" } as L },
     { src: "/team/shuhrat/versal.jpg", caption: { uz: "Fransiya — Versal bog'lari", ru: "Франция — сады Версаля" } as L },
     { src: "/team/shuhrat/dala-korigi.jpg", caption: { uz: "Bog' ko'rigi", ru: "Осмотр сада" } as L },
