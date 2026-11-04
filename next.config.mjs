@@ -49,6 +49,22 @@ const nextConfig = {
         destination: "https://parkentplants.uz/:path*",
         permanent: true,
       },
+      // Muddati o'tgan chegirma yangiligi olib tashlandi
+      {
+        source: "/news/gilos-payvand-chegirma.html",
+        destination: "/uz/kochatlar/gilos-kochati",
+        permanent: true,
+      },
+      {
+        source: "/uz/news/gilos-payvand-chegirma",
+        destination: "/uz/kochatlar/gilos-kochati",
+        permanent: true,
+      },
+      {
+        source: "/ru/news/gilos-payvand-chegirma",
+        destination: "/ru/kochatlar/gilos-kochati",
+        permanent: true,
+      },
     ];
   },
   async headers() {
