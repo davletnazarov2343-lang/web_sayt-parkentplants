@@ -203,9 +203,13 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-cream-100/10 py-6">
           <div className="flex flex-col items-center justify-between gap-3 text-xs text-cream-100/60 sm:flex-row">
-            <p>
-              © {year} {BRAND.name}. {t("footer.rights")}
-            </p>
+            <div className="text-center sm:text-left">
+              <p>
+                © {year} {BRAND.name}. {t("footer.rights")}
+              </p>
+              {/* Yuridik shaxs: Meta Business Verification brend ↔ yuridik nomni shu qatordan bog'laydi */}
+              <p className="mt-1 text-cream-100/50">{t("footer.legal")}</p>
+            </div>
             <p className="flex items-center gap-4">
               <Link
                 href={`/${locale}/maxfiylik`}
